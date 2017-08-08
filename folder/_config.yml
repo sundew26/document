@@ -1,80 +1,119 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+# Hexo 配置
+## 参考: https://hexo.io/docs/configuration.html
+## github: https://github.com/hexojs/hexo/
 
-# Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+# Site 网站
+# 网站标题
+title: weex
+# 网站副标题
+subtitle: weex使用手册
+# 网站描述
+description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移
+# 作者名字
+author: 魏露
+# 网站使用的语言
+language: 简体中文
+# 网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。
+timezone: UTC
 
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+# URL 网址
+## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+# 网址
+url: https://github.com/stardew516/document
+# 网站根目录
+root: /document/
+# 文章的 永久链接 格式
 permalink: :year/:month/:day/:title/
+# 永久链接中各部分的默认值
 permalink_defaults:
 
-# Directory
+# Directory 目录
+# 资源文件夹，这个文件夹用来存放内容。
 source_dir: source
+# 公共文件夹，这个文件夹用于存放生成的站点文件。
 public_dir: public
+# 标签文件夹
 tag_dir: tags
+# 归档文件夹
 archive_dir: archives
+# 分类文件夹
 category_dir: categories
+# Include code 文件夹
 code_dir: downloads/code
+# 国际化（i18n）文件夹
 i18n_dir: :lang
+# 跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
 skip_render:
 
-# Writing
-new_post_name: :title.md # File name of new posts
+# Writing 文章
+# File name of new posts 新文章的文件名称
+new_post_name: :title.md
+# 预设布局
 default_layout: post
-titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+# 在中文和英文之间加入空格
+auto_spacing: false
+# Transform title into titlecase 把标题转换为 title case
+titlecase: false
+# Open external links in new tab 在新标签中打开链接
+external_link: true
+# 把文件名称转换为 (1) 小写或 (2) 大写
 filename_case: 0
+# 显示草稿
 render_drafts: false
+# 启动 Asset 文件夹
 post_asset_folder: false
+# 把链接改为与根目录的相对位址
 relative_link: false
+# 显示未来的文章
 future: true
+# 代码块的设置
 highlight:
   enable: true
   line_number: true
   auto_detect: false
   tab_replace:
   
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
+# Home page setting 主页设置
+# path: 博客索引页的跟路径,默认为空
+# per_page: 每页展示的文章量, 为0时表示不分页
+# order_by: 排序, 默认日期降序
 index_generator:
   path: ''
   per_page: 10
   order_by: -date
   
-# Category & Tag
+# Category & Tag 分类 & 标签
+# 默认分类
 default_category: uncategorized
+# 分类别名
 category_map:
+# 标签别名
 tag_map:
 
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
+# Date / Time format 日期 / 时间格式
+## Hexo 使用 Moment.js 来解析和显示时间。
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
+# 日期格式
 date_format: YYYY-MM-DD
+# 时间格式
 time_format: HH:mm:ss
 
-# Pagination
+# Pagination 分页
 ## Set per_page to 0 to disable pagination
+# 每页显示的文章量 (0 = 关闭分页功能)
 per_page: 10
+# 分页目录
 pagination_dir: page
 
-# Extensions
+# Extensions 扩展
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+# 当前主题名称。值为false时禁用主题
 theme: landscape
 
-# Deployment
+# Deployment 部署
 ## Docs: https://hexo.io/docs/deployment.html
+# 部署部分的设置
 deploy:
   type:
