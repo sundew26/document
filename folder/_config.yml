@@ -4,13 +4,13 @@
 
 # Site 网站
 # 网站标题
-title: weex
+title: weex使用手册
 # 网站副标题
-subtitle: weex使用手册
+subtitle: 阿里旗下
 # 网站描述
 description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移
 # 作者名字
-author: 魏露
+author: lu.wei
 # 网站使用的语言
 language: 简体中文
 # 网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。
@@ -61,7 +61,7 @@ filename_case: 0
 # 显示草稿
 render_drafts: false
 # 启动 Asset 文件夹
-post_asset_folder: false
+post_asset_folder: true
 # 把链接改为与根目录的相对位址
 relative_link: false
 # 显示未来的文章
@@ -70,7 +70,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting 主页设置
