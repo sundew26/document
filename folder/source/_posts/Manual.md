@@ -110,10 +110,12 @@ _下划线斜体_
 ```
 ![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
 
-8. 代码块
+8. 代码
 ---
 ![](/document/assert/code.png "Title")
 ```
+多行代码块使用三个`
+单行代码使用一个`
 console.log('hello world!')
 ```
 

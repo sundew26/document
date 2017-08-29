@@ -4,3 +4,7 @@
 .article-entry h6 {
   font-weight: normal;
 }
+.article-entry code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+}

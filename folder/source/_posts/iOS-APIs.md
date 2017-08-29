@@ -16,7 +16,7 @@ tags:
 * 重置 JSFramework
 
 ### Handler (对应于 Android 的 Adapter) 介绍
-* WXImgLoaderDefaultImpl 图片下载 handler。Weex 会把需要设置图片的 View 和 URL 透露出来，Native 端需要实现这个接口进行图片下载。WeexSDK kernel
+* `WXImgLoaderDefaultImpl` 图片下载 handler。Weex 会把需要设置图片的 View 和 URL 透露出来，Native 端需要实现这个接口进行图片下载。WeexSDK kernel
 本身没有提供图片下载的默认实现。
 
   接口定义如下：
@@ -59,9 +59,9 @@ tags:
 * 事件回调
 
   多用于 Module 回调结果给 js，回调类型分为下面两种：
-  1. WXModuleCallback 为了性能考虑，该回调只能回调通知js一次，之后会被释放，多用于一次结果
+  1. `WXModuleCallback` 为了性能考虑，该回调只能回调通知js一次，之后会被释放，多用于一次结果
 
-  2. WXModuleKeepAliveCallback 该回调可以设置是否为多次回调类型，多次回调的场景如持续监听位置的变化，并返回给 js。
+  2. `WXModuleKeepAliveCallback` 该回调可以设置是否为多次回调类型，多次回调的场景如持续监听位置的变化，并返回给 js。
 
   ```
   @implementation WXEchoModule
@@ -76,7 +76,7 @@ tags:
 
 ### 动态适配容器
 
-WeexSDK 在 WXSDKInstance 类中提供了方法 setFrame(CGRect) 来改变容器的大小。
+WeexSDK 在 `WXSDKInstance` 类中提供了方法 `setFrame(CGRect)` 来改变容器的大小。
 
 如：在导航栏从有到无过程，需要 weexView 的变化， 可以在此时 native 调用该方法设置
 
@@ -86,4 +86,4 @@ Weex 处于发展阶段会增加一些新的特性和功能，但是这些新的
 
 所谓降级功能就是 Weex 无法运行的版本或者手机，可以用 Weex h5 来代替。
 
-Native 端可以通过接口 WXSDKInstance 中的 onFailed 回调进行处理，如果是主动降级则返回的错误 domain 为 TemplateErrorType，Native 端可以跳转到对应的 H5 页面，或者用其他的方式提示用户当前环境不支持 Weex。
+Native 端可以通过接口 WXSDKInstance 中的 onFailed 回调进行处理，如果是主动降级则返回的错误 domain 为 `TemplateErrorType`，Native 端可以跳转到对应的 H5 页面，或者用其他的方式提示用户当前环境不支持 Weex。
