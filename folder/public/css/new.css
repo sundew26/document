@@ -1,3 +1,6 @@
 .article-entry blockquote {
   text-align: left;
 }
+.article-entry h6 {
+  font-weight: normal;
+}
