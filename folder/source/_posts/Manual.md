@@ -147,3 +147,32 @@ console.log('hello world!')
 #### 四级
 ##### 五级
 ###### 6级
+
+10. jsfiddle
+===
+```
+{% jsfiddle shorttag [tabs] [skin] [width] [height] %}
+
+{% jsfiddle stardew/ffnm6Lsd/1/ %}  点击左上角fiddles
+```
+{% jsfiddle stardew/ffnm6Lsd/1/ %}
+
+11. iframe
+===
+```
+{% iframe url [width] [height] %}
+
+{% iframe https://www.baidu.com/ 500 300 %}
+```
+
+{% iframe https://www.baidu.com/ 500 300 %}
+
+12. link
+===
+```
+{% link text url [external] [title] %}
+
+你好,我是{% link 百度 https://www.baidu.com/ 搜索  度娘 %}.
+```
+
+##### 你好,我是{% link 百度 https://www.baidu.com/ 搜索  度娘 %}.

@@ -116,4 +116,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 # 部署部分的设置
 deploy:
-  type:
+  type: git
+
