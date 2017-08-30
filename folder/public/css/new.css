@@ -15,3 +15,28 @@ li li {
 li li li{
   list-style-type: square;
 }
+
+.article-entry table {
+  border: 1px solid #ddd;
+}
+
+.article-entry th {
+  border-bottom: 1px solid #ddd;
+  padding-top: 0.5em;
+}
+
+.article-entry td:first-child, .article-entry th:first-child{
+  border-right: 1px solid #ddd;
+}
+.article-entry td, .article-entry th {
+  padding: 0 5px;
+}
+.color-box {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 2px;
+  height: 14px;
+  line-height: 14px;
+  font-size: 15px;
+  font-weight: bold;
+}

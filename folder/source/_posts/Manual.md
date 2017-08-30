@@ -200,3 +200,17 @@ dog | bird | cat
 foo | foo  | foo
 bar | bar  | bar
 baz | baz  | baz
+
+14. 原生代码
+```
+{% raw %}
+content
+{% endraw %}
+
+或者直接
+content
+
+<span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF
+```
+
+<span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF
