@@ -65,7 +65,7 @@ darkmagenta | <span class="color-box" style="background:#8B008B;color:#8B008B"> 
 darkolivegreen | <span class="color-box" style="background:#556B2F;color:#556B2F"> yy </span> #556B2F
 darkorange | <span class="color-box" style="background:#FF8C00;color:#FF8C00"> yy </span> #FF8C00
 darkorchid | <span class="color-box" style="background:#9932CC;color:#9932CC"> yy </span> #9932CC
-darkred	<span class="color-box" style="background:#8B0000;color:#8B0000"> yy </span> | #8B0000
+darkred	| <span class="color-box" style="background:#8B0000;color:#8B0000"> yy </span> #8B0000
 darksalmon | <span class="color-box" style="background:#E9967A;color:#E9967A"> yy </span> #E9967A
 darkseagreen | <span class="color-box" style="background:#8FBC8F;color:#8FBC8F"> yy </span> #8FBC8F
 darkslateblue | <span class="color-box" style="background:#483D8B;color:#483D8B"> yy </span> #483D8B
