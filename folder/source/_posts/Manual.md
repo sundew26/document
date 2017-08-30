@@ -107,8 +107,14 @@ _下划线斜体_
 ---
 ```
 ![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
+
+{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
+
+{% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %}
 ```
 ![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
+
+{% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %}
 
 8. 代码
 ---
@@ -178,3 +184,19 @@ console.log('hello world!')
 ```
 
 ##### 你好,我是{% link 百度 https://www.baidu.com/ 搜索  度娘 %}.
+
+13. 表格
+
+```
+dog | bird | cat
+----|------|----
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+```
+
+dog | bird | cat
+----|------|----
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
