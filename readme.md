@@ -25,3 +25,6 @@ github上部署:
     message: hexo + css
   ```
 3. 终端进入目录 运行 hexo deploy
+
+注意:
+1. 标签比如a标签, 直接尖括号会解析成html, 无法显示, 需要用&lt; 和 &gt; 代替
