@@ -31,6 +31,11 @@ li li li{
 .article-entry td, .article-entry th {
   padding: 0 5px;
 }
+
+.highlight td, .highlight table {
+  border: 0 none!important;
+}
+
 .color-box {
   box-sizing: border-box;
   display: inline-block;
