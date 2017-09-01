@@ -36,6 +36,10 @@ li li li{
   border: 0 none!important;
 }
 
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
 .color-box {
   box-sizing: border-box;
   display: inline-block;
