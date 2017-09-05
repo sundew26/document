@@ -186,22 +186,65 @@ console.log('hello world!')
 ##### 你好,我是{% link 百度 https://www.baidu.com/ 搜索  度娘 %}.
 
 13. 表格
+===
 
 ```
+左中右对齐
+
+
 dog | bird | cat
-----|------|----
+--- | ---- | ---
 foo | foo  | foo
 bar | bar  | bar
 baz | baz  | baz
+
+dog | bird | cat
+:---- | :---- | :----
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
+dog | bird | cat
+:----: | :----: | :----:
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
+dog | bird | cat
+----: | ----: | ----:
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
 ```
 
 dog | bird | cat
-----|------|----
+--- | ---- | ---
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
+dog | bird | cat
+:---- | :---- | :----
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
+dog | bird | cat
+:----: | :----: | :----:
+foo | foo  | foo
+bar | bar  | bar
+baz | baz  | baz
+
+dog | bird | cat
+----: | ----: | ----:
 foo | foo  | foo
 bar | bar  | bar
 baz | baz  | baz
 
 14. 原生代码
+===
+
 ```
 {% raw %}
 content
@@ -214,3 +257,31 @@ content
 ```
 
 <span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF
+
+15. 转义
+===
+
+符号 | 转义
+:----:|:----:
+! | `&#33;`
+” | `&#34;` 或 `&quot;`
+# | `&#35;`
+$ | `&#36;`
+% | `&#37;`
+& | `&#38;` 或 `&amp;`
+‘ | `&#39;`
+( | `&#40;`
+) | `&#41;`
+* | `&#42;`
++ | `&#43;`
+< | `&#60;` 或 `&lt;`
+= | `&#61;`
+> | `&#62;` 或 `&gt;`
+? | `&#63;`
+@ | `&#64;`
+[ | `&#91;`
+\ | `&#92;`
+] | `&#93;`
+{ | `&#123`
+&#124; | `&#124;`
+} | `&#125`

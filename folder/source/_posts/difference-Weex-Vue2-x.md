@@ -6,9 +6,12 @@ tags:
 
 ## Weex 和 Vue 2.x 的语法差异
 ###### Updated time: 14/06/2017
-
+<script>
+const foo='foo'
+</script>
 `if="&#123;&#123;!foo&#125;&#125;"`
 
+&#33;
 ```
 ### Overview
  | Weex |	Vue

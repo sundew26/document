@@ -1,4 +1,4 @@
-1. error:
+1. error(来源: difference-Weex-Vue2-x.md):
 ```
 FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
 Template render error: (unknown path) [Line 17, Column 9]
@@ -34,3 +34,6 @@ solution: 页面出现了不能解析的!, 定位到`条件指令	|	if="{{!foo}}
 ```
 if="{{!foo}}"   输出  if="{{!foo}}"
 ```
+
+`if="&#123;&#123;!foo&#125;&#125;"`中的大括号不解析, 可是`{`中的又解析.
+解决:
