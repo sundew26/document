@@ -26,7 +26,7 @@ Template render error: (unknown path) [Line 17, Column 9]
     at processImmediate [as _immediateCallback] (timers.js:533:5)
 ```
 solution: 页面出现了不能解析的!, 定位到`条件指令	|	if="{{!foo}}"	|	v-if="!foo"`. 页面还存在多处类似问题, 追溯根源是{{引起的, hexo会把{{...}}中的内容作为变量解析,
-此时需要转义一下. {转义为&#123;, }转义为&#125;
+此时需要转义一下. {转义为`&#123;`, }转义为`&#125;`
 
 此外, ```中的代码也是不会被解析的, 某些情况下可以使用. 例如:
 
