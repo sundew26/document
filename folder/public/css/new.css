@@ -1,5 +1,13 @@
+.article-entry p {
+  font-weight: normal;
+  margin: 0 0 1em;
+}
 .article-entry blockquote {
   text-align: left;
+  margin: 0;
+  padding: 1em 0 1px 20px;
+  border-left: 5px solid #ddd;
+  font-size: 1em;
 }
 .article-entry h6 {
   font-weight: normal;
