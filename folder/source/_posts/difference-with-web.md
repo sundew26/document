@@ -13,7 +13,7 @@ Vue.js 最初是为 Web 平台设计的，虽然可以基于 Weex 开发原生�
 由于运行平台存在差异，Weex 不支持 Vue.js 中与 DOM 相关的功能：
 
 * 不支持事件冒泡和捕获机制，`.prevent` 、`.capture` 、`.stop` 、`.self` 等事件修饰符在原生环境中无意义。
-* 键盘事件的 ``.{keyCode | keyAlias}` 修饰符在原生环境中无意义。(参考 [Vue 相关文档](https://cn.vuejs.org/v2/guide/events.html#按键修饰符))
+* 键盘事件的 `.{keyCode | keyAlias}` 修饰符在原生环境中无意义。(参考 [Vue 相关文档](https://cn.vuejs.org/v2/guide/events.html#按键修饰符))
 * 无需自行调用 `vm.$mount`，默认会将入口组件挂载到原生应用的视图中。
 * 不支持 `v-html` 和 `v-text` 指令。
 
