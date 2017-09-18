@@ -1,7 +1,7 @@
 ---
 title: WebStandards
 date: 2017-09-01 16:36:14
-tags:
+tags: web standards
 ---
 
 ## Web 标准

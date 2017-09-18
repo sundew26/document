@@ -1,7 +1,7 @@
 ---
 title: JS-Service
 date: 2017-09-01 16:36:38
-tags:
+tags: JS service
 ---
 
 ## JS Service v0.9.5+
