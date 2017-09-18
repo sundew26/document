@@ -1,7 +1,7 @@
 ---
 title: extend-jsfm
 date: 2017-09-01 16:39:03
-tags:
+tags: advanced
 ---
 
 ## 拓展 JS framework
