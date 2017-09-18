@@ -1,7 +1,7 @@
 ---
 title: switch
 date: 2017-08-31 14:54:16
-tags:
+tags: components
 ---
 
 ## &lt;switch&gt; v0.6.1+

@@ -1,7 +1,7 @@
 ---
 title: list
 date: 2017-08-31 14:55:09
-tags:
+tags: components
 ---
 
 ## &#60;list &#62;

@@ -1,7 +1,7 @@
 ---
 title: components
 date: 2017-08-31 14:48:03
-tags:
+tags: components
 ---
 
 ---
@@ -21,6 +21,6 @@ tags:
 * [&lt;input&gt;](/document/2017/08/31/input)
 * [&lt;list&gt;](/document/2017/08/31/list)
 * [&lt;cell&gt;](/document/2017/08/31/cell)
-* [&lt;refresh&gt; & &lt;loading&gt;](/document/2017/08/31/refresh-loading)
+* [&lt;refresh&gt; & &lt;loading&gt;](/document/2017/08/31/refresh)
 * [&lt;scroller&gt;](/document/2017/08/31/scroller)
 * [&lt;slider&gt;](/document/2017/08/31/slider)

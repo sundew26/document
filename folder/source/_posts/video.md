@@ -1,7 +1,7 @@
 ---
 title: video
 date: 2017-08-31 14:54:44
-tags:
+tags: components
 ---
 
 ## &#60;video&#62; v0.6.1+

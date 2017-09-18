@@ -1,7 +1,7 @@
 ---
 title: text
 date: 2017-08-31 14:54:24
-tags:
+tags: components
 ---
 
 ## &#60;text&#62;

@@ -1,7 +1,7 @@
 ---
 title: scroller
 date: 2017-08-31 14:55:27
-tags:
+tags: components
 ---
 
 ## &#60;scroller&#62; v0.6.1+
