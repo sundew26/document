@@ -1,7 +1,7 @@
 ---
 title: General-characteristic
 date: 2017-08-23 19:41:04
-tags: General characteristic
+tags: 通用特性
 ---
 
 
