@@ -1,7 +1,7 @@
 ---
 title: refresh
 date: 2017-08-31 14:55:21
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;refresh&#62;  v0.6.1+

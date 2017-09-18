@@ -1,7 +1,7 @@
 ---
 title: web
 date: 2017-08-31 14:54:48
-tags: components
+tags: 内建组件
 ---
 
 ### &#60;web&#62;  v0.5+

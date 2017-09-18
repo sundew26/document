@@ -1,7 +1,7 @@
 ---
 title: image
 date: 2017-08-31 14:55:00
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;image&#62;

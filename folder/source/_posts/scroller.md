@@ -1,7 +1,7 @@
 ---
 title: scroller
 date: 2017-08-31 14:55:27
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;scroller&#62; v0.6.1+

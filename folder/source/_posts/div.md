@@ -1,7 +1,7 @@
 ---
 title: div
 date: 2017-08-31 14:54:54
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;div&#62;

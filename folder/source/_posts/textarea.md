@@ -1,7 +1,7 @@
 ---
 title: textarea
 date: 2017-08-31 14:54:30
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;textarea&#62;v0.8+

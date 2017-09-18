@@ -1,7 +1,7 @@
 ---
 title: cell
 date: 2017-08-31 14:55:14
-tags: components
+tags: 内建组件
 ---
 
 ## &#60;cell&#62;

@@ -1,7 +1,7 @@
 ---
 title: loading
 date: 2017-08-31 14:55:17
-tags:
+tags: 内建组件
 ---
 
 ## &#60;loading&#62;  v0.6.1+
