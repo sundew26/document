@@ -103,7 +103,13 @@ _下划线斜体_
 *星号斜体*
 _下划线斜体_
 
-7. 图片
+7. 删除线
+```
+~~删除线~~
+```
+~~删除线~~
+
+8. 图片
 ---
 ```
 ![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
@@ -116,7 +122,7 @@ _下划线斜体_
 
 {% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %}
 
-8. 代码
+9. 代码
 ---
 ![](/document/assert/code.png "Title")
 ```
@@ -125,7 +131,7 @@ _下划线斜体_
 console.log('hello world!')
 ```
 
-9. 标题
+10. 标题
 ---
 ```
 方法1: - 和 = (任何数量等效)
@@ -156,7 +162,7 @@ console.log('hello world!')
 ##### 五级
 ###### 六级
 
-10. jsfiddle
+11. jsfiddle
 ===
 ```
 {% jsfiddle shorttag [tabs] [skin] [width] [height] %}
@@ -165,7 +171,7 @@ console.log('hello world!')
 ```
 {% jsfiddle stardew/ffnm6Lsd/1/ %}
 
-11. iframe
+12. iframe
 ===
 ```
 {% iframe url [width] [height] %}
@@ -175,7 +181,7 @@ console.log('hello world!')
 
 {% iframe https://www.baidu.com/ 500 300 %}
 
-12. link
+13. link
 ===
 ```
 {% link text url [external] [title] %}
@@ -185,7 +191,7 @@ console.log('hello world!')
 
 ##### 你好,我是{% link 百度 https://www.baidu.com/ 搜索  度娘 %}.
 
-13. 表格
+14. 表格
 ===
 
 ```
@@ -242,7 +248,7 @@ foo | foo  | foo
 bar | bar  | bar
 baz | baz  | baz
 
-14. 原生代码
+15. 原生代码
 ===
 
 ```
@@ -258,7 +264,7 @@ content
 
 <span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF
 
-15. 转义
+16. 转义
 ===
 
 符号 | 转义
