@@ -1,7 +1,7 @@
 ---
 title: difference-Weex-Vue2-x
 date: 2017-09-01 16:47:27
-tags:
+tags: vue
 ---
 
 ## Weex 和 Vue 2.x 的语法差异
