@@ -1,7 +1,7 @@
 ---
 title: WeexInstanceVariableS
 date: 2017-09-01 16:35:34
-tags: weex instance variables
+tags: weex 实例变量
 ---
 
 ## Weex 实例变量
