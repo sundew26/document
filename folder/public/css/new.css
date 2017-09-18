@@ -34,10 +34,11 @@ li li li{
 }
 
 .article-entry td:first-child, .article-entry th:first-child{
-  border-right: 1px solid #ddd;
+  border-left: 0 none;
 }
 .article-entry td, .article-entry th {
   padding: 0 5px;
+  border-left: 1px solid #ddd;
 }
 
 .highlight td, .highlight table {
