@@ -1,7 +1,7 @@
 ---
 title: platform-difference
 date: 2017-09-01 16:39:58
-tags:
+tags: platform difference
 ---
 
 ## Weex 和 Web 平台的差异

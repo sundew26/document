@@ -1,7 +1,7 @@
 ---
 title: difference-with-web
 date: 2017-09-01 16:37:10
-tags:
+tags: platform difference
 ---
 
 ## Vue 2.x 在 Weex 和 Web 中的差异

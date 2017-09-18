@@ -1,7 +1,7 @@
 ---
 title: migration-from-weex
 date: 2017-09-01 16:40:09
-tags:
+tags: platform difference
 ---
 
 ## 如何将原有 Weex 项目改造成 Vue 版本
