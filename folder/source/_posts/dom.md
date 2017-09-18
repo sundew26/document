@@ -1,7 +1,7 @@
 ---
 title: dom
 date: 2017-09-01 16:32:34
-tags: inner model
+tags: 内建模块
 ---
 
 ## dom

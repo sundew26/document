@@ -1,7 +1,7 @@
 ---
 title: globalEvent
 date: 2017-09-01 16:33:24
-tags: inner model
+tags: 内建模块
 ---
 
 ## globalEvent 0.8

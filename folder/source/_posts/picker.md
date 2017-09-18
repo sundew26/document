@@ -1,7 +1,7 @@
 ---
 title: picker
 date: 2017-09-01 16:32:00
-tags: inner model
+tags: 内建模块
 ---
 
 ## picker v0.9+

@@ -1,7 +1,7 @@
 ---
 title: navigator
 date: 2017-09-01 16:32:51
-tags: inner model
+tags: 内建模块
 ---
 
 ## navigator v0.6.1+
