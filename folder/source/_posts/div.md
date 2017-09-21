@@ -43,7 +43,7 @@ tags: 内建组件
 * `opacity`
 * `background-color`
 
-查看 [组件通用样式](/document/2017/08/24/Common-Style)
+查看 [组件通用样式](/2017/08/24/Common-Style)
 
 #### 事件
 `<div>` 支持所有通用事件：
@@ -53,7 +53,7 @@ tags: 内建组件
 * `appear`
 * `disappear`
 
-查看 [通用事件](/document/2017/09/02/commonEvent)
+查看 [通用事件](/2017/09/02/commonEvent)
 
 ### 约束
 1. **不能**直接在 `<div>` 中添加文本。

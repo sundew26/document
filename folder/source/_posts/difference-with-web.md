@@ -76,7 +76,7 @@ Weex 中只支持单个类名选择器，不支持关系选择器，也不支持
 #### 支持的样式属性
 Weex 支持的样式特性是 CSS 的子集，并且会不断扩充；在实现过程中我们参考了 [CSS 属性在浏览器中的使用频率](https://gist.github.com/Jinjiang/ea6b403036b7287cf8b8508729b77ac0#css-properties)，优先实现其中频率最高的一些属性。
 
-Weex 支持了基本的盒模型和 flexbox 布局，以及其他常用样式，详情可参考[Weex 通用样式文档](/document/2017/08/24/Common-Style)。
+Weex 支持了基本的盒模型和 flexbox 布局，以及其他常用样式，详情可参考[Weex 通用样式文档](/2017/08/24/Common-Style)。
 
 在编写样式时，还应该注意一下几点：
 

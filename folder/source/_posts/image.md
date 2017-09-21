@@ -68,7 +68,7 @@ tags: 内建组件
   * `position`
   * `opacity`
   * `background-color`
-查看 [组件通用样式](/document/2017/08/24/Common-Style)
+查看 [组件通用样式](/2017/08/24/Common-Style)
 
 ### 事件
 * load: v0.8+：当图片加载完成时触发。目前在 Android、iOS 上支持，H5 暂不支持。[示例](http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad)
@@ -85,7 +85,7 @@ tags: 内建组件
   * `longpress`
   * `appear`
   * `disappear`
-查看 [通用事件](/document/2017/09/02/commonEvent)
+查看 [通用事件](/2017/09/02/commonEvent)
 
 ### 约束
 1. 需要指定宽高；

@@ -34,7 +34,7 @@ tags: 内建组件
 * `position`
 * `opacity`
 * `background-color`
-查看 [组件通用样式](/document/2017/08/24/Common-Style)
+查看 [组件通用样式](/2017/08/24/Common-Style)
 
 #### 事件
 
@@ -46,7 +46,7 @@ tags: 内建组件
   * `longpress`
   * `appear`
   * `disappear`
-  查看 [通用事件](/document/2017/09/02/commonEvent)
+  查看 [通用事件](/2017/09/02/commonEvent)
 
 ### API
 滚动到列表某个指定项是常见需求，`<waterfall>` 拓展了该功能支持滚动到指定 `<cell>` 或者 `<header>`。通过 `dom` module 访问，更多信息可参考 [dom module](http://weex.apache.org/cn/references/modules/dom.html) 。

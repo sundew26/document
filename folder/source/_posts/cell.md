@@ -26,7 +26,7 @@ tags: 内建组件
   * `position`
   * `opacity`
   * `background-color`
-  查看 [组件通用样式](/document/2017/08/24/Common-Style)
+  查看 [组件通用样式](/2017/08/24/Common-Style)
 
 ### 事件
 * 通用事件
@@ -37,7 +37,7 @@ tags: 内建组件
   * `longpress`
   * `appear`
   * `disappear`
-  查看 [通用事件](/document/2017/09/02/commonEvent)
+  查看 [通用事件](/2017/09/02/commonEvent)
 
 ### 示例
 ```

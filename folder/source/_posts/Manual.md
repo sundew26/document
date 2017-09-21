@@ -79,10 +79,10 @@ tags:
 ---
 ```
 [这是一个绝对路径的链接](https://hexo.io/zh-cn/docs/writing.html)
-[这是一个相对路径的链接](/document/2017/08/07/hello-world/)
+[这是一个相对路径的链接](/2017/08/07/hello-world/)
 ```
 [这是一个绝对路径的链接](https://hexo.io/zh-cn/docs/writing.html)
-[这是一个相对路径的链接](/document/2017/08/07/hello-world/)
+[这是一个相对路径的链接](/2017/08/07/hello-world/)
 
 5. 加粗
 ---
@@ -112,19 +112,19 @@ _下划线斜体_
 8. 图片
 ---
 ```
-![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
+![图1. 我最爱的炮兵](/assert/img.jpg "Title")
 
 {% img [class names] /path/to/image [width] [height] [title text [alt text]] %}
 
 {% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %}
 ```
-![图1. 我最爱的炮兵](/document/assert/img.jpg "Title")
+![图1. 我最爱的炮兵](/assert/img.jpg "Title")
 
 {% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %}
 
 9. 代码
 ---
-![](/document/assert/code.png "Title")
+![](/assert/code.png "Title")
 ```
 多行代码块使用三个`
 单行代码使用一个`

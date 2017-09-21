@@ -34,7 +34,7 @@ Page至少滚动了10px。注意，将该值设置为较小的数值会提高滚
   * `opacity`
   * `background-color`
 
-查看 [组件通用样式](/document/2017/08/24/Common-Style)
+查看 [组件通用样式](/2017/08/24/Common-Style)
 
 ### 事件
 * `change`: 当轮播索引改变时，触发该事件。
@@ -57,7 +57,7 @@ Page至少滚动了10px。注意，将该值设置为较小的数值会提高滚
   * `appear`
   * `disappear`
 
-查看 [通用事件](/document/2017/09/02/commonEvent)
+查看 [通用事件](/2017/09/02/commonEvent)
 
 ### 示例
 ```
