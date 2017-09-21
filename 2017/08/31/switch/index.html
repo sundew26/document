@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="weex使用手册">
 <meta property="og:description" content="&amp;lt;switch&amp;gt; v0.6.1+Updated time: 14/06/2017&amp;lt;switch&amp;gt; 是 Weex 的内置组件，用来创建与 iOS 一致样式的按钮。例如，在 iPhone 中的设置应用中的飞行模式按钮就是一个 switch 按钮。 子组件&amp;lt;switch&amp;gt; 组件不支持任何子组件。 特性 checked {boolean}：默认值为 false，表明按钮">
 <meta property="og:locale" content="简体中文">
-<meta property="og:updated_time" content="2017-09-21T03:10:34.000Z">
+<meta property="og:updated_time" content="2017-09-21T03:28:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="switch">
 <meta name="twitter:description" content="&amp;lt;switch&amp;gt; v0.6.1+Updated time: 14/06/2017&amp;lt;switch&amp;gt; 是 Weex 的内置组件，用来创建与 iOS 一致样式的按钮。例如，在 iPhone 中的设置应用中的飞行模式按钮就是一个 switch 按钮。 子组件&amp;lt;switch&amp;gt; 组件不支持任何子组件。 特性 checked {boolean}：默认值为 false，表明按钮">
@@ -59,9 +59,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516"></form>
@@ -119,7 +119,7 @@
 </ul>
 </li>
 </ul>
-<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<p>查看 <a href="/2017/08/24/Common-Style">组件通用样式</a></p>
 <h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
 <li><p><code>change</code>：改变开关状态时触发该事件。</p>
 <p>事件中 event 对象属性：</p>
@@ -138,13 +138,13 @@
 </ul>
 </li>
 </ul>
-<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<p>查看 <a href="/2017/09/02/commonEvent">通用事件</a></p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>normal<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>checked<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">checked</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>disabled<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">disabled</span>=<span class="string">"true"</span> <span class="attr">checked</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">disabled</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>onchange<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> @<span class="attr">change</span>=<span class="string">"onchange"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span></span><span class="template-variable">&#123;&#123;checked&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        checked: false</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onchange (event) &#123;</span></div><div class="line"><span class="xml">        console.log(`onchage, value: $&#123;event.value&#125;`)</span></div><div class="line"><span class="xml">        this.checked = event.value</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .example &#123;</span></div><div class="line"><span class="xml">    flex-direction: row;</span></div><div class="line"><span class="xml">    justify-content: flex-start;</span></div><div class="line"><span class="xml">    margin-top: 60px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .label &#123;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    width: 350px;</span></div><div class="line"><span class="xml">    color: #666;</span></div><div class="line"><span class="xml">    text-align: right;</span></div><div class="line"><span class="xml">    margin-right: 20px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .info &#123;</span></div><div class="line"><span class="xml">    font-size: 30px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    color: #BBB;</span></div><div class="line"><span class="xml">    margin-left: 10px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/06b1d740fb69d04f9ebe9eaf730974d1" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/stardew516/2017/08/31/switch/" data-id="cj7tvy6i9003gfqz6fge5yto5" class="article-share-link">Share</a>
+      <a data-url="https://github.com/stardew516/2017/08/31/switch/" data-id="cj7twdk2n003e3pz6a5v232yz" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内建组件/">内建组件</a></li></ul>
@@ -156,7 +156,7 @@
 <nav id="article-nav">
   
     <a href="/2017/08/31/text/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Récent</strong>
       <div class="article-nav-title">
         
           text
@@ -166,7 +166,7 @@
   
   
     <a href="/2017/08/31/indicator/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">indicator</div>
     </a>
   
@@ -184,7 +184,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高阶知识/">高阶知识</a></li></ul>
     </div>
@@ -194,7 +194,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/tags/vue/" style="font-size: 12px;">vue</a> <a href="/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
     </div>
@@ -213,7 +213,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -250,7 +250,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 lu.wei<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
