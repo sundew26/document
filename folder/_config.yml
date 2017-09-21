@@ -19,9 +19,9 @@ timezone: UTC
 # URL 网址
 ## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 # 网址
-url: https://github.com/stardew516/document
+url: https://github.com/stardew516/
 # 网站根目录
-root: /document/
+root: /
 # 文章的 永久链接 格式
 permalink: :year/:month/:day/:title/
 # 永久链接中各部分的默认值
