@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Manual | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="语法使用手册1. 列表:123456789有序号:1. 第一点2. 第二点3. 第三点无序号:* 星号列表+ 加号列表- 减号列表 效果:  第一点 第二点 第三点   星号列表   加号列表   减号列表  2. 块注释123456789101112&amp;gt; 区块引用下一行或者:&amp;#123;% blockquote %&amp;#125;普通的引用下一行&amp;#123;% endblockquote %&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manual">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/24/Manual/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="语法使用手册1. 列表:123456789有序号:1. 第一点2. 第二点3. 第三点无序号:* 星号列表+ 加号列表- 减号列表 效果:  第一点 第二点 第三点   星号列表   加号列表   减号列表  2. 块注释123456789101112&amp;gt; 区块引用下一行或者:&amp;#123;% blockquote %&amp;#125;普通的引用下一行&amp;#123;% endblockquote %&amp;#">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="https://github.com/document/assert/img.jpg">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/css-boxmodel.png">
+<meta property="og:image" content="https://github.com/document/assert/code.png">
+<meta property="og:updated_time" content="2017-08-24T15:26:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Manual">
+<meta name="twitter:description" content="语法使用手册1. 列表:123456789有序号:1. 第一点2. 第二点3. 第三点无序号:* 星号列表+ 加号列表- 减号列表 效果:  第一点 第二点 第三点   星号列表   加号列表   减号列表  2. 块注释123456789101112&amp;gt; 区块引用下一行或者:&amp;#123;% blockquote %&amp;#125;普通的引用下一行&amp;#123;% endblockquote %&amp;#">
+<meta name="twitter:image" content="https://github.com/document/assert/img.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Manual" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/24/Manual/" class="article-date">
+  <time datetime="2017-08-24T15:26:08.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Manual
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="语法使用手册"><a href="#语法使用手册" class="headerlink" title="语法使用手册"></a>语法使用手册</h2><h2 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表:"></a>1. 列表:</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">有序号:</div><div class="line"><span class="bullet">1. </span>第一点</div><div class="line"><span class="bullet">2. </span>第二点</div><div class="line"><span class="bullet">3. </span>第三点</div><div class="line"></div><div class="line">无序号:</div><div class="line"><span class="bullet">* </span>星号列表</div><div class="line"><span class="bullet">+ </span>加号列表</div><div class="line"><span class="bullet">- </span>减号列表</div></pre></td></tr></table></figure>
+<p>效果:</p>
+<ol>
+<li>第一点</li>
+<li>第二点</li>
+<li>第三点</li>
+</ol>
+<ul>
+<li>星号列表</li>
+</ul>
+<ul>
+<li>加号列表</li>
+</ul>
+<ul>
+<li>减号列表</li>
+</ul>
+<h2 id="2-块注释"><a href="#2-块注释" class="headerlink" title="2. 块注释"></a>2. 块注释</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> 区块引用</span></div><div class="line">下一行</div><div class="line"></div><div class="line">或者:</div><div class="line">&#123;% blockquote %&#125;</div><div class="line">普通的引用</div><div class="line">下一行</div><div class="line">&#123;% endblockquote %&#125;</div><div class="line"></div><div class="line">嵌套引用</div><div class="line"><span class="meta">&gt;</span><span class="bash"> 一层</span></div><div class="line"><span class="meta">&gt;</span><span class="bash">&gt; 两层</span></div></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块引用<br>  下一行</p>
+</blockquote>
+<blockquote><p>普通的引用<br>下一行</p>
+</blockquote>
+<blockquote>
+<p>一层</p>
+<blockquote>
+<p>两层</p>
+</blockquote>
+</blockquote>
+<h2 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3. 分割线"></a>3. 分割线</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">虚线:</div><div class="line">**<span class="strong">*</span></div><div class="line"><span class="strong">或者(实线)</span></div><div class="line"><span class="strong">---</span></div></pre></td></tr></table></figure>
+<p>效果:</p>
+<hr>
+<p>虚线</p>
+<hr>
+<p>实线</p>
+<h2 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="string">这是一个绝对路径的链接</span>](<span class="link">https://hexo.io/zh-cn/docs/writing.html</span>)</div><div class="line">[<span class="string">这是一个相对路径的链接</span>](<span class="link">/document/2017/08/07/hello-world/</span>)</div></pre></td></tr></table></figure>
+<p><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">这是一个绝对路径的链接</a><br><a href="/document/2017/08/07/hello-world/">这是一个相对路径的链接</a></p>
+<h2 id="5-加粗"><a href="#5-加粗" class="headerlink" title="5. 加粗"></a>5. 加粗</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="strong">**双星加粗**</span></div><div class="line"><span class="strong">__双下划线加粗__</span></div></pre></td></tr></table></figure>
+<p><strong>双星加粗</strong><br><strong>双下划线加粗</strong></p>
+<h2 id="6-斜体"><a href="#6-斜体" class="headerlink" title="6. 斜体"></a>6. 斜体</h2><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*星号斜体*</div><div class="line"><span class="keyword">_</span>下划线斜体<span class="keyword">_</span></div></pre></td></tr></table></figure>
+<p><em>星号斜体</em><br><em>下划线斜体</em></p>
+<ol>
+<li>删除线<figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~~删除线~~</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><del>删除线</del></p>
+<h2 id="8-图片"><a href="#8-图片" class="headerlink" title="8. 图片"></a>8. 图片</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">![<span class="string">图1. 我最爱的炮兵</span>](<span class="link">/document/assert/img.jpg "Title"</span>)</div><div class="line"></div><div class="line">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;</div><div class="line"></div><div class="line">&#123;% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %&#125;</div></pre></td></tr></table></figure>
+<p><img src="/document/assert/img.jpg" alt="图1. 我最爱的炮兵" title="Title"></p>
+<img src="http://weex.apache.org/cn/references/images/css-boxmodel.png" class="[box-model]" width="377" height="340" title="weex 盒模型">
+<h2 id="9-代码"><a href="#9-代码" class="headerlink" title="9. 代码"></a>9. 代码</h2><p><img src="/document/assert/code.png" alt="" title="Title"><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">多行代码块使用三个`</div><div class="line">单行代码使用一个`</div><div class="line">console.log(<span class="string">'hello world!'</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="10-标题"><a href="#10-标题" class="headerlink" title="10. 标题"></a>10. 标题</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">方法<span class="number">1</span>: - 和 = (任何数量等效)</div><div class="line">一级标题</div><div class="line">===</div><div class="line">二级标题</div><div class="line">---</div><div class="line"></div><div class="line">方法<span class="number">2</span>: #</div><div class="line"># 一级 H1</div><div class="line">## 二级 H2</div><div class="line">### 三级 H3</div><div class="line">#### 四级 H4</div><div class="line">##### 五级 H5</div><div class="line">###### 六级 H6</div></pre></td></tr></table></figure>
+<p>方法1: - 和 =</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>方法2: #</p>
+<h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h1 id="11-jsfiddle"><a href="#11-jsfiddle" class="headerlink" title="11. jsfiddle"></a>11. jsfiddle</h1><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% jsfiddle shorttag <span class="string">[tabs]</span> <span class="string">[skin]</span> <span class="string">[width]</span> <span class="string">[height]</span> %&#125;</div><div class="line"></div><div class="line">&#123;% jsfiddle stardew/ffnm6Lsd/<span class="number">1</span>/ %&#125;  点击左上角fiddles</div></pre></td></tr></table></figure>
+<iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/stardew/ffnm6Lsd/1//embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe>
+<h1 id="12-iframe"><a href="#12-iframe" class="headerlink" title="12. iframe"></a>12. iframe</h1><figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% iframe url [width] [height] %&#125;</div><div class="line"></div><div class="line">&#123;% iframe https://www.baidu.com/ <span class="number">500</span> <span class="number">300</span> %&#125;</div></pre></td></tr></table></figure>
+<iframe src="https://www.baidu.com/" width="500" height="300" frameborder="0" allowfullscreen></iframe>
+<h1 id="13-link"><a href="#13-link" class="headerlink" title="13. link"></a>13. link</h1><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">link</span> text url [external] [title] %&#125;</span><span class="xml"></span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml">你好,我是</span><span class="template-tag">&#123;% <span class="name">link</span> 百度 https://www.baidu.com/ 搜索  度娘 %&#125;</span><span class="xml">.</span></div></pre></td></tr></table></figure>
+<h5 id="你好-我是"><a href="#你好-我是" class="headerlink" title="你好,我是."></a>你好,我是<a href="https://www.baidu.com/" title="搜索 度娘" target="_blank" rel="external">百度</a>.</h5><h1 id="14-表格"><a href="#14-表格" class="headerlink" title="14. 表格"></a>14. 表格</h1><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">左中右对齐</div><div class="line"></div><div class="line"></div><div class="line">dog |<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">--- </span>|<span class="string"> ---- </span>|<span class="string"> ---</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">:---- </span>|<span class="string"> :---- </span>|<span class="string"> :----</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">:----: </span>|<span class="string"> :----: </span>|<span class="string"> :----:</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">----: </span>|<span class="string"> ----: </span>|<span class="string"> ----:</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">dog</th>
+<th style="text-align:left">bird</th>
+<th style="text-align:left">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">foo</td>
+<td style="text-align:left">foo</td>
+<td style="text-align:left">foo</td>
+</tr>
+<tr>
+<td style="text-align:left">bar</td>
+<td style="text-align:left">bar</td>
+<td style="text-align:left">bar</td>
+</tr>
+<tr>
+<td style="text-align:left">baz</td>
+<td style="text-align:left">baz</td>
+<td style="text-align:left">baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dog</th>
+<th style="text-align:center">bird</th>
+<th style="text-align:center">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">foo</td>
+<td style="text-align:center">foo</td>
+<td style="text-align:center">foo</td>
+</tr>
+<tr>
+<td style="text-align:center">bar</td>
+<td style="text-align:center">bar</td>
+<td style="text-align:center">bar</td>
+</tr>
+<tr>
+<td style="text-align:center">baz</td>
+<td style="text-align:center">baz</td>
+<td style="text-align:center">baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">dog</th>
+<th style="text-align:right">bird</th>
+<th style="text-align:right">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">foo</td>
+<td style="text-align:right">foo</td>
+<td style="text-align:right">foo</td>
+</tr>
+<tr>
+<td style="text-align:right">bar</td>
+<td style="text-align:right">bar</td>
+<td style="text-align:right">bar</td>
+</tr>
+<tr>
+<td style="text-align:right">baz</td>
+<td style="text-align:right">baz</td>
+<td style="text-align:right">baz</td>
+</tr>
+</tbody>
+</table>
+<h1 id="15-原生代码"><a href="#15-原生代码" class="headerlink" title="15. 原生代码"></a>15. 原生代码</h1><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">raw</span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="xml">content</span></div><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endraw</span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml">或者直接</span></div><div class="line"><span class="xml">content</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"color-box"</span> <span class="attr">style</span>=<span class="string">"background:#FF00FF;color:#FF00FF"</span>&gt;</span> yy <span class="tag">&lt;/<span class="name">span</span>&gt;</span> #FF00FF</span></div></pre></td></tr></table></figure>
+<p><span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF</p>
+<h1 id="16-转义"><a href="#16-转义" class="headerlink" title="16. 转义"></a>16. 转义</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">转义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">!</td>
+<td style="text-align:center"><code>&amp;#33;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">”</td>
+<td style="text-align:center"><code>&amp;#34;</code> 或 <code>&amp;quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center"><code>&amp;#35;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center"><code>&amp;#36;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">%</td>
+<td style="text-align:center"><code>&amp;#37;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center"><code>&amp;#38;</code> 或 <code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">‘</td>
+<td style="text-align:center"><code>&amp;#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">(</td>
+<td style="text-align:center"><code>&amp;#40;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">)</td>
+<td style="text-align:center"><code>&amp;#41;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center"><code>&amp;#42;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center"><code>&amp;#43;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center"><code>&amp;#60;</code> 或 <code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center"><code>&amp;#61;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center"><code>&amp;#62;</code> 或 <code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;#63;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">@</td>
+<td style="text-align:center"><code>&amp;#64;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">[</td>
+<td style="text-align:center"><code>&amp;#91;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">\</td>
+<td style="text-align:center"><code>&amp;#92;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">]</td>
+<td style="text-align:center"><code>&amp;#93;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">{</td>
+<td style="text-align:center"><code>&amp;#123;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&#124;</td>
+<td style="text-align:center"><code>&amp;#124;</code>(竖线)</td>
+</tr>
+<tr>
+<td style="text-align:center">}</td>
+<td style="text-align:center"><code>&amp;#125;</code></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/24/Manual/" data-id="cj7tv5rh0000mt0z6tyo5ppvi" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/31/components/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          components
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/24/Path/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Path</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

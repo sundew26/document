@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>commonEvent | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="通用事件Updated time: 14/06/2017Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性： click当组件上发生点击手势时被触发。 注意： &amp;lt;input&amp;gt; 和 &amp;lt;switch&amp;gt; 组件目前不支持 click 事件，请使用 change 或 input 事件来代替">
+<meta name="keywords" content="通用事件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="commonEvent">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/09/02/commonEvent/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="通用事件Updated time: 14/06/2017Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性： click当组件上发生点击手势时被触发。 注意： &amp;lt;input&amp;gt; 和 &amp;lt;switch&amp;gt; 组件目前不支持 click 事件，请使用 change 或 input 事件来代替">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T08:05:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="commonEvent">
+<meta name="twitter:description" content="通用事件Updated time: 14/06/2017Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性： click当组件上发生点击手势时被触发。 注意： &amp;lt;input&amp;gt; 和 &amp;lt;switch&amp;gt; 组件目前不支持 click 事件，请使用 change 或 input 事件来代替">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-commonEvent" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/commonEvent/" class="article-date">
+  <time datetime="2017-09-01T16:34:12.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      commonEvent
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="通用事件"><a href="#通用事件" class="headerlink" title="通用事件"></a>通用事件</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性：</p>
+<h3 id="click"><a href="#click" class="headerlink" title="click"></a><code>click</code></h3><p>当组件上发生点击手势时被触发。</p>
+<p><strong>注意：</strong></p>
+<p><code>&lt;input&gt;</code> 和 <code>&lt;switch&gt;</code> 组件目前不支持 <code>click</code> 事件，请使用 <code>change</code> 或 <code>input</code> 事件来代替。</p>
+<h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><ul>
+<li><code>type</code>: <code>click</code></li>
+<li><code>target</code>: 触发点击事件的目标组件</li>
+<li><code>timestamp</code>: 触发点击事件时的时间戳</li>
+</ul>
+<h3 id="longpress"><a href="#longpress" class="headerlink" title="longpress"></a><code>longpress</code></h3><p>如果一个组件被绑定了 <code>longpress</code> 事件，那么当用户长按这个组件时，该事件将会被触发。</p>
+<p><strong>注意：</strong></p>
+<p><code>&lt;input&gt;</code> 和 <code>&lt;switch&gt;</code> 组件目前不支持 <code>click</code> 事件，请使用 <code>change</code> 或 <code>input</code> 事件来代替。</p>
+<h4 id="事件对象-1"><a href="#事件对象-1" class="headerlink" title="事件对象"></a>事件对象</h4><ul>
+<li><code>type</code> : <code>longpress</code></li>
+<li><code>target</code> : 触发长按事件的目标组件</li>
+<li><code>timestamp</code> : 长按事件触发时的时间戳</li>
+</ul>
+<h3 id="Appear-事件"><a href="#Appear-事件" class="headerlink" title="Appear 事件"></a>Appear 事件</h3><p>如果一个位于某个可滚动区域内的组件被绑定了 <code>appear</code> 事件，那么当这个组件的状态变为在屏幕上可见时，该事件将被触发。</p>
+<h4 id="事件对象-2"><a href="#事件对象-2" class="headerlink" title="事件对象"></a>事件对象</h4><ul>
+<li><code>type</code> : <code>appear</code></li>
+<li><code>target</code> : 触发 Appear 事件的组件对象</li>
+<li><code>timestamp</code> : 事件被触发时的时间戳</li>
+<li><code>direction</code> : 触发事件时屏幕的滚动方向，<code>up</code> 或 <code>down</code></li>
+</ul>
+<h3 id="Disappear-事件"><a href="#Disappear-事件" class="headerlink" title="Disappear 事件"></a>Disappear 事件</h3><p>如果一个位于某个可滚动区域内的组件被绑定了 <code>disappear</code> 事件，那么当这个组件被滑出屏幕变为不可见状态时，该事件将被触发。</p>
+<h4 id="事件对象-3"><a href="#事件对象-3" class="headerlink" title="事件对象"></a>事件对象</h4><ul>
+<li><code>type</code> : <code>disappear</code></li>
+<li><code>target</code> : 触发 Disappear 事件的组件对象</li>
+<li><code>timestamp</code> : 事件被触发时的时间戳</li>
+<li><code>direction</code> : 触发事件时屏幕的滚动方向，<code>up</code> 或 <code>down</code></li>
+</ul>
+<h3 id="Page-事件"><a href="#Page-事件" class="headerlink" title="Page 事件"></a>Page 事件</h3><p><em>注意：仅支持 iOS 和 Android，H5 暂不支持。</em></p>
+<p>Weex 通过 <code>viewappear</code> 和 <code>viewdisappear</code> 事件提供了简单的页面状态管理能力。</p>
+<p><code>viewappear</code> 事件会在页面就要显示或配置的任何页面动画被执行前触发，例如，当调用 <code>navigator</code> 模块的 <code>push</code> 方法时，该事件将会在打开新页面时被触发。<code>viewdisappear</code> 事件会在页面就要关闭时被触发。</p>
+<p>与组件的 <code>appear</code> 和 <code>disappear</code> 事件不同的是，<code>viewappear</code> 和 <code>viewdisappear</code> 事件关注的是整个页面的状态，所以它们必须绑定到页面的根元素上。</p>
+<p>特殊情况下，这两个事件也能被绑定到非根元素的body组件上，例如 <code>wxc-navpage</code> 组件。</p>
+<h4 id="事件对象-4"><a href="#事件对象-4" class="headerlink" title="事件对象"></a>事件对象</h4><ul>
+<li><code>type</code> : <code>viewappear</code> 或 <code>viewdisappear</code></li>
+<li><code>target</code> : 触发事件的组件对象</li>
+<li><code>timestamp</code> : 事件被触发时的时间戳</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> @<span class="attr">click</span>=<span class="string">"onclick"</span> @<span class="attr">longpress</span>=<span class="string">"onlongpress"</span> @<span class="attr">appear</span>=<span class="string">"onappear"</span>  @<span class="attr">disappear</span>=<span class="string">"ondisappear"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      onclick (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onclick:'</span>, event)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="actionscript">          message: <span class="string">'onclick'</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onlongpress (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onlongpress:'</span>, event)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="actionscript">          message: <span class="string">'onlongpress'</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onappear (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onappear:'</span>, event)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="actionscript">          message: <span class="string">'onappear'</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      ondisappear (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'ondisappear:'</span>, event)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="actionscript">          message: <span class="string">'ondisappear'</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBB</span>;</span></div><div class="line"><span class="undefined">    width: 250px;</span></div><div class="line"><span class="undefined">    height: 250px;</span></div><div class="line"><span class="undefined">    margin-top: 250px;</span></div><div class="line"><span class="undefined">    margin-left: 250px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#EEE</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/commonEvent/" data-id="cj7tv5ri4001ct0z6ifq4kif7" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/通用事件/">通用事件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/09/02/NativeDomAPIS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          NativeDomAPIS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/09/02/cssUnit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">cssUnit</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

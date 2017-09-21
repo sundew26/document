@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>difference-Weex-Vue2-x | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Weex 和 Vue 2.x 的语法差异Updated time: 14/06/2017Overview    Weex Vue     生命周期 ready: function() {} mounted: function() {}   条件指令 if=&amp;quot;&amp;#123;{!foo}}&amp;quot; v-if=&amp;quot;!foo&amp;quot;   循环指令 repeat=&amp;quot;&amp;#12">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="difference-Weex-Vue2-x">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/09/02/difference-Weex-Vue2-x/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="Weex 和 Vue 2.x 的语法差异Updated time: 14/06/2017Overview    Weex Vue     生命周期 ready: function() {} mounted: function() {}   条件指令 if=&amp;quot;&amp;#123;{!foo}}&amp;quot; v-if=&amp;quot;!foo&amp;quot;   循环指令 repeat=&amp;quot;&amp;#12">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T07:26:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="difference-Weex-Vue2-x">
+<meta name="twitter:description" content="Weex 和 Vue 2.x 的语法差异Updated time: 14/06/2017Overview    Weex Vue     生命周期 ready: function() {} mounted: function() {}   条件指令 if=&amp;quot;&amp;#123;{!foo}}&amp;quot; v-if=&amp;quot;!foo&amp;quot;   循环指令 repeat=&amp;quot;&amp;#12">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-difference-Weex-Vue2-x" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/difference-Weex-Vue2-x/" class="article-date">
+  <time datetime="2017-09-01T16:47:27.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      difference-Weex-Vue2-x
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Weex-和-Vue-2-x-的语法差异"><a href="#Weex-和-Vue-2-x-的语法差异" class="headerlink" title="Weex 和 Vue 2.x 的语法差异"></a>Weex 和 Vue 2.x 的语法差异</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>Weex</th>
+<th>Vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命周期</td>
+<td><code>ready: function() {}</code></td>
+<td><code>mounted: function() {}</code></td>
+</tr>
+<tr>
+<td>条件指令</td>
+<td><code>if=&quot;&#123;{!foo}}&quot;</code></td>
+<td><code>v-if=&quot;!foo&quot;</code></td>
+</tr>
+<tr>
+<td>循环指令</td>
+<td><code>repeat=&quot;&#123;{item in list}}&quot;</code></td>
+<td><code>v-for=&quot;item in list&quot;</code></td>
+</tr>
+<tr>
+<td>样式类名</td>
+<td><code>class=&quot;btn btn-&#123;{type}}&quot;</code></td>
+<td><code>:class=&quot;[&#39;btn&#39;, &#39;btn-&#39; + type]&quot;</code></td>
+</tr>
+<tr>
+<td>内联样式</td>
+<td><code>style=&quot;color:&#123;{textColor}}&quot;</code></td>
+<td><code>:style=&quot;{ color: textColor }&quot;</code></td>
+</tr>
+<tr>
+<td>事件绑定</td>
+<td><code>onclick=&quot;handler&quot;</code></td>
+<td><code>@click=&quot;handler&quot;</code></td>
+</tr>
+<tr>
+<td>原生事件</td>
+<td><code>onclick=&quot;xxx&quot;</code></td>
+<td><code>@click.native=&quot;xxx&quot;</code></td>
+</tr>
+<tr>
+<td>数据绑定</td>
+<td><code>src=&quot;&#123;{rightItemSrc}}&quot;</code></td>
+<td><code>:src=&quot;rightItemSrc&quot;</code></td>
+</tr>
+<tr>
+<td>内容/槽</td>
+<td><code>&lt;content&gt;&lt;/content&gt;</code></td>
+<td><code>&lt;slot&gt;&lt;/slot&gt;</code></td>
+</tr>
+<tr>
+<td>数据初始化</td>
+<td><code>data: { value: &#39;x&#39; }</code></td>
+<td><code>data: function() { return { value: &#39;x&#39; } }</code></td>
+</tr>
+<tr>
+<td>标签 ID</td>
+<td><code>id=&quot;xxx&quot;</code></td>
+<td><code>ref=&quot;xxx&quot;</code></td>
+</tr>
+<tr>
+<td>获取节点</td>
+<td><code>this.$el(&#39;xxx&#39;)</code></td>
+<td><code>this.$refs.xxx</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>See the source code of <code>weex-vue-migration</code> for more details:</p>
+<ul>
+<li><a href="https://github.com/songsiqi/weex-vue-migration/blob/master/src/template-rewriter/rewriter.js">template-rewriter</a></li>
+<li><a href="https://github.com/songsiqi/weex-vue-migration/blob/master/src/script-rewriter/rewriter.js">script-rewriter</a></li>
+</ul>
+<h3 id="LifeCycle-Hooks-生命周期钩子"><a href="#LifeCycle-Hooks-生命周期钩子" class="headerlink" title="LifeCycle Hooks 生命周期钩子"></a>LifeCycle Hooks 生命周期钩子</h3><table>
+<thead>
+<tr>
+<th>weex</th>
+<th>vue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>init</td>
+<td>beforeCreate</td>
+<td>组件实例刚刚被创建，组件属性如data计算之前</td>
+</tr>
+<tr>
+<td>created</td>
+<td>created</td>
+<td>组件实例创建完成，属性已绑定，但DOM还未生成</td>
+</tr>
+<tr>
+<td></td>
+<td>beforeMount</td>
+<td>模板编译/挂载之前</td>
+</tr>
+<tr>
+<td>ready</td>
+<td>mounted</td>
+<td>模板编译/挂载之后</td>
+</tr>
+<tr>
+<td></td>
+<td>beforeUpdate</td>
+<td>组件更新之前</td>
+</tr>
+<tr>
+<td></td>
+<td>updated</td>
+<td>组件更新之后</td>
+</tr>
+<tr>
+<td></td>
+<td>activated</td>
+<td>for <code>keep-alive</code>, 组件被激活时调用</td>
+</tr>
+<tr>
+<td></td>
+<td>deactivated</td>
+<td>for <code>keep-alive</code>, 组件被移除时调用</td>
+</tr>
+<tr>
+<td></td>
+<td>beforeDestroy</td>
+<td>组件被销毁前调用</td>
+</tr>
+<tr>
+<td>destroyed</td>
+<td>destroyed</td>
+<td>组件被销毁后调用</td>
+</tr>
+</tbody>
+</table>
+<p>在weex中，使用&#123;{…}}在<code>&lt;template&gt;</code>中绑定在<code>&lt;script&gt;</code>里定义的数据；在vue中，需要在要绑定的属性前加 <code>:</code> 。如以下示例。</p>
+<ul>
+<li><p>类名</p>
+<ul>
+<li><p>weex</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-&amp;#123;&#123;type&#125;&#125;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="symbol">:class=<span class="string">"['btn', 'btn-' + type]"</span>&gt;&lt;/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>样式绑定</p>
+<ul>
+<li><p>weex</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color:</span></span></span><span class="template-variable">&#123;&#123;textColor&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="symbol">:style=<span class="string">"&#123;color: textColor&#125;"</span>&gt;&lt;/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>weex</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="built_in">image</span> src=<span class="string">"..."</span> <span class="built_in">if</span>=<span class="string">"&#123;&#123;shown&#125;&#125;"</span>&gt;&lt;/<span class="built_in">image</span>&gt;</div></pre></td></tr></table></figure>
+<p>  or</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="built_in">image</span> src=<span class="string">"..."</span> <span class="built_in">if</span>=<span class="string">"shown"</span>&gt;&lt;/<span class="built_in">image</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="built_in">image</span> src=<span class="string">"..."</span> v-<span class="built_in">if</span>=<span class="string">"shown"</span>&gt;&lt;/<span class="built_in">image</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>weex: repeat</p>
+<ul>
+<li><p><code>$index</code>为索引</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;list&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">text</span>&gt;</span>No. </span><span class="template-variable">&#123;&#123;$index + 1&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;v <span class="builtin-name">in</span> list&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">text</span>&gt;</span>No. </span><span class="template-variable">&#123;&#123;$index + 1&#125;&#125;</span><span class="xml">, </span><span class="template-variable">&#123;&#123;v.nickname&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>对象参数的顺序</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;(key, value) <span class="builtin-name">in</span> list&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">text</span>&gt;</span>No. </span><span class="template-variable">&#123;&#123;key + 1&#125;&#125;</span><span class="xml">, </span><span class="template-variable">&#123;&#123;value.nickname&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>track-by</code></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="keyword">repeat</span>=<span class="string">"&#123;&#123;item in items&#125;&#125;"</span> track-<span class="keyword">by</span>=<span class="string">"item.id"</span> <span class="built_in">class</span>=<span class="string">"&#123;&#123;gender&#125;&#125;"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>vue: v-for</p>
+<ul>
+<li><p>移除<code>$index</code>索引</p>
+</li>
+<li><p>对象参数的改变：改为(value, key), 与通用的对象迭代器保持一致</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">repeat</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123;(value, key) <span class="builtin-name">in</span> list&#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span></div><div class="line"><span class="xml"> <span class="tag">&lt;<span class="name">text</span>&gt;</span>No. </span><span class="template-variable">&#123;&#123;key + 1&#125;&#125;</span><span class="xml">, </span><span class="template-variable">&#123;&#123;value.nickname&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>track-by</code> 替换为<code>v-bind</code></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> v-<span class="keyword">for</span>=<span class="string">"item in items"</span> v-<span class="keyword">bind</span>:key=<span class="string">"item.id"</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>weex</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">data</span>: &#123; <span class="attribute">value</span>: <span class="string">'x'</span> &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">props</span>: &#123; <span class="attribute">value</span>: &#123; default: <span class="string">'x'</span> &#125; &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>动态数据<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data: <span class="keyword">function</span> <span class="title"></span>() &#123; <span class="keyword">return</span> <span class="type">&#123;</span> value: <span class="string">'x'</span> &#125; &#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>获取节点</p>
+<ul>
+<li><p>weex: <code>this.$el(&#39;xxx&#39;)</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">container</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">text</span> <span class="attr">id</span>=<span class="string">"top"</span>&gt;</span>Top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">container</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="built_in">module</span>.exports = &#123;</span></div><div class="line"><span class="undefined">  methods: &#123;</span></div><div class="line"><span class="actionscript">    toTop: <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">var</span> top = <span class="keyword">this</span>.$el(<span class="string">'top'</span>)</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">this.<span class="variable">$refs</span>.xxx</div><div class="line">​</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>事件绑定</p>
+<ul>
+<li><p>weex</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> onclick=<span class="string">"handler"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> @click=<span class="string">"handler"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>事件触发</p>
+<ul>
+<li><p>weex: dispatch和broadcast</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$dispatch()</div></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$broadcast()</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue: emit</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$emit()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>注：Weex 的 <code>$dispatch</code> 与组件无关，在任意组件中都可以通过 <code>$on</code> 捕获到，Vue 的<code>$emit</code> 用于触发组件(标签)的自定义事件。</p>
+</blockquote>
+</li>
+<li><p>原生事件</p>
+<ul>
+<li><p>weex</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">onclick</span>=<span class="string">"xxx"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>vue</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@click</span>.<span class="keyword">native</span>=<span class="string">"xxx"</span></div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/difference-Weex-Vue2-x/" data-id="cj7tv5ri9001jt0z6nse5hj2g" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/document/2017/09/02/migration-from-weex/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">migration-from-weex</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

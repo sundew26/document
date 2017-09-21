@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>textarea | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#60;textarea&amp;#62;v0.8+Updated time: 14/06/2017textarea 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 &amp;lt;input&amp;gt; Notes: &amp;lt;textarea&amp;gt;支持 &amp;lt;input&amp;gt; 支持的所有的事件。 子组件textarea 组件不支持子组件。 特性 value {strin">
+<meta name="keywords" content="内建组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="textarea">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/31/textarea/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="&amp;#60;textarea&amp;#62;v0.8+Updated time: 14/06/2017textarea 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 &amp;lt;input&amp;gt; Notes: &amp;lt;textarea&amp;gt;支持 &amp;lt;input&amp;gt; 支持的所有的事件。 子组件textarea 组件不支持子组件。 特性 value {strin">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-21T02:37:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="textarea">
+<meta name="twitter:description" content="&amp;#60;textarea&amp;#62;v0.8+Updated time: 14/06/2017textarea 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 &amp;lt;input&amp;gt; Notes: &amp;lt;textarea&amp;gt;支持 &amp;lt;input&amp;gt; 支持的所有的事件。 子组件textarea 组件不支持子组件。 特性 value {strin">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-textarea" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/textarea/" class="article-date">
+  <time datetime="2017-08-31T14:54:30.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      textarea
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-textarea-62-v0-8"><a href="#60-textarea-62-v0-8" class="headerlink" title="&#60;textarea&#62;v0.8+"></a>&#60;textarea&#62;v0.8+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>textarea</code> 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 <code>&lt;input&gt;</code></p>
+<p><strong>Notes:</strong> <code>&lt;textarea&gt;</code>支持 <code>&lt;input&gt;</code> 支持的所有的事件。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>textarea</code> 组件不支持子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>value {string}</code>：组件的接收到的输入字符。</li>
+<li><code>placeholder {string}</code>：提示用户可以输入什么。 提示文本不能有回车或换行。</li>
+<li><code>disabled {boolean}</code>：表示是否支持输入。通常 <code>click</code> 事件在 <code>disabled</code> 控件上是失效的。</li>
+<li><code>autofocus {boolean}</code>：表示是否在页面加载时控件自动获得输入焦点。</li>
+<li><code>rows {number}</code>：接收 number 类型的数据，指定组件的高度，默认值是 2</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>伪类v0.9.5+: <code>textarea</code> 支持以下伪类：</p>
+<ul>
+<li><code>active</code></li>
+<li><code>focus</code></li>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+</ul>
+</li>
+<li><p>text styles</p>
+<ul>
+<li>支持 <code>color</code></li>
+<li>支持 <code>font-size</code></li>
+<li>支持 <code>font-style</code></li>
+<li>支持 <code>font-weight</code></li>
+<li>支持 <code>text-align</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="http://weex.apache.org/cn/references/text-style.html" target="_blank" rel="external">文本样式</a></p>
+<ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p><code>input</code>: 输入字符的值更改。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>value</code>: 触发事件的组件；</li>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p><code>change</code>: 当用户输入完成时触发。通常在 <code>blur</code> 事件之后。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><p><code>value</code>: 触发事件的组件；</p>
+</li>
+<li><p><code>timestamp</code>: 事件发生时的时间戳。</p>
+</li>
+</ul>
+</li>
+<li><p><code>focus</code>: 组件获得输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p><code>blur</code>: 组件失去输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p><strong>注意：</strong><br>不支持 <code>click</code> 事件。 请监听 <code>input</code> 或 <code>change</code> 事件代替。</p>
+<p>  支持以下通用事件：</p>
+<ul>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<p>示例<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"textarea"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">focus</span>=<span class="string">"onfocus"</span> @<span class="attr">blur</span>=<span class="string">"onblur"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      oninput (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'oninput:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`oninput: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onchange (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onchange:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`onchange: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onfocus (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onfocus:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`onfocus: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onblur (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onblur:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`input blur: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.textarea</span> &#123;</span></div><div class="line"><span class="undefined">    font-size: 50px;</span></div><div class="line"><span class="undefined">    width: 650px;</span></div><div class="line"><span class="undefined">    margin-top: 50px;</span></div><div class="line"><span class="undefined">    margin-left: 50px;</span></div><div class="line"><span class="undefined">    padding-top: 20px;</span></div><div class="line"><span class="undefined">    padding-bottom: 20px;</span></div><div class="line"><span class="undefined">    padding-left: 20px;</span></div><div class="line"><span class="undefined">    padding-right: 20px;</span></div><div class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#666666</span>;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/textarea/" data-id="cj7tv5rkp003it0z6dl0rzicr" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/31/video/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          video
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/31/text/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">text</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Text-Style | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="文本样式 v0.5+Updated time: 14/06/2017文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性 color {color}：文字颜色。  可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（">
+<meta name="keywords" content="通用特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Text-Style">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/24/Text-Style/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="文本样式 v0.5+Updated time: 14/06/2017文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性 color {color}：文字颜色。  可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T07:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Text-Style">
+<meta name="twitter:description" content="文本样式 v0.5+Updated time: 14/06/2017文本类组件共享一些通用样式, 这类组件目前包括 &amp;lt;text&amp;gt; 和 &amp;lt;input&amp;gt;。 属性 color {color}：文字颜色。  可选值为色值，支持 RGB（ rgb(255, 0, 0) ）；RGBA（ rgba(255, 0, 0, 0.5) ）；十六进制（ #ff0000 ）；精简写法的十六进制（">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Text-Style" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/24/Text-Style/" class="article-date">
+  <time datetime="2017-08-24T14:48:50.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Text-Style
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="文本样式-v0-5"><a href="#文本样式-v0-5" class="headerlink" title="文本样式 v0.5+"></a>文本样式 v0.5+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>文本类组件共享一些通用样式, 这类组件目前包括 <code>&lt;text&gt;</code> 和 <code>&lt;input&gt;</code>。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><code>color {color}</code>：文字颜色。</li>
+</ul>
+<p>可选值为色值，支持 RGB（ <code>rgb(255, 0, 0)</code> ）；RGBA（ <code>rgba(255, 0, 0, 0.5)</code> ）；十六进制（ <code>#ff0000</code> ）；精简写法的十六进制（ <code>#f00</code> ）；色值关键字（<code>red</code>）。</p>
+<ul>
+<li><p><code>lines {number}</code>: 指定文本行数。仅在 <code>&lt;text&gt;</code> 组件中支持。默认值是 <code>0</code> 代表不限制行数。</p>
+</li>
+<li><p><code>font-size {number}</code>：文字大小。</p>
+</li>
+<li><p><code>font-style {string}</code>：字体类别。可选值 <code>normal</code> | <code>italic</code>，默认为 <code>normal</code>。</p>
+</li>
+<li><p><code>font-weight {string}</code> v0.9+：字体粗细程度</p>
+<ul>
+<li>可选值: <code>normal</code>, <code>bold</code>, <code>100</code>, <code>200</code>, <code>300</code>, <code>400</code>, <code>500</code>, <code>600</code>, <code>700</code>, <code>800</code>, <code>900</code></li>
+<li>normal 等同于 400, bold 等同于 700；</li>
+<li>默认值: <code>normal</code>；</li>
+<li>iOS 支持 9 种 font-weight值；Android 仅支持 400 和 700, 其他值会设为 400 或 700</li>
+<li>类似 <code>lighter</code>, <code>bolder</code> 这样的值暂时不支持</li>
+</ul>
+</li>
+<li><p><code>text-decoration {string}</code>：字体装饰，可选值 <code>none</code> | <code>underline</code> | <code>line-through</code>，默认值为 <code>none</code>。</p>
+</li>
+<li><p><code>text-align {string}</code>：对齐方式。可选值 <code>left</code> | <code>center</code> | <code>right</code>，默认值为 <code>left</code>。目前暂不支持 <code>justify</code>, <code>justify-all</code>。</p>
+</li>
+<li><p><code>font-family {string}</code>：设置字体。</p>
+</li>
+</ul>
+<p>这个设置 <strong>不保证</strong> 在不同平台，设备间的一致性。如所选设置在平台上不可用，将会降级到平台默认字体。</p>
+<ul>
+<li><code>text-overflow {string}</code>：设置内容超长时的省略样式。可选值 <code>clip</code> | <code>ellipsis</code></li>
+</ul>
+<h3 id="其它参考"><a href="#其它参考" class="headerlink" title="其它参考"></a>其它参考</h3><ul>
+<li><a href="http://weex.apache.org/cn/references/color-names.html" target="_blank" rel="external">颜色关键字列表</a>。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/24/Text-Style/" data-id="cj7tv5rh6000qt0z683u3rnzq" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/通用特性/">通用特性</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/24/Color-Name-List/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Color-Name-List
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/24/Common-Style/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Common-Style</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS-Service | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JS Service v0.9.5+Updated time: 14/06/2017JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。 重要提醒: JS Service 非常强大但也很危险，请小心使用！ 注册 JS ServiceiOS1[WeexSDKEngine reg">
+<meta name="keywords" content="JS service">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-Service">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/09/02/JS-Service/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="JS Service v0.9.5+Updated time: 14/06/2017JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。 重要提醒: JS Service 非常强大但也很危险，请小心使用！ 注册 JS ServiceiOS1[WeexSDKEngine reg">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T07:25:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS-Service">
+<meta name="twitter:description" content="JS Service v0.9.5+Updated time: 14/06/2017JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。 重要提醒: JS Service 非常强大但也很危险，请小心使用！ 注册 JS ServiceiOS1[WeexSDKEngine reg">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS-Service" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/JS-Service/" class="article-date">
+  <time datetime="2017-09-01T16:36:38.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS-Service
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS-Service-v0-9-5"><a href="#JS-Service-v0-9-5" class="headerlink" title="JS Service v0.9.5+"></a>JS Service v0.9.5+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>JS service 和 Weex 实例在 JS runtime 中并行运行。Weex 实例的生命周期可调用 JS service 生命周期。目前提供创建、刷新、销毁生命周期。</p>
+<p><strong>重要提醒: JS Service 非常强大但也很危险，请小心使用！</strong></p>
+<h3 id="注册-JS-Service"><a href="#注册-JS-Service" class="headerlink" title="注册 JS Service"></a>注册 JS Service</h3><h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[WeexSDKEngine <span class="string">registerService:</span>@<span class="string">"SERVICE_NAME"</span> <span class="string">withScript:</span> @<span class="string">"SERVICE_JS_CODE"</span> <span class="string">withOptions:</span> @&#123;&#125;];</div></pre></td></tr></table></figure>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, <span class="keyword">String</span>&gt; options = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;&gt;()</div><div class="line">options.put(<span class="string">"k1"</span>, <span class="string">"v1"</span>)</div><div class="line"><span class="keyword">String</span> SERVICE_NAME = <span class="string">"SERVICE_NAME"</span></div><div class="line"><span class="keyword">String</span> SERVICE_JS_CODE = <span class="string">"SERVICE_JS_CODE"</span></div><div class="line"><span class="built_in">boolean</span> result = WXSDKEngine.registerService(SERVICE_NAME, SERVICE_JS_CODE, options)</div></pre></td></tr></table></figure>
+<h4 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 必须在 JSFM 之后加载 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"SERVICE_JS_CODE_URL"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="编写一个-JS-service"><a href="#编写一个-JS-service" class="headerlink" title="编写一个 JS service"></a>编写一个 JS service</h3><figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">// options: native inject options</div><div class="line">// options.serviceName is native options name</div><div class="line">service.register(options.serviceName, &#123;</div><div class="line">  /**</div><div class="line">    * JS Service lifecycle. JS Service `create` will before then each<span class="built_in"> instance </span>lifecycle `create`. The<span class="built_in"> return </span>param `instance` is Weex<span class="keyword"> protected</span> param. This object will<span class="built_in"> return </span>to<span class="built_in"> instance </span>global. Other params will in the `services` at instance.</div><div class="line">    *</div><div class="line">    * @param  &#123;String&#125; id <span class="built_in"> instance </span>id</div><div class="line">    * @param  &#123;Object&#125; env device environment</div><div class="line">    * @return &#123;Object&#125;</div><div class="line">    */</div><div class="line">  create: function(id, env, config) &#123;</div><div class="line">   <span class="built_in"> return </span>&#123;</div><div class="line">      instance: &#123;</div><div class="line">        InstanceService: function(weex) &#123;</div><div class="line">          var modal = weex.requireModule('modal')</div><div class="line">         <span class="built_in"> return </span>&#123;</div><div class="line">            toast: function(title) &#123;</div><div class="line">              modal.toast(&#123; message: title &#125;)</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      NormalService: function(weex) &#123;</div><div class="line">        var modal = weex.requireModule('modal')</div><div class="line">       <span class="built_in"> return </span>&#123;</div><div class="line">          toast: function(title) &#123;</div><div class="line">            modal.toast(&#123; message: title &#125;)</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  /**</div><div class="line">    * JS Service lifecycle. JS Service `refresh` will before then each<span class="built_in"> instance </span>lifecycle `refresh`. If you want to reset variable<span class="built_in"> or </span>something on<span class="built_in"> instance </span>refresh.</div><div class="line">    *</div><div class="line">    * @param  &#123;String&#125; id <span class="built_in"> instance </span>id</div><div class="line">    * @param  &#123;Object&#125; env device environment</div><div class="line">    */</div><div class="line">  refresh: function(id, env, config)&#123;</div><div class="line">  &#125;,</div><div class="line">  /**</div><div class="line">    * JS Service lifecycle. JS Service `destroy` will before then each<span class="built_in"> instance </span>lifecycle `destroy`. You can deleted variable here. If you doesn't detete variable define in JS Service. The variable will always in the js runtime. It's would be memory leak risk.</div><div class="line">    *</div><div class="line">    * @param  &#123;String&#125; id <span class="built_in"> instance </span>id</div><div class="line">    * @param  &#123;Object&#125; env device environment</div><div class="line">    * @return &#123;Object&#125;</div><div class="line">    */</div><div class="line">  destroy: function(id, env) &#123;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="Using-JS-Service-vuejs"><a href="#Using-JS-Service-vuejs" class="headerlink" title="Using JS Service (vuejs)"></a>Using JS Service (vuejs)</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript"><span class="keyword">var</span> _InstanceService = <span class="keyword">new</span> InstanceService(weex)</span></div><div class="line"><span class="actionscript"><span class="keyword">var</span> _NormalService = <span class="keyword">new</span> service.normalService(weex)</span></div><div class="line"><span class="javascript"><span class="built_in">module</span>.exports = &#123;</span></div><div class="line"><span class="undefined">  created: fucntion() &#123;</span></div><div class="line"><span class="actionscript">    <span class="comment">// called modal module to toast something</span></span></div><div class="line"><span class="actionscript">    _InstanceService.toast(<span class="string">'Instance JS Service'</span>)</span></div><div class="line"><span class="actionscript">    _NormalService.toast(<span class="string">'Normal JS Service'</span>)</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/JS-Service/" data-id="cj7tv5rgs000ht0z6npucn14w" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/JS-service/">JS service</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/09/02/Vue/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Vue
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/09/02/WebStandards/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">WebStandards</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>indicator | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;indicator&amp;gt;Updated time: 14/06/2017&amp;lt;indicator&amp;gt; 组件用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。 子组件&amp;lt;indicator&amp;gt; 组件没有任何子组件。 样式 &amp;lt;indicator&amp;gt; 组件有一些私有样式，如下：  item-color {color}：设置项的颜色，可以">
+<meta name="keywords" content="内建组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="indicator">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/31/indicator/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="&amp;lt;indicator&amp;gt;Updated time: 14/06/2017&amp;lt;indicator&amp;gt; 组件用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。 子组件&amp;lt;indicator&amp;gt; 组件没有任何子组件。 样式 &amp;lt;indicator&amp;gt; 组件有一些私有样式，如下：  item-color {color}：设置项的颜色，可以">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-21T02:37:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="indicator">
+<meta name="twitter:description" content="&amp;lt;indicator&amp;gt;Updated time: 14/06/2017&amp;lt;indicator&amp;gt; 组件用于显示轮播图指示器效果，必须充当 &amp;lt;slider&amp;gt; 组件的子组件使用。 子组件&amp;lt;indicator&amp;gt; 组件没有任何子组件。 样式 &amp;lt;indicator&amp;gt; 组件有一些私有样式，如下：  item-color {color}：设置项的颜色，可以">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-indicator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/indicator/" class="article-date">
+  <time datetime="2017-08-31T14:54:08.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      indicator
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-indicator-gt"><a href="#lt-indicator-gt" class="headerlink" title="&lt;indicator&gt;"></a>&lt;indicator&gt;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;indicator&gt;</code> 组件用于显示轮播图指示器效果，必须充当 <code>&lt;slider&gt;</code> 组件的子组件使用。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;indicator&gt;</code> 组件没有任何子组件。</p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p><code>&lt;indicator&gt;</code> 组件有一些私有样式，如下：</p>
+</li>
+<li><p><code>item-color {color}</code>：设置项的颜色，可以是颜色的名称，例如 <code>red</code>；也可以是 16 进制的颜色，例如 <code>#RRGGBB</code>。</p>
+</li>
+<li><p><code>item-selected-color {color}</code>：被选中时的颜色，可以是颜色的名称，<code>red</code>；也可以是 16 进制的颜色，例如 <code>#RRGGBB</code>。</p>
+</li>
+<li><p><code>item-size {number}</code>：元素的个数。</p>
+</li>
+<li><p>通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h4 id="注意-1："><a href="#注意-1：" class="headerlink" title="注意 1："></a>注意 1：</h4><p>这里需要注意一点，<code>&lt;indicator&gt;</code> 的 <code>position</code> 不仅依赖 <code>top</code>、<code>left</code>、<code>bottom</code> 和 <code>right</code> 样式，同时会参考 <code>width</code> 和 <code>height</code> 样式。<code>&lt;indicator&gt;</code>默认的宽高继承于 <code>&lt;slider&gt;</code>，如果 <code>&lt;slider&gt;</code> 未设置宽高，需要显式的给 <code>&lt;indicator&gt;</code> 设置宽高值。</p>
+<h4 id="注意-2："><a href="#注意-2：" class="headerlink" title="注意 2："></a>注意 2：</h4><p><code>background-color</code> 不推荐使用，建议使用 <code>item-color</code> 和 <code>item-selected-color</code> 代替。</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>支持所有通用事件。</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li>不支持子组件。</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"4500"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"frame"</span> <span class="attr">v-for</span>=<span class="string">"img in imageList"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"image"</span> <span class="attr">resize</span>=<span class="string">"cover"</span> <span class="attr">:src</span>=<span class="string">"img.src"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><span class="template-variable">&#123;&#123;img.title&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">indicator</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span><span class="tag">&lt;/<span class="name">indicator</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .image &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .slider &#123;</span></div><div class="line"><span class="xml">    margin-top: 25px;</span></div><div class="line"><span class="xml">    margin-left: 25px;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .title &#123;</span></div><div class="line"><span class="xml">    position: absolute;</span></div><div class="line"><span class="xml">    top: 20px;</span></div><div class="line"><span class="xml">    left: 20px;</span></div><div class="line"><span class="xml">    padding-left: 20px;</span></div><div class="line"><span class="xml">    width: 200px;</span></div><div class="line"><span class="xml">    color: #FFFFFF;</span></div><div class="line"><span class="xml">    font-size: 36px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    background-color: rgba(0, 0, 0, 0.3);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .frame &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    position: relative;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .indicator &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    item-color: green;</span></div><div class="line"><span class="xml">    item-selected-color: red;</span></div><div class="line"><span class="xml">    item-size: 50px;</span></div><div class="line"><span class="xml">    position: absolute;</span></div><div class="line"><span class="xml">    top: 200px;</span></div><div class="line"><span class="xml">    left: 200px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        imageList: [</span></div><div class="line"><span class="xml">          &#123; title: 'item A', src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'&#125;,</span></div><div class="line"><span class="xml">          &#123; title: 'item B', src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'&#125;,</span></div><div class="line"><span class="xml">          &#123; title: 'item C', src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'&#125;</span></div><div class="line"><span class="xml">        ]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onchange (event) &#123;</span></div><div class="line"><span class="xml">        console.log('changed:', event.index)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/e1b4fd8a37ed4cafd8f5e161698754aa" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/indicator/" data-id="cj7tv5rjb002et0z6xq5ih9do" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/31/switch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          switch
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/31/a/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">a</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

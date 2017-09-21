@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Path | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Path (英) v0.9+Updated time: 14/06/2017本文将介绍 Weex 中 uri(url) 的用法。包括使用图像、字体等资源，处理相对路径以及如何访问本地及打包的资源文件。 Schemes 本地资源  Weex SDK 提供 local scheme 来访问打包在应用程序中的资源，此 scheme 无法在 H5 环境下使用。目前，开发者可以在 image 组件和字体文">
+<meta name="keywords" content="通用特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Path">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/24/Path/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="Path (英) v0.9+Updated time: 14/06/2017本文将介绍 Weex 中 uri(url) 的用法。包括使用图像、字体等资源，处理相对路径以及如何访问本地及打包的资源文件。 Schemes 本地资源  Weex SDK 提供 local scheme 来访问打包在应用程序中的资源，此 scheme 无法在 H5 环境下使用。目前，开发者可以在 image 组件和字体文">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T07:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Path">
+<meta name="twitter:description" content="Path (英) v0.9+Updated time: 14/06/2017本文将介绍 Weex 中 uri(url) 的用法。包括使用图像、字体等资源，处理相对路径以及如何访问本地及打包的资源文件。 Schemes 本地资源  Weex SDK 提供 local scheme 来访问打包在应用程序中的资源，此 scheme 无法在 H5 环境下使用。目前，开发者可以在 image 组件和字体文">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Path" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/24/Path/" class="article-date">
+  <time datetime="2017-08-24T14:49:59.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Path
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="Path-英-v0-9"><a href="#Path-英-v0-9" class="headerlink" title="Path (英) v0.9+"></a>Path (英) v0.9+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>本文将介绍 Weex 中 uri(url) 的用法。包括使用图像、字体等资源，处理相对路径以及如何访问本地及打包的资源文件。</p>
+<h3 id="Schemes"><a href="#Schemes" class="headerlink" title="Schemes"></a>Schemes</h3><ul>
+<li>本地资源</li>
+</ul>
+<p>Weex SDK 提供 <code>local</code> scheme 来访问打包在应用程序中的资源，此 scheme 无法在 H5 环境下使用。目前，开发者可以在 <code>image</code> 组件和字体文件中使用本地资源。</p>
+<ul>
+<li><p>在 iOS 中，Weex 会在 <code>bundle resources</code> 中查找。例如，<code>image</code> 组件的 src 属性为 <code>local:///app_icon&#39;</code>， Weex 会加载 <code>bundle resouce</code> 中名为 <code>app_icon</code><br>的图像资源，而字体文件也以相同的方式工作。</p>
+</li>
+<li><p>在 Android 中，<code>image</code> 组件将从 <code>drawable</code> 资源文件夹加载，如 <code>res/drawable-xxx</code>。但加载字体文件是不同的，Android 框架无法从 <code>res</code> 加载字体文件，因此 SDK 将从<br><code>asserts</code> 文件夹加载它。</p>
+</li>
+</ul>
+<ul>
+<li>HTTP/HTTPS</li>
+</ul>
+<p>它的工作方式与 web 相同，Weex 一直支持这种方式。</p>
+<ul>
+<li>File</li>
+</ul>
+<p>使用 <code>file</code> scheme 访问本地磁盘文件。这个方案有其局限性：你不应该在源页面中硬编码文件 url。因为不管它是否在不同的平台（iOS，Android）上运行，内容将在另一个设备上完全不同，这取决于具体的设备。</p>
+<p>所以一种可行的方案是在运行时动态获取文件 url，你可以使用它来显示本地磁盘的图像，或者稍后上传它。</p>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><p><a href="https://www.w3.org/TR/html4/types.html#type-uri" target="_blank" rel="external">与我们在 HTML 中的用法类似</a>，Weex 以相同的方式处理相对路径。以<code>/</code>、<code>.</code>、<code>..</code>、<code>//</code> 开头的相对 URI 将相对于 bunle url 解析。</p>
+<p>这意味着， 一个以 <code>/</code> 开头的路径将是相对于 JS Bundle 文件的根文件夹。<code>.</code> 则是当前文件夹，<code>..</code> 是父文件夹。 <code>//</code> 则被解析为与 JS Bundle 相同的 scheme。</p>
+<h3 id="URI-Adapter"><a href="#URI-Adapter" class="headerlink" title="URI Adapter"></a>URI Adapter</h3><p>以上所有是默认实现，开发者可以通过提供一个 <code>URI Adapter</code> 来扩展或覆盖默认实现。与其他 Adapter 相同，应在 Weex SDK 初始化之前设置自定义 Adapter。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/24/Path/" data-id="cj7tv5rgv000jt0z6x6g32qt1" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/通用特性/">通用特性</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/24/Manual/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Manual
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/24/Gesture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Gesture</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+<meta property="og:type" content="website">
+<meta property="og:title" content="weex使用手册">
+<meta property="og:url" content="https://github.com/stardew516/document/page/4/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+<meta property="og:locale" content="简体中文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex使用手册">
+<meta name="twitter:description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-WebSocket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/WebSocket/" class="article-date">
+  <time datetime="2017-09-01T16:31:52.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/09/02/WebSocket/">WebSocket</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="WebSocket-v0-12"><a href="#WebSocket-v0-12" class="headerlink" title="WebSocket v0.12+"></a>WebSocket v0.12+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>WebSockets 是一种先进的技术, 这使得在用户的 H5/iOS/Android 和一个服务器之间打开一个的交互式通信会话成为可能, 有了这个 API，你可以向服务器发送消息, 并接收事件驱动的响应, 无需轮询服务器的响应</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>iOS和h5提供 WebSockets 的 protocol 默认实现，安卓使用需要提供自定义 adapter 实现，source:</p>
+<ul>
+<li><a href="https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapter.java">DefaultWebSocketAdapter.java</a>;</li>
+<li><a href="https://github.com/apache/incubator-weex/blob/dev/android/commons/src/main/java/com/alibaba/weex/commons/adapter/DefaultWebSocketAdapterFactory.java">DefaultWebSocketAdapterFactory.java</a>;</li>
+<li>集成例子参考weex <a href="https://github.com/apache/incubator-weex/tree/dev/android/playground">playground</a></li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><strong><code>WebSocket(url, protocol)</code></strong><br>创建 WebSockets，并连接服务器</p>
+<h4 id="Arguments"><a href="#Arguments" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>url {string}</code>: 表示要连接的 URL;</li>
+<li><code>protocol {string}</code>: WebSockets 协议</li>
+</ul>
+<p><strong><code>send(data)</code></strong></p>
+<p>通过WebSocket连接向服务器发送数据</p>
+<h4 id="Arguments-1"><a href="#Arguments-1" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>data{string}</code>:要发送到服务器的数据</li>
+</ul>
+<p><strong><code>close(code,reason)</code></strong><br>关闭 WebSockets 的链接</p>
+<h4 id="Arguments-2"><a href="#Arguments-2" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>code {number}</code>: 关闭连接的状态号.</li>
+<li><code>reason {string}</code>: 关闭的原因</li>
+</ul>
+<p><strong><code>onopen(options)</code></strong><br>链接打开的监听</p>
+<h4 id="Arguments-3"><a href="#Arguments-3" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options {object}</code>: 一个空的对象</li>
+</ul>
+<p><strong><code>onmessage(options)</code></strong><br>消息事件的监听器</p>
+<h4 id="Arguments-4"><a href="#Arguments-4" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options {object}</code>: 服务器返回的消息对象<ul>
+<li><code>data {string}</code>: 监听器接收的到的消息</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>onclose(options)</code></strong><br>关闭事件的监听器</p>
+<h4 id="Arguments-5"><a href="#Arguments-5" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options {object}</code>: 监听器接收到的对象<ul>
+<li><code>code {number}</code>: 服务器返回关闭的状态码</li>
+<li><code>reason {string}</code>: 服务器返回的关闭原因</li>
+<li><code>wasClean {boolen}</code>: 是否完全关闭.</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>onerror(options)</code></strong><br>错误事件的监听器</p>
+<h4 id="Arguments-6"><a href="#Arguments-6" class="headerlink" title="Arguments"></a>Arguments</h4><ul>
+<li><code>options {object}</code>: 错误信息的事件<ul>
+<li><code>data {string}</code>: 监听器接收到的信息</li>
+</ul>
+</li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: white"</span>&gt;</span>websocket<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input message to send"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">autofocus</span>=<span class="string">"false"</span> <span class="attr">value</span>=<span class="string">""</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> <span class="attr">ref</span>=<span class="string">"input"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row; justify-content: center;"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"connect"</span>&gt;</span>connect<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"send"</span>&gt;</span>send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"close"</span>&gt;</span>close<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 80px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;sendinfo&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = onopen<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 80px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;onopeninfo&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = onmessage<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 400px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;onmessage&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = onclose<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 80px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;oncloseinfo&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = onerror<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 80px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;onerrorinfo&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: lightgray"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80px ;padding: 20px;color: black"</span>&gt;</span>method = close<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"color: black;height: 80px"</span>&gt;</span></span><span class="template-variable">&#123;&#123;closeinfo&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .input &#123;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    height: 80px;</span></div><div class="line"><span class="xml">    width: 600px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .button &#123;</span></div><div class="line"><span class="xml">    font-size: 36px;</span></div><div class="line"><span class="xml">    width: 150px;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    padding-top: 25px;</span></div><div class="line"><span class="xml">    padding-bottom: 25px;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    margin-right: 20px;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  var websocket = weex.requireModule('webSocket')</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        connectinfo: '',</span></div><div class="line"><span class="xml">        sendinfo: '',</span></div><div class="line"><span class="xml">        onopeninfo: '',</span></div><div class="line"><span class="xml">        onmessage: '',</span></div><div class="line"><span class="xml">        oncloseinfo: '',</span></div><div class="line"><span class="xml">        onerrorinfo: '',</span></div><div class="line"><span class="xml">        closeinfo: '',</span></div><div class="line"><span class="xml">        txtInput:'',</span></div><div class="line"><span class="xml">        navBarHeight: 88,</span></div><div class="line"><span class="xml">        title: 'Navigator',</span></div><div class="line"><span class="xml">        dir: 'examples',</span></div><div class="line"><span class="xml">        baseURL: ''</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      connect:function() &#123;</span></div><div class="line"><span class="xml">        websocket.WebSocket('ws://echo.websocket.org','');</span></div><div class="line"><span class="xml">        var self = this;</span></div><div class="line"><span class="xml">        self.onopeninfo = 'connecting...'</span></div><div class="line"><span class="xml">        websocket.onopen = function(e)</span></div><div class="line"><span class="xml">        &#123;</span></div><div class="line"><span class="xml">          self.onopeninfo = 'websocket open';</span></div><div class="line"><span class="xml">        &#125;</span></div><div class="line"><span class="xml">        websocket.onmessage = function(e)</span></div><div class="line"><span class="xml">        &#123;</span></div><div class="line"><span class="xml">          self.onmessage = e.data;</span></div><div class="line"><span class="xml">        &#125;</span></div><div class="line"><span class="xml">        websocket.onerror = function(e)</span></div><div class="line"><span class="xml">        &#123;</span></div><div class="line"><span class="xml">          self.onerrorinfo = e.data;</span></div><div class="line"><span class="xml">        &#125;</span></div><div class="line"><span class="xml">        websocket.onclose = function(e)</span></div><div class="line"><span class="xml">        &#123;</span></div><div class="line"><span class="xml">          self.onopeninfo = '';</span></div><div class="line"><span class="xml">          self.onerrorinfo = e.code;</span></div><div class="line"><span class="xml">        &#125;</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      send:function(e) &#123;</span></div><div class="line"><span class="xml">        var input = this.$refs.input;</span></div><div class="line"><span class="xml">        input.blur();</span></div><div class="line"><span class="xml">        websocket.send(this.txtInput);</span></div><div class="line"><span class="xml">        this.sendinfo = this.txtInput;</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      oninput: function(event) &#123;</span></div><div class="line"><span class="xml">        this.txtInput = event.value;</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      close:function(e) &#123;</span></div><div class="line"><span class="xml">        websocket.close();</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/6d8bdfe66f24fda1a2dc6158b0182573" target="_blank" rel="external">Have a try</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/WebSocket/" data-id="cj7tv5rhf000vt0z60kglexjp" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建模块/">内建模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-animation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/animation/" class="article-date">
+  <time datetime="2017-09-01T16:31:39.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/09/02/animation/">animation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h2><h6 id="Updated-time-13-09-2017"><a href="#Updated-time-13-09-2017" class="headerlink" title="Updated time: 13/09/2017"></a>Updated time: 13/09/2017</h6><p>流畅且有意义的动画是一个十分有效的提升移动应用用户体验的手段，<code>animation</code> 模块被用于在组件上执行动画。动画可以对组件执行一系列简单的变换 (位置、大小、旋转角度、背景颜色和不透明度)。举个例子，如果有一个 <code>&lt;image&gt;</code> 组件，通过动画你可以对其进行移动、旋转、拉伸或收缩等动作。</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p><strong><code>transition(el, options, callback)</code></strong></p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>el {Element}</code>：将要执行动画的元素，例如指定动画的元素 <code>ref</code> 属性为 <code>test</code> , 可以通过调用 <code>this.refs.test</code> 来获取元素的引用。</li>
+<li><code>options {Object}</code>：描述动画过程的对象。<ul>
+<li><code>options.duration {number}</code>：指定动画的持续时间 (单位是毫秒)，默认值是 <code>0</code>，表示没有动画效果。</li>
+<li><code>options.delay {number}</code>：指定请求动画操作到执行动画之间的时间间隔 (单位是毫秒)，默认值是 <code>0</code>，表示没有延迟，在请求后立即执行动画。</li>
+<li><code>options.timingFunction {string}</code>：描述动画执行的速度曲线，用于使动画变化更为平滑。默认值是 <code>linear</code>，表示动画从开始到结束都拥有同样的速度。下表列出了所有合法的属性：</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>linear</code></td>
+<td>动画从头到尾的速度是相同的</td>
+</tr>
+<tr>
+<td><code>ease-in</code></td>
+<td>动画速度由慢到快</td>
+</tr>
+<tr>
+<td><code>ease-out</code></td>
+<td>动画速度由快到慢</td>
+</tr>
+<tr>
+<td><code>ease-in-out</code></td>
+<td>动画先加速到达中间点后减速到达终点</td>
+</tr>
+<tr>
+<td><code>cubic-bezier(x1, y1, x2, y2)</code></td>
+<td>在三次贝塞尔函数中定义变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 <a href="http://cubic-bezier.com/" target="_blank" rel="external">cubic-bezier</a> 和 <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank" rel="external">Bézier curve</a>.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>options.styles {Object}</code>：设置不同样式过渡效果的键值对，下表列出了所有合法的参数：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>动画执行后应用到组件上的宽度值</td>
+<td>length</td>
+<td>无</td>
+</tr>
+<tr>
+<td>height</td>
+<td>动画执行后应用到组件上的高度值</td>
+<td>length</td>
+<td>无</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>动画执行后应用到组件上的背景颜色</td>
+<td>string</td>
+<td>none</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>动画执行后应用到组件上的不透明度值</td>
+<td>介于 0 到 1 间的数值</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>transformOrigin</td>
+<td>定义变化过程的中心点. 参数 <code>x-aris</code> 可能的值为 <code>left</code>、<code>center</code>、<code>right</code>、长度值或百分比值, 参数 <code>y-axis</code> 可能的值为 <code>top</code>、<code>center</code>、<code>bottom</code>、长度值或百分比值</td>
+<td><code>x-axis y-axis</code></td>
+<td><code>center center</code></td>
+</tr>
+<tr>
+<td>transform</td>
+<td>定义应用在元素上的变换类型，支持下表列出的属性</td>
+<td>object</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><code>transform</code>属性的合法值:</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>值类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translate/translateX/translateY</code></td>
+<td>指定元素要移动到的位置</td>
+<td>像素值或百分比</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>rotate</code></td>
+<td>指定元素将被旋转的角度，单位是度</td>
+<td>number</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>scale</code>/<code>scaleX</code>/<code>scaleY</code></td>
+<td>按比例放大或缩小元素</td>
+<td>number</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>rotate</code>/<code>rotateX</code> v0.14+ /<code>rotateY</code> v0.14+</td>
+<td>指定元素将被旋转的角度，单位是度</td>
+<td>number</td>
+<td>无</td>
+</tr>
+<tr>
+<td><code>perspective</code> v0.16+    观察者距离z=0平面的距离，在Android 4.1及以上有效</td>
+<td>number</td>
+<td>正无穷</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>callback {Function}</code>：动画执行完毕之后的回调</li>
+<li><code>needLayout（boolean）</code>：节点动画执行时是否产生布局动画即LayoutAnimation</li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"test"</span> @<span class="attr">click</span>=<span class="string">"move"</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> animation = weex.requireModule(<span class="string">'animation'</span>)</span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      move () &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">var</span> testEl = <span class="keyword">this</span>.$refs.test;</span></div><div class="line"><span class="undefined">        animation.transition(testEl, &#123;</span></div><div class="line"><span class="undefined">          styles: &#123;</span></div><div class="line"><span class="actionscript">            color: <span class="string">'#FF0000'</span>,</span></div><div class="line"><span class="actionscript">            transform: <span class="string">'translate(250px, 100px)'</span>,</span></div><div class="line"><span class="actionscript">            transformOrigin: <span class="string">'center center'</span></span></div><div class="line"><span class="undefined">          &#125;,</span></div><div class="line"><span class="actionscript">          duration: <span class="number">800</span>, <span class="comment">//ms</span></span></div><div class="line"><span class="actionscript">          timingFunction: <span class="string">'ease'</span>,</span></div><div class="line"><span class="actionscript">          delay: <span class="number">0</span> <span class="comment">//ms</span></span></div><div class="line"><span class="actionscript">        &#125;, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">          modal.toast(&#123; message: <span class="string">'animation finished.'</span> &#125;)</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></div><div class="line"><span class="undefined">    width: 250px;</span></div><div class="line"><span class="undefined">    height: 250px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#DDD</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/2d1b61bef061448c1a5a13eac9624410" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/animation/" data-id="cj7tv5rhz0017t0z6ihca067f" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建模块/">内建模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-innerModel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/innerModel/" class="article-date">
+  <time datetime="2017-09-01T16:30:43.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/09/02/innerModel/">innerModel</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="内建模块"><a href="#内建模块" class="headerlink" title="内建模块"></a>内建模块</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><ul>
+<li><a href="/document/2017/09/02/animation">animation</a></li>
+<li><a href="/document/2017/09/02/WebSocket">WebSocket</a></li>
+<li><a href="/document/2017/09/02/picker">picker</a></li>
+<li><a href="/document/2017/09/02/clipboard">clipboard</a></li>
+<li><a href="/document/2017/09/02/dom">dom</a></li>
+<li><a href="/document/2017/09/02/modal">modal</a></li>
+<li><a href="/document/2017/09/02/navigator">navigator</a></li>
+<li><a href="/document/2017/09/02/storage">storage</a></li>
+<li><a href="/document/2017/09/02/stream">stream</a></li>
+<li><a href="/document/2017/09/02/webview">webview</a></li>
+<li><a href="/document/2017/09/02/globalEvent">globalEvent</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/innerModel/" data-id="cj7tv5rjd002gt0z6vzihigyn" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建模块/">内建模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-slider" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/slider/" class="article-date">
+  <time datetime="2017-08-31T14:55:33.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/slider/">slider</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-slider-gt"><a href="#lt-slider-gt" class="headerlink" title="&lt;slider&gt;"></a>&lt;slider&gt;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;slider&gt;</code> 组件用于在一个页面中展示多个图片，在前端，这种效果被称为 <code>轮播图</code>。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下组件作为子组件展示特殊效果：</p>
+<ul>
+<li><code>&lt;indicator&gt;</code>：用于显示轮播图指示器效果，必须充当 <code>&lt;slider&gt;</code> 组件的子组件使用。</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>auto-play {boolean}</code>：可选值为 <code>true/false</code>，默认的是 <code>false</code>。</li>
+</ul>
+<p>该值决定是否自动播放轮播。重置 <code>loadmore</code> 相关的 UI，值不一样就会重置。</p>
+<ul>
+<li><p><code>interval {number}</code>：值为毫秒数，此值设定 slider 切换时间间隔。当 <code>auto-play</code> 值为 <code>true</code> 时生效。</p>
+</li>
+<li><p><code>infinite {boolean}</code>：循环播放，可选值为 <code>true/false</code>，默认的是 <code>true</code>。</p>
+</li>
+<li><code>offset-x-accuracy {number}</code>0.11+：控制 <code>onscroll</code> 事件触发的频率，默认值为10，表示两次 <code>onscroll</code> 事件之间Slider<br>Page至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p><code>change</code>: 当轮播索引改变时，触发该事件。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>index</code>：展示的图片索引</li>
+<li><code>scroll</code> 0.11+: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性<code>offset-accuracy</code>设置抽样率。<br><a href="http://dotwe.org/vue/832e8f50cc325975b9d3aba93a9f6c39" target="_blank" rel="external">体验一下</a><br>事件中 event 对象属性：</li>
+<li><code>offsetXRatio {number}``：表示当前页面的偏移比例，取值范围为[-1, 1]，负值表示向左侧滚动，正值向右。例如，</code>-0.2<code>表示当前item有20%的区域被滚动到slider左侧边界以外，</code>0<br>.3`表示当前item有30%的区域被滚动到slider右侧边界以外。</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"3000"</span> <span class="attr">auto-play</span>=<span class="string">"true"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"frame"</span> <span class="attr">v-for</span>=<span class="string">"img in imageList"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"image"</span> <span class="attr">resize</span>=<span class="string">"cover"</span> <span class="attr">:src</span>=<span class="string">"img.src"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.image</span> &#123;</span></div><div class="line"><span class="undefined">    width: 700px;</span></div><div class="line"><span class="undefined">    height: 700px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.slider</span> &#123;</span></div><div class="line"><span class="undefined">    margin-top: 25px;</span></div><div class="line"><span class="undefined">    margin-left: 25px;</span></div><div class="line"><span class="undefined">    width: 700px;</span></div><div class="line"><span class="undefined">    height: 700px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.frame</span> &#123;</span></div><div class="line"><span class="undefined">    width: 700px;</span></div><div class="line"><span class="undefined">    height: 700px;</span></div><div class="line"><span class="undefined">    position: relative;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    data () &#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="undefined">        imageList: [</span></div><div class="line"><span class="actionscript">          &#123; src: <span class="string">'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'</span>&#125;,</span></div><div class="line"><span class="actionscript">          &#123; src: <span class="string">'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'</span>&#125;,</span></div><div class="line"><span class="actionscript">          &#123; src: <span class="string">'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'</span>&#125;</span></div><div class="line"><span class="undefined">        ]</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/0c43ffd743c90b3bd9f5371062652e60" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/slider/" data-id="cj7tv5rki003at0z6ve0kkt03" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-scroller" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/scroller/" class="article-date">
+  <time datetime="2017-08-31T14:55:27.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/scroller/">scroller</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-scroller-62-v0-6-1"><a href="#60-scroller-62-v0-6-1" class="headerlink" title="&#60;scroller&#62; v0.6.1+"></a>&#60;scroller&#62; v0.6.1+</h2><h6 id="Updated-time-30-06-2017"><a href="#Updated-time-30-06-2017" class="headerlink" title="Updated time: 30/06/2017"></a>Updated time: 30/06/2017</h6><p><code>&lt;scroller&gt;</code> 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。</p>
+<p><strong>注意：</strong> <code>&lt;scroller&gt;</code> 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下两个特殊组件作为子组件：</p>
+<ul>
+<li><p><code>&lt;refresh&gt;</code></p>
+<p>用于给列表添加下拉刷新的功能。</p>
+<p>使用文档请查看 <code>&lt;refresh&gt;</code></p>
+</li>
+<li><p><code>&lt;loading&gt;</code></p>
+<p><code>&lt;loading&gt;</code> 用法与特性和 <code>&lt;refresh&gt;</code> 类似，用于给列表添加上拉加载更多的功能。</p>
+<p>使用文档请查看 <a href="http://weex.apache.org/cn/references/components/loading.html" target="_blank" rel="external"><code>&lt;loading&gt;</code></a></p>
+</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><p><code>show-scrollbar {boolean}</code>：可选值为 <code>true</code>/ <code>false</code>，默认值为 <code>true</code>。控制是否出现滚动条。</p>
+</li>
+<li><p><code>scroll-direction {string}</code>：可选为 <code>horizontal</code> 或者 <code>vertical</code>，默认值为 <code>vertical</code> 。定义滚动的方向。</p>
+<ul>
+<li><code>scroll-direction</code>定义了 scroller 的滚动方向，<code>flex-direction</code> 定义了 scroller 的布局方向，两个方向必须一致。</li>
+<li><code>scroll-direction</code> 的默认值是 <code>vertical</code>, <code>flex-direction</code> 的默认值是 <code>row</code>。</li>
+<li>当需要一个水平方向的 scroller 时，使用 <code>scroll-direction:horizontal</code> 和 <code>flex-direction: row</code>。</li>
+<li>当需要一个竖直方向的 scroller 时，使用 <code>scroll-direction:vertical</code> 和 <code>flex-direction: column</code>。由于这两个值均是默认值，当需要一个竖直方向的 scroller<br>时，这两个值可以不设置。</li>
+</ul>
+</li>
+<li><p><code>loadmoreoffset {number}</code>：默认值为 0，触发 <code>loadmore</code> 事件所需要的垂直偏移距离（设备屏幕底部与页面底部之间的距离）。当页面的滚动条滚动到足够接近页面底部时将会触发 <code>loadmore</code> 这个事件。</p>
+<img src="http://weex.apache.org/cn/references/images/scroller_1.jpg" class="[box-model]" width="200" height="622" title="mobile_preview">
+</li>
+<li><p><code>loadmoreretry {number}</code>：默认值为 0，当 <code>loadmore</code> 失败时是否重置 <code>loadmore</code> 相关的 UI，值不一样就会重置。 该属性已废弃，请使用<code>resetLoadmore()</code>函数实现重置<code>loadmore</code>的操作。</p>
+</li>
+<li><p><code>offset-accuracy {number}</code> 0.11+：控制<code>onscroll</code>事件触发的频率，默认值为10，表示两次<code>onscroll</code>事件之间列表至少滚动了10px<br>。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。</p>
+</li>
+<li><p><code>offset-accuracy</code>：默认值是0，触发 <code>scroll</code> 事件所需要的垂直偏移距离。</p>
+</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>  通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>loadmore</code> v0.5+：如果滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。</li>
+<li><p><code>scroll</code> 0.11+: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性<code>offset-accuracy</code>设置抽样率。 参见 <a href="http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa" target="_blank" rel="external">scroll event demo</a>。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>contentSize {Object}</code>：列表的内容尺寸<ul>
+<li><code>width {number}</code>: 列表内容宽度</li>
+<li><code>height {number}</code>: 列表内容高度</li>
+</ul>
+</li>
+<li><code>contentOffset {Object}</code>: 列表的偏移尺寸<ul>
+<li><code>x {number}</code>: x轴上的偏移量</li>
+<li><code>y {number}</code>: y轴上的偏移量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h4><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="http://weex.apache.org/cn/references/modules/dom.html" target="_blank" rel="external">dom module</a> 。</p>
+<h4 id="resetLoadmore-0-9"><a href="#resetLoadmore-0-9" class="headerlink" title="resetLoadmore() 0.9+"></a>resetLoadmore() 0.9+</h4><p>在默认情况下，触发<code>loadmore</code>事件后，如果列表中内容没有发生变更，则下一次滚动到列表末尾时将不会再次触发<code>loadmore</code>事件，你可以通过调用<code>resetLoadmore()</code>方法来打破这一限制，调用该方法后，下一次滚动到列表末尾时将强制触发<code>loadmore</code>。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>node {node}</code>：指定目标节点。</li>
+<li><code>options {Object}</code>：<ul>
+<li><code>offset {number}</code>：一个到其可见位置的偏移距离，默认是0</li>
+</ul>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><p><strong>不允许</strong>相同方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 互相嵌套，换句话说就是嵌套的 <code>&lt;list&gt;</code>/<code>&lt;scroller&gt;</code> 必须是不同的方向。</p>
+<p>举个例子，<strong>不允许</strong>一个垂直方向的 <code>&lt;list&gt;</code> 嵌套的一个垂直方向的 <code>&lt;scroller&gt;</code> 中，但是一个垂直方向的 <code>&lt;list&gt;</code> 是可以嵌套的一个水平方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 中的。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">class</span>=<span class="string">"scroller"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">v-for</span>=<span class="string">"(name, index) in rows"</span> <span class="attr">:ref</span>=<span class="string">"'item'+index"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">:ref</span>=<span class="string">"'text'+index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;name&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> @<span class="attr">click</span>=<span class="string">"goto10"</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;</span>Go to 10<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> @<span class="attr">click</span>=<span class="string">"goto20"</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;</span>Go to 20<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const dom = weex.requireModule('dom')</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        rows: []</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    created () &#123;</span></div><div class="line"><span class="xml">      for (let i = 0; i <span class="tag">&lt; <span class="attr">30</span>; <span class="attr">i</span>++) &#123;</span></span></div><div class="line"><span class="xml">        this.rows.push('row ' + i)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      goto10 (count) &#123;</span></div><div class="line"><span class="xml">        const el = this.$refs.item10[0]</span></div><div class="line"><span class="xml">        dom.scrollToElement(el, &#123;&#125;)</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      goto20 (count) &#123;</span></div><div class="line"><span class="xml">        const el = this.$refs.item20[0]</span></div><div class="line"><span class="xml">        dom.scrollToElement(el, &#123; offset: 0 &#125;)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .scroller &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    border-width: 3px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    margin-left: 25px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .row &#123;</span></div><div class="line"><span class="xml">    height: 100px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    padding-left: 30px;</span></div><div class="line"><span class="xml">    border-bottom-width: 2px;</span></div><div class="line"><span class="xml">    border-bottom-style: solid;</span></div><div class="line"><span class="xml">    border-bottom-color: #DDDDDD;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 45px;</span></div><div class="line"><span class="xml">    color: #666666;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .group &#123;</span></div><div class="line"><span class="xml">    flex-direction: row;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    margin-top: 60px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .button &#123;</span></div><div class="line"><span class="xml">    width: 200px;</span></div><div class="line"><span class="xml">    padding-top: 20px;</span></div><div class="line"><span class="xml">    padding-bottom: 20px;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    margin-left: 30px;</span></div><div class="line"><span class="xml">    margin-right: 30px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/2f22f14fb711d88515e63c3f67bed46a" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/scroller/" data-id="cj7tv5rkf0038t0z68adawvyi" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-refresh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/refresh/" class="article-date">
+  <time datetime="2017-08-31T14:55:21.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/refresh/">refresh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-refresh-62-v0-6-1"><a href="#60-refresh-62-v0-6-1" class="headerlink" title="&#60;refresh&#62;  v0.6.1+"></a>&#60;refresh&#62;  v0.6.1+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;refresh&gt;</code> 为 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 提供下拉加载功能。用法与特性与 <code>&lt;loading&gt;</code> 类似，<code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 的子组件，且只能在被 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 包含时才能被正确的渲染。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><ul>
+<li><code>&lt;text&gt;</code></li>
+<li><code>&lt;image&gt;</code></li>
+<li><code>&lt;loading-indicator&gt;</code>: <code>&lt;refresh&gt;</code> 和 <code>&lt;loading&gt;</code> 组件的子组件，拥有默认的动画效果的实现。</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>display {string}</code>：可选值为 <code>show</code> 或者 <code>hide</code>，仅隐藏 <code>&lt;indicator&gt;</code>，<code>&lt;refresh&gt;</code> 其他子组件依然可见，<code>&lt;refresh&gt;</code> 事件仍会被触发。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>支持所有通用样式。</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>refresh</code>： 当 <code>&lt;scroller&gt;</code>/<code>&lt;list&gt;</code> 被下拉时触发。</li>
+<li><code>pullingdown</code>: 当 <code>&lt;scroller&gt;</code>/<code>&lt;list&gt;</code> 被下拉时触发，可以从事件的参数对象中获取 dy,pullingDistance, viewHeight, type<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">dy:</span> 前后两次回调滑动距离的差值</div><div class="line"><span class="symbol">pullingDistance:</span> 下拉的距离</div><div class="line"><span class="symbol">viewHeight:</span> refreshView 高度</div><div class="line"><span class="symbol">type:</span> <span class="string">"pullingdown"</span> 常数字符串</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li><code>&lt;refresh&gt;</code> 不支持 <code>remove</code>，v0.9 版本会修复。</li>
+<li><p><code>display</code> 值为 <code>show</code> 或 <code>hide</code>。仅隐藏 <code>&lt;indicator&gt;</code>，<code>&lt;refresh&gt;</code> 其他子组件依然可见，<code>refresh</code> 事件仍会被触发。<br>如果需要 <code>&lt;refresh&gt;</code> hide 时隐藏文案并不再触发事件，有两种解决方法：</p>
+<ol>
+<li>修改提示文案，并在 <code>refresh</code> 事件中添加判断逻辑；</li>
+<li>v0.9+ 可通过 <code>remove</code> 解决。</li>
+</ol>
+</li>
+<li><p>只能通过 <code>display</code> 特性进行展示和隐藏，且必须成对出现，即设置 <code>display=&quot;show&quot;</code>,必须有对应的 <code>display=&quot;hide&quot;</code>。</p>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">class</span>=<span class="string">"scroller"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">refresh</span> <span class="attr">class</span>=<span class="string">"refresh"</span> @<span class="attr">refresh</span>=<span class="string">"onrefresh"</span> @<span class="attr">pullingdown</span>=<span class="string">"onpullingdown"</span> <span class="attr">:display</span>=<span class="string">"refreshing ? 'show' : 'hide'"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span>Refreshing ...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">refresh</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span> <span class="attr">v-for</span>=<span class="string">"num in lists"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></span><span class="template-variable">&#123;&#123;num&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const modal = weex.requireModule('modal')</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        refreshing: false,</span></div><div class="line"><span class="xml">        lists: [1, 2, 3, 4, 5]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onrefresh (event) &#123;</span></div><div class="line"><span class="xml">        console.log('is refreshing')</span></div><div class="line"><span class="xml">        modal.toast(&#123; message: 'refresh', duration: 1 &#125;)</span></div><div class="line"><span class="xml">        this.refreshing = true</span></div><div class="line"><span class="xml">        setTimeout(() =&gt; &#123;</span></div><div class="line"><span class="xml">          this.refreshing = false</span></div><div class="line"><span class="xml">        &#125;, 2000)</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onpullingdown (event) &#123;</span></div><div class="line"><span class="xml">        console.log('is onpulling down')</span></div><div class="line"><span class="xml">        modal.toast(&#123; message: 'pulling down', duration: 1 &#125;)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .indicator &#123;</span></div><div class="line"><span class="xml">    color: #888888;</span></div><div class="line"><span class="xml">    font-size: 42px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .panel &#123;</span></div><div class="line"><span class="xml">    width: 600px;</span></div><div class="line"><span class="xml">    height: 250px;</span></div><div class="line"><span class="xml">    margin-left: 75px;</span></div><div class="line"><span class="xml">    margin-top: 35px;</span></div><div class="line"><span class="xml">    margin-bottom: 35px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: #DDDDDD;</span></div><div class="line"><span class="xml">    background-color: #F5F5F5;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 50px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/d3db5f344220a6339de044a5e33c502b" target="_blank" rel="external">try it</a></p>
+<p>更多示例可查看 <a href="http://weex.apache.org/cn/references/components/list.html" target="_blank" rel="external"><code>&lt;list&gt;</code></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/refresh/" data-id="cj7tv5rka0036t0z68ox0lfos" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-loading" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/loading/" class="article-date">
+  <time datetime="2017-08-31T14:55:17.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/loading/">loading</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-loading-62-v0-6-1"><a href="#60-loading-62-v0-6-1" class="headerlink" title="&#60;loading&#62;  v0.6.1+"></a>&#60;loading&#62;  v0.6.1+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;loading&gt;</code> 为 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 提供上拉加载功能。用法与特性与 <code>&lt;refresh&gt;</code> 类似， 是 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 的子组件，且只能在被 <code>&lt;scroller&gt;</code> 和 <code>&lt;list&gt;</code> 包含时才能被正确的渲染。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><ul>
+<li><code>&lt;text&gt;</code></li>
+<li><code>&lt;image&gt;</code></li>
+<li><code>&lt;loading-indicator&gt;</code>: <code>&lt;refresh&gt;</code> 和 <code>&lt;loading&gt;</code> 组件的子组件，拥有默认的动画效果的实现。</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>display {string}</code>：可选值为 <code>show</code> 或者 <code>hide</code>，仅隐藏 <code>&lt;indicator&gt;</code>，<code>&lt;loading&gt;</code> 其他子组件依然可见，<code>loading</code> 事件仍会被触发。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>  支持所有通用样式。</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>loading</code>：加载时被触发。</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li><code>&lt;loading&gt;</code> 不支持 <code>remove</code>，v0.9 版本会修复。</li>
+<li><p><code>display</code> 值为 <code>show</code> 或 <code>hide</code>。仅隐藏 <code>&lt;indicator&gt;</code>，<code>&lt;loading&gt;</code> 其他子组件依然可见，<code>loading</code> 事件仍会被触发。</p>
+<p>如果需要 <code>&lt;loading&gt;</code> hide 时隐藏文案并不再触发事件，有两种解决方法：</p>
+<ol>
+<li>修改提示文案，并在 <code>loading</code> 事件中添加判断逻辑；</li>
+<li>v0.9+ 可通过 <code>remove</code> 解决。<br>只能通过 <code>display</code> 特性进行展示和隐藏，且必须成对出现，即设置 <code>display=&quot;show&quot;</code>,必须有对应的 <code>display=&quot;hide&quot;</code>。</li>
+</ol>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">class</span>=<span class="string">"scroller"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cell"</span> <span class="attr">v-for</span>=<span class="string">"num in lists"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></span><span class="template-variable">&#123;&#123;num&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">loading</span> <span class="attr">class</span>=<span class="string">"loading"</span> @<span class="attr">loading</span>=<span class="string">"onloading"</span> <span class="attr">:display</span>=<span class="string">"showLoading"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span>Loading ...<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">loading</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const modal = weex.requireModule('modal')</span></div><div class="line"><span class="xml">  const LOADMORE_COUNT = 4</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        showLoading: 'hide',</span></div><div class="line"><span class="xml">        lists: [1, 2, 3, 4, 5]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onloading (event) &#123;</span></div><div class="line"><span class="xml">        modal.toast(&#123; message: 'loading', duration: 1 &#125;)</span></div><div class="line"><span class="xml">        this.showLoading = 'show'</span></div><div class="line"><span class="xml">        setTimeout(() =&gt; &#123;</span></div><div class="line"><span class="xml">          const length = this.lists.length</span></div><div class="line"><span class="xml">          for (let i = length; i <span class="tag">&lt; <span class="attr">length</span> + <span class="attr">LOADMORE_COUNT</span>; ++<span class="attr">i</span>) &#123;</span></span></div><div class="line"><span class="xml">            this.lists.push(i + 1)</span></div><div class="line"><span class="xml">          &#125;</span></div><div class="line"><span class="xml">          this.showLoading = 'hide'</span></div><div class="line"><span class="xml">        &#125;, 1500)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .panel &#123;</span></div><div class="line"><span class="xml">    width: 600px;</span></div><div class="line"><span class="xml">    height: 250px;</span></div><div class="line"><span class="xml">    margin-left: 75px;</span></div><div class="line"><span class="xml">    margin-top: 35px;</span></div><div class="line"><span class="xml">    margin-bottom: 35px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: #DDDDDD;</span></div><div class="line"><span class="xml">    background-color: #F5F5F5;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 50px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .loading &#123;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .indicator &#123;</span></div><div class="line"><span class="xml">    color: #888888;</span></div><div class="line"><span class="xml">    font-size: 42px;</span></div><div class="line"><span class="xml">    padding-top: 20px;</span></div><div class="line"><span class="xml">    padding-bottom: 20px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/d5c1b2336a703a6e6e47c303af41ffcd" target="_blank" rel="external">Try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/loading/" data-id="cj7tv5rjr002qt0z6gcfw7rg9" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cell" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/cell/" class="article-date">
+  <time datetime="2017-08-31T14:55:14.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/cell/">cell</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-cell-62"><a href="#60-cell-62" class="headerlink" title="&#60;cell&#62;"></a>&#60;cell&#62;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>用于定义列表中的子列表项，类似于 HTML 中的 <code>ul</code> 之于 <code>li</code>。Weex 会对 <code>&lt;cell&gt;</code> 进行高效的内存回收以达到更好的性能，该组件必须作为<code>&lt;list&gt;</code> 组件的子组件, 这是为了优化滚动时的性能。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>支持所有 Weex 的组件作为它的子组件。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li><code>keep-scroll-position {boolean}</code>: v0.11+ List 插入数据后是否保持上次滚动的位置</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p><strong>注意：</strong></p>
+<p>由于 <code>&lt;cell&gt;</code> 本身是一个容器，其布局由 <code>&lt;list&gt;</code> 进行管理，你不能给 <code>&lt;cell&gt;</code> 设定<code>flex</code>值。 <code>&lt;cell&gt;</code>的宽度等于父组件 <code>&lt;list&gt;</code> 的宽度，并且 <code>&lt;cell&gt;</code> 高度自适应，指定 <code>margin</code> 样式也不起作用。</p>
+<ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span> @<span class="attr">loadmore</span>=<span class="string">"fetch"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"10"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"cell"</span> <span class="attr">v-for</span>=<span class="string">"num in lists"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></span><span class="template-variable">&#123;&#123;num&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const modal = weex.requireModule('modal')</span></div><div class="line"><span class="xml">  const LOADMORE_COUNT = 4</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        lists: [1, 2, 3, 4, 5]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      fetch (event) &#123;</span></div><div class="line"><span class="xml">        modal.toast(&#123; message: 'loadmore', duration: 1 &#125;)</span></div><div class="line"><span class="xml">        setTimeout(() =&gt; &#123;</span></div><div class="line"><span class="xml">          const length = this.lists.length</span></div><div class="line"><span class="xml">          for (let i = length; i <span class="tag">&lt; <span class="attr">length</span> + <span class="attr">LOADMORE_COUNT</span>; ++<span class="attr">i</span>) &#123;</span></span></div><div class="line"><span class="xml">            this.lists.push(i + 1)</span></div><div class="line"><span class="xml">          &#125;</span></div><div class="line"><span class="xml">        &#125;, 800)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .panel &#123;</span></div><div class="line"><span class="xml">    width: 600px;</span></div><div class="line"><span class="xml">    height: 250px;</span></div><div class="line"><span class="xml">    margin-left: 75px;</span></div><div class="line"><span class="xml">    margin-top: 35px;</span></div><div class="line"><span class="xml">    margin-bottom: 35px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 50px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/cell/" data-id="cj7tv5rhw0015t0z62nnj0lqb" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-waterfall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/waterfall/" class="article-date">
+  <time datetime="2017-08-31T14:55:10.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/waterfall/">waterfall</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-waterfall-62-v0-11-0"><a href="#60-waterfall-62-v0-11-0" class="headerlink" title="&#60;waterfall&#62; v0.11.0+"></a>&#60;waterfall&#62; v0.11.0+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>提供瀑布流布局的组件</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>注意: 和list一样, waterfall 只支持特定类型的组件: cell, header, refresh, loading 和 fixed-position 组件.</p>
+<ul>
+<li><code>cell</code>: 瀑布流中的每个元素</li>
+<li><code>header</code>: 主要用于表示横跨多列的元素，可以通过css的position属性设置为sticky</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><strong>column-width</strong> : 描述瀑布流每一列的列宽<ul>
+<li><code>auto</code>: 意味着列宽是被其他属性所决定的(比如 column-count)</li>
+<li><code>&lt;length&gt;</code>: 最佳列宽，实际的列宽可能会更宽(需要填充剩余的空间)， 或者更窄(如果剩余空间比列宽还要小)。 该值必须大于0</li>
+</ul>
+</li>
+<li><strong>column-count</strong>: 描述瀑布流的列数<ul>
+<li><code>auto</code>: 意味着列数是被其他属性所决定的(比如 column-width)</li>
+<li><code>&lt;integer&gt;</code>: 最佳列数，column-width 和 column-count 都指定非0值， 则 column-count 代表最大列数。</li>
+</ul>
+</li>
+<li><strong>column-gap</strong>: 列与列的间隙. 如果指定了 <code>normal</code> ，则对应 <code>32</code>.</li>
+</ul>
+<p>其他支持的属性参见 <a href="http://weex.apache.org/cn/references/components/list.html" target="_blank" rel="external">List Component Attributes</a></p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><ul>
+<li>通用事件</li>
+</ul>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><p>滚动到列表某个指定项是常见需求，<code>&lt;waterfall&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code> 或者 <code>&lt;header&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="http://weex.apache.org/cn/references/modules/dom.html" target="_blank" rel="external">dom module</a> 。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>参见 <a href="http://dotwe.org/vue/7a9195643e9e8da352b0d879cdbe68c0" target="_blank" rel="external">playground waterfall example</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/waterfall/" data-id="cj7tv5rkv003mt0z655kncahz" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-list" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/list/" class="article-date">
+  <time datetime="2017-08-31T14:55:09.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/list/">list</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-list-62"><a href="#60-list-62" class="headerlink" title="&#60;list &#62;"></a>&#60;list &#62;</h2><h6 id="Updated-time-17-07-2017"><a href="#Updated-time-17-07-2017" class="headerlink" title="Updated time: 17/07/2017"></a>Updated time: 17/07/2017</h6><p><code>&lt;list&gt;</code> 组件是提供垂直列表功能的核心组件，拥有平滑的滚动和高效的内存管理，非常适合用于长列表的展示。最简单的使用方法是在 <code>&lt;list&gt;</code> 标签内使用一组由简单数组 <code>repeat</code> 生成的 <code>&lt;cell&gt;</code> 标签填充。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;list&gt;</code> 组件支持更多高级功能，由以下子组件提供：</p>
+<ul>
+<li><p><code>&lt;cell&gt;</code></p>
+<p>用于定义列表中的子列表项，类似于 HTML 中的 <code>ul</code> 之于 <code>li</code>。Weex 会对 <code>&lt;cell&gt;</code> 进行高效的内存回收以达到更好的性能。</p>
+<p>使用文档请查看 <code>&lt;cell&gt;</code>。</p>
+</li>
+<li><p><code>header</code> 0.6.1+</p>
+<p>当 <code>&lt;header&gt;</code> 到达屏幕顶部时，吸附在屏幕顶部。</p>
+</li>
+<li><p><code>&lt;refresh&gt;</code></p>
+<p>用于给列表添加下拉刷新的功能。</p>
+<p>使用文档请查看 <code>&lt;refresh&gt;</code></p>
+</li>
+<li><p><code>&lt;loading&gt;</code></p>
+<p><code>&lt;loading&gt;</code> 用法与特性和 <code>&lt;refresh&gt;</code> 类似，用于给列表添加上拉加载更多的功能。</p>
+<p>使用文档请查看 <code>&lt;loading&gt;</code></p>
+</li>
+</ul>
+<p><strong>注意：</strong></p>
+<p><code>&lt;list&gt;</code> 的子组件只能包括以上四种组件或是 <code>fix</code> 定位的组件，其他形式的组件将不能被正确的渲染。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>loadmoreoffset {number}</code>：默认值为 0，触发 <code>loadmore</code> 事件所需要的垂直偏移距离（设备屏幕底部与 <code>&lt;list&gt;</code> 底部之间的距离）。当 <code>&lt;list&gt;</code> 的滚动条滚动到足够接近 <code>&lt;list&gt;</code> 底部时将会触发<code>loadmore</code> 这个事件。</li>
+<li><p><code>offset-accuracy {number}</code> 0.11+：控制 <code>onscroll</code> 事件触发的频率，默认值为10，表示两次<code>onscroll</code>事件之间列表至少滚动了10px。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。</p>
+<img src="http://weex.apache.org/cn/references/images/list_4.jpg" class="[box-model]" width="200" height="400" title="mobile_preview">
+</li>
+<li><p><code>offset-accuracy</code>：默认值是0，触发 <code>scroll</code> 事件所需要的垂直偏移距离。</p>
+</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>loadmore</code> 0.5+：如果列表滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。</li>
+<li><p><code>scroll</code> 0.11+: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性<code>offset-accuracy</code>设置抽样率。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>contentSize {Object}</code>：列表的内容尺寸<ul>
+<li><code>width {number}</code>: 列表内容宽度</li>
+<li><code>height {number}</code>: 列表内容高度</li>
+</ul>
+</li>
+<li><code>contentOffset {Object}</code>: 列表的偏移尺寸<ul>
+<li><code>x {number}</code>: x轴上的偏移量</li>
+<li><code>y {number}</code>: y轴上的偏移量<br><a href="http://dotwe.org/bc445ede8746a31360e3607d210304c5" target="_blank" rel="external">体验一下</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h4><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="http://weex.apache.org/cn/references/modules/dom.html" target="_blank" rel="external">dom module</a> 。</p>
+<h4 id="resetLoadmore-0-9"><a href="#resetLoadmore-0-9" class="headerlink" title="resetLoadmore() 0.9+"></a>resetLoadmore() 0.9+</h4><p>在默认情况下，触发<code>loadmore</code>事件后，如果列表中内容没有发生变更，则下一次滚动到列表末尾时将不会再次触发<code>loadmore</code>事件，你可以通过调用<code>resetLoadmore()</code>方法来打破这一限制，调用该方法后，下一次滚动到列表末尾时将强制触发<code>loadmore</code>。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>node {node}</code>：指定目标节点。</li>
+<li><code>options {Object}</code>：<ul>
+<li><code>offset {number}</code>：一个到其可见位置的偏移距离，默认是 0</li>
+</ul>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li><p><strong>不允许</strong>相同方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 互相嵌套，换句话说就是嵌套的 <code>&lt;list&gt;</code>/<code>&lt;scroller&gt;</code> 必须是不同的方向。</p>
+<p>举个例子，<strong>不允许</strong>一个垂直方向的 <code>&lt;list&gt;</code> 嵌套的一个垂直方向的 <code>&lt;scroller&gt;</code> 中，但是一个垂直方向的 <code>&lt;list&gt;</code> 是可以嵌套的一个水平方向的 list 或者 <code>&lt;scroller&gt;</code> 中的。</p>
+</li>
+<li><p><code>&lt;list&gt;</code> 为根节点时无需设置高度，但是内嵌 <code>&lt;list&gt;</code> 高度必须可计算，你可以使用 <code>flex</code> 或 <code>postion</code> 将 <code>&lt;list&gt;</code> 设为一个响应式高度（例如全屏显示）, 也可以显式设置 <code>&lt;list&gt;</code> 组件的 <code>height</code> 样式。</p>
+</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">list</span> <span class="attr">class</span>=<span class="string">"list"</span> @<span class="attr">loadmore</span>=<span class="string">"fetch"</span> <span class="attr">loadmoreoffset</span>=<span class="string">"10"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">cell</span> <span class="attr">class</span>=<span class="string">"cell"</span> <span class="attr">v-for</span>=<span class="string">"num in lists"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span></span><span class="template-variable">&#123;&#123;num&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">cell</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const modal = weex.requireModule('modal')</span></div><div class="line"><span class="xml">  const LOADMORE_COUNT = 4</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        lists: [1, 2, 3, 4, 5]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      fetch (event) &#123;</span></div><div class="line"><span class="xml">        modal.toast(&#123; message: 'loadmore', duration: 1 &#125;)</span></div><div class="line"><span class="xml">        setTimeout(() =&gt; &#123;</span></div><div class="line"><span class="xml">          const length = this.lists.length</span></div><div class="line"><span class="xml">          for (let i = length; i <span class="tag">&lt; <span class="attr">length</span> + <span class="attr">LOADMORE_COUNT</span>; ++<span class="attr">i</span>) &#123;</span></span></div><div class="line"><span class="xml">            this.lists.push(i + 1)</span></div><div class="line"><span class="xml">          &#125;</span></div><div class="line"><span class="xml">        &#125;, 800)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .panel &#123;</span></div><div class="line"><span class="xml">    width: 600px;</span></div><div class="line"><span class="xml">    height: 250px;</span></div><div class="line"><span class="xml">    margin-left: 75px;</span></div><div class="line"><span class="xml">    margin-top: 35px;</span></div><div class="line"><span class="xml">    margin-bottom: 35px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 50px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/d31c85e7cd2dc54fa098e920a5376c38" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/list/" data-id="cj7tv5rjo002ot0z6a4srstwt" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/document/page/3/">&laquo; __('prev')</a><a class="page-number" href="/document/">1</a><a class="page-number" href="/document/page/2/">2</a><a class="page-number" href="/document/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/document/page/5/">5</a><a class="page-number" href="/document/page/6/">6</a><a class="page-number" href="/document/page/7/">7</a><a class="extend next" rel="next" href="/document/page/5/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

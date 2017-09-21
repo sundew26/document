@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webview | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="webviewUpdated time: 14/06/2017一系列的 &amp;lt;web&amp;gt; 组件操作接口。 比如 goBack、goForward、和 reload。webview module 与 &amp;lt;web&amp;gt; 组件共用。 示例查看 简单浏览器 ，一个结合 &amp;lt;web&amp;gt; 组件和 webview module 的示例。 APIgoBack(webElement)加载历史记录">
+<meta name="keywords" content="内建模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webview">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/09/02/webview/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="webviewUpdated time: 14/06/2017一系列的 &amp;lt;web&amp;gt; 组件操作接口。 比如 goBack、goForward、和 reload。webview module 与 &amp;lt;web&amp;gt; 组件共用。 示例查看 简单浏览器 ，一个结合 &amp;lt;web&amp;gt; 组件和 webview module 的示例。 APIgoBack(webElement)加载历史记录">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T08:05:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webview">
+<meta name="twitter:description" content="webviewUpdated time: 14/06/2017一系列的 &amp;lt;web&amp;gt; 组件操作接口。 比如 goBack、goForward、和 reload。webview module 与 &amp;lt;web&amp;gt; 组件共用。 示例查看 简单浏览器 ，一个结合 &amp;lt;web&amp;gt; 组件和 webview module 的示例。 APIgoBack(webElement)加载历史记录">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webview" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/webview/" class="article-date">
+  <time datetime="2017-09-01T16:33:15.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webview
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="webview"><a href="#webview" class="headerlink" title="webview"></a>webview</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>一系列的 <code>&lt;web&gt;</code> 组件操作接口。 比如 <code>goBack</code>、<code>goForward</code>、和 <code>reload</code>。<code>webview</code> module 与 <code>&lt;web&gt;</code> 组件共用。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>查看 <a href="http://weex.apache.org/cn/references/components/web.html" target="_blank" rel="external">简单浏览器</a> ，一个结合 <code>&lt;web&gt;</code> 组件和 <code>webview</code> module 的示例。</p>
+<h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><h4 id="goBack-webElement"><a href="#goBack-webElement" class="headerlink" title="goBack(webElement)"></a><code>goBack(webElement)</code></h4><p>加载历史记录里的前一个资源地址。</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><ul>
+<li><code>webElement {Element}</code>：<code>&lt;web&gt;</code> 组件对象。</li>
+</ul>
+<h4 id="goForward-webElement"><a href="#goForward-webElement" class="headerlink" title="goForward(webElement)"></a><code>goForward(webElement)</code></h4><p>加载历史记录里的下一个资源地址。</p>
+<h5 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h5><ul>
+<li><code>webElement {Element}</code>：<code>&lt;web&gt;</code> 组件对象。</li>
+</ul>
+<h4 id="reload-webElement"><a href="#reload-webElement" class="headerlink" title="reload(webElement)"></a><code>reload(webElement)</code></h4><p>刷新当前页面。</p>
+<h5 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h5><ul>
+<li><code>webElement {Element}</code>：<code>&lt;web&gt;</code> 组件对象。<br><em>注意事项：未来 <code>&lt;web&gt;</code> 组件的 <code>Element</code> 对象将会支持直接这些方法，届时 <code>webview</code> module 将不再需要</em></li>
+</ul>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">v-model</span>=<span class="string">"value"</span> <span class="attr">ref</span>=<span class="string">"input"</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">autofocus</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"loadURL"</span>&gt;</span>LoadURL<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"reload"</span>&gt;</span>reload<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">web</span> <span class="attr">ref</span>=<span class="string">"webview"</span> <span class="attr">:src</span>=<span class="string">"url"</span> <span class="attr">class</span>=<span class="string">"webview"</span> @<span class="attr">pagestart</span>=<span class="string">"start"</span> @<span class="attr">pagefinish</span>=<span class="string">"finish"</span> @<span class="attr">error</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;/<span class="name">web</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> webview = weex.requireModule(<span class="string">'webview'</span>)</span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    data () &#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="actionscript">        url : <span class="string">'https://m.alibaba.com'</span>,</span></div><div class="line"><span class="actionscript">        value: <span class="string">'https://m.alibaba.com'</span></span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      loadURL (event) &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">this</span>.url = <span class="keyword">this</span>.value</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'load url:'</span> + <span class="keyword">this</span>.url &#125;)</span></div><div class="line"><span class="javascript">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></div><div class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">'will go back.'</span>)</span></div><div class="line"><span class="actionscript">          modal.toast(&#123; message: <span class="string">'will go back'</span> &#125;)</span></div><div class="line"><span class="actionscript">          webview.goBack(<span class="keyword">this</span>.$refs.webview)</span></div><div class="line"><span class="undefined">        &#125;, 10000)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      reload (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'will reload webview'</span>)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'reload'</span> &#125;)</span></div><div class="line"><span class="actionscript">        webview.reload(<span class="keyword">this</span>.$refs.webview)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      start (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'pagestart'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'pagestart'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      finish (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'pagefinish'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'pagefinish'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      error (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'error'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'error'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.group</span> &#123;</span></div><div class="line"><span class="undefined">    flex-direction: row;</span></div><div class="line"><span class="undefined">    justify-content: space-around;</span></div><div class="line"><span class="undefined">    margin-top: 20px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.input</span> &#123;</span></div><div class="line"><span class="undefined">    width: 600px;</span></div><div class="line"><span class="undefined">    font-size: 36px;</span></div><div class="line"><span class="undefined">    padding-top: 15px;</span></div><div class="line"><span class="undefined">    padding-bottom: 15px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBBBBB</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.button</span> &#123;</span></div><div class="line"><span class="undefined">    width: 225px;</span></div><div class="line"><span class="undefined">    text-align: center;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#D3D3D3</span>;</span></div><div class="line"><span class="undefined">    padding-top: 15px;</span></div><div class="line"><span class="undefined">    padding-bottom: 15px;</span></div><div class="line"><span class="undefined">    margin-bottom: 30px;</span></div><div class="line"><span class="undefined">    font-size: 30px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.webview</span> &#123;</span></div><div class="line"><span class="undefined">    margin-left: 75px;</span></div><div class="line"><span class="undefined">    width: 600px;</span></div><div class="line"><span class="undefined">    height: 750px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/221ff37113a12d692a7a92a100f20162" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/webview/" data-id="cj7tv5rl0003qt0z61gx2htdi" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建模块/">内建模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/09/02/globalEvent/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          globalEvent
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/09/02/stream/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">stream</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

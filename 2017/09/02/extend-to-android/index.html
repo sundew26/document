@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>extend-to-android | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android 扩展Updated time: 17/07/2017Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。 Adapter 扩展 We">
+<meta name="keywords" content="高阶知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="extend-to-android">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/09/02/extend-to-android/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="Android 扩展Updated time: 17/07/2017Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。 Adapter 扩展 We">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T08:07:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="extend-to-android">
+<meta name="twitter:description" content="Android 扩展Updated time: 17/07/2017Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。主要分为两类扩展：  Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。 Adapter 扩展 We">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-extend-to-android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/09/02/extend-to-android/" class="article-date">
+  <time datetime="2017-09-01T16:38:39.000Z" itemprop="datePublished">2017-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      extend-to-android
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Android-扩展"><a href="#Android-扩展" class="headerlink" title="Android 扩展"></a>Android 扩展</h2><h6 id="Updated-time-17-07-2017"><a href="#Updated-time-17-07-2017" class="headerlink" title="Updated time: 17/07/2017"></a>Updated time: 17/07/2017</h6><p>Weex 提供了扩展机制，可以根据自己的业务进行定制自己的功能。<br>主要分为两类扩展：</p>
+<ul>
+<li>Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。</li>
+<li>Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。</li>
+<li>Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。</li>
+</ul>
+<h3 id="Module-扩展"><a href="#Module-扩展" class="headerlink" title="Module 扩展"></a>Module 扩展</h3><ol>
+<li>Module 扩展必须继承 WXModule 类。</li>
+<li>扩展方法必须加上 @WXModuleAnno 注解。Weex 会根据注解来判断当前方法是否要运行在 UI 线程，和当前方法是否是扩展方法。</li>
+<li>Weex是根据反射来进行调用 Module 扩展方法，所以Module中的扩展方法必须是 public 类型。</li>
+<li>同样因为是通过反射调用，Module 不能被混淆。请在混淆文件中添加代码：<code>-keep public class * extends com.taobao.weex.common.WXModule{*;}</code></li>
+<li>Module 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数</li>
+<li>完成 Module 后一定要在初始化时注册 <code>WXSDKEngine.registerModule(&quot;myModule&quot;, MyModule.class);</code> 否则会报类似错误：<code>ReportException :undefined:9:
+TypeError: Object #&lt;Object&gt; has no method &#39;printLog&#39;</code><br>示例如下：</li>
+</ol>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public <span class="class"><span class="keyword">class</span> <span class="title">MyModule</span> <span class="keyword">extends</span> <span class="title">WXModule</span> </span>&#123;</div><div class="line">  <span class="meta">@WXModuleAnno</span>(runOnUIThread = <span class="literal">true</span>)</div><div class="line">  public void printLog(<span class="type">String</span> msg) &#123;</div><div class="line">    <span class="type">Toast</span>.makeText(mWXSDKInstance.getContext(),msg,<span class="type">Toast</span>.<span class="type">LENGTH_SHORT</span>).show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>JS 调用如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">onclick</span>=<span class="string">"click"</span>&gt;</span>点击我测试<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">module</span>.exports = &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="actionscript">      click: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">        weex.requireModule(<span class="string">'myModule'</span>).printLog(<span class="string">"我是一个测试!"</span>);</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="支持-synchronous-asynchronous-回调"><a href="#支持-synchronous-asynchronous-回调" class="headerlink" title="支持 synchronous/asynchronous 回调"></a>支持 synchronous/asynchronous 回调</h4><p>你可以添加 <code>@JSMethod(uiThread = false或true)</code> 注释来选择 moudle 的回调模式。请参见以下示例：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// as sync-callback mode</span></div><div class="line"><span class="variable">@JSMethod</span> (uiThread = false)</div><div class="line">public void testSyncCall()&#123;</div><div class="line">    <span class="selector-tag">WXLogUtils</span><span class="selector-class">.d</span>("<span class="attribute">WXComponentSyncTest </span>: Thread.currentThread().getName());</div><div class="line">&#125;</div><div class="line"><span class="comment">// as async-callback mode</span></div><div class="line">@<span class="selector-tag">JSMethod</span> (uiThread = true)</div><div class="line"><span class="selector-tag">public</span> <span class="selector-tag">void</span> <span class="selector-tag">testAsyncCall</span>()&#123;</div><div class="line">    <span class="selector-tag">WXLogUtils</span><span class="selector-class">.e</span>("<span class="attribute">WXComponentASynTest </span>: Thread.currentThread().getName() );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Component-扩展"><a href="#Component-扩展" class="headerlink" title="Component 扩展"></a>Component 扩展</h3><ol>
+<li>Component 扩展类必须集成 WXComponent.</li>
+<li>Component 对应的设置属性的方法必须添加注解 @WXComponentProp(name=value(value is attr or style of dsl))</li>
+<li>Weex sdk 通过反射调用对应的方法，所以 Component 对应的属性方法必须是 public，并且不能被混淆。请在混淆文件中添加代码 <code>-keep public class * extends com.taobao.weex
+.ui.component.WXComponent{*;}</code></li>
+<li>Component 扩展的方法可以使用 int, double, float, String, Map, List 类型的参数</li>
+<li>完成 Component 后一定要在初始化时注册 <code>WXSDKEngine.registerComponent(&quot;richtext&quot;,RichText.class);</code><br>示例如下:</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RichText</span> <span class="keyword">extends</span> <span class="title">WXComponent</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">RichText</span><span class="params">(WXSDKInstance instance, WXDomObject dom, WXVContainer parent, <span class="keyword">boolean</span> isLazy)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>(instance, dom, parent, isLazy);</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initView</span><span class="params">()</span> </span>&#123;</div><div class="line">    mHost=<span class="keyword">new</span> TextView(mContext);</div><div class="line">    ((TextView)mHost).setMovementMethod(LinkMovementMethod.getInstance());</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@WXComponentProp</span>(name = <span class="string">"tel"</span>)</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTelLink</span><span class="params">(String tel)</span></span>&#123;</div><div class="line">    SpannableString spannable=<span class="keyword">new</span> SpannableString(tel);</div><div class="line">    spannable.setSpan(<span class="keyword">new</span> URLSpan(<span class="string">"tel:"</span>+tel),<span class="number">0</span>,tel.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);</div><div class="line">    ((TextView)mHost).setText(spannable);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>JS 调用如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">richText</span> <span class="attr">tel</span>=<span class="string">"12305"</span> <span class="attr">style</span>=<span class="string">"width:200;height:100"</span>&gt;</span>12305<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Adapter扩展"><a href="#Adapter扩展" class="headerlink" title="Adapter扩展"></a>Adapter扩展</h3><p>图片下载：</p>
+<p>需要时集成接口 IWXImgLoaderAdapter，实现 setImage 方法。</p>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageAdapter</span> <span class="keyword">implements</span> <span class="title">IWXImgLoaderAdapter</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ImageAdapter</span><span class="params">()</span> </span>&#123;</div><div class="line">  &#125;</div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setImage</span><span class="params">(<span class="keyword">final</span> String url, <span class="keyword">final</span> ImageView view,</span></span></div><div class="line"><span class="function"><span class="params">                       WXImageQuality quality, WXImageStrategy strategy)</span> </span>&#123;</div><div class="line">    WXSDKManager.getInstance().postOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(view==<span class="keyword">null</span>||view.getLayoutParams()==<span class="keyword">null</span>)&#123;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (TextUtils.isEmpty(url)) &#123;</div><div class="line">          view.setImageBitmap(<span class="keyword">null</span>);</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        String temp = url;</div><div class="line">        <span class="keyword">if</span> (url.startsWith(<span class="string">"//"</span>)) &#123;</div><div class="line">          temp = <span class="string">"http:"</span> + url;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (view.getLayoutParams().width &lt;= <span class="number">0</span> || view.getLayoutParams().height &lt;= <span class="number">0</span>) &#123;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        Picasso.with(WXEnvironment.getApplication())</div><div class="line">            .load(temp)</div><div class="line">            .into(view);</div><div class="line">      &#125;</div><div class="line">    &#125;,<span class="number">0</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="组件方法支持"><a href="#组件方法支持" class="headerlink" title="组件方法支持"></a>组件方法支持</h4><p>从WeexSDK 0.9.5开始，你可以定义组件方法</p>
+<ul>
+<li><p>在组件中如下声明一个组件方法</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@JSMethod</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">focus</span><span class="params">()</span></span>&#123;</div><div class="line"> <span class="comment">//method implementation</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>注册组之后，你可以在weex 文件中调用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">mycomponent</span> <span class="attr">id</span>=<span class="string">'mycomponent'</span>&gt;</span><span class="tag">&lt;/<span class="name">mycomponent</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">   <span class="built_in">module</span>.exports = &#123;</span></div><div class="line"><span class="actionscript">     created: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">       <span class="keyword">this</span>.$el(<span class="string">'mycomponent'</span>).focus();</span></div><div class="line"><span class="undefined">     &#125;</span></div><div class="line"><span class="undefined">   &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注:工程要添加依赖 <code>compile &#39;com.squareup.picasso:picasso:2.5.2&#39;</code></p>
+<h4 id="SDK混淆规则"><a href="#SDK混淆规则" class="headerlink" title="SDK混淆规则"></a>SDK混淆规则</h4><p>若要在APP中使用混淆，请在相应的配置文件中添加如下规则：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-keep <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">taobao</span>.<span class="title">weex</span>.<span class="title">WXDebugTool</span></span>&#123;*;&#125;</div><div class="line">-keep <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">taobao</span>.<span class="title">weex</span>.<span class="title">devtools</span>.<span class="title">common</span>.<span class="title">LogUtil</span></span>&#123;*;&#125;</div><div class="line">-keep public <span class="class"><span class="keyword">class</span> <span class="title">*</span> <span class="keyword">extends</span> <span class="title">com</span>.<span class="title">taobao</span>.<span class="title">weex</span>.<span class="title">ui</span>.<span class="title">component</span>.<span class="title">WXComponent</span></span>&#123;*;&#125;</div><div class="line">-keep public <span class="class"><span class="keyword">class</span> <span class="title">*</span> <span class="keyword">extends</span> <span class="title">com</span>.<span class="title">taobao</span>.<span class="title">weex</span>.<span class="title">common</span>.<span class="title">WXModule</span></span>&#123;*;&#125;</div><div class="line">-keepclassmembers <span class="class"><span class="keyword">class</span> <span class="title">**</span> </span>&#123;</div><div class="line">  <span class="meta">@com</span>.taobao.weex.ui.component.<span class="type">WXComponentProp</span> public *;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/09/02/extend-to-android/" data-id="cj7tv5ris001xt0z6u20hqcvl" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/09/02/extend-to-html5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          extend-to-html5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/09/02/extend-to-ios/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">extend-to-ios</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

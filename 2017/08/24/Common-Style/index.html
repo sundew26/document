@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Common-Style | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="通用样式Updated time: 23/08/2017所有 Weex 组件都支持以下通用样式规则。 盒模型 Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding">
+<meta name="keywords" content="通用特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Common-Style">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/24/Common-Style/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="通用样式Updated time: 23/08/2017所有 Weex 组件都支持以下通用样式规则。 盒模型 Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/css-boxmodel.png">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/css-flexbox-justify.svg">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/css-flexbox-align.jpg">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/style_1.jpg">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/style_2.jpg">
+<meta property="og:image" content="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png">
+<meta property="og:updated_time" content="2017-09-18T07:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Common-Style">
+<meta name="twitter:description" content="通用样式Updated time: 23/08/2017所有 Weex 组件都支持以下通用样式规则。 盒模型 Weex 盒模型基于 CSS 盒模型，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding">
+<meta name="twitter:image" content="http://weex.apache.org/cn/references/images/css-boxmodel.png">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Common-Style" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/24/Common-Style/" class="article-date">
+  <time datetime="2017-08-24T14:48:28.000Z" itemprop="datePublished">2017-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Common-Style
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="通用样式"><a href="#通用样式" class="headerlink" title="通用样式"></a>通用样式</h2><h6 id="Updated-time-23-08-2017"><a href="#Updated-time-23-08-2017" class="headerlink" title="Updated time: 23/08/2017"></a>Updated time: 23/08/2017</h6><p>所有 Weex 组件都支持以下通用样式规则。</p>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><img src="http://weex.apache.org/cn/references/images/css-boxmodel.png" class="[box-model]" width="377" height="340" title="图1. css盒模型">
+<p>Weex 盒模型基于 <code>CSS 盒模型</code>，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。</p>
+<p>盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding edge 与内容边界 content edge。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。</p>
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><p>Weex 对于长度值目前只支持像素值，不支持相对单位（<code>em</code>、<code>rem</code>）。</p>
+<ul>
+<li><code>width {length}</code>：，默认值 0</li>
+<li><code>height {length}</code>：，默认值 0</li>
+<li><p><code>padding {length}</code>：内边距，内容和边框之间的距离。默认值 0</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>padding-left {length}</code>：，默认值 0</li>
+<li><code>padding-right {length}</code>：，默认值 0</li>
+<li><code>padding-top {length}</code>：，默认值 0</li>
+<li><code>padding-bottom {length}</code>：，默认值 0</li>
+</ul>
+</li>
+<li><p>margin：</p>
+<p>外边距，元素和元素之间的空白距离。值类型为 length，默认值 0</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>margin-left {length}</code>：，默认值 0</li>
+<li><code>margin-right {length}</code>：，默认值 0</li>
+<li><code>margin-top {length}</code>：，默认值 0</li>
+<li><code>margin-bottom {length}</code>：，默认值 0</li>
+</ul>
+</li>
+<li><p>border：</p>
+<p>设定边框，border 目前不支持类似这样 border: 1 solid #ff0000; 的组合写法。</p>
+<p>可有如下写法：</p>
+<ul>
+<li><p>border-style：</p>
+<p>设定边框样式，值类型为 string，可选值为 solid | dashed | dotted，默认值 solid</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>border-left-style {string}</code>：可选值为 solid | dashed | dotted，默认值 solid</li>
+<li><code>border-top-style {string}</code>：可选值为 solid | dashed | dotted，默认值 solid</li>
+<li><code>border-right-style {string}</code>：可选值为 solid | dashed | dotted，默认值 solid</li>
+<li><code>border-bottom-style {string}</code>：可选值为 solid | dashed | dotted，默认值 solid</li>
+</ul>
+</li>
+<li><p><code>border-width {length}</code>：</p>
+<p>设定边框宽度，非负值, 默认值 0</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>border-left-width {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-top-width {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-right-width {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-bottom-width {length}</code>：，非负值, 默认值 0</li>
+</ul>
+</li>
+<li><p><code>border-color {color}</code>：</p>
+<p>设定边框颜色，默认值 #000000</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>border-left-color {color}</code>：，默认值 #000000</li>
+<li><code>border-top-color {color}</code>：，默认值 #000000</li>
+<li><code>border-right-color {color}</code>：，默认值 #000000</li>
+<li><code>border-bottom-color {color}</code>：，默认值 #000000</li>
+</ul>
+</li>
+<li><p><code>border-radius {length}</code>：</p>
+<p>设定圆角，默认值 0</p>
+<p>可有如下写法：</p>
+<ul>
+<li><code>border-bottom-left-radius {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-bottom-right-radius {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-top-left-radius {length}</code>：，非负值, 默认值 0</li>
+<li><code>border-top-right-radius {length}</code>：，非负值, 默认值 0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="注意：-1"><a href="#注意：-1" class="headerlink" title="注意："></a>注意：</h5><p>Weex 盒模型的 <code>box-sizing</code> 默认为 <code>border-box</code>，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。</p>
+<p>目前在 <code>&lt;image&gt;</code> 组件上尚无法只定义一个或几个角的 <code>border-radius</code>。比如你无法在这两个组件上使用 <code>border-top-left-radius</code>。该约束只对 iOS 生效，Android 并不受此限制。</p>
+<p>尽管 <code>overflow:hidden</code> 在 Android 上是默认行为，但只有下列条件都满足时，一个父 view 才会去 clip 它的子 view。这个限制只对 Android 生效，iOS 不受影响。</p>
+<p>父view是<code>div</code>, <code>a</code>, <code>cell</code>, <code>refresh</code> 或 <code>loading</code>。<br>系统版本是 Android 4.3 或更高。<br>系统版本不是 Andorid 7.0。<br>父 view 没有 <code>background-image</code> 属性或系统版本是 Android 5.0 或更高。</p>
+<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span>  <span class="attr">style</span>=<span class="string">"width: 400px; height: 200px; margin-left: 20px;"</span> <span class="attr">src</span>=<span class="string">"https://g.alicdn.com/mtb/lab-zikuan/0.0.18/weex/weex_logo_blue@3x.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h3><p>Weex 布局模型基于 CSS <code>Flexbox</code>，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。</p>
+<p>Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容纳其他元素，那么它就成为 flex 容器。需要注意的是，flexbox 的老版规范相较新版有些出入，比如是否能支持 wrapping。这些都描述在 W3C 的工作草案中了，你需要注意下新老版本之间的不同。另外，老版本只在安卓 4.4 版以下得到支持。</p>
+<h3 id="Flex-容器"><a href="#Flex-容器" class="headerlink" title="Flex 容器"></a>Flex 容器</h3><p>在 Weex 中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 <code>display: flex;</code> 属性。</p>
+<ul>
+<li><p><code>flex-direction</code>：</p>
+<p>定义了 flex 容器中 flex 成员项的排列方向。可选值为 row | column，默认值为 column</p>
+<ul>
+<li><code>column</code>：从上到下排列。</li>
+<li><code>row</code>：从左到右排列。</li>
+</ul>
+</li>
+<li><p><code>justify-content</code>：</p>
+<p>定义了 flex 容器中 flex 成员项在主轴方向上如何排列以处理空白部分。可选值为 <code>flex-start</code> | <code>flex-end</code> | <code>center</code> | <code>space-between</code>，默认值为 <code>flex-start</code>。</p>
+<p><code>flex-start</code>：是默认值，所有的 flex 成员项都排列在容器的前部；<br><code>flex-end</code>：则意味着成员项排列在容器的后部；<br><code>center</code>：即中间对齐，成员项排列在容器中间、两边留白；<br><code>space-between</code>：表示两端对齐，空白均匀地填充到 flex 成员项之间。</p>
+<img src="http://weex.apache.org/cn/references/images/css-flexbox-justify.svg" class="[css-flexbox-justify]" width="504" height="270" title="图2. justify content">
+</li>
+</ul>
+<ul>
+<li><p><code>align-items</code>：</p>
+<p>定义了 flex 容器中 flex 成员项在纵轴方向上如何排列以处理空白部分。可选值为 <code>stretch</code> | <code>flex-start</code> | <code>center</code> | <code>flex-end</code>，默认值为 <code>stretch</code>。</p>
+<ul>
+<li><code>stretch</code> 是默认值，即拉伸高度至 flex 容器的大小；</li>
+<li><code>flex-start</code> 则是上对齐，所有的成员项排列在容器顶部；</li>
+<li><code>flex-end</code> 是下对齐，所有的成员项排列在容器底部；</li>
+<li><code>center</code> 是中间对齐，所有成员项都垂直地居中显示。<img src="http://weex.apache.org/cn/references/images/css-flexbox-align.jpg" class="[css-flexbox-justify]" title="图3. justify content">
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Flex-成员项"><a href="#Flex-成员项" class="headerlink" title="Flex 成员项"></a>Flex 成员项</h3><p>flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。如果所有的成员项设置相同的值 <code>flex: 1</code>，它们将平均分配剩余空间. 如果一个成员项设置的值为 <code>flex: 2</code>，其它的成员项设置的值为 <code>flex: 1</code>，那么这个成员项所占用的剩余空间是其它成员项的2倍。</p>
+<ul>
+<li>flex {number}：值为 number 类型。</li>
+</ul>
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>一个简单的网格布局。</p>
+<img src="http://weex.apache.org/cn/references/images/style_1.jpg" class="[mobile_preview]" width="200" height="400" title="图4. 一个简单的网格布局">
+<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(v, i) in list"</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">"(text, k) in v"</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span>&gt;</span></span><span class="template-variable">&#123;&#123;text&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .item&#123;</span></div><div class="line"><span class="xml">    flex:1;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    align-items:center;</span></div><div class="line"><span class="xml">    border-width:1;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .row&#123;</span></div><div class="line"><span class="xml">    flex-direction: row;</span></div><div class="line"><span class="xml">    height:80px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  module.exports = &#123;</span></div><div class="line"><span class="xml">    data: function () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        list:[</span></div><div class="line"><span class="xml">          ['A', 'B', 'C'],</span></div><div class="line"><span class="xml">          ['D', 'E', 'F'],</span></div><div class="line"><span class="xml">          ['G', 'H', 'I']</span></div><div class="line"><span class="xml">        ]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>一个在相对于屏幕水平居中，全屏居中的 <code>&lt;div&gt;</code>。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.wrapper</span> &#123;</span></div><div class="line"><span class="undefined">    position: absolute;</span></div><div class="line"><span class="undefined">    top: 0;</span></div><div class="line"><span class="undefined">    right: 0;</span></div><div class="line"><span class="undefined">    bottom: 0;</span></div><div class="line"><span class="undefined">    left: 0;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#cccccc</span>;</span></div><div class="line"><span class="undefined">    justify-content: center;</span></div><div class="line"><span class="undefined">    align-items: center;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></div><div class="line"><span class="undefined">    width: 200px;</span></div><div class="line"><span class="undefined">    height: 200px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#fc0000</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>Weex 支持 <code>position</code> 定位，用法与 CSS position 类似。为元素设置 <code>position</code> 后，可通过 <code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code> 四个属性设置元素坐标。</p>
+<ul>
+<li><p>`position {string}``：</p>
+<p>设置定位类型。可选值为 <code>relative</code> | <code>absolute</code> | <code>fixed</code> | <code>sticky</code>，默认值为 <code>relative</code>。</p>
+<ul>
+<li><code>relative</code> 是默认值，指的是相对定位；</li>
+<li><code>absolute</code> 是绝对定位，以元素的容器作为参考系；</li>
+<li><code>fixed</code> 保证元素在页面窗口中的对应位置显示；</li>
+<li><code>sticky</code> 指的是仅当元素滚动到页面之外时，元素会固定在页面窗口的顶部。</li>
+</ul>
+</li>
+<li><code>top {number}</code>：距离上方的偏移量，默认为 0。</li>
+<li><code>bottom {number}</code>：距离下方的偏移量，默认为 0。</li>
+<li><code>left {number}</code>：距离左方的偏移量，默认为 0。</li>
+<li><code>right {number}</code>：距离右方的偏移量，默认为 0。</li>
+</ul>
+<h5 id="注意：-2"><a href="#注意：-2" class="headerlink" title="注意："></a>注意：</h5><ol>
+<li><p>Weex 目前不支持 <code>z-index</code> 设置元素层级关系，但靠后的元素层级更高，因此，对于层级高的元素，可将其排列在后面。</p>
+</li>
+<li><p>如果定位元素超过容器边界，在 Android 下，超出部分将不可见，原因在于 Android 端元素 <code>overflow</code> 默认值为 <code>hidden</code>，但目前 Android 暂不支持设置 <code>overflow: visible</code>。</p>
+</li>
+</ol>
+<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><img src="http://weex.apache.org/cn/references/images/style_2.jpg" class="[mobile_preview]" width="200" height="400" title="图5. 示例">
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">scoped</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box2"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box3"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.wrapper</span> &#123;</span></div><div class="line"><span class="undefined">    position: absolute;</span></div><div class="line"><span class="undefined">    top: 0;</span></div><div class="line"><span class="undefined">    right: 0;</span></div><div class="line"><span class="undefined">    bottom: 0;</span></div><div class="line"><span class="undefined">    left: 0;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#cccccc</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></div><div class="line"><span class="undefined">    width: 400px;</span></div><div class="line"><span class="undefined">    height: 400px;</span></div><div class="line"><span class="undefined">    position: absolute;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.box1</span> &#123;</span></div><div class="line"><span class="undefined">    top: 0;</span></div><div class="line"><span class="undefined">    left: 0;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#ff0000</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.box2</span> &#123;</span></div><div class="line"><span class="undefined">    top: 150px;</span></div><div class="line"><span class="undefined">    left: 150px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#0055dd</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.box3</span> &#123;</span></div><div class="line"><span class="undefined">    top: 300px;</span></div><div class="line"><span class="undefined">    left: 300px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#00ff49</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p>transform 属性向元素应用 2D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</p>
+<p>目前支持的 transform 声明格式:</p>
+<ul>
+<li>translate( [, ]?)</li>
+<li>translateX( )</li>
+<li>translateY( )</li>
+<li>scale( )</li>
+<li>scaleX( )</li>
+<li>scaleY( )</li>
+<li>rotate( )</li>
+<li>transform-origin: number/percentage/keyword(top/left/right/bottom)</li>
+</ul>
+<h5 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"transform"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span>Transformed element<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.transform</span> &#123;</span></div><div class="line"><span class="undefined">    align-items: center;</span></div><div class="line"><span class="undefined">    transform: translate(150px,200px) rotate(20deg);</span></div><div class="line"><span class="undefined">    transform-origin: 0 -250px;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span><span class="selector-pseudo">:red</span>;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-width</span><span class="selector-pseudo">:2px</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.title</span> &#123;<span class="attribute">font-size</span>: <span class="number">48px</span>;&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="transition-v0-16-0"><a href="#transition-v0-16-0" class="headerlink" title="transition v0.16.0+"></a>transition v0.16.0+</h3><p>现在您可以在CSS中使用transition属性来提升您应用的交互性与视觉感受，transition中包括布局动画，即LayoutAnimation，现在布局产生变化的同时也能使用transition带来的流畅动画。transition允许CSS的属性值在一定的时间区间内平滑地过渡。</p>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><ul>
+<li><code>transition-property</code>:允许过渡动画的属性名，设置不同样式transition效果的键值对，默认值为空，表示不执行任何transition，下表列出了所有合法的参数属性：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>transition过渡执行的时候是否组件的宽度参与动画</td>
+</tr>
+<tr>
+<td>height</td>
+<td>transition过渡执行的时候是否组件的高度参与动画</td>
+</tr>
+<tr>
+<td>top</td>
+<td>transition过渡执行的时候是否组件的顶部距离参与动画</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>transition过渡执行的时候是否组件的底部距离参与动画</td>
+</tr>
+<tr>
+<td>left</td>
+<td>transition过渡执行的时候是否组件的左侧距离参与动画</td>
+</tr>
+<tr>
+<td>right</td>
+<td>transition过渡执行的时候是否组件的右侧距离参与动画</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>transition过渡执行的时候是否组件的背景颜色参与动画</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>transition过渡执行的时候是否组件的不透明度参与动画</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>transition过渡执行的时候是否组件的变换类型参与动画</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><code>transition-duration</code>:指定transition过渡的持续时间 (单位是毫秒)，默认值是 0，表示没有动画效果。</p>
+</li>
+<li><p><code>transition-delay</code>:指定请求transition过渡操作到执行transition过渡之间的时间间隔 (单位是毫秒或者秒)，默认值是 0，表示没有延迟，在请求后立即执行transition过渡。</p>
+</li>
+<li><p><code>transition-timing-function</code>:描述transition过渡执行的速度曲线，用于使transition过渡更为平滑。默认值是 ease。下表列出了所有合法的属性：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ease</td>
+<td>transition过渡逐渐变慢的过渡效果</td>
+</tr>
+<tr>
+<td>ease-in</td>
+<td>transition过渡慢速开始，然后变快的过渡效果</td>
+</tr>
+<tr>
+<td>ease-out</td>
+<td>transition过渡快速开始，然后变慢的过渡效果</td>
+</tr>
+<tr>
+<td>ease-in-out</td>
+<td>transition过渡慢速开始，然后变快，然后慢速结束的过渡效果</td>
+</tr>
+<tr>
+<td>linear</td>
+<td>transition过渡以匀速变化</td>
+</tr>
+<tr>
+<td>cubic-bezier(x1, y1, x2, y2)</td>
+<td>使用三阶贝塞尔函数中自定义transition变化过程，函数的参数值必须处于 0 到 1 之间。更多关于三次贝塞尔的信息请参阅 cubic-bezier 和 Bézier curve.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">    <span class="selector-class">.panel</span> &#123;</span></div><div class="line"><span class="undefined">        margin: 10px;</span></div><div class="line"><span class="css">        <span class="selector-tag">top</span><span class="selector-pseudo">:10px</span>;</span></div><div class="line"><span class="undefined">        align-items: center;</span></div><div class="line"><span class="undefined">        justify-content: center;</span></div><div class="line"><span class="undefined">        border: solid;</span></div><div class="line"><span class="undefined">        border-radius: 10px;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">        transition-property: width,height,backgroundColor;</span></div><div class="line"><span class="css">        <span class="selector-tag">transition-duration</span>: 0<span class="selector-class">.3s</span>;</span></div><div class="line"><span class="undefined">        transition-delay: 0s;</span></div><div class="line"><span class="css">        <span class="selector-tag">transition-timing-function</span>: <span class="selector-tag">cubic-bezier</span>(0<span class="selector-class">.25</span>, 0<span class="selector-class">.1</span>, 0<span class="selector-class">.25</span>, 1<span class="selector-class">.0</span>);</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="伪类-v0-9-5"><a href="#伪类-v0-9-5" class="headerlink" title="伪类 v0.9.5+"></a>伪类 v0.9.5+</h3><p>Weex 支持四种伪类：<code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled</code></p>
+<p>所有组件都支持 <code>active</code>, 但只有 <code>input</code> 组件和 <code>textarea</code> 组件支持 <code>focus</code>, <code>enabled</code>, <code>disabled</code>。</p>
+<h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><ul>
+<li><p>同时生效的时候，优先级高覆盖优先级低</p>
+<ul>
+<li>例如：<code>input:active:enabled</code> 和 <code>input:active</code> 同时生效，前者覆盖后者</li>
+</ul>
+</li>
+<li><p>互联规则如下所示</p>
+<img src="https://img.alicdn.com/tps/TB1KGwIPpXXXXbxXFXXXXXXXXXX-400-205.png" class="[rule]" width="400" height="200" title="图6. 互联网规则">
+</li>
+</ul>
+<h5 id="示例-4"><a href="#示例-4" class="headerlink" title="示例"></a>示例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">:src</span>=<span class="string">"logoUrl"</span> <span class="attr">class</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.wrapper</span> &#123;</span></div><div class="line"><span class="undefined">    align-items: center;</span></div><div class="line"><span class="undefined">    margin-top: 120px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.title</span> &#123;</span></div><div class="line"><span class="undefined">    font-size: 48px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.logo</span> &#123;</span></div><div class="line"><span class="undefined">    width: 360px;</span></div><div class="line"><span class="undefined">    height: 82px;</span></div><div class="line"><span class="undefined">    background-color: red;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.logo</span><span class="selector-pseudo">:active</span> &#123;</span></div><div class="line"><span class="undefined">    width: 180px;</span></div><div class="line"><span class="undefined">    height: 82px;</span></div><div class="line"><span class="undefined">    background-color: green;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    props: &#123;</span></div><div class="line"><span class="undefined">      logoUrl: &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">default</span>: <span class="string">'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png'</span></span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      target: &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">default</span>: <span class="string">'World'</span></span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      update (e) &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">this</span>.target = <span class="string">'Weex'</span>;</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/df2c8f254620d6d30d0906ee75fe5b99" title="Weex Playground" target="_blank" rel="external">Try it</a></h4><h3 id="线性渐变-v0-10"><a href="#线性渐变-v0-10" class="headerlink" title="线性渐变 v0.10+"></a>线性渐变 v0.10+</h3><p>Weex 支持线性渐变背景，具体介绍可参考 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients" target="_blank" rel="external">W3C description of the gradient</a>。</p>
+<p>所有组件均支持线性渐变。</p>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p>你可以通过 <code>background-image</code> 属性创建线性渐变。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">background-image</span>: linear-gradient(to top,<span class="number">#a80077</span>,<span class="number">#66ff00</span>);</div></pre></td></tr></table></figure></p>
+<p>目前暂不支持 <code>radial-gradient</code>（径向渐变）。</p>
+<p>Weex 目前只支持两种颜色的渐变，渐变方向如下：</p>
+<ul>
+<li>to right<br>从左向右渐变</li>
+<li>to left<br>从右向左渐变</li>
+<li>to bottom<br>从上到下渐变</li>
+<li>to top<br>从下到上渐变</li>
+<li>to bottom right<br>从左上角到右下角</li>
+<li>to top left<br>从右下角到左上角</li>
+</ul>
+<h5 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h5><p><code>background-image</code> 优先级高于 <code>background-color</code>，这意味着同时设置 <code>background-image</code> 和 <code>background-color</code>，<code>background-color</code> 被覆盖。<br>不要使用 <code>background</code> 简写.</p>
+<h5 id="示例-5"><a href="#示例-5" class="headerlink" title="示例"></a>示例</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">style</span>=<span class="string">"background-color: #3a3a3a"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to right,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to left,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to bottom,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to bottom<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container1"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to top,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to top<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;align-items: center;justify-content: center"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container2"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to bottom right,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to bottom right<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container2"</span> <span class="attr">style</span>=<span class="string">"background-image:linear-gradient(to top left,#a80077,#66ff00);"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"direction"</span>&gt;</span>to top left<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.container1</span> &#123;</span></div><div class="line"><span class="undefined">    margin: 10px;</span></div><div class="line"><span class="undefined">    width: 730px;</span></div><div class="line"><span class="undefined">    height: 200px;</span></div><div class="line"><span class="undefined">    align-items: center;</span></div><div class="line"><span class="undefined">    justify-content: center;</span></div><div class="line"><span class="undefined">    border: solid;</span></div><div class="line"><span class="undefined">    border-radius: 10px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.container2</span> &#123;</span></div><div class="line"><span class="undefined">    margin: 10px;</span></div><div class="line"><span class="undefined">    width: 300px;</span></div><div class="line"><span class="undefined">    height: 300px;</span></div><div class="line"><span class="undefined">    align-items: center;</span></div><div class="line"><span class="undefined">    justify-content: center;</span></div><div class="line"><span class="undefined">    border: solid;</span></div><div class="line"><span class="undefined">    border-radius: 10px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.direction</span> &#123;</span></div><div class="line"><span class="undefined">    font-size: 40px;</span></div><div class="line"><span class="undefined">    color: white;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="阴影-box-shadow-v0-11"><a href="#阴影-box-shadow-v0-11" class="headerlink" title="阴影(box-shadow) v0.11+"></a>阴影(box-shadow) v0.11+</h3><p>Weex 支持阴影属性：<code>active</code>, <code>focus</code>, <code>disabled</code>, <code>enabled inset</code>(可选),<code>offset-x</code>,<code>offset-y</code>, <code>blur-radius</code>,<code>color</code></p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><ul>
+<li>box-shadow仅仅支持iOS</li>
+</ul>
+<h5 id="示例-6"><a href="#示例-6" class="headerlink" title="示例"></a>示例</h5><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px rgb(255, 69, 0);"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow: 20px  10px 5px rgba(255, 69, 0, 0.8);"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgba(255, 69, 0, 0.8);"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:inset 20px  10px 5px rgb(255, 69, 0);"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px black;"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"margin-top: 80px;width:400px; height:60px;background-color: #FFE4C4; box-shadow:20px  10px 5px #008B00;"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span>Hello </span><span class="template-variable">&#123;&#123;target&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .wrapper &#123;align-items: center; margin-top: 120px;&#125;</span></div><div class="line"><span class="xml">  .title &#123;font-size: 48px;&#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  module.exports = &#123;</span></div><div class="line"><span class="xml">    data: function () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        logoUrl: 'https://alibaba.github.io/weex/img/weex_logo_blue@3x.png',</span></div><div class="line"><span class="xml">        target: 'World'</span></div><div class="line"><span class="xml">      &#125;;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="其他基本样式"><a href="#其他基本样式" class="headerlink" title="其他基本样式"></a>其他基本样式</h3><ul>
+<li><code>opacity {number}</code>：取值范围为 [0, 1] 区间。默认值是 1，即完全不透明；0 是完全透明；0.5 是 50% 的透明度。</li>
+<li><code>background-color {color}</code>：设定元素的背景色，可选值为色值，支持RGB（ <code>rgb(255, 0, 0)`` ）；RGBA（</code>rgba(255, 0, 0, 0.5)<code>）；十六进制（</code>#ff0000<code>）；精简写法的十六进制（</code>#f00<code>）；色值关键字（</code>red<code>），默认值是</code>transparent` 。<br>注意： <a href="http://weex.apache.org/cn/references/color-names.html" target="_blank" rel="external">色值的关键字列表</a>。</li>
+</ul>
+<h3 id="上手样式"><a href="#上手样式" class="headerlink" title="上手样式"></a>上手样式</h3><p>如果对于样式写法需要更多上手参考，可参考每个组件的文档中，都有常见的例子可供参考。</p>
+<p>你可以按照以下步骤来规划 Weex 页面的样式。</p>
+<ol>
+<li>全局样式规划：将整个页面分割成合适的模块。</li>
+<li>flex 布局：排列和对齐页面模块。</li>
+<li>定位盒子：定位并设置偏移量。</li>
+<li>细节样式处理：增加特定的具体样式。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/24/Common-Style/" data-id="cj7tv5rfy0003t0z6va8vx78q" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/通用特性/">通用特性</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/24/Text-Style/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Text-Style
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/24/Event-Bubbling/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">Event-Bubbling</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS-APIs | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS APIsUpdated time: 19/06/2017Native 对外接口 注册 SDK 默认的 Module、Handler 和 Component 注册自定义 module、Handler 和 Component 重置 JSFramework  Handler (对应于 Android 的 Adapter) 介绍 WXImgLoaderDefaultImpl 图片下载 handl">
+<meta name="keywords" content="通用特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS-APIs">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/24/iOS-APIs/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="iOS APIsUpdated time: 19/06/2017Native 对外接口 注册 SDK 默认的 Module、Handler 和 Component 注册自定义 module、Handler 和 Component 重置 JSFramework  Handler (对应于 Android 的 Adapter) 介绍 WXImgLoaderDefaultImpl 图片下载 handl">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2017-09-18T07:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS-APIs">
+<meta name="twitter:description" content="iOS APIsUpdated time: 19/06/2017Native 对外接口 注册 SDK 默认的 Module、Handler 和 Component 注册自定义 module、Handler 和 Component 重置 JSFramework  Handler (对应于 Android 的 Adapter) 介绍 WXImgLoaderDefaultImpl 图片下载 handl">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-iOS-APIs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/24/iOS-APIs/" class="article-date">
+  <time datetime="2017-08-23T19:42:14.000Z" itemprop="datePublished">2017-08-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS-APIs
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="iOS-APIs"><a href="#iOS-APIs" class="headerlink" title="iOS APIs"></a>iOS APIs</h2><h6 id="Updated-time-19-06-2017"><a href="#Updated-time-19-06-2017" class="headerlink" title="Updated time: 19/06/2017"></a>Updated time: 19/06/2017</h6><h3 id="Native-对外接口"><a href="#Native-对外接口" class="headerlink" title="Native 对外接口"></a>Native 对外接口</h3><ul>
+<li>注册 SDK 默认的 Module、Handler 和 Component</li>
+<li>注册自定义 module、Handler 和 Component</li>
+<li>重置 JSFramework</li>
+</ul>
+<h3 id="Handler-对应于-Android-的-Adapter-介绍"><a href="#Handler-对应于-Android-的-Adapter-介绍" class="headerlink" title="Handler (对应于 Android 的 Adapter) 介绍"></a>Handler (对应于 Android 的 Adapter) 介绍</h3><ul>
+<li><p><code>WXImgLoaderDefaultImpl</code> 图片下载 handler。Weex 会把需要设置图片的 View 和 URL 透露出来，Native 端需要实现这个接口进行图片下载。WeexSDK kernel<br>本身没有提供图片下载的默认实现。</p>
+<p>接口定义如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@protocol</span> WXImgLoaderProtocol &lt;WXModuleProtocol&gt;</div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">  * <span class="doctag">@abstract</span> Creates a image download handler with a given URL</span></div><div class="line"><span class="comment">  *</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> imageUrl The URL of the image to download</span></div><div class="line"><span class="comment">  *</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> imageFrame  The frame of the image you want to set</span></div><div class="line"><span class="comment">  *</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> options : The options to be used for this download</span></div><div class="line"><span class="comment">  *</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> completedBlock : A block called once the download is completed.</span></div><div class="line"><span class="comment">  *                 image : the image which has been download to local.</span></div><div class="line"><span class="comment">  *                 error : the error which has happened in download.</span></div><div class="line"><span class="comment">  *              finished : a Boolean value indicating whether download action has finished.</span></div><div class="line"><span class="comment">  */</span></div><div class="line">- (id&lt;WXImageOperationProtocol&gt;)<span class="string">downloadImageWithURL:</span>(NSString *)url <span class="string">imageFrame:</span>(CGRect)imageFrame <span class="string">userInfo:</span>(NSDictionary *)options <span class="string">completed:</span>(<span class="keyword">void</span>(^)(UIImage *image,  NSError *error, BOOL finished))completedBlock;</div><div class="line"><span class="meta">@end</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Native-和-JS-通信"><a href="#Native-和-JS-通信" class="headerlink" title="Native 和 JS 通信"></a>Native 和 JS 通信</h3><ul>
+<li><p>自定义通知事件</p>
+<p>用于 native 自定义部分和 js 进行实践通知，比如传递下拉事件到 js，这个是在 component 基类的方法，可以直接使用</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">  * <span class="doctag">@abstract</span> Fire an event to the component and tell Javascript which value has been changed.</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> eventName 事件名称，可以在weex文件某个标签组件监听，命名规范为 onXXX</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> params 数据</span></div><div class="line"><span class="comment">  * <span class="doctag">@param</span> domChanges 发生改变的数据</span></div><div class="line"><span class="comment">  **/</span></div><div class="line">- (<span class="keyword">void</span>)<span class="string">fireEvent:</span>(NSString *)eventName <span class="string">params:</span>(NSDictionary *)params <span class="string">domChanges:</span>(NSDictionary *)domChanges</div></pre></td></tr></table></figure>
+</li>
+<li><p>事件回调</p>
+<p>多用于 Module 回调结果给 js，回调类型分为下面两种：</p>
+<ol>
+<li><p><code>WXModuleCallback</code> 为了性能考虑，该回调只能回调通知js一次，之后会被释放，多用于一次结果</p>
+</li>
+<li><p><code>WXModuleKeepAliveCallback</code> 该回调可以设置是否为多次回调类型，多次回调的场景如持续监听位置的变化，并返回给 js。</p>
+</li>
+</ol>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@implementation</span> WXEchoModule</div><div class="line"><span class="variable">@synthesize</span> weexInstance; <span class="comment">// 让该module 获得当前instance</span></div><div class="line"><span class="selector-tag">WX_EXPORT_METHOD</span>(<span class="variable">@selector</span>(<span class="attribute">echo</span>:))</div><div class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">echo</span><span class="selector-pseudo">:(NSString</span> *)<span class="selector-tag">param</span> <span class="selector-tag">callback</span><span class="selector-pseudo">:(WXModuleKeepAliveCallback)callback</span></div><div class="line">&#123;</div><div class="line">  <span class="selector-tag">callback</span>(param,ture);<span class="comment">// 此处设置true，该回调function 可以多次回调执行，可以写循环测试.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="动态适配容器"><a href="#动态适配容器" class="headerlink" title="动态适配容器"></a>动态适配容器</h3><p>WeexSDK 在 <code>WXSDKInstance</code> 类中提供了方法 <code>setFrame(CGRect)</code> 来改变容器的大小。</p>
+<p>如：在导航栏从有到无过程，需要 weexView 的变化， 可以在此时 native 调用该方法设置</p>
+<h3 id="降级使用"><a href="#降级使用" class="headerlink" title="降级使用"></a>降级使用</h3><p>Weex 处于发展阶段会增加一些新的特性和功能，但是这些新的特性和功能都必须升级 SDK 才能实现，对于没有升级的应用应该怎么处理呢？可以使用降级功能。</p>
+<p>所谓降级功能就是 Weex 无法运行的版本或者手机，可以用 Weex h5 来代替。</p>
+<p>Native 端可以通过接口 WXSDKInstance 中的 onFailed 回调进行处理，如果是主动降级则返回的错误 domain 为 <code>TemplateErrorType</code>，Native 端可以跳转到对应的 H5 页面，或者用其他的方式提示用户当前环境不支持 Weex。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/24/iOS-APIs/" data-id="cj7tv5rj10029t0z6zy5twlux" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/通用特性/">通用特性</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/24/Android-APIs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          Android-APIs
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/24/General-characteristic/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">General-characteristic</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

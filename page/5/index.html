@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+<meta property="og:type" content="website">
+<meta property="og:title" content="weex使用手册">
+<meta property="og:url" content="https://github.com/stardew516/document/page/5/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+<meta property="og:locale" content="简体中文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex使用手册">
+<meta name="twitter:description" content="整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-input" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/input/" class="article-date">
+  <time datetime="2017-08-31T14:55:05.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/input/">input</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-input-62"><a href="#60-input-62" class="headerlink" title="&#60;input&#62;"></a>&#60;input&#62;</h2><h6 id="Updated-time-19-07-2017"><a href="#Updated-time-19-07-2017" class="headerlink" title="Updated time: 19/07/2017"></a>Updated time: 19/07/2017</h6><p>Weex 内置的 <code>&lt;input&gt;</code> 组件用来创建接收用户输入字符的输入组件。 <code>&lt;input&gt;</code> 组件的工作方式因 <code>type</code> 属性的值而异，比如 <code>&lt;text&gt;</code>， <code>password</code>，<code>url</code>，<code>email</code>，<code>tel</code> 等。</p>
+<p><strong>注意：</strong></p>
+<p>此组件不支持 <code>click</code> 事件。请监听 <code>&lt;input&gt;</code> 或 <code>change</code> 来代替 <code>click</code> 事件。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>不支持子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>type {string}</code>：控件的类型，默认值是 <code>&lt;text&gt;</code>。<code>type</code> 值可以是 <code>text</code>，<code>password</code>，<code>url</code>，<code>email</code>，<code>tel</code> ，<code>number</code> 。每个 <code>type</code> 值都符合 W3C 标准。</li>
+<li><code>value {string}</code>：组件的接收到的输入字符。</li>
+<li><code>placeholder {string}</code>：提示用户可以输入什么。 提示文本不能有回车或换行。</li>
+<li><code>disabled {boolean}</code>：布尔类型的数据，表示是否支持输入。通常 <code>click</code> 事件在 <code>disabled</code> 控件上是失效的。</li>
+<li><code>autofocus {boolean}</code>：布尔类型的数据，表示是否在页面加载时控件自动获得输入焦点。</li>
+<li><code>maxlength {nubmer}</code>：v0.7一个数值类型的值，表示输入的最大长度。</li>
+<li><code>return-key-type {string}</code>：v0.11键盘返回键的类型,支持 defalut;go;next;search;send,done。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><code>placeholder-color {color}</code>：placeholder 字符颜色。默认值是 <code>#999999</code></li>
+<li><p>伪类v0.9.5+: <code>input</code> 支持以下伪类：</p>
+<ul>
+<li><code>active</code></li>
+<li><code>focus</code></li>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+</ul>
+</li>
+<li><p>text styles</p>
+<ul>
+<li>支持 <code>color</code></li>
+<li>支持 <code>font-size</code></li>
+<li>支持 <code>font-style</code></li>
+<li>支持 <code>font-weight</code></li>
+<li>支持 <code>text-align</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="http://weex.apache.org/cn/references/text-style.html" target="_blank" rel="external">文本样式</a></p>
+<ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p><code>input</code>: 输入字符的值更改。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>value</code>: 触发事件的组件；</li>
+<li><code>timestamp</code>: 事件发生时的时间戳,仅支持Android。</li>
+</ul>
+</li>
+<li><p><code>change</code>: 当用户输入完成时触发。通常在 <code>blur</code> 事件之后。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><p><code>value</code>: 触发事件的组件；</p>
+</li>
+<li><p><code>timestamp</code>: 事件发生时的时间戳,仅支持Android。</p>
+</li>
+</ul>
+</li>
+<li><p><code>focus</code>: 组件获得输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳,仅支持Android。</li>
+</ul>
+</li>
+<li><p><code>blur</code>: 组件失去输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳,仅支持Android。</li>
+</ul>
+</li>
+<li><p><code>return</code>: 键盘点击返回键。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>returnKeyType</code>: 事件发生时的返回键类型。</li>
+<li><code>value</code>: 触发事件的组件的文本；</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p><strong>注意：</strong><br>不支持 <code>click</code> 事件。 请监听 <code>input</code> 或 <code>change</code> 事件代替。</p>
+<p>支持以下通用事件：</p>
+<ul>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+</li>
+</ul>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><ul>
+<li><p><code>focus()</code> v0.9+</p>
+<p><code>focus()</code> 方法用于将 <code>input</code> 组件聚焦。</p>
+</li>
+<li><p><code>blur()</code> v0.9+</p>
+<p><code>blur()</code> 方法用于从 <code>input</code> 组件中移除焦点并关闭软键盘（如果它具有焦点）。</p>
+</li>
+<li><p><code>setSelectionRange(selectionStart,selectionEnd)</code> v0.11+设置文本选区</p>
+<ul>
+<li><code>selectionStart {number}</code>：设置文本选区的起始点</li>
+<li><code>selectionEnd {number}</code>：设置文本选区的起终点</li>
+</ul>
+</li>
+<li><p><code>getEditSelectionRange(callback[selectionStart,selectionEnd])</code> v0.11+设置文本选区</p>
+<ul>
+<li><code>selectionStart {number}</code>：获取文本选区的起始点</li>
+<li><code>selectionEnd {number}</code>：获取文本选区的起终点</li>
+</ul>
+</li>
+</ul>
+<h4 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h4><p>目前不支持 <code>this.$el(id).value = &#39;&#39;</code> 这种方式改写 input value。只支持在 <code>&lt;input&gt;</code> 组件的 <code>input</code>、<code>change</code> 事件中改写。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>oninput: </span><span class="template-variable">&#123;&#123;txtInput&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>onchange: </span><span class="template-variable">&#123;&#123;txtChange&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>onreturntype: </span><span class="template-variable">&#123;&#123;txtReturnType&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size: 40px"</span>&gt;</span>selection: </span><span class="template-variable">&#123;&#123;txtSelection&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = text<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"Input Text"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">:autofocus</span>=<span class="string">true</span> <span class="attr">value</span>=<span class="string">""</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = password<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"Input Password"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = url<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">placeholder</span>=<span class="string">"Input URL"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = email<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"Input Email"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = tel<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">placeholder</span>=<span class="string">"Input Tel"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = time<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span> <span class="attr">placeholder</span>=<span class="string">"Input Time"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = number<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">placeholder</span>=<span class="string">"Input number"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input type = date<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">placeholder</span>=<span class="string">"Input Date"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> <span class="attr">max</span>=<span class="string">"2017-12-12"</span> <span class="attr">min</span>=<span class="string">"2015-01-01"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = default<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"default"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = go<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"go"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = next<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"next"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = search<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"search"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = send<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"send"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input return-key-type = done<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">return-key-type</span>=<span class="string">"done"</span> <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> /&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>function focus() &amp; blur()<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;margin-bottom: 16px;justify-content: space-between"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Focus"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"focus"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Blur"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"blur"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">"Input1"</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">ref</span>=<span class="string">"input1"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"background-color: #286090"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span> <span class="attr">style</span>=<span class="string">"height: 80 ;padding: 20;color: #FFFFFF"</span>&gt;</span>input selection<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"flex-direction: row;margin-bottom: 16px;justify-content: space-between"</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"setRange"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"setRange"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">          <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"getSelectionRange"</span> <span class="attr">type</span>=<span class="string">"primary"</span> @<span class="attr">click</span>=<span class="string">"getSelectionRange"</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>  <span class="attr">ref</span>=<span class="string">"inputselection"</span> <span class="attr">placeholder</span>=<span class="string">"please input"</span> <span class="attr">value</span>=<span class="string">"123456789"</span>  <span class="attr">class</span>=<span class="string">"input"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">return</span> = <span class="string">"onreturn"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span>/&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .input &#123;</span></div><div class="line"><span class="xml">    font-size: 60px;</span></div><div class="line"><span class="xml">    height: 80px;</span></div><div class="line"><span class="xml">    width: 750px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .button &#123;</span></div><div class="line"><span class="xml">    font-size: 36;</span></div><div class="line"><span class="xml">    width: 200;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    padding-top: 10;</span></div><div class="line"><span class="xml">    padding-bottom: 10;</span></div><div class="line"><span class="xml">    border-width: 2;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    margin-right: 20;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  module.exports = &#123;</span></div><div class="line"><span class="xml">    data: function () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        txtInput: '',</span></div><div class="line"><span class="xml">        txtChange: '',</span></div><div class="line"><span class="xml">        txtReturnType: '',</span></div><div class="line"><span class="xml">        txtSelection:'',</span></div><div class="line"><span class="xml">        autofocus: false</span></div><div class="line"><span class="xml">      &#125;;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      ready: function () &#123;</span></div><div class="line"><span class="xml">        var self = this;</span></div><div class="line"><span class="xml">        setTimeout(function () &#123;</span></div><div class="line"><span class="xml">          self.autofocus = true;</span></div><div class="line"><span class="xml">        &#125;, 1000);</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onchange: function (event) &#123;</span></div><div class="line"><span class="xml">        this.txtChange = event.value;</span></div><div class="line"><span class="xml">        console.log('onchange', event.value);</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onreturn: function (event) &#123;</span></div><div class="line"><span class="xml">        this.txtReturnType = event.returnKeyType;</span></div><div class="line"><span class="xml">        console.log('onreturn', event.type);</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      oninput: function (event) &#123;</span></div><div class="line"><span class="xml">        this.txtInput = event.value;</span></div><div class="line"><span class="xml">        console.log('oninput', event.value);</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      focus: function () &#123;</span></div><div class="line"><span class="xml">        this.$refs['input1'].focus();</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      blur: function () &#123;</span></div><div class="line"><span class="xml">        this.$refs['input1'].blur();</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      setRange: function() &#123;</span></div><div class="line"><span class="xml">        console.log(this.$refs["inputselection"]);</span></div><div class="line"><span class="xml">        this.$refs["inputselection"].setSelectionRange(2, 6);</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      getSelectionRange: function() &#123;</span></div><div class="line"><span class="xml">        console.log(this.$refs["inputselection"]);</span></div><div class="line"><span class="xml">        var self = this;</span></div><div class="line"><span class="xml">        this.$refs["inputselection"].getSelectionRange(function(e) &#123;</span></div><div class="line"><span class="xml">          self.txtSelection = e.selectionStart +'-' + e.selectionEnd;</span></div><div class="line"><span class="xml">        &#125;);</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/3470e4d0194f3879a72d38e2ab02cc9f" target="_blank" rel="external">体验一下</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/input/" data-id="cj7tv5rjg002it0z6j6f0ubjx" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-image" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/image/" class="article-date">
+  <time datetime="2017-08-31T14:55:00.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/image/">image</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-image-62"><a href="#60-image-62" class="headerlink" title="&#60;image&#62;"></a>&#60;image&#62;</h2><h6 id="Updated-time-17-07-2017"><a href="#Updated-time-17-07-2017" class="headerlink" title="Updated time: 17/07/2017"></a>Updated time: 17/07/2017</h6><p><code>&lt;image&gt;</code> 组件用于渲染图片，并且它不能包含任何子组件。新版 Vue 2.0 中<strong>不支持</strong>用 <code>&lt;img&gt;</code> 作简写。</p>
+<p>需要注意的是，需要明确指定 <code>width</code> 和 <code>height</code>，否则图片无法显示。</p>
+<p>简单例子：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"width: 560px;height: 560px;"</span> <span class="attr">src</span>=<span class="string">"https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/1d6145d98cbdb8c66c69b4d4dcd2744d" target="_blank" rel="external">体验一下</a></p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;image&gt;</code> 组件不支持任何子组件，因此不要尝试在 <code>&lt;image&gt;</code> 组件中添加任何组件。如果需要实现 <code>background-image</code> 的效果，可以使用 <code>&lt;image&gt;</code> 组件和 <code>position</code> 定位来现实，如下面代码。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">image</span> <span class="attr">style</span>=<span class="string">"width:750px; height:750px;"</span> <span class="attr">src</span>=<span class="string">"https://img.alicdn.com/tps/TB1z.55OFXXXXcLXXXXXXXXXXXX-560-560.jpg"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">"font-size:50px; color: #ff0000"</span>&gt;</span>你好，image<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.title</span>&#123;</span></div><div class="line"><span class="css">    <span class="selector-tag">position</span><span class="selector-pseudo">:absolute</span>;</span></div><div class="line"><span class="css">    <span class="selector-tag">top</span><span class="selector-pseudo">:50</span>;</span></div><div class="line"><span class="css">    <span class="selector-tag">left</span><span class="selector-pseudo">:10</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/0a81d27b5dbc68ea3bf5f9fd56c882e8" target="_blank" rel="external">体验一下</a></p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><p><code>&lt;image&gt;</code> 组件，包含 <code>src</code> 和 <code>resize</code> 两个重要特性。</p>
+<ul>
+<li><code>src {string}</code>：定义图片链接，目前图片暂不支持本地图片。</li>
+<li><p><code>resize {string}</code>：可以控制图片的拉伸状态，值行为和 W3C 标准一致。</p>
+<p>可选值为：</p>
+<ul>
+<li><code>stretch</code>：默认值，指定图片按照容器拉伸，有可能使图片产生形变。</li>
+<li><code>cover</code>：指定图片可以被调整到容器，以使图片完全覆盖背景区域，图片有可能被剪裁。</li>
+<li><code>contain</code>：指定可以不用考虑容器的大小，把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。<br>例子：<img src="http://weex.apache.org/cn/references/images/image_1.jpg" class="[box-model]" width="200" height="400" title="mobile_preview">
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>placeholder</code>: v0.9+ <string> 当源图片下载中时显示一张占位图。</string></p>
+<p><a href="http://dotwe.org/vue/18e71ab3484bb6751ad77ff7d5195404" target="_blank" rel="external">体验一下</a></p>
+</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p>load: v0.8+：当图片加载完成时触发。目前在 Android、iOS 上支持，H5 暂不支持。<a href="http://dotwe.org/vue/e291159ac60b35dcd4994638a78d54ad" target="_blank" rel="external">示例</a></p>
+<ul>
+<li>事件对象<ul>
+<li><code>success</code>: 当图片成功加载时为<code>true</code>，否则为<code>false</code></li>
+<li><code>size</code>: 图片的原始尺寸，包含两个参数：<code>naturalWidth</code> 代表图片的原始宽度像素值，<code>naturalHeight</code> 代表图片的原始高度值。这两个参数的默认值都为<code>0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li>需要指定宽高；</li>
+<li>不支持子组件。</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">  &lt;scroller <span class="built_in">class</span>=<span class="string">"wrapper"</span> &gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"page-head"</span> &gt;</div><div class="line">      &lt;image <span class="built_in">class</span>=<span class="string">"title-bg"</span> resize=<span class="string">"cover"</span> src=<span class="string">"https://img.alicdn.com/tps/TB1dX5NOFXXXXc6XFXXXXXXXXXX-750-202.png"</span>&gt;&lt;/image&gt;</div><div class="line">      &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"title-box"</span>&gt;</div><div class="line">        &lt;<span class="built_in">text</span> <span class="built_in">class</span>=<span class="string">"title"</span>&gt;Alan Mathison Turing&lt;/<span class="built_in">text</span>&gt;</div><div class="line">      &lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;/<span class="keyword">div</span>&gt;</div><div class="line">    &lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">"article"</span>&gt;</div><div class="line">      &lt;<span class="built_in">text</span> <span class="built_in">class</span>=<span class="string">"paragraph"</span>&gt;Alan Mathison Turing ( <span class="number">23</span> June <span class="number">1912</span> – <span class="number">7</span> June <span class="number">1954</span>) was an English computer scientist, mathematician, logician, cryptanalyst <span class="keyword">and</span> theoretical biologist. He was highly influential <span class="keyword">in</span> <span class="keyword">the</span> development <span class="keyword">of</span> theoretical computer science, providing a formalisation <span class="keyword">of</span> <span class="keyword">the</span> concepts <span class="keyword">of</span> algorithm <span class="keyword">and</span> computation <span class="keyword">with</span> <span class="keyword">the</span> Turing machine, which can be considered a model <span class="keyword">of</span> a general purpose computer.Turing <span class="keyword">is</span> widely considered <span class="keyword">to</span> be <span class="keyword">the</span> father <span class="keyword">of</span> theoretical computer science <span class="keyword">and</span> artificial intelligence.&lt;/<span class="built_in">text</span>&gt;</div><div class="line">      &lt;<span class="built_in">text</span> <span class="built_in">class</span>=<span class="string">"paragraph"</span>&gt;During <span class="keyword">the</span> Second World War, Turing worked <span class="keyword">for</span> <span class="keyword">the</span> Government Code <span class="keyword">and</span> Cypher School (GC&amp;CS) <span class="keyword">at</span> Bletchley Park, Britain's codebreaking centre. For a <span class="built_in">time</span> he led Hut <span class="number">8</span>, <span class="keyword">the</span> section responsible <span class="keyword">for</span> German naval cryptanalysis. He devised a <span class="built_in">number</span> <span class="keyword">of</span> techniques <span class="keyword">for</span> speeding <span class="keyword">the</span> breaking <span class="keyword">of</span> German ciphers, including improvements <span class="keyword">to</span> <span class="keyword">the</span> pre-war Polish bombe method, an electromechanical machine <span class="keyword">that</span> could find settings <span class="keyword">for</span> <span class="keyword">the</span> Enigma machine. Turing played a pivotal role <span class="keyword">in</span> cracking intercepted coded messages <span class="keyword">that</span> enabled <span class="keyword">the</span> Allies <span class="keyword">to</span> defeat <span class="keyword">the</span> Nazis <span class="keyword">in</span> many crucial engagements, including <span class="keyword">the</span> Battle <span class="keyword">of</span> <span class="keyword">the</span> Atlantic; <span class="keyword">it</span> has been estimated <span class="keyword">that</span> this work shortened <span class="keyword">the</span> war <span class="keyword">in</span> Europe <span class="keyword">by</span> more than two years <span class="keyword">and</span> saved <span class="keyword">over</span> fourteen million lives.&lt;/<span class="built_in">text</span>&gt;</div><div class="line">      &lt;<span class="built_in">text</span> <span class="built_in">class</span>=<span class="string">"paragraph"</span>&gt;After <span class="keyword">the</span> war, he worked <span class="keyword">at</span> <span class="keyword">the</span> National Physical Laboratory, <span class="keyword">where</span> he designed <span class="keyword">the</span> ACE, among <span class="keyword">the</span> <span class="keyword">first</span> designs <span class="keyword">for</span> a stored-program computer. In <span class="number">1948</span> Turing joined Max Newman's Computing Machine Laboratory <span class="keyword">at</span> <span class="keyword">the</span> Victoria University <span class="keyword">of</span> Manchester, <span class="keyword">where</span> he helped develop <span class="keyword">the</span> Manchester computers <span class="keyword">and</span> became interested <span class="keyword">in</span> mathematical biology. He wrote a paper <span class="keyword">on</span> <span class="keyword">the</span> chemical basis <span class="keyword">of</span> morphogenesis, <span class="keyword">and</span> predicted oscillating chemical reactions such <span class="keyword">as</span> <span class="keyword">the</span> Belousov–Zhabotinsky reaction, <span class="keyword">first</span> observed <span class="keyword">in</span> <span class="keyword">the</span> <span class="number">1960</span>s.&lt;/<span class="built_in">text</span>&gt;</div><div class="line">      &lt;<span class="built_in">text</span> <span class="built_in">class</span>=<span class="string">"paragraph"</span>&gt;Turing was prosecuted <span class="keyword">in</span> <span class="number">1952</span> <span class="keyword">for</span> homosexual acts, when <span class="keyword">by</span> <span class="keyword">the</span> Labouchere Amendment, <span class="string">"gross indecency"</span> was still criminal <span class="keyword">in</span> <span class="keyword">the</span> UK. He accepted chemical castration treatment, <span class="keyword">with</span> DES, <span class="keyword">as</span> an alternative <span class="keyword">to</span> prison. Turing died <span class="keyword">in</span> <span class="number">1954</span>, <span class="number">16</span> days <span class="keyword">before</span> his <span class="number">42</span>nd birthday, <span class="keyword">from</span> cyanide poisoning. An inquest determined his death <span class="keyword">as</span> suicide, <span class="keyword">but</span> <span class="keyword">it</span> has been noted <span class="keyword">that</span> <span class="keyword">the</span> known evidence <span class="keyword">is</span> also consistent <span class="keyword">with</span> accidental poisoning. In <span class="number">2009</span>, following an Internet campaign, British Prime Minister Gordon Brown made an official public apology <span class="keyword">on</span> behalf <span class="keyword">of</span> <span class="keyword">the</span> British government <span class="keyword">for</span> <span class="string">"the appalling way he was treated."</span> Queen Elizabeth II granted him a posthumous pardon <span class="keyword">in</span> <span class="number">2013.</span>&lt;/<span class="built_in">text</span>&gt;</div><div class="line">    &lt;/<span class="keyword">div</span>&gt;</div><div class="line">  &lt;/scroller&gt;</div><div class="line">&lt;/template&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  .page-head &#123;</div><div class="line">    width: <span class="number">750</span>px;</div><div class="line">    height: <span class="number">200</span>px;</div><div class="line">  &#125;</div><div class="line">  .title-bg &#123;</div><div class="line">    width: <span class="number">750</span>px;</div><div class="line">    height: <span class="number">200</span>px;</div><div class="line">  &#125;</div><div class="line">  .title-box &#123;</div><div class="line">    width: <span class="number">750</span>px;</div><div class="line">    height: <span class="number">200</span>px;</div><div class="line">    justify-content: center;</div><div class="line">    align-items: center;</div><div class="line">    position: absolute;</div><div class="line">    top: <span class="number">0</span>;</div><div class="line">    right: <span class="number">0</span>;</div><div class="line">    bottom: <span class="number">0</span>;</div><div class="line">    left: <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  .title &#123;</div><div class="line">    color: <span class="comment">#ffffff;</span></div><div class="line">    font-size: <span class="number">32</span>px;</div><div class="line">    font-weight: bold;</div><div class="line">  &#125;</div><div class="line">  .article &#123;</div><div class="line">    padding: <span class="number">20</span>px;</div><div class="line">  &#125;</div><div class="line">  .<span class="built_in">paragraph</span>&#123;</div><div class="line">    margin-bottom: <span class="number">15</span>px;</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/e2122bc245beafb0348d79bfd1274904" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/image/" data-id="cj7tv5rj8002bt0z68bl2zl4n" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-div" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/div/" class="article-date">
+  <time datetime="2017-08-31T14:54:54.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/div/">div</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-div-62"><a href="#60-div-62" class="headerlink" title="&#60;div&#62;"></a>&#60;div&#62;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;div&gt;</code> 组件是用于包装其它组件的最基本容器。支持所有的通用样式、特性、<code>flexbox</code> 布局。其类似于 HTML 的 <code>&lt;div&gt;</code> 容器，但<strong>不能</strong>直接在里面添加文本（字符串），如果要展示文本，应该使用 <code>&lt;text&gt;</code>组件。历史版本中，<code>&lt;div&gt;</code> 别名是 <code>&lt;container&gt;</code>，目前<strong>已经弃用</strong>。</p>
+<p><strong>注意：</strong></p>
+<p><code>&lt;div&gt;</code> 嵌套层级不可过深，否则容易引起性能问题，建议控制在 <code>10</code> 层以内。</p>
+<p>一个简单例子：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.text</span> &#123;</span></div><div class="line"><span class="undefined">  font-size: 70px;</span></div><div class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#ff0000</span></span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/ea4f528a0b381640b77ba03fcc69a90a" target="_blank" rel="external">体验一下</a><br><img src="http://weex.apache.org/cn/references/images/div_1.jpg" class="[box-model]" width="200" height="400" title="mobile_preview"></p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;div&gt;</code> 基本容器组件，因此支持包括 <code>&lt;div&gt;</code> 在内的任何组件作为自己的子组件。因此，在写一个组件时，推荐外层使用 <code>&lt;div&gt;</code> 作为根容器。</p>
+<h4 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h4><p><code>&lt;div&gt;</code> 支持所有通用样式：</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p><code>&lt;div&gt;</code> 支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li><p><strong>不能</strong>直接在 <code>&lt;div&gt;</code> 中添加文本。</p>
+<p>错误示例，“Hello World!” 无法被正常渲染。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-class">.text</span> &#123;</span></div><div class="line"><span class="undefined">  font-size: 70;</span></div><div class="line"><span class="css">  <span class="selector-tag">color</span>: <span class="selector-id">#ff0000</span></span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/541f016de379c8764ddcdd9da0cabc24" target="_blank" rel="external">体验一下</a></p>
+</li>
+<li><p><code>&lt;div&gt;</code> 在 native 中不可滚动，即使显式设置高度也一样。</p>
+<p><a href="http://dotwe.org/vue/6795753d1a51662b8a7282b129dc7ddf" target="_blank" rel="external">错误示例</a></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.box</span> &#123;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBB</span>;</span></div><div class="line"><span class="undefined">    width: 250px;</span></div><div class="line"><span class="undefined">    height: 250px;</span></div><div class="line"><span class="undefined">    margin-top: 250px;</span></div><div class="line"><span class="undefined">    margin-left: 250px;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#EEE</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/edfbd1806508cb86254b03dc0b8e28ac" target="_blank" rel="external">try it</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/div/" data-id="cj7tv5rii001pt0z6xnx6ln9y" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-web" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/web/" class="article-date">
+  <time datetime="2017-08-31T14:54:48.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/web/">web</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="60-web-62-v0-5"><a href="#60-web-62-v0-5" class="headerlink" title="&#60;web&#62;  v0.5+"></a>&#60;web&#62;  v0.5+</h3><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p>使用 <code>&lt;web&gt;</code> 组件在 Weex 页面中嵌入一张网页内容。<code>src</code> 属性用来指定资源地址。你也可以使用 <code>webview module</code> 来控制 <code>web</code> 的行为，比如前进、后退和重载。可以在这里查看 <a href="http://weex.apache.org/cn/references/modules/webview.html" target="_blank" rel="external"><code>webview</code> module</a>。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>不支持子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>src {string}</code>：此特性指定嵌入的 web 页面 url。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>通用样式：不支持部分盒模型样式，支持列表如下：</p>
+<ul>
+<li><code>width</code></li>
+</ul>
+<p>组件的宽度，默认值是0。这个样式定义必须指定数值。</p>
+<ul>
+<li><code>height</code></li>
+</ul>
+<p>组件的高度，默认值是0。这个样式定义必须指定数值。</p>
+<ul>
+<li><p><code>flexbox</code> 布局</p>
+</li>
+<li><p><code>position</code></p>
+</li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>pagestart</code>: <code>&lt;web&gt;</code> 组件开始加载时发送此事件消息。</li>
+<li><code>pagefinish</code>: <code>&lt;web&gt;</code> 组件完成加载时发送此事件消息。</li>
+<li><p><code>error</code>: 如果 <code>&lt;web&gt;</code> 组件加载出现错误，会发送此事件消息。</p>
+</li>
+<li><p>通用事件</p>
+<p>支持以下通用事件：</p>
+<ul>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>注意：</strong></p>
+<p>不支持 <code>click</code> 事件。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>我们用一个简易浏览器示例，来展示如何使用 <code>&lt;web&gt;</code> 组件和 <code>webview module</code>。 查看 webview module。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"input"</span> <span class="attr">v-model</span>=<span class="string">"value"</span> <span class="attr">ref</span>=<span class="string">"input"</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">autofocus</span>=<span class="string">"false"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"loadURL"</span>&gt;</span>LoadURL<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"reload"</span>&gt;</span>reload<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">web</span> <span class="attr">ref</span>=<span class="string">"webview"</span> <span class="attr">:src</span>=<span class="string">"url"</span> <span class="attr">class</span>=<span class="string">"webview"</span> @<span class="attr">pagestart</span>=<span class="string">"start"</span> @<span class="attr">pagefinish</span>=<span class="string">"finish"</span> @<span class="attr">error</span>=<span class="string">"error"</span>&gt;</span><span class="tag">&lt;/<span class="name">web</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> webview = weex.requireModule(<span class="string">'webview'</span>)</span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    data () &#123;</span></div><div class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></div><div class="line"><span class="actionscript">        url : <span class="string">'https://m.alibaba.com'</span>,</span></div><div class="line"><span class="actionscript">        value: <span class="string">'https://m.alibaba.com'</span></span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;,</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      loadURL (event) &#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">this</span>.url = <span class="keyword">this</span>.value</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'load url:'</span> + <span class="keyword">this</span>.url &#125;)</span></div><div class="line"><span class="javascript">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></div><div class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">'will go back.'</span>)</span></div><div class="line"><span class="actionscript">          modal.toast(&#123; message: <span class="string">'will go back'</span> &#125;)</span></div><div class="line"><span class="actionscript">          webview.goBack(<span class="keyword">this</span>.$refs.webview)</span></div><div class="line"><span class="undefined">        &#125;, 10000)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      reload (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'will reload webview'</span>)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'reload'</span> &#125;)</span></div><div class="line"><span class="actionscript">        webview.reload(<span class="keyword">this</span>.$refs.webview)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      start (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'pagestart'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'pagestart'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      finish (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'pagefinish'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'pagefinish'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      error (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'error'</span>, event)</span></div><div class="line"><span class="actionscript">        modal.toast(&#123; message: <span class="string">'error'</span> &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.group</span> &#123;</span></div><div class="line"><span class="undefined">    flex-direction: row;</span></div><div class="line"><span class="undefined">    justify-content: space-around;</span></div><div class="line"><span class="undefined">    margin-top: 20px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.input</span> &#123;</span></div><div class="line"><span class="undefined">    width: 600px;</span></div><div class="line"><span class="undefined">    font-size: 36px;</span></div><div class="line"><span class="undefined">    padding-top: 15px;</span></div><div class="line"><span class="undefined">    padding-bottom: 15px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBBBBB</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.button</span> &#123;</span></div><div class="line"><span class="undefined">    width: 225px;</span></div><div class="line"><span class="undefined">    text-align: center;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#D3D3D3</span>;</span></div><div class="line"><span class="undefined">    padding-top: 15px;</span></div><div class="line"><span class="undefined">    padding-bottom: 15px;</span></div><div class="line"><span class="undefined">    margin-bottom: 30px;</span></div><div class="line"><span class="undefined">    font-size: 30px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.webview</span> &#123;</span></div><div class="line"><span class="undefined">    margin-left: 75px;</span></div><div class="line"><span class="undefined">    width: 600px;</span></div><div class="line"><span class="undefined">    height: 750px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/221ff37113a12d692a7a92a100f20162" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/web/" data-id="cj7tv5rl2003st0z6h6ytnxyn" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-video" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/video/" class="article-date">
+  <time datetime="2017-08-31T14:54:44.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/video/">video</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-video-62-v0-6-1"><a href="#60-video-62-v0-6-1" class="headerlink" title="&#60;video&#62; v0.6.1+"></a>&#60;video&#62; v0.6.1+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;video&gt;</code> 组件可以让我们在 Weex 页面中嵌入视频内容。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><ul>
+<li><code>&lt;text&gt;</code> 是唯一合法的子组件。</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>src {string}</code>：内嵌的视频指向的URL</li>
+<li><code>play-status {string}</code>：可选值为 <code>play</code> | <code>pause</code>，用来控制视频的播放状态，<code>play</code> 或者 <code>pause</code>，默认值是 <code>pause</code>。</li>
+<li><code>auto-play {boolean}</code>：可选值为 <code>true</code> | <code>false</code>，当页面加载初始化完成后，用来控制视频是否立即播放，默认值是 <code>false</code>。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>start</code>：当 playback 的状态是 Playing 时触发</li>
+<li><code>pause</code>：当 playback 的状态是 Paused 时触发</li>
+<li><code>finish</code>：当 playback 的状态是 Finished 时触发</li>
+<li><code>fail</code>：当 playback 状态是 Failed 时触发</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">video</span> <span class="attr">class</span>=<span class="string">"video"</span> <span class="attr">:src</span>=<span class="string">"src"</span> <span class="attr">autoplay</span> <span class="attr">controls</span></span></span></div><div class="line"><span class="xml">      @start="onstart" @pause="onpause" @finish="onfinish" @fail="onfail"&gt;<span class="tag">&lt;/<span class="name">video</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span>state: </span><span class="template-variable">&#123;&#123;state&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .video &#123;</span></div><div class="line"><span class="xml">    width: 630px;</span></div><div class="line"><span class="xml">    height: 350px;</span></div><div class="line"><span class="xml">    margin-top: 60px;</span></div><div class="line"><span class="xml">    margin-left: 60px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .info &#123;</span></div><div class="line"><span class="xml">    margin-top: 40px;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        state: '----',</span></div><div class="line"><span class="xml">        src:'http://flv2.bn.netease.com/videolib3/1611/01/XGqSL5981/SD/XGqSL5981-mobile.mp4'</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods:&#123;</span></div><div class="line"><span class="xml">      onstart (event) &#123;</span></div><div class="line"><span class="xml">        this.state = 'onstart'</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onpause (event) &#123;</span></div><div class="line"><span class="xml">        this.state = 'onpause'</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onfinish (event) &#123;</span></div><div class="line"><span class="xml">        this.state = 'onfinish'</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      onfail (event) &#123;</span></div><div class="line"><span class="xml">        this.state = 'onfinish'</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/01d3d27073a471bb234b1a76e130d197" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/video/" data-id="cj7tv5rkw003ot0z6xaxm3h67" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-textarea" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/textarea/" class="article-date">
+  <time datetime="2017-08-31T14:54:30.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/textarea/">textarea</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-textarea-62-v0-8"><a href="#60-textarea-62-v0-8" class="headerlink" title="&#60;textarea&#62;v0.8+"></a>&#60;textarea&#62;v0.8+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>textarea</code> 是 Weex 内置的一个组件，用于用户交互，接受用户输入数据。 可以认为是允许多行的 <code>&lt;input&gt;</code></p>
+<p><strong>Notes:</strong> <code>&lt;textarea&gt;</code>支持 <code>&lt;input&gt;</code> 支持的所有的事件。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>textarea</code> 组件不支持子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>value {string}</code>：组件的接收到的输入字符。</li>
+<li><code>placeholder {string}</code>：提示用户可以输入什么。 提示文本不能有回车或换行。</li>
+<li><code>disabled {boolean}</code>：表示是否支持输入。通常 <code>click</code> 事件在 <code>disabled</code> 控件上是失效的。</li>
+<li><code>autofocus {boolean}</code>：表示是否在页面加载时控件自动获得输入焦点。</li>
+<li><code>rows {number}</code>：接收 number 类型的数据，指定组件的高度，默认值是 2</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p>伪类v0.9.5+: <code>textarea</code> 支持以下伪类：</p>
+<ul>
+<li><code>active</code></li>
+<li><code>focus</code></li>
+<li><code>disabled</code></li>
+<li><code>enabled</code></li>
+</ul>
+</li>
+<li><p>text styles</p>
+<ul>
+<li>支持 <code>color</code></li>
+<li>支持 <code>font-size</code></li>
+<li>支持 <code>font-style</code></li>
+<li>支持 <code>font-weight</code></li>
+<li>支持 <code>text-align</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="http://weex.apache.org/cn/references/text-style.html" target="_blank" rel="external">文本样式</a></p>
+<ul>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p><code>input</code>: 输入字符的值更改。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>value</code>: 触发事件的组件；</li>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p><code>change</code>: 当用户输入完成时触发。通常在 <code>blur</code> 事件之后。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><p><code>value</code>: 触发事件的组件；</p>
+</li>
+<li><p><code>timestamp</code>: 事件发生时的时间戳。</p>
+</li>
+</ul>
+</li>
+<li><p><code>focus</code>: 组件获得输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p><code>blur</code>: 组件失去输入焦点。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>timestamp</code>: 事件发生时的时间戳。</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p><strong>注意：</strong><br>不支持 <code>click</code> 事件。 请监听 <code>input</code> 或 <code>change</code> 事件代替。</p>
+<p>  支持以下通用事件：</p>
+<ul>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<p>示例<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"textarea"</span> @<span class="attr">input</span>=<span class="string">"oninput"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span> @<span class="attr">focus</span>=<span class="string">"onfocus"</span> @<span class="attr">blur</span>=<span class="string">"onblur"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="actionscript">  <span class="keyword">const</span> modal = weex.requireModule(<span class="string">'modal'</span>)</span></div><div class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></div><div class="line"><span class="undefined">    methods: &#123;</span></div><div class="line"><span class="undefined">      oninput (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'oninput:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`oninput: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onchange (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onchange:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`onchange: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onfocus (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onfocus:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`onfocus: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;,</span></div><div class="line"><span class="undefined">      onblur (event) &#123;</span></div><div class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'onblur:'</span>, event.value)</span></div><div class="line"><span class="undefined">        modal.toast(&#123;</span></div><div class="line"><span class="javascript">          message: <span class="string">`input blur: <span class="subst">$&#123;event.value&#125;</span>`</span>,</span></div><div class="line"><span class="undefined">          duration: 0.8</span></div><div class="line"><span class="undefined">        &#125;)</span></div><div class="line"><span class="undefined">      &#125;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.textarea</span> &#123;</span></div><div class="line"><span class="undefined">    font-size: 50px;</span></div><div class="line"><span class="undefined">    width: 650px;</span></div><div class="line"><span class="undefined">    margin-top: 50px;</span></div><div class="line"><span class="undefined">    margin-left: 50px;</span></div><div class="line"><span class="undefined">    padding-top: 20px;</span></div><div class="line"><span class="undefined">    padding-bottom: 20px;</span></div><div class="line"><span class="undefined">    padding-left: 20px;</span></div><div class="line"><span class="undefined">    padding-right: 20px;</span></div><div class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#666666</span>;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#41B883</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/a1877866e8b91ffa1e6ea9bc66c200fa" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/textarea/" data-id="cj7tv5rkp003it0z6dl0rzicr" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-text" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/text/" class="article-date">
+  <time datetime="2017-08-31T14:54:24.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/text/">text</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-text-62"><a href="#60-text-62" class="headerlink" title="&#60;text&#62;"></a>&#60;text&#62;</h2><h6 id="Updated-time-10-08-2017"><a href="#Updated-time-10-08-2017" class="headerlink" title="Updated time: 10/08/2017"></a>Updated time: 10/08/2017</h6><p><code>&lt;text&gt;</code> 是 Weex 内置的组件，用来将文本按照指定的样式渲染出来。<code>&lt;text&gt;</code> 只能包含文本值，你可以使用 <code>&#123;{}}</code> 标记插入变量值作为文本内容。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>此组件不支持子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>value {string}</code>: 组件的值，与 <code>&lt;text&gt;</code> 标签中的文本内容相同。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p><code>lines {number}</code>: 指定文本行数。默认值是 <code>0</code> 代表不限制行数。</p>
+</li>
+<li><p>text styles: 查看 <a href="http://weex.apache.org/cn/references/text-style.html" target="_blank" rel="external">文本样式</a></p>
+<ul>
+<li>支持 <code>color</code> 样式.</li>
+<li>支持 <code>font-size</code> 样式. iOS默认值：<code>32</code>，Android：不同设备不同，H5 默认值：<code>32</code>.</li>
+<li>支持 <code>font-style</code> 样式.</li>
+<li>支持 <code>font-weight</code> 样式.</li>
+<li>支持 <code>text-align</code> 样式.</li>
+<li>支持 <code>text-decoration</code> 样式.</li>
+<li>支持 <code>text-overflow</code> 样式.</li>
+<li>支持 <code>line-height</code>样式0.6.1+</li>
+<li>不支持 <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> 这些为子节点设置的属性，并且<code>&lt;text&gt;</code>没有子节点。</li>
+</ul>
+</li>
+<li><p>通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p>通用事件<br>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li><code>&lt;text&gt;</code> 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。</li>
+</ol>
+<h3 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h3><p><code>支持版本:v0.12.0</code></p>
+<p>支持ttf和woff字体格式的自定义字体, 可以通过调用 <code>dom</code> module 里面的 <a href="http://weex.apache.org/cn/references/modules/dom.html#addRule" target="_blank" rel="external">addRule</a>方法, 构建自定义的<code>font-family</code>使用, addRule 建议在<code>mounted</code>时候调用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">'flex-direction:row;margin-top:50px'</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:50;color:green'</span>&gt;</span>&amp;#xe614;&amp;#xe612;&amp;#xe613;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:50;'</span>&gt;</span>&amp;#xe614;&amp;#xe612;&amp;#xe613;&amp;#xe61d;&amp;#xe714;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:60;color:blue'</span>&gt;</span>&amp;#xe711;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont4;font-size:60;color:green'</span>&gt;</span>&amp;#xe71c;&amp;#xe60b;<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">    <span class="built_in">module</span>.exports = &#123;</span></div><div class="line"><span class="actionscript">        mounted: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></div><div class="line"><span class="actionscript">        <span class="keyword">var</span> domModule = weex.requireModule(<span class="string">'dom'</span>);</span></div><div class="line"><span class="actionscript">        <span class="comment">//目前支持ttf、woff文件，不支持svg、eot类型,moreItem at http://www.iconfont.cn/</span></span></div><div class="line"><span class="actionscript">        domModule.addRule(<span class="string">'fontFace'</span>, &#123;</span></div><div class="line"><span class="actionscript">            <span class="string">'fontFamily'</span>: <span class="string">"iconfont2"</span>,</span></div><div class="line"><span class="actionscript">            <span class="string">'src'</span>: <span class="string">"url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"</span></span></div><div class="line"><span class="undefined">        &#125;);</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><a href="http://dotwe.org/vue/6ece072d0abd9a9e5718eb26bd5719f8" target="_blank" rel="external">try it</a></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">lines</span>=<span class="string">"3"</span>&gt;</span>Weex 是一套简单易用的跨平台开发方案，能以 Web 的开发体验构建高性能、可扩展的原生应用。Vue 是一个轻量并且功能强大的渐进式前端框架。<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"panel"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">lines</span>=<span class="string">"3"</span>&gt;</span>Weex is an cross-platform development solution that builds high-performance, scalable native applications with a Web development experience. Vue is a lightweight and powerful progressive front-end framework. <span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.wrapper</span> &#123;</span></div><div class="line"><span class="undefined">    flex-direction: column;</span></div><div class="line"><span class="undefined">    justify-content: center;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.panel</span> &#123;</span></div><div class="line"><span class="undefined">    width: 600px;</span></div><div class="line"><span class="undefined">    margin-left: 75px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#BBB</span>;</span></div><div class="line"><span class="undefined">    padding-top: 15px;</span></div><div class="line"><span class="undefined">    padding-bottom: 15px;</span></div><div class="line"><span class="undefined">    padding-left: 15px;</span></div><div class="line"><span class="undefined">    padding-right: 15px;</span></div><div class="line"><span class="undefined">    margin-bottom: 30px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.text</span> &#123;</span></div><div class="line"><span class="undefined">    lines: 3;</span></div><div class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#666666</span>;</span></div><div class="line"><span class="undefined">    font-size: 32px;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/154e20171d350a081fba7878c53cf7d2" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/text/" data-id="cj7tv5rkr003kt0z66rzfgytf" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-switch" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/switch/" class="article-date">
+  <time datetime="2017-08-31T14:54:16.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/switch/">switch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-switch-gt-v0-6-1"><a href="#lt-switch-gt-v0-6-1" class="headerlink" title="&lt;switch&gt; v0.6.1+"></a>&lt;switch&gt; v0.6.1+</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;switch&gt;</code> 是 Weex 的内置组件，用来创建与 iOS 一致样式的按钮。例如，在 iPhone 中的设置应用中的飞行模式按钮就是一个 switch 按钮。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;switch&gt;</code> 组件不支持任何子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>checked {boolean}</code>：默认值为 <code>false</code>，表明按钮是否开启 is on or not.</li>
+<li><code>disabled {boolean}</code>：默认值为 <code>false</code>，表明是否激活按钮</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>值得注意的是，在这个组件上，有些样式组件属性<strong>不能</strong>使用，它们是：</p>
+<ul>
+<li><code>width</code></li>
+<li><code>height</code></li>
+<li><code>min-width</code></li>
+<li><code>min-height</code></li>
+<li><code>margin</code></li>
+<li><code>padding</code></li>
+<li><code>border</code></li>
+</ul>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><p>如果 <code>&lt;switch&gt;</code> 的容器没有设置为 <code>align-items：flex-start</code>，则 Android 中的开关将被拉伸。</p>
+<ul>
+<li><p>通用样式</p>
+<ul>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><p><code>change</code>：改变开关状态时触发该事件。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>value</code>: 组件布尔值真或假。</li>
+<li><code>timestamp</code>: 事件的时间戳。</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>normal<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>checked<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">checked</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>disabled<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">disabled</span>=<span class="string">"true"</span> <span class="attr">checked</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> <span class="attr">disabled</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"example"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"label"</span>&gt;</span>onchange<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">switch</span> @<span class="attr">change</span>=<span class="string">"onchange"</span>&gt;</span><span class="tag">&lt;/<span class="name">switch</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"info"</span>&gt;</span></span><span class="template-variable">&#123;&#123;checked&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        checked: false</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onchange (event) &#123;</span></div><div class="line"><span class="xml">        console.log(`onchage, value: $&#123;event.value&#125;`)</span></div><div class="line"><span class="xml">        this.checked = event.value</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .example &#123;</span></div><div class="line"><span class="xml">    flex-direction: row;</span></div><div class="line"><span class="xml">    justify-content: flex-start;</span></div><div class="line"><span class="xml">    margin-top: 60px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .label &#123;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    width: 350px;</span></div><div class="line"><span class="xml">    color: #666;</span></div><div class="line"><span class="xml">    text-align: right;</span></div><div class="line"><span class="xml">    margin-right: 20px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .info &#123;</span></div><div class="line"><span class="xml">    font-size: 30px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    color: #BBB;</span></div><div class="line"><span class="xml">    margin-left: 10px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/06b1d740fb69d04f9ebe9eaf730974d1" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/switch/" data-id="cj7tv5rko003gt0z6ov9l2hj5" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-indicator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/indicator/" class="article-date">
+  <time datetime="2017-08-31T14:54:08.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/indicator/">indicator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-indicator-gt"><a href="#lt-indicator-gt" class="headerlink" title="&lt;indicator&gt;"></a>&lt;indicator&gt;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;indicator&gt;</code> 组件用于显示轮播图指示器效果，必须充当 <code>&lt;slider&gt;</code> 组件的子组件使用。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p><code>&lt;indicator&gt;</code> 组件没有任何子组件。</p>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><ul>
+<li><p><code>&lt;indicator&gt;</code> 组件有一些私有样式，如下：</p>
+</li>
+<li><p><code>item-color {color}</code>：设置项的颜色，可以是颜色的名称，例如 <code>red</code>；也可以是 16 进制的颜色，例如 <code>#RRGGBB</code>。</p>
+</li>
+<li><p><code>item-selected-color {color}</code>：被选中时的颜色，可以是颜色的名称，<code>red</code>；也可以是 16 进制的颜色，例如 <code>#RRGGBB</code>。</p>
+</li>
+<li><p><code>item-size {number}</code>：元素的个数。</p>
+</li>
+<li><p>通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+</li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></p>
+<h4 id="注意-1："><a href="#注意-1：" class="headerlink" title="注意 1："></a>注意 1：</h4><p>这里需要注意一点，<code>&lt;indicator&gt;</code> 的 <code>position</code> 不仅依赖 <code>top</code>、<code>left</code>、<code>bottom</code> 和 <code>right</code> 样式，同时会参考 <code>width</code> 和 <code>height</code> 样式。<code>&lt;indicator&gt;</code>默认的宽高继承于 <code>&lt;slider&gt;</code>，如果 <code>&lt;slider&gt;</code> 未设置宽高，需要显式的给 <code>&lt;indicator&gt;</code> 设置宽高值。</p>
+<h4 id="注意-2："><a href="#注意-2：" class="headerlink" title="注意 2："></a>注意 2：</h4><p><code>background-color</code> 不推荐使用，建议使用 <code>item-color</code> 和 <code>item-selected-color</code> 代替。</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>支持所有通用事件。</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ol>
+<li>不支持子组件。</li>
+</ol>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">slider</span> <span class="attr">class</span>=<span class="string">"slider"</span> <span class="attr">interval</span>=<span class="string">"4500"</span> @<span class="attr">change</span>=<span class="string">"onchange"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"frame"</span> <span class="attr">v-for</span>=<span class="string">"img in imageList"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">class</span>=<span class="string">"image"</span> <span class="attr">resize</span>=<span class="string">"cover"</span> <span class="attr">:src</span>=<span class="string">"img.src"</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></span><span class="template-variable">&#123;&#123;img.title&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">indicator</span> <span class="attr">class</span>=<span class="string">"indicator"</span>&gt;</span><span class="tag">&lt;/<span class="name">indicator</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">slider</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .image &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .slider &#123;</span></div><div class="line"><span class="xml">    margin-top: 25px;</span></div><div class="line"><span class="xml">    margin-left: 25px;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: #41B883;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .title &#123;</span></div><div class="line"><span class="xml">    position: absolute;</span></div><div class="line"><span class="xml">    top: 20px;</span></div><div class="line"><span class="xml">    left: 20px;</span></div><div class="line"><span class="xml">    padding-left: 20px;</span></div><div class="line"><span class="xml">    width: 200px;</span></div><div class="line"><span class="xml">    color: #FFFFFF;</span></div><div class="line"><span class="xml">    font-size: 36px;</span></div><div class="line"><span class="xml">    line-height: 60px;</span></div><div class="line"><span class="xml">    background-color: rgba(0, 0, 0, 0.3);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .frame &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    position: relative;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .indicator &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    item-color: green;</span></div><div class="line"><span class="xml">    item-selected-color: red;</span></div><div class="line"><span class="xml">    item-size: 50px;</span></div><div class="line"><span class="xml">    position: absolute;</span></div><div class="line"><span class="xml">    top: 200px;</span></div><div class="line"><span class="xml">    left: 200px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        imageList: [</span></div><div class="line"><span class="xml">          &#123; title: 'item A', src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg'&#125;,</span></div><div class="line"><span class="xml">          &#123; title: 'item B', src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg'&#125;,</span></div><div class="line"><span class="xml">          &#123; title: 'item C', src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg'&#125;</span></div><div class="line"><span class="xml">        ]</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      onchange (event) &#123;</span></div><div class="line"><span class="xml">        console.log('changed:', event.index)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/e1b4fd8a37ed4cafd8f5e161698754aa" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/indicator/" data-id="cj7tv5rjb002et0z6xq5ih9do" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/a/" class="article-date">
+  <time datetime="2017-08-31T14:53:56.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/document/2017/08/31/a/">a</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="lt-a-gt"><a href="#lt-a-gt" class="headerlink" title="&lt;a&gt;"></a>&lt;a&gt;</h2><h6 id="Updated-time-14-06-2017"><a href="#Updated-time-14-06-2017" class="headerlink" title="Updated time: 14/06/2017"></a>Updated time: 14/06/2017</h6><p><code>&lt;a&gt;</code> 组件定义了指向某个页面的一个超链接. 此组件的作用和用法与HTML5中的 <code>&lt;a&gt;</code> 非常类似，区别在于 Weex 的 <code>&lt;a&gt;</code><br>组件<strong>不能</strong>直接在里面添加文本（字符串），如果要展示文本，应该添加 <code>&lt;text&gt;</code> 组件。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>此组件支持除了自己外的所有 Weex 组件作为子组件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><code>href {string}</code>：定义了超链接的 URL。</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p><code>&lt;a&gt;</code> 支持所有通用样式。</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code></li>
+</ul>
+<p>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a>。</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p><code>&lt;a&gt;</code> 支持所有通用事件。</p>
+<ul>
+<li><code>click</code><br><strong>注意</strong>：我们不能保证 <code>click</code> 事件和 <code>href</code> 跳转的执行顺序。建议不要使用 <code>click</code> 事件来处理 <code>href</code> 跳转前的逻辑处理。</li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code></li>
+</ul>
+<p>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a>。</p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><ul>
+<li><p><strong>不能</strong>直接在 <code>&lt;a&gt;</code> 中添加文本。</p>
+</li>
+<li><p>请不要为 <code>&lt;a&gt;</code> 添加 <code>click</code> 事件。我们不能确保 <code>click</code> 事件和 <code>href</code> 跳转的执行顺序。</p>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">href</span>=<span class="string">"http://dotwe.org/raw/dist/3e0e40f9ddad79f98cd236753965ffd8.js"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>Jump<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css">  <span class="selector-class">.wrapper</span> &#123;</span></div><div class="line"><span class="undefined">    flex-direction: column;</span></div><div class="line"><span class="undefined">    justify-content: center;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.button</span> &#123;</span></div><div class="line"><span class="undefined">    width: 450px;</span></div><div class="line"><span class="undefined">    margin-top: 30px;</span></div><div class="line"><span class="undefined">    margin-left: 150px;</span></div><div class="line"><span class="undefined">    padding-top: 20px;</span></div><div class="line"><span class="undefined">    padding-bottom: 20px;</span></div><div class="line"><span class="undefined">    border-width: 2px;</span></div><div class="line"><span class="undefined">    border-style: solid;</span></div><div class="line"><span class="css">    <span class="selector-tag">border-color</span>: <span class="selector-id">#DDDDDD</span>;</span></div><div class="line"><span class="css">    <span class="selector-tag">background-color</span>: <span class="selector-id">#F5F5F5</span></span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="css">  <span class="selector-class">.text</span> &#123;</span></div><div class="line"><span class="undefined">    font-size: 60px;</span></div><div class="line"><span class="css">    <span class="selector-tag">color</span>: <span class="selector-id">#666666</span>;</span></div><div class="line"><span class="undefined">    text-align: center;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a><a href="http://dotwe.org/vue/025db54e37123ab5336a4b848397660f" title="Weex Playground" target="_blank" rel="external">Try it</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/a/" data-id="cj7tv5rhq0011t0z692dwou3v" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/document/page/4/">&laquo; __('prev')</a><a class="page-number" href="/document/">1</a><span class="space">&hellip;</span><a class="page-number" href="/document/page/3/">3</a><a class="page-number" href="/document/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/document/page/6/">6</a><a class="page-number" href="/document/page/7/">7</a><a class="extend next" rel="next" href="/document/page/6/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>

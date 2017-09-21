@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>scroller | weex使用手册</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#60;scroller&amp;#62; v0.6.1+Updated time: 30/06/2017&amp;lt;scroller&amp;gt; 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。 注意： &amp;lt;scroller&amp;gt; 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。 子组件支持任意类型的 Weex 组件作为其子组">
+<meta name="keywords" content="内建组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scroller">
+<meta property="og:url" content="https://github.com/stardew516/document/2017/08/31/scroller/index.html">
+<meta property="og:site_name" content="weex使用手册">
+<meta property="og:description" content="&amp;#60;scroller&amp;#62; v0.6.1+Updated time: 30/06/2017&amp;lt;scroller&amp;gt; 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。 注意： &amp;lt;scroller&amp;gt; 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。 子组件支持任意类型的 Weex 组件作为其子组">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="http://weex.apache.org/cn/references/images/scroller_1.jpg">
+<meta property="og:updated_time" content="2017-09-21T02:37:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scroller">
+<meta name="twitter:description" content="&amp;#60;scroller&amp;#62; v0.6.1+Updated time: 30/06/2017&amp;lt;scroller&amp;gt; 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。 注意： &amp;lt;scroller&amp;gt; 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。 子组件支持任意类型的 Weex 组件作为其子组">
+<meta name="twitter:image" content="http://weex.apache.org/cn/references/images/scroller_1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="weex使用手册" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/document/css/style.css">
+  <link rel="stylesheet" href="/document/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/document/" id="logo">weex使用手册</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/document/" id="subtitle">阿里旗下</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/document/">Home</a>
+        
+          <a class="main-nav-link" href="/document/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew516/document"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-scroller" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/document/2017/08/31/scroller/" class="article-date">
+  <time datetime="2017-08-31T14:55:27.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      scroller
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="60-scroller-62-v0-6-1"><a href="#60-scroller-62-v0-6-1" class="headerlink" title="&#60;scroller&#62; v0.6.1+"></a>&#60;scroller&#62; v0.6.1+</h2><h6 id="Updated-time-30-06-2017"><a href="#Updated-time-30-06-2017" class="headerlink" title="Updated time: 30/06/2017"></a>Updated time: 30/06/2017</h6><p><code>&lt;scroller&gt;</code> 是一个竖直的，可以容纳多个排成一列的子组件的滚动器。如果子组件的总高度高于其本身，那么所有的子组件都可滚动。</p>
+<p><strong>注意：</strong> <code>&lt;scroller&gt;</code> 可以当作根元素或者嵌套元素使用。此组件的滚动方向是垂直方向的形式。</p>
+<h3 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h3><p>支持任意类型的 Weex 组件作为其子组件。 其中，还支持以下两个特殊组件作为子组件：</p>
+<ul>
+<li><p><code>&lt;refresh&gt;</code></p>
+<p>用于给列表添加下拉刷新的功能。</p>
+<p>使用文档请查看 <code>&lt;refresh&gt;</code></p>
+</li>
+<li><p><code>&lt;loading&gt;</code></p>
+<p><code>&lt;loading&gt;</code> 用法与特性和 <code>&lt;refresh&gt;</code> 类似，用于给列表添加上拉加载更多的功能。</p>
+<p>使用文档请查看 <a href="http://weex.apache.org/cn/references/components/loading.html" target="_blank" rel="external"><code>&lt;loading&gt;</code></a></p>
+</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li><p><code>show-scrollbar {boolean}</code>：可选值为 <code>true</code>/ <code>false</code>，默认值为 <code>true</code>。控制是否出现滚动条。</p>
+</li>
+<li><p><code>scroll-direction {string}</code>：可选为 <code>horizontal</code> 或者 <code>vertical</code>，默认值为 <code>vertical</code> 。定义滚动的方向。</p>
+<ul>
+<li><code>scroll-direction</code>定义了 scroller 的滚动方向，<code>flex-direction</code> 定义了 scroller 的布局方向，两个方向必须一致。</li>
+<li><code>scroll-direction</code> 的默认值是 <code>vertical</code>, <code>flex-direction</code> 的默认值是 <code>row</code>。</li>
+<li>当需要一个水平方向的 scroller 时，使用 <code>scroll-direction:horizontal</code> 和 <code>flex-direction: row</code>。</li>
+<li>当需要一个竖直方向的 scroller 时，使用 <code>scroll-direction:vertical</code> 和 <code>flex-direction: column</code>。由于这两个值均是默认值，当需要一个竖直方向的 scroller<br>时，这两个值可以不设置。</li>
+</ul>
+</li>
+<li><p><code>loadmoreoffset {number}</code>：默认值为 0，触发 <code>loadmore</code> 事件所需要的垂直偏移距离（设备屏幕底部与页面底部之间的距离）。当页面的滚动条滚动到足够接近页面底部时将会触发 <code>loadmore</code> 这个事件。</p>
+<img src="http://weex.apache.org/cn/references/images/scroller_1.jpg" class="[box-model]" width="200" height="622" title="mobile_preview">
+</li>
+<li><p><code>loadmoreretry {number}</code>：默认值为 0，当 <code>loadmore</code> 失败时是否重置 <code>loadmore</code> 相关的 UI，值不一样就会重置。 该属性已废弃，请使用<code>resetLoadmore()</code>函数实现重置<code>loadmore</code>的操作。</p>
+</li>
+<li><p><code>offset-accuracy {number}</code> 0.11+：控制<code>onscroll</code>事件触发的频率，默认值为10，表示两次<code>onscroll</code>事件之间列表至少滚动了10px<br>。注意，将该值设置为较小的数值会提高滚动事件采样的精度，但同时也会降低页面的性能。</p>
+</li>
+<li><p><code>offset-accuracy</code>：默认值是0，触发 <code>scroll</code> 事件所需要的垂直偏移距离。</p>
+</li>
+</ul>
+<h3 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h3><p>  通用样式：支持所有通用样式</p>
+<ul>
+<li>盒模型</li>
+<li><code>flexbox</code> 布局</li>
+<li><code>position</code></li>
+<li><code>opacity</code></li>
+<li><code>background-color</code><br>查看 <a href="/document/2017/08/24/Common-Style">组件通用样式</a></li>
+</ul>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li><code>loadmore</code> v0.5+：如果滚动到底部将会立即触发这个事件，你可以在这个事件的处理函数中加载下一页的列表项。</li>
+<li><p><code>scroll</code> 0.11+: 列表发生滚动时将会触发该事件，事件的默认抽样率为10px，即列表每滚动10px触发一次，可通过属性<code>offset-accuracy</code>设置抽样率。 参见 <a href="http://dotwe.org/vue/9ef0e52bacaa20182a693f2187d851aa" target="_blank" rel="external">scroll event demo</a>。</p>
+<p>事件中 event 对象属性：</p>
+<ul>
+<li><code>contentSize {Object}</code>：列表的内容尺寸<ul>
+<li><code>width {number}</code>: 列表内容宽度</li>
+<li><code>height {number}</code>: 列表内容高度</li>
+</ul>
+</li>
+<li><code>contentOffset {Object}</code>: 列表的偏移尺寸<ul>
+<li><code>x {number}</code>: x轴上的偏移量</li>
+<li><code>y {number}</code>: y轴上的偏移量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通用事件</p>
+<p>支持所有通用事件：</p>
+<ul>
+<li><code>click</code></li>
+<li><code>longpress</code></li>
+<li><code>appear</code></li>
+<li><code>disappear</code><br>查看 <a href="/document/2017/09/02/commonEvent">通用事件</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h4 id="scrollToElement-node-options"><a href="#scrollToElement-node-options" class="headerlink" title="scrollToElement(node, options)"></a>scrollToElement(node, options)</h4><p>滚动到列表某个指定项是常见需求，<code>&lt;list&gt;</code> 拓展了该功能支持滚动到指定 <code>&lt;cell&gt;</code>。通过 <code>dom</code> module 访问，更多信息可参考 <a href="http://weex.apache.org/cn/references/modules/dom.html" target="_blank" rel="external">dom module</a> 。</p>
+<h4 id="resetLoadmore-0-9"><a href="#resetLoadmore-0-9" class="headerlink" title="resetLoadmore() 0.9+"></a>resetLoadmore() 0.9+</h4><p>在默认情况下，触发<code>loadmore</code>事件后，如果列表中内容没有发生变更，则下一次滚动到列表末尾时将不会再次触发<code>loadmore</code>事件，你可以通过调用<code>resetLoadmore()</code>方法来打破这一限制，调用该方法后，下一次滚动到列表末尾时将强制触发<code>loadmore</code>。</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><ul>
+<li><code>node {node}</code>：指定目标节点。</li>
+<li><code>options {Object}</code>：<ul>
+<li><code>offset {number}</code>：一个到其可见位置的偏移距离，默认是0</li>
+</ul>
+</li>
+</ul>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><p><strong>不允许</strong>相同方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 互相嵌套，换句话说就是嵌套的 <code>&lt;list&gt;</code>/<code>&lt;scroller&gt;</code> 必须是不同的方向。</p>
+<p>举个例子，<strong>不允许</strong>一个垂直方向的 <code>&lt;list&gt;</code> 嵌套的一个垂直方向的 <code>&lt;scroller&gt;</code> 中，但是一个垂直方向的 <code>&lt;list&gt;</code> 是可以嵌套的一个水平方向的 <code>&lt;list&gt;</code> 或者 <code>&lt;scroller&gt;</code> 中的。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">scroller</span> <span class="attr">class</span>=<span class="string">"scroller"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span> <span class="attr">v-for</span>=<span class="string">"(name, index) in rows"</span> <span class="attr">:ref</span>=<span class="string">"'item'+index"</span>&gt;</span></span></div><div class="line"><span class="xml">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">:ref</span>=<span class="string">"'text'+index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;name&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">scroller</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"group"</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> @<span class="attr">click</span>=<span class="string">"goto10"</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;</span>Go to 10<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">      <span class="tag">&lt;<span class="name">text</span> @<span class="attr">click</span>=<span class="string">"goto20"</span> <span class="attr">class</span>=<span class="string">"button"</span>&gt;</span>Go to 20<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span></div><div class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  const dom = weex.requireModule('dom')</span></div><div class="line"><span class="xml">  export default &#123;</span></div><div class="line"><span class="xml">    data () &#123;</span></div><div class="line"><span class="xml">      return &#123;</span></div><div class="line"><span class="xml">        rows: []</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    created () &#123;</span></div><div class="line"><span class="xml">      for (let i = 0; i <span class="tag">&lt; <span class="attr">30</span>; <span class="attr">i</span>++) &#123;</span></span></div><div class="line"><span class="xml">        this.rows.push('row ' + i)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;,</span></div><div class="line"><span class="xml">    methods: &#123;</span></div><div class="line"><span class="xml">      goto10 (count) &#123;</span></div><div class="line"><span class="xml">        const el = this.$refs.item10[0]</span></div><div class="line"><span class="xml">        dom.scrollToElement(el, &#123;&#125;)</span></div><div class="line"><span class="xml">      &#125;,</span></div><div class="line"><span class="xml">      goto20 (count) &#123;</span></div><div class="line"><span class="xml">        const el = this.$refs.item20[0]</span></div><div class="line"><span class="xml">        dom.scrollToElement(el, &#123; offset: 0 &#125;)</span></div><div class="line"><span class="xml">      &#125;</span></div><div class="line"><span class="xml">    &#125;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span></div><div class="line"><span class="xml">  .scroller &#123;</span></div><div class="line"><span class="xml">    width: 700px;</span></div><div class="line"><span class="xml">    height: 700px;</span></div><div class="line"><span class="xml">    border-width: 3px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    margin-left: 25px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .row &#123;</span></div><div class="line"><span class="xml">    height: 100px;</span></div><div class="line"><span class="xml">    flex-direction: column;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    padding-left: 30px;</span></div><div class="line"><span class="xml">    border-bottom-width: 2px;</span></div><div class="line"><span class="xml">    border-bottom-style: solid;</span></div><div class="line"><span class="xml">    border-bottom-color: #DDDDDD;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .text &#123;</span></div><div class="line"><span class="xml">    font-size: 45px;</span></div><div class="line"><span class="xml">    color: #666666;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .group &#123;</span></div><div class="line"><span class="xml">    flex-direction: row;</span></div><div class="line"><span class="xml">    justify-content: center;</span></div><div class="line"><span class="xml">    margin-top: 60px;</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml">  .button &#123;</span></div><div class="line"><span class="xml">    width: 200px;</span></div><div class="line"><span class="xml">    padding-top: 20px;</span></div><div class="line"><span class="xml">    padding-bottom: 20px;</span></div><div class="line"><span class="xml">    font-size: 40px;</span></div><div class="line"><span class="xml">    margin-left: 30px;</span></div><div class="line"><span class="xml">    margin-right: 30px;</span></div><div class="line"><span class="xml">    text-align: center;</span></div><div class="line"><span class="xml">    color: #41B883;</span></div><div class="line"><span class="xml">    border-width: 2px;</span></div><div class="line"><span class="xml">    border-style: solid;</span></div><div class="line"><span class="xml">    border-color: rgb(162, 217, 192);</span></div><div class="line"><span class="xml">    background-color: rgba(162, 217, 192, 0.2);</span></div><div class="line"><span class="xml">  &#125;</span></div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p><a href="http://dotwe.org/vue/2f22f14fb711d88515e63c3f67bed46a" target="_blank" rel="external">try it</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew516/document/2017/08/31/scroller/" data-id="cj7tv5rkf0038t0z68adawvyi" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/document/tags/内建组件/">内建组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/document/2017/08/31/slider/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          slider
+        
+      </div>
+    </a>
+  
+  
+    <a href="/document/2017/08/31/refresh/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">refresh</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Labels</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/JS-service/">JS service</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/Weex-和-Web-平台的差异/">Weex 和 Web 平台的差异</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/css-单位/">css 单位</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/native-dom-APIs/">native dom APIs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/web-标准/">web 标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/weex-实例变量/">weex 实例变量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建模块/">内建模块</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/内建组件/">内建组件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用事件/">通用事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/通用特性/">通用特性</a></li><li class="tag-list-item"><a class="tag-list-link" href="/document/tags/高阶知识/">高阶知识</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/document/tags/JS-service/" style="font-size: 10px;">JS service</a> <a href="/document/tags/Weex-和-Web-平台的差异/" style="font-size: 14px;">Weex 和 Web 平台的差异</a> <a href="/document/tags/css-单位/" style="font-size: 10px;">css 单位</a> <a href="/document/tags/native-dom-APIs/" style="font-size: 10px;">native dom APIs</a> <a href="/document/tags/vue/" style="font-size: 12px;">vue</a> <a href="/document/tags/web-标准/" style="font-size: 10px;">web 标准</a> <a href="/document/tags/weex-实例变量/" style="font-size: 10px;">weex 实例变量</a> <a href="/document/tags/内建模块/" style="font-size: 18px;">内建模块</a> <a href="/document/tags/内建组件/" style="font-size: 20px;">内建组件</a> <a href="/document/tags/通用事件/" style="font-size: 10px;">通用事件</a> <a href="/document/tags/通用特性/" style="font-size: 18px;">通用特性</a> <a href="/document/tags/高阶知识/" style="font-size: 16px;">高阶知识</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/document/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/document/2017/09/02/difference-Weex-Vue2-x/">difference-Weex-Vue2-x</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration-from-weex/">migration-from-weex</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/platform-difference/">platform-difference</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/migration/">migration</a>
+          </li>
+        
+          <li>
+            <a href="/document/2017/09/02/integrate-devtool-to-ios/">integrate-devtool-to-ios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 lu.wei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/document/" class="mobile-nav-link">Home</a>
+  
+    <a href="/document/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/document/fancybox/jquery.fancybox.css">
+  <script src="/document/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/document/js/script.js"></script>
+
+  </div>
+</body>
+</html>
