@@ -14,17 +14,20 @@
 
 
 github上部署:
-1. 安装 hexo-deployer-git npm install hexo-deployer-git --save
-2. _config.yml 中配置
+1. 安装 hexo-deployer-git: npm install hexo-deployer-git --save
+2. 新建仓库: stardew516.github.io.git
+3. _config.yml 中配置
   ```
   # 部署部分的设置
   deploy:
     type: git
-    repo: https://github.com/stardew516/document
+    repo: https://github.com/stardew516/stardew516.github.io.git
     branch: master
     message: hexo + css
   ```
-3. 终端进入目录 运行 hexo deploy
+4. 生成文件: hexo generate
+5. 部署: hexo deploy
+6. 访问: https://stardew516.github.io/
 
 注意:
 1. 标签比如a标签, 直接尖括号会解析成html, 无法显示, 需要用`&lt;` 和 `&gt;` 代替

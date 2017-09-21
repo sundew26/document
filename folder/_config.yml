@@ -117,7 +117,7 @@ theme: landscape
 # 部署部分的设置
 deploy:
   type: git
-  repo: https://github.com/stardew516/document
+  repo: https://github.com/stardew516/stardew516.github.io.git
   branch: master
   message: hexo + css
 
