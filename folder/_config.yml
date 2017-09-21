@@ -6,7 +6,7 @@
 # 网站标题
 title: weex使用手册
 # 网站副标题
-subtitle: 阿里旗下
+subtitle: 这是盗版的--仿写于2017年08~09月--by stardew
 # 网站描述
 description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移
 # 作者名字
@@ -80,7 +80,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -date
+  order_by: date
   
 # Category & Tag 分类 & 标签
 # 默认分类
