@@ -26,7 +26,7 @@ tags: 内建组件
 * `position`
 * `opacity`
 * `background-color`
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html)
+查看 [组件通用样式](/document/2017/08/24/Common-Style)
 
 ### 事件
 * `refresh`： 当 `<scroller>`/`<list>` 被下拉时触发。

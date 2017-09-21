@@ -26,7 +26,7 @@ tags: 内建组件
   * `opacity`
   * `background-color`
 
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html)
+查看 [组件通用样式](/document/2017/08/24/Common-Style)
 
 ### 事件
   * `start`：当 playback 的状态是 Playing 时触发

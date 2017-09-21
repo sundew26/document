@@ -52,7 +52,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
   * `opacity`
   * `background-color`
 
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html)
+查看 [组件通用样式](/document/2017/08/24/Common-Style)
 
 ### 事件
 * `input`: 输入字符的值更改。
@@ -100,7 +100,7 @@ Weex 内置的 `<input>` 组件用来创建接收用户输入字符的输入组�
     * `appear`
     * `disappear`
 
-  查看 [通用事件](http://weex.apache.org/cn/references/common-event.html)
+  查看 [通用事件](/document/2017/09/02/commonEvent)
 
 ### Methods
 * `focus()` v0.9+

@@ -32,7 +32,7 @@ tags: 内建组件
   * `opacity`
   * `background-color`
 
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html)
+查看 [组件通用样式](/document/2017/08/24/Common-Style)
 
 ### 事件
   * `pagestart`: `<web>` 组件开始加载时发送此事件消息。
@@ -45,7 +45,7 @@ tags: 内建组件
 
     * `appear`
     * `disappear`
-查看 [通用事件](http://weex.apache.org/cn/references/common-event.html)
+查看 [通用事件](/document/2017/09/02/commonEvent)
 
 **注意：**
 

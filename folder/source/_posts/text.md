@@ -37,7 +37,7 @@ tags: 内建组件
   * `opacity`
   * `background-color`
 
-查看 [组件通用样式](http://weex.apache.org/cn/references/common-style.html)
+查看 [组件通用样式](/document/2017/08/24/Common-Style)
 
 ### 事件
 * 通用事件
@@ -48,7 +48,7 @@ tags: 内建组件
   * `appear`
   * `disappear`
 
-查看 [通用事件](http://weex.apache.org/cn/references/common-event.html)
+查看 [通用事件](/document/2017/09/02/commonEvent)
 
 ### 约束
 1. `<text>` 里直接写文本头尾空白会被过滤，如果需要保留头尾空白，暂时只能通过数据绑定写头尾空格。
