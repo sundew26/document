@@ -118,6 +118,6 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/stardew516/stardew516.github.io.git
-  branch: master
+  branch: weex ## master部署时可以访问
   message: hexo + css
 
