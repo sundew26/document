@@ -12,8 +12,6 @@
 添加css: 在/public/css/目录下新建new.css供使用, 直接在html中添加css链接不起作用, 需要到/themes/landscape/layout/_partial/head.ejs中的第35行添加```<%-
  css('css/new') %>```
 
-修改博客样式: /themes/landscape/_config.yml  可以修改侧边栏以及一些其它的参数
-
 
 github上部署:
 1. 安装 hexo-deployer-git: npm install hexo-deployer-git --save
