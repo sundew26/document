@@ -8,7 +8,7 @@
   <meta name="description" content="平时知识积累，站点博客迁移">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stardew的博客">
-<meta property="og:url" content="https://github.com/stardew/index.html">
+<meta property="og:url" content="https://github.com/stardew/page/3/index.html">
 <meta property="og:site_name" content="stardew的博客">
 <meta property="og:description" content="平时知识积累，站点博客迁移">
 <meta property="og:locale" content="简体中文">
@@ -70,24 +70,41 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-1.7" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-regexp-password" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/1.7/" class="article-date">
-  <time datetime="2018-06-27T05:47:14.000Z" itemprop="datePublished">2018-06-27</time>
+    <a href="/regexp-password/" class="article-date">
+  <time datetime="2017-04-06T11:35:00.000Z" itemprop="datePublished">2017-04-06</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/regexp-password/">regexp-password</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>## </p>
-<h5 id="转自"><a href="#转自" class="headerlink" title="转自"></a>转自<a href=""></a></h5>
+        <h2 id="正则校验密码规则"><a href="#正则校验密码规则" class="headerlink" title="正则校验密码规则"></a>正则校验密码规则</h2><p>1. 8-16位数字、字母和特殊字符~!@#$%^&amp;*-+=_.</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var reg = /^\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;  </div><div class="line">var str = '<span class="number">1</span>wfwe@<span class="number">99</span>$;' <span class="comment">// 有分号  </span></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure>
+<p>2. 8-16位，且必须只包含数字、字母和特殊字符~!@#$%^&amp;*-+=_.</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var reg = /^(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[~!@#$%^&amp;*\\-+=_.\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[<span class="number">0</span><span class="number">-9</span>\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[a-zA-Z\])\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;</div><div class="line"></div><div class="line">var str = '<span class="number">1</span>w@<span class="number">2812</span>fhif94#$%<span class="number">1</span>'    <span class="comment">// 17位</span></div><div class="line"></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure>
+<p>3. 感觉上面的有点长，replace了一下，但是看着也没多好，将就下吧。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">注：</div><div class="line"></div><div class="line">x = '~!@<span class="comment">#$%^&amp;*\\\-+=_.'  // 特殊字符</span></div><div class="line"></div><div class="line">d = '0-9'  // 数字</div><div class="line"></div><div class="line">w = 'a-zA-Z' // 字母</div></pre></td></tr></table></figure>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var reg = '^(?=<span class="tag">\<span class="name">[</span></span>xdw<span class="tag">\<span class="name">]</span></span>*<span class="tag">\<span class="name">[</span></span>x<span class="tag">\<span class="name">]</span></span>)(?=<span class="tag">\<span class="name">[</span></span>xdw<span class="tag">\<span class="name">]</span></span>*<span class="tag">\<span class="name">[</span></span>d<span class="tag">\<span class="name">]</span></span>)(?=<span class="tag">\<span class="name">[</span></span>xdw<span class="tag">\<span class="name">]</span></span>*<span class="tag">\<span class="name">[</span></span>w<span class="tag">\<span class="name">]</span></span>)<span class="tag">\<span class="name">[</span></span>xdw<span class="tag">\<span class="name">]</span><span class="string">&#123;8,16&#125;</span></span><span class="formula">$'.replace(/x/gi, '~!@#$</span><span class="comment">%^&amp;*\\\-+=_.').replace(/d/gi, '0-9').replace(/w/gi, 'a-zA-Z');</span></div><div class="line"></div><div class="line">reg = new RegExp(reg);</div><div class="line"></div><div class="line">var str = '1w@28194#<span class="formula">$%&lt;' // 有&lt;</span></div><div class="line"><span class="formula"></span></div><div class="line"><span class="formula">console.log(reg, reg.test(str))</span></div></pre></td></tr></table></figure>
+<p>注：特殊字符里的‘-’需要转义‘\-’, 3中需要‘\-’</p>
+<h5 id="转自正则校验密码规则"><a href="#转自正则校验密码规则" class="headerlink" title="转自正则校验密码规则"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/873937" target="_blank" rel="external">正则校验密码规则</a></h5>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/stardew/1.7/" data-id="cjiwslp3u0000lfz6o7b88i3b" class="article-share-link">Partager</a>
+      <a data-url="https://github.com/stardew/regexp-password/" data-id="cjiwslp4s000flfz62jy0g7j0" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -102,7 +119,7 @@
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/4/">__('next') &raquo;</a>
   </nav>
 </section>
         

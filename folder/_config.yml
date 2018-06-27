@@ -4,11 +4,11 @@
 
 # Site 网站
 # 网站标题
-title: weex使用手册
+title: stardew的博客
 # 网站副标题
-subtitle: 阿里旗下
+subtitle: 做个安静大气的美女子
 # 网站描述
-description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移
+description: 平时知识积累，站点博客迁移
 # 作者名字
 author: lu.wei
 # 网站使用的语言
@@ -19,11 +19,12 @@ timezone: UTC
 # URL 网址
 ## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 # 网址
-url: https://github.com/stardew516/document
+url: https://github.com/stardew/
 # 网站根目录
-root: /document/
+root: /
 # 文章的 永久链接 格式
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :title/
 # 永久链接中各部分的默认值
 permalink_defaults:
 
@@ -79,7 +80,7 @@ highlight:
 # order_by: 排序, 默认日期降序
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 1
   order_by: -date
   
 # Category & Tag 分类 & 标签
@@ -102,7 +103,7 @@ time_format: HH:mm:ss
 # Pagination 分页
 ## Set per_page to 0 to disable pagination
 # 每页显示的文章量 (0 = 关闭分页功能)
-per_page: 10
+per_page: 1
 # 分页目录
 pagination_dir: page
 

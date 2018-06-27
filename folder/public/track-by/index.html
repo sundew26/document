@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>track-by | stardew的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue中track-by的理解api：http://cn.vuejs.org/guide/list.html#track-by 示例地址：https://jsfiddle.net/stardew/f1eju0ku/5/ 无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到） 加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="track-by">
+<meta property="og:url" content="https://github.com/stardew/track-by/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="vue中track-by的理解api：http://cn.vuejs.org/guide/list.html#track-by 示例地址：https://jsfiddle.net/stardew/f1eju0ku/5/ 无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到） 加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/155631_7GXl_255575.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/161002_B1YX_255575.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png">
+<meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png">
+<meta property="og:updated_time" content="2018-06-27T07:12:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="track-by">
+<meta name="twitter:description" content="vue中track-by的理解api：http://cn.vuejs.org/guide/list.html#track-by 示例地址：https://jsfiddle.net/stardew/f1eju0ku/5/ 无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到） 加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在">
+<meta name="twitter:image" content="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png">
+  
+    <link rel="alternate" href="/atom.xml" title="stardew的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">stardew的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">做个安静大气的美女子</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-track-by" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/track-by/" class="article-date">
+  <time datetime="2016-10-25T16:20:00.000Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      track-by
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue中track-by的理解"><a href="#vue中track-by的理解" class="headerlink" title="vue中track-by的理解"></a>vue中track-by的理解</h2><p>api：<a href="http://cn.vuejs.org/guide/list.html#track-by" target="_blank" rel="external">http://cn.vuejs.org/guide/list.html#track-by</a></p>
+<p>示例地址：<a href="https://jsfiddle.net/stardew/f1eju0ku/5/" target="_blank" rel="external">https://jsfiddle.net/stardew/f1eju0ku/5/</a></p>
+<p>无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到）</p>
+<p>加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在dom才被重新渲染</p>
+<p>track-by的两种使用方法：</p>
+<p>1. 使用数据中某唯一字段，例如_uid</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"_uid"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始数据</span></div><div class="line">items: [</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'222222'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'333'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'444444'</span>, <span class="attr">message</span>: <span class="string">'444'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'555555'</span>, <span class="attr">message</span>: <span class="string">'555'</span> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 修改成</span></div><div class="line">modify: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.items = [</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'666666'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'3333'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'888888'</span>, <span class="attr">message</span>: <span class="string">'4444'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'999999'</span>, <span class="attr">message</span>: <span class="string">'5555'</span> &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>渲染效果如下图右(左边无track-by，右边有track-by)，_uid和message都不变的情况下，才不被重新渲染，只有第一组符合条件。</p>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/155631_7GXl_255575.png" alt=""></p>
+<p>2. 使用$index，其它条件同上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>渲染效果如下图右，message的值第一、二条都没改变，所以一、二都没有重新渲染。</p>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161002_B1YX_255575.png" alt=""></p>
+<p>模板中同时使用message和_uid时，只有两者都不变的情况下才不重新渲染，如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;  &#123;&#123;item._uid&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png" alt=""></p>
+<h5 id="转自vue中track-by的理解"><a href="#转自vue中track-by的理解" class="headerlink" title="转自vue中track-by的理解"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/775534" target="_blank" rel="external">vue中track-by的理解</a></h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew/track-by/" data-id="cjiwslp4v000hlfz6s710xki2" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/autojump/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          autojump
+        
+      </div>
+    </a>
+  
+  
+    <a href="/regexp-important/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">regexp-important</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/front/">front</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/joy/">joy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/others/">others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/front/" style="font-size: 10px;">front</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joy/" style="font-size: 16.67px;">joy</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/1.7/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/regexp-password/">regexp-password</a>
+          </li>
+        
+          <li>
+            <a href="/autojump/">autojump</a>
+          </li>
+        
+          <li>
+            <a href="/track-by/">track-by</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 lu.wei<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

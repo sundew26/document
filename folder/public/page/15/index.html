@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | stardew的博客</title>
+  <title>stardew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="平时知识积累，站点博客迁移">
 <meta property="og:type" content="website">
 <meta property="og:title" content="stardew的博客">
-<meta property="og:url" content="https://github.com/stardew/archives/index.html">
+<meta property="og:url" content="https://github.com/stardew/page/15/index.html">
 <meta property="og:site_name" content="stardew的博客">
 <meta property="og:description" content="平时知识积累，站点博客迁移">
 <meta property="og:locale" content="简体中文">
@@ -70,35 +70,51 @@
       <div class="outer">
         <section id="main">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/1.7/" class="archive-article-date">
-  <time datetime="2018-06-27T05:47:14.000Z" itemprop="datePublished">Jun 27</time>
+    <article id="post-mCustomScrollbar-config" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/mCustomScrollbar-config/" class="article-date">
+  <time datetime="2015-01-19T15:54:00.000Z" itemprop="datePublished">2015-01-19</time>
 </a>
-      
-    </header>
+    
   </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/mCustomScrollbar-config/">mCustomScrollbar-config</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mCustomScrollbar常用配置"><a href="#mCustomScrollbar常用配置" class="headerlink" title="mCustomScrollbar常用配置"></a>mCustomScrollbar常用配置</h2><p>mCustomScrollbar是一个非常好用的滚动条插件，一般情况下只需作如下配置即可。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">'jquery'</span>,<span class="string">'mCustomScrollbar'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">$,mCustomScrollbar</span>)</span>&#123;</div><div class="line">    $(<span class="string">".submenu-content"</span>).mCustomScrollbar(&#123;</div><div class="line">        autoHideScrollbar: <span class="literal">true</span>,</div><div class="line">        horizontalScroll:<span class="literal">false</span></div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.mCSB_scrollTools</span> <span class="selector-class">.mCSB_draggerRail</span>&#123;<span class="attribute">background-color</span>: <span class="number">#c6c4c2</span>;<span class="attribute">width</span>: <span class="number">8px</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.mCSB_scrollTools</span> <span class="selector-class">.mCSB_dragger</span> <span class="selector-class">.mCSB_dragger_bar</span>&#123;<span class="attribute">background-color</span>: <span class="number">#c6c4c2</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.mCSB_scrollTools</span> <span class="selector-class">.mCSB_dragger</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.mCSB_dragger_bar</span>,<span class="selector-class">.mCSB_scrollTools</span> <span class="selector-class">.mCSB_dragger</span><span class="selector-pseudo">:active</span> <span class="selector-class">.mCSB_dragger_bar</span>,<span class="selector-class">.mCSB_scrollTools</span> <span class="selector-class">.mCSB_dragger</span><span class="selector-class">.mCSB_dragger_onDrag</span> <span class="selector-class">.mCSB_dragger_bar</span> &#123;<span class="attribute">background-color</span>: <span class="number">#938B89</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.ui-state-default</span>&#123;<span class="attribute">background</span>:none;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.accordion-hov</span>,<span class="selector-class">.accordion-click</span>&#123;<span class="attribute">background-color</span>:<span class="number">#6e8fd0</span>;<span class="attribute">color</span>:<span class="number">#ffc600</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.copyright</span>&#123;<span class="attribute">line-height</span>:<span class="number">30px</span>;<span class="attribute">background-color</span>:<span class="number">#a3a3a3</span>;&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.mCSB_scrollTools</span><span class="selector-class">.mCSB_scrollTools_horizontal</span> <span class="selector-class">.mCSB_draggerRail</span> &#123;<span class="attribute">height</span>: <span class="number">8px</span>;<span class="attribute">margin</span>: <span class="number">4px</span> <span class="number">0</span>;&#125;</div></pre></td></tr></table></figure>
+<h5 id="转自mCustomScrollbar常用配置"><a href="#转自mCustomScrollbar常用配置" class="headerlink" title="转自mCustomScrollbar常用配置"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/369341" target="_blank" rel="external">mCustomScrollbar常用配置</a></h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew/mCustomScrollbar-config/" data-id="cjiwslp4e0005lfz68prd2k91" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-  
-  
-    </div></section>
+
+
   
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/14/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span>
   </nav>
 </section>
         

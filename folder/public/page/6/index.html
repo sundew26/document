@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>stardew的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="平时知识积累，站点博客迁移">
+<meta property="og:type" content="website">
+<meta property="og:title" content="stardew的博客">
+<meta property="og:url" content="https://github.com/stardew/page/6/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="平时知识积累，站点博客迁移">
+<meta property="og:locale" content="简体中文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="stardew的博客">
+<meta name="twitter:description" content="平时知识积累，站点博客迁移">
+  
+    <link rel="alternate" href="/atom.xml" title="stardew的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">stardew的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">做个安静大气的美女子</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-regexp-important" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/regexp-important/" class="article-date">
+  <time datetime="2016-10-21T16:56:00.000Z" itemprop="datePublished">2016-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/regexp-important/">regexp-important</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="正则表达式重点总结"><a href="#正则表达式重点总结" class="headerlink" title="正则表达式重点总结"></a>正则表达式重点总结</h2><p>1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/a.*b/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC</p>
+<p>**非贪婪模式（尽可能少的去匹配符合条件的字符串 ‘?’ ）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/a.*?b/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：笨蛋bbbccccc笨蛋BBBCCCCC  匹配了aaabbbbcccccAAABBBBCCCCC</p>
+<p>2. 捕获组</p>
+<p>**捕获型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line">/[\w]&#123;<span class="number">3</span>&#125;(b)*(c)*<span class="regexp">/.exec(str)</span></div></pre></td></tr></table></figure>
+<p>// 结果：[“aaabbbbccccc”, “b”, “c”]  除了输出匹配结果，还输出了捕获到的b和c</p>
+<p>**非捕获型3种：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line">/[\w]&#123;<span class="number">3</span>&#125;(?!b)/.exec(str)</div></pre></td></tr></table></figure>
+<p>// 结果：[“bbb”]    后面跟的不是b的三个字符 aaabbbbcccccAAABBBBCCCCC</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line">/[\w]&#123;<span class="number">3</span>&#125;(?=b)/.exec(str)</div></pre></td></tr></table></figure>
+<p>// 结果：[“aaa”]    后面跟b的三个字符 aaabbbbcccccAAABBBBCCCCC</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line">/[\w]&#123;<span class="number">3</span>&#125;(?:b)/.exec(str)</div></pre></td></tr></table></figure>
+<p>// 结果：[“aaab”]    三个字符后紧跟b的字符串 aaabbbbcccccAAABBBBCCCCC</p>
+<p>**更好的理解捕获(分组) </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/((\d)(\d))/</span>; </div><div class="line"><span class="keyword">if</span>(reg.test(<span class="string">'abc123ddd'</span>))&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">RegExp</span>.$<span class="number">0</span>, <span class="built_in">RegExp</span>.$<span class="number">1</span>, <span class="built_in">RegExp</span>.$<span class="number">2</span>, <span class="built_in">RegExp</span>.$<span class="number">3</span>) </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>// 结果：undefined “12” “1” “2”     ‘(‘ 从左到右算分组，下标从1开始</p>
+<p>3. 方法：</p>
+<p>test、match、search、replace、split、exec、compile</p>
+<p>**test：测试str是否包含匹配，包含返回true，不包含返回false。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/ab/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = reg.test(str); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：true</p>
+<p>**match：根据reg进行正则匹配，匹配到，返回匹配结果，否则返回null。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/ab/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.match(reg); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：[“ab”, “AB”]</p>
+<p>**search ：根据reg进行正则匹配，如果匹配到一个结果，则返回它的索引数（0开始），否则返回-1。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ar str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str. search(reg); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：6    下标从0开始</p>
+<p>**replace：根据reg进行正则匹配，把匹配结果替换为“ 笨蛋 ”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str. replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：aaabbb笨蛋ccccAAABBB笨蛋CCCC</p>
+<p>**split：根据reg进行正则分割，返回分割后的字符串组成的数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.split(reg); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：[“aaabbb”, “ccccAAABBB”, “CCCC”]    aaabbbbcccccAAABBBBCCCCC</p>
+<p>**exec：对str进行正则处理，并返回匹配结果。array[0]为匹配到的字符串，array[1]为匹配在整个被搜索字符串中的位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = reg.exec(str); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：[“bc”, index: 6, input: “aaabbbbcccccAAABBBBCCCCC”]</p>
+<p>**compile：用于改变和重新编译正则表达式(基本等同于构造方法方式，已被废弃)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr); reg=<span class="regexp">/ab/gi</span>; </div><div class="line">reg.compile(reg); </div><div class="line">newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+<p>// 结果：aaabbb笨蛋ccccAAABBB笨蛋CCCC     aa笨蛋bbbcccccAA笨蛋BBBCCCCC   使用与否好像并没有区别，可以试试</p>
+<h5 id="转自正则表达式重点总结"><a href="#转自正则表达式重点总结" class="headerlink" title="转自正则表达式重点总结"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/761840" target="_blank" rel="external">正则表达式重点总结</a></h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew/regexp-important/" data-id="cjiwslp4q000dlfz6pelklunt" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/7/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/front/">front</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/joy/">joy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/others/">others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/front/" style="font-size: 10px;">front</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joy/" style="font-size: 16.67px;">joy</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/1.7/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/regexp-password/">regexp-password</a>
+          </li>
+        
+          <li>
+            <a href="/autojump/">autojump</a>
+          </li>
+        
+          <li>
+            <a href="/track-by/">track-by</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 lu.wei<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>stardew的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="平时知识积累，站点博客迁移">
+<meta property="og:type" content="website">
+<meta property="og:title" content="stardew的博客">
+<meta property="og:url" content="https://github.com/stardew/page/11/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="平时知识积累，站点博客迁移">
+<meta property="og:locale" content="简体中文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="stardew的博客">
+<meta name="twitter:description" content="平时知识积累，站点博客迁移">
+  
+    <link rel="alternate" href="/atom.xml" title="stardew的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/new.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">stardew的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">做个安静大气的美女子</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://github.com/stardew"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-regexp-basic" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/regexp-basic/" class="article-date">
+  <time datetime="2016-01-08T15:49:00.000Z" itemprop="datePublished">2016-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/regexp-basic/">regexp-basic</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="我对正则表达式的一点理解"><a href="#我对正则表达式的一点理解" class="headerlink" title="我对正则表达式的一点理解"></a>我对正则表达式的一点理解</h2><p>前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。  </p>
+<ol>
+<li><p>何为正则表达式？</p>
+<p>通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：[\w!#$%&amp;’<em>+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;’</em>+/=?^_`{|}~-]+)<em>@(?:[\w](?:[\w-]</em>[\w])?\.)+[\w](?:[\w-]*[\w])?），没错，正则表达式就是符合某一类规则的一串表达式。</p>
+</li>
+<li><p>什么情况下会用到正则表达式？</p>
+<p>通常我们会在字符串的查找匹配，替换中使用到正则。</p>
+</li>
+<li><p>如何使用正则表达式？</p>
+<p>前面也说过，正则表达式需要符合一定的规则，也就是说，按规则来书写，就基本可以满足需求，当然，只是满足基本，在实际应用中还应该考虑各种情况，这就需要添加更多的限定条件。我们先拿前面提到的正则式来举个例子。</p>
+<p>[\w!#$%&amp;’<em>+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;’</em>+/=?^_`{|}~-]+)<em>@(?:[\w](?:[\w-]</em>[\w])?\.)+[\w](?:[\w-]*[\w])?</p>
+<p>看着这么一大串乱七八糟的字符有没有很头疼呢，我们且不说这是干什么用的，先根据附录中的规则分解剖析一番，把这个表达式分几部分</p>
+</li>
+</ol>
+<ol>
+<li><p>[\w!#$%&amp;’*+/=?^_`{|}~-]+ </p>
+<p>中括号[]里面是我们要匹配的字符，后面的+是重复至少一次的意思，\w是指此字符串以下划线、数字或字母打头，或者以!#$%&amp;’<em>+/=?^_`{|}~-中的任何一个打头，!#$%&amp;’</em>+/=?^_`{|}~-这么一大串其实就是我们键盘顶部那些字符。</p>
+</li>
+<li><p>(?:\.[\w!#$%&amp;’<em>+/=?^_`{|}~-]+)</em> </p>
+<p>这一串紧跟着首字符之后，小括号()里面是一个子表达式，用来分组的，(?:\.)见附录表4中的捕获，.是匹配除换行符以外的任意字符，而\.是转义之后的，单纯指.，.后必须跟字符或字符串。最后面的<em>指重复0次或更多次的意思，小括号里面还a中出现的[\w!#$%&amp;’</em>+/=?^_`{|}~-]+。</p>
+</li>
+<li><p>@</p>
+<p>这个就是匹配单纯的@符号，必须出现的。</p>
+</li>
+<li><p>(?:[\w](?:[\w-]*[\w])?\.)+ </p>
+<p>字符或字符串以.结束，内部还嵌套了一个子表达式(?:[\w-]*[\w])?，不难理解。</p>
+</li>
+<li><p>[\w](?:[\w-]*[\w])? </p>
+<p>d内部嵌套的子表达式一样。</p>
+</li>
+</ol>
+<p>看完上面的解释，你一定也看出这个正则表达式的功能了吧，不错，正是用来匹配邮箱的。当然，上面匹配的比较严格，我们也可以简单的使用[\w+~!#$%^&amp;*()_+]+@\w+.\w+进行匹配，依项目需要了。看到这里，有没有觉得其实正则表达式并没有想象中那么可怕呢。下面我们来写一个简单的匹配电话号码的正则式（如：010-11111111,0101111111等）：</p>
+<p>^[0]\d{2}-?\d{8}|\[0]d{3}-?\d{7,8}$</p>
+<p>写完之后，可以在线（<a href="http://tool.oschina.net/regex/" target="_blank" rel="external">http://tool.oschina.net/regex/</a>）测试一下我们所写的正则式是否符合要求，</p>
+<h4 id="4-附录："><a href="#4-附录：" class="headerlink" title="4. 附录："></a>4. 附录：</h4><p>表1. 常用元字符</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配字母或数字或下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意的空白符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配数字</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+<p>表2.常用的限定符</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>重复零次或更多次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>重复一次或更多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>重复零次或一次</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>重复n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>重复n次或更多次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>重复n到m次</td>
+</tr>
+</tbody>
+</table>
+<p>表3.常用的反义代码</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任意不是字母，数字，下划线的字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意不是空白符的字符</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字的字符</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>匹配不是单词开头或结束的位置</td>
+</tr>
+<tr>
+<td>[^x]</td>
+<td>匹配除了x以外的任意字符</td>
+</tr>
+<tr>
+<td>[^aeiou]</td>
+<td>匹配除了aeiou这几个字母以外的任意字符</td>
+</tr>
+</tbody>
+</table>
+<p>表4.常用分组语法</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>捕获：(exp)</td>
+<td>匹配exp,并捕获文本到自动命名的组里</td>
+</tr>
+<tr>
+<td>捕获：(?<name>exp)</name></td>
+<td>匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)</td>
+</tr>
+<tr>
+<td>捕获：(?:exp)</td>
+<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
+</tr>
+<tr>
+<td>零宽断言：(?=exp)</td>
+<td>匹配exp前面的位置</td>
+</tr>
+<tr>
+<td>零宽断言：(?&lt;=exp)</td>
+<td>匹配exp后面的位置</td>
+</tr>
+<tr>
+<td>零宽断言：(?!exp)</td>
+<td>匹配后面跟的不是exp的位置</td>
+</tr>
+<tr>
+<td>零宽断言：(?&lt;!exp)</td>
+<td>匹配前面不是exp的位置</td>
+</tr>
+<tr>
+<td>注释：(?#comment)</td>
+<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
+</tr>
+</tbody>
+</table>
+<p>表5.懒惰限定符</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*?</td>
+<td>重复任意次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>+?</td>
+<td>重复1次或更多次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>??</td>
+<td>重复0次或1次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,m}?</td>
+<td>重复n到m次，但尽可能少重复</td>
+</tr>
+<tr>
+<td>{n,}?</td>
+<td>重复n次以上，但尽可能少重复</td>
+</tr>
+</tbody>
+</table>
+<p>表6.常用的处理选项</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IgnoreCase(忽略大小写)</td>
+<td>匹配时不区分大小写。</td>
+</tr>
+<tr>
+<td>Multiline(多行模式)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)<br>Singleline(单行模式) | 更改.的含义，使它与每一个字符匹配（包括换行符\n）。<br>IgnorePatternWhitespace(忽略空白) | 忽略表达式中的非转义空白并启用由#标记的注释。<br>ExplicitCapture(显式捕获) | 仅捕获已被显式命名的组。</p>
+<p>表7.尚未详细讨论的语法</p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>\a | 报警字符(打印它的效果是电脑嘀一声)<br>\b | 通常是单词分界位置，但如果在字符类里使用代表退格<br>\t | 制表符，Tab<br>\r | 回车<br>\v | 竖向制表符<br>\f | 换页符<br>\n | 换行符<br>\e | Escape<br>\0nn | ASCII代码中八进制代码为nn的字符<br>\xnn | ASCII代码中十六进制代码为nn的字符<br>\unnnn | Unicode代码中十六进制代码为nnnn的字符<br>\cN | ASCII控制字符。比如\cC代表Ctrl+C<br>\A | 字符串开头(类似^，但不受处理多行选项的影响)<br>\Z | 字符串结尾或行尾(不受处理多行选项的影响)<br>\z | 字符串结尾(类似$，但不受处理多行选项的影响)<br>\G | 当前搜索的开头<br>\p{name} | Unicode中命名为name的字符类，例如\p{IsGreek}<br>(?&gt;exp) | 贪婪子表达式<br>(?<x>-<y>exp) | 平衡组<br>(?im-nsx:exp) | 在子表达式exp中改变处理选项<br>(?im-nsx) | 为表达式后面的部分改变处理选项<br>(?(exp)yes|no) | 把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no<br>(?(exp)yes) | 同上，只是使用空表达式作为no<br>(?(name)yes|no) | 如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no<br>(?(name)yes) | 同上，只是使用空表达式作为no</y></x></p>
+<h5 id="转自我对正则表达式的一点理解"><a href="#转自我对正则表达式的一点理解" class="headerlink" title="转自我对正则表达式的一点理解"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/599739" target="_blank" rel="external">我对正则表达式的一点理解</a></h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew/regexp-basic/" data-id="cjiwslp4p000clfz6k9p7t44z" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/joy/">joy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/10/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/front/">front</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/joy/">joy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/others/">others</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/front/" style="font-size: 10px;">front</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/joy/" style="font-size: 16.67px;">joy</a> <a href="/tags/others/" style="font-size: 10px;">others</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/vue/" style="font-size: 13.33px;">vue</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/1.7/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/regexp-password/">regexp-password</a>
+          </li>
+        
+          <li>
+            <a href="/autojump/">autojump</a>
+          </li>
+        
+          <li>
+            <a href="/track-by/">track-by</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 lu.wei<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | stardew的博客</title>
+  <title>autojump | stardew的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="平时知识积累，站点博客迁移">
-<meta property="og:type" content="website">
-<meta property="og:title" content="stardew的博客">
-<meta property="og:url" content="https://github.com/stardew/archives/index.html">
+  <meta name="description" content="mac安装autojumpautojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。    安装zsh：sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot; 将zsh设置成默认的shell：-s(重启shel">
+<meta name="keywords" content="tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="autojump">
+<meta property="og:url" content="https://github.com/stardew/autojump/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="平时知识积累，站点博客迁移">
+<meta property="og:description" content="mac安装autojumpautojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。    安装zsh：sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot; 将zsh设置成默认的shell：-s(重启shel">
 <meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-06-27T06:58:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="stardew的博客">
-<meta name="twitter:description" content="平时知识积累，站点博客迁移">
+<meta name="twitter:title" content="autojump">
+<meta name="twitter:description" content="mac安装autojumpautojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。    安装zsh：sh -c &amp;quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&amp;quot; 将zsh设置成默认的shell：-s(重启shel">
   
     <link rel="alternate" href="/atom.xml" title="stardew的博客" type="application/atom+xml">
   
@@ -68,38 +70,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/1.7/" class="archive-article-date">
-  <time datetime="2018-06-27T05:47:14.000Z" itemprop="datePublished">Jun 27</time>
+        <section id="main"><article id="post-autojump" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/autojump/" class="article-date">
+  <time datetime="2016-12-12T18:52:00.000Z" itemprop="datePublished">2016-12-12</time>
 </a>
-      
-    </header>
+    
   </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      autojump
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="mac安装autojump"><a href="#mac安装autojump" class="headerlink" title="mac安装autojump"></a>mac安装autojump</h2><p>autojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。  </p>
+<ol>
+<li>安装zsh：<code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></li>
+<li>将zsh设置成默认的shell：<figure class="highlight plain"><figcaption><span>-s</span><a href="/bin/zsh```">(重启shell)</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">3. ```echo $SHELL```可以查看用的哪个shell（bash or zsh）</div><div class="line">4. 安装autojump：```brew install autojump```（确保有brew）</div><div class="line">5. 使用```vim .zshrc```打开.zshrc（有些人会找不到.zshrc这个文件，其实安装了zsh才会有.zshrc ，在默认打开的终端目录下。可以打开终端并且ls -a查看）。</div><div class="line">* 找到 plugins=，在后面添加autojump：```plugins=(git autojump)</div></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>新开一行，添加：<figure class="highlight plain"><figcaption><span>-s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">* ```：wq```保存退出</div><div class="line">6. 重启终端，autojump就可以使用了，例如：</div><div class="line">      添加一条快捷键：```j -a s &apos;/Users/XXX/Desktop/code/shark’```（j -a 你定义的快捷命令 ‘需要跳转的目录位置’）</div><div class="line"></div><div class="line">      进入shark：```j s</div></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="转自mac安装autojump"><a href="#转自mac安装autojump" class="headerlink" title="转自mac安装autojump"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/804679" target="_blank" rel="external">mac安装autojump</a></h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/stardew/autojump/" data-id="cjiwslp470003lfz6be2j9lty" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/regexp-password/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          regexp-password
+        
+      </div>
+    </a>
+  
+  
+    <a href="/track-by/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">track-by</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
