@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/regexp-basic/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/weex-start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/regexp-basic/" itemprop="url">regexp-basic</a></h2>
+                <a class="post-title-link" href="/weex-start/" itemprop="url">weex-start</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-08T15:49:00Z">
-                2016-01-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T00:00:00Z">
+                2017-07-24
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/regexp-basic/#comments" itemprop="discussionUrl">
+                <a href="/weex-start/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="regexp-basic/" itemprop="commentCount"></span>
+                        data-disqus-identifier="weex-start/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,351 +365,68 @@
       
         
           
-            <h2 id="我对正则表达式的一点理解"><a href="#我对正则表达式的一点理解" class="headerlink" title="我对正则表达式的一点理解"></a>我对正则表达式的一点理解</h2><p>前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。  </p>
-<h4 id="1-何为正则表达式？"><a href="#1-何为正则表达式？" class="headerlink" title="1. 何为正则表达式？"></a>1. 何为正则表达式？</h4><pre><code>通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?），没错，正则表达式就是符合某一类规则的一串表达式。
-</code></pre><h4 id="2-什么情况下会用到正则表达式？"><a href="#2-什么情况下会用到正则表达式？" class="headerlink" title="2. 什么情况下会用到正则表达式？"></a>2. 什么情况下会用到正则表达式？</h4><pre><code>通常我们会在字符串的查找匹配，替换中使用到正则。
-</code></pre><h4 id="3-如何使用正则表达式？"><a href="#3-如何使用正则表达式？" class="headerlink" title="3. 如何使用正则表达式？"></a>3. 如何使用正则表达式？</h4><pre><code>前面也说过，正则表达式需要符合一定的规则，也就是说，按规则来书写，就基本可以满足需求，当然，只是满足基本，在实际应用中还应该考虑各种情况，这就需要添加更多的限定条件。我们先拿前面提到的正则式来举个例子。
-
-\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?
-
-看着这么一大串乱七八糟的字符有没有很头疼呢，我们且不说这是干什么用的，先根据附录中的规则分解剖析一番，把这个表达式分几部分
-</code></pre><ol>
-<li><p>[\w!#$%&amp;’*+/=?^_`{|}~-]+ </p>
-<p>中括号[]里面是我们要匹配的字符，后面的+是重复至少一次的意思，\w是指此字符串以下划线、数字或字母打头，或者以!#$%&amp;’<em>+/=?^_`{|}~-中的任何一个打头，!#$%&amp;’</em>+/=?^_`{|}~-这么一大串其实就是我们键盘顶部那些字符。</p>
+            <h5 id="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。"><a href="#认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。" class="headerlink" title="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。"></a>认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。</h5><h1 id="1-构建项目"><a href="#1-构建项目" class="headerlink" title="1. 构建项目"></a>1. 构建项目</h1><p>创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。</p>
+<h4 id="weex-toolkit（创建的weex项目没有ios和android包）"><a href="#weex-toolkit（创建的weex项目没有ios和android包）" class="headerlink" title="weex-toolkit（创建的weex项目没有ios和android包）"></a>weex-toolkit（创建的weex项目没有ios和android包）</h4><ul>
+<li>weex init weex 创建项目</li>
+<li><p>修改weex.html文件，将<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- cnpm install 加载依赖包</div><div class="line">- package.json中的scripts配置```&quot;app&quot;: &quot;npm run build &amp; npm run dev &amp; npm run server&quot;</div></pre></td></tr></table></figure></p>
 </li>
-<li><p>(?:\.[\w!#$%&amp;’<em>+/=?^_`{|}~-]+)</em> </p>
-<p>这一串紧跟着首字符之后，小括号()里面是一个子表达式，用来分组的，(?:\.)见附录表4中的捕获，.是匹配除换行符以外的任意字符，而\.是转义之后的，单纯指.，.后必须跟字符或字符串。最后面的<em>指重复0次或更多次的意思，小括号里面还a中出现的[\w!#$%&amp;’</em>+/=?^_`{|}~-]+。</p>
+<li><p>npm run app 启动项目</p>
 </li>
-<li><p>@</p>
-<p>这个就是匹配单纯的@符号，必须出现的。</p>
-</li>
-<li><p>(?:[\w](?:[\w-]*[\w])?\.)+ </p>
-<p>字符或字符串以.结束，内部还嵌套了一个子表达式(?:[\w-]*[\w])?，不难理解。</p>
-</li>
-<li><p>[\w](?:[\w-]*[\w])? </p>
-<p>d内部嵌套的子表达式一样。</p>
-</li>
-</ol>
-<p>看完上面的解释，你一定也看出这个正则表达式的功能了吧，不错，正是用来匹配邮箱的。当然，上面匹配的比较严格，我们也可以简单的使用[\w+~!#$%^&amp;*()_+]+@\w+.\w+进行匹配，依项目需要了。看到这里，有没有觉得其实正则表达式并没有想象中那么可怕呢。下面我们来写一个简单的匹配电话号码的正则式（如：010-11111111,0101111111等）：</p>
-<p>^[0]\d{2}-?\d{8}|\[0]d{3}-?\d{7,8}$</p>
-<p>写完之后，可以在线（<a href="http://tool.oschina.net/regex/" target="_blank" rel="external">http://tool.oschina.net/regex/</a>）测试一下我们所写的正则式是否符合要求，</p>
-<h4 id="4-附录："><a href="#4-附录：" class="headerlink" title="4. 附录："></a>4. 附录：</h4><p>表1. 常用元字符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-<p>表2.常用的限定符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>重复零次或更多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>重复一次或更多次</td>
-</tr>
-<tr>
-<td>?</td>
-<td>重复零次或一次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>重复n次或更多次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>重复n到m次</td>
-</tr>
-</tbody>
-</table>
-<p>表3.常用的反义代码</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\W</td>
-<td>匹配任意不是字母，数字，下划线的字符</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配任意不是空白符的字符</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配任意非数字的字符</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配不是单词开头或结束的位置</td>
-</tr>
-<tr>
-<td>[^x]</td>
-<td>匹配除了x以外的任意字符</td>
-</tr>
-<tr>
-<td>[^aeiou]</td>
-<td>匹配除了aeiou这几个字母以外的任意字符</td>
-</tr>
-</tbody>
-</table>
-<p>表4.常用分组语法</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>捕获：(exp)</td>
-<td>匹配exp,并捕获文本到自动命名的组里</td>
-</tr>
-<tr>
-<td>捕获：(?<name>exp)</name></td>
-<td>匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)</td>
-</tr>
-<tr>
-<td>捕获：(?:exp)</td>
-<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
-</tr>
-<tr>
-<td>零宽断言：(?=exp)</td>
-<td>匹配exp前面的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?&lt;=exp)</td>
-<td>匹配exp后面的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?!exp)</td>
-<td>匹配后面跟的不是exp的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?&lt;!exp)</td>
-<td>匹配前面不是exp的位置</td>
-</tr>
-<tr>
-<td>注释：(?#comment)</td>
-<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
-</tr>
-</tbody>
-</table>
-<p>表5.懒惰限定符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*?</td>
-<td>重复任意次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>+?</td>
-<td>重复1次或更多次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>??</td>
-<td>重复0次或1次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,m}?</td>
-<td>重复n到m次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,}?</td>
-<td>重复n次以上，但尽可能少重复</td>
-</tr>
-</tbody>
-</table>
-<p>表6.常用的处理选项</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IgnoreCase(忽略大小写)</td>
-<td>匹配时不区分大小写。</td>
-</tr>
-<tr>
-<td>Multiline(多行模式)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)<br>Singleline(单行模式) | 更改.的含义，使它与每一个字符匹配（包括换行符\n）。<br>IgnorePatternWhitespace(忽略空白) | 忽略表达式中的非转义空白并启用由#标记的注释。<br>ExplicitCapture(显式捕获) | 仅捕获已被显式命名的组。</p>
-<p>表7.尚未详细讨论的语法</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\a</td>
-<td>报警字符(打印它的效果是电脑嘀一声)</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>通常是单词分界位置，但如果在字符类里使用代表退格</td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符，Tab</td>
-</tr>
-<tr>
-<td>\r</td>
-<td>回车</td>
-</tr>
-<tr>
-<td>\v</td>
-<td>竖向制表符</td>
-</tr>
-<tr>
-<td>\f</td>
-<td>换页符</td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符</td>
-</tr>
-<tr>
-<td>\e</td>
-<td>Escape</td>
-</tr>
-<tr>
-<td>\0nn</td>
-<td>ASCII代码中八进制代码为nn的字符</td>
-</tr>
-<tr>
-<td>\xnn</td>
-<td>ASCII代码中十六进制代码为nn的字符</td>
-</tr>
-<tr>
-<td>\unnnn</td>
-<td>Unicode代码中十六进制代码为nnnn的字符</td>
-</tr>
-<tr>
-<td>\cN</td>
-<td>ASCII控制字符。比如\cC代表Ctrl+C</td>
-</tr>
-<tr>
-<td>\A</td>
-<td>字符串开头(类似^，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\Z</td>
-<td>字符串结尾或行尾(不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\z</td>
-<td>字符串结尾(类似$，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\G</td>
-<td>当前搜索的开头</td>
-</tr>
-<tr>
-<td>\p{name}</td>
-<td>Unicode中命名为name的字符类，例如\p{IsGreek}</td>
-</tr>
-<tr>
-<td>(?&gt;exp)</td>
-<td>贪婪子表达式</td>
-</tr>
-<tr>
-<td>(?<x>-<y>exp)</y></x></td>
-<td>平衡组</td>
-</tr>
-<tr>
-<td>(?im-nsx:exp)</td>
-<td>在子表达式exp中改变处理选项</td>
-</tr>
-<tr>
-<td>(?im-nsx)</td>
-<td>为表达式后面的部分改变处理选项</td>
-</tr>
-<tr>
-<td>(?(exp)yes</td>
-<td>no)</td>
-<td>把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no</td>
-</tr>
-<tr>
-<td>(?(exp)yes)</td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-<tr>
-<td>(?(name)yes</td>
-<td>no)</td>
-<td>如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</td>
-</tr>
-<tr>
-<td>(?(name)yes)</td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-</tbody>
-</table>
-<h5 id="转自-我对正则表达式的一点理解"><a href="#转自-我对正则表达式的一点理解" class="headerlink" title="[转自] 我对正则表达式的一点理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/599739" target="_blank" rel="external">我对正则表达式的一点理解</a></h5>
+</ul>
+<p>目录结构如下图：<br><img src="https://segmentfault.com/img/bVPAmL" alt="clipboard.png"></p>
+<h4 id="weexpack-（创建的weex项目有ios和android包）"><a href="#weexpack-（创建的weex项目有ios和android包）" class="headerlink" title="weexpack （创建的weex项目有ios和android包）"></a>weexpack （创建的weex项目有ios和android包）</h4><ul>
+<li>weexpack create weex 创建项目</li>
+<li>weexpack platform add android 添加android</li>
+<li>weexpack platform add ios 添加ios</li>
+<li>weexpack run ios 模拟器运行</li>
+</ul>
+<p>目录结构如下图：<br><img src="https://segmentfault.com/img/bVPAly" alt="clipboard.png"></p>
+<p>因为我们不打包android和ios，只需要将写好的页面打包成.weex.js文件供ios和android开发人员调用，所以采用了weex init的构建方式。</p>
+<h1 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h1><h4 id="Weex-Devtools"><a href="#Weex-Devtools" class="headerlink" title="Weex Devtools"></a>Weex Devtools</h4><p>Weex Devtools是Weex开发调试必备的神器，安装好后，终端进入到项目目录，运行weex debug 会自动打开页面</p>
+<p><img src="https://segmentfault.com/img/bVPAfS" alt="clipboard.png"></p>
+<p>扫二维码后</p>
+<p><img src="https://segmentfault.com/img/bVPAgs" alt="clipboard.png"></p>
+<p>点击Inspector可以看页面信息，我们打开Debugger，然后扫描打包好的js文件二维码就可以开始调试了。</p>
+<p><img src="https://segmentfault.com/img/bVPAgM" alt="clipboard.png"></p>
+<p>注： 箭头所指处选debugger，我因为手贱选了个别的，导致好几天console里没有内容提示，还以为版本问题，后来研究了下，发现这里选错了。</p>
+<h1 id="3-遇到的问题"><a href="#3-遇到的问题" class="headerlink" title="3. 遇到的问题"></a>3. 遇到的问题</h1><blockquote>
+<p>官方demo跑不通</p>
+<h5 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h5><p>高一点版本的weex-vue-render里index.js路径改变，导致。修改weex.html文件，将<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; 使用vue-resources获取接口数据, weex web上好的，但是weex-playground中跑不通，一片空白，错误信息：</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>[undefined:344:31] ReferenceError: Can’t find variable: document<br>addStyle<br>addStylesToDom<br>exports</p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p>anonymous<br>a@main.js:4:16690<br>main.js:7:8740<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">weex中不支持document和window，换成其它方式。weex不支持vue-resources，改成weex支持的fetch</div><div class="line">&gt; &lt;scroll&gt;里loading一直没效果</div><div class="line">##### 解决：</div><div class="line">&lt;scroll&gt;中使用refresh就没法用loading，去掉refresh模块</div><div class="line">&gt; webpack报错，错误信息 ```ERROR <span class="keyword">in</span> Entry <span class="keyword">module</span> not found: Error: Cannot resolve <span class="string">'file'</span> or <span class="string">'directory'</span> /Users/xx/xx/<span class="keyword">code</span>/weex/app.js <span class="keyword">in</span> /Users/xx/xx/<span class="keyword">code</span>/weex</div></pre></td></tr></table></figure></p>
+<h5 id="解决：-1"><a href="#解决：-1" class="headerlink" title="解决："></a>解决：</h5><p>开始一直以为是webpack入口没配置对，检查很多遍，各种测试后，发现这里真的没问题<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// entry: entries</span></div><div class="line"><span class="attribute">entry</span>: &#123;</div><div class="line">  <span class="attribute">app</span>: path.resolve(<span class="string">'./app.js'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>后来找到问题出自<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">resolve</span>: &#123;</div><div class="line">  <span class="attribute">extensions</span>: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>原因是修改了默认的这个配置后，第一个空项不能省略，应该配置为<br><figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.vue&apos;, &apos;.json&apos;]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>错误信息 <figure class="highlight plain"><figcaption><span>resolve module 'sass-loader'```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">缺少node-sass 或 sass-loader</div><div class="line">```npm install node-sass sass-loader --save-dev</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>把sass-loader安装成了”scss-loader”: “0.0.1”,也是服了我自己。</p>
+<blockquote>
+<p>接口地址只能获取本地数据，配置test环境失败</p>
+<h5 id="解决：-2"><a href="#解决：-2" class="headerlink" title="解决："></a>解决：</h5><p>server.js中加一层代理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>)</div><div class="line"></div><div class="line"><span class="comment">// api代理</span></div><div class="line"><span class="keyword">var</span> proxyTable = config.test.proxyTable</div><div class="line"><span class="built_in">Object</span>.keys(proxyTable).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> options = proxyTable[context]</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> options === <span class="string">'string'</span>) &#123;</div><div class="line">    options = &#123; <span class="attr">target</span>: options &#125;</div><div class="line">  &#125;</div><div class="line">  server.use(proxyMiddleware(context, options))</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// proxyTable数据</span></div><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    <span class="comment">// 测试服务器</span></div><div class="line">    target: <span class="string">'http://ip地址:端口号/xx'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>weex接口调用，fetch的headers某些字段始终设置不上</p>
+<h5 id="解决：-3"><a href="#解决：-3" class="headerlink" title="解决："></a>解决：</h5><p>fetch的headers只能设置下面这些字段<br>参考： <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS</a></p>
+<hr>
+<p>  ● 人为设置了对CORS安全的首部字段集合之外的其他首部字段。该集合为：<br>    ○ Accept<br>    ○ Accept-Language<br>    ○ Content-Language<br>    ○ Content-Type (but note the additional requirements below)<br>    ○ DPR<br>    ○ Downlink<br>    ○ Save-Data<br>    ○ Viewport-Width<br>    ○ Width<br>  ●  Content-Type 的值不属于下列之一:<br>    ○ application/x-www-form-urlencoded<br>    ○ multipart/form-data<br>    ○ text/plain</p>
+<hr>
+<p>stream的fetch使用get方式请求接口，url都会自动加上&amp;undefined，官网的例子也不例外。原本普通接口多加一个undefined也没太大影响，但是我们项目是需要根据url参数计算签名的，所以一直签名不通过。</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/bVPAyC" alt="clipboard.png"></p>
+<h5 id="解决：-4"><a href="#解决：-4" class="headerlink" title="解决："></a>解决：</h5><p>找到源码出处<br><img src="https://segmentfault.com/img/bVPz7b" alt="clipboard.png"><br><img src="https://segmentfault.com/img/bVPz6u" alt="clipboard.png"><br><img src="https://segmentfault.com/img/bVPABE" alt="clipboard.png"></p>
+<p>weex-vue-render第2753行对get进行了特别处理，第2764行的url拼接了body和hash，因为body没有传值，所以是undefined，注释掉url+=这行就没有undefined了，但是修改node_modules中的包内容显然不是一个合理的解决方案。<br>于是把get方式传值改为body传过来，web端好了，签名没有问题，但是真机上还是报错，排查后发现问题出在get中使用了body传值，找到开发文档，<br><a href="http://weex.apache.org/cn/references/modules/stream.html" target="_blank" rel="external">http://weex.apache.org/cn/references/modules/stream.html</a><br><img src="https://segmentfault.com/img/bVPABf" alt="clipboard.png"><br>然后我凌乱了，为什么明明不能传body你的源码里又要有那么一行代码<figure class="highlight plain"><figcaption><span>+= (config.url.indexOf('?') <= -1="" ?="" '?'="" :="" '&')="" +="" body="" hash;```。没办法，最后使用了一个超级笨的办法解决了。在签名计算的时候人为的给url加上“&undefined",计算好签名后，web中fetch参数中的url也要加上“&undefined"，但是真机上是不会有&undefined的，所以真机上的url需要去掉undefined，好了问题解决了。<="" span=""></=></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; storage中的```getItem(key, callback)```封装后，页面没拿到数据。</div><div class="line">##### 解决：</div><div class="line">storage异步造成的，使用promise解决</div></pre></td></tr></table></figure></p>
+<p>const p1 = new Promise(function (resolve) {<br>    storage.getItem(key, event =&gt; {<br>      let ls = event.data || ‘’<br>      let d = secret.decrypt(ls) // 对密文字符串进行解密。<br>      d = typeof d === ‘object’ ? JSON.parse(d) : d<br>      resolve(d)<br>    })<br>  })<br>  Promise.all([p1]).then(function (result) {<br>    callback(result)<br>  }).catch(function(err){<br>    console.log(‘error’, err)<br>  })<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> 页面跳转外部非js链接，在网页上是好的，但真机上一片空白</span></div></pre></td></tr></table></figure></p>
+<p>navigator.push({<br>  url: ‘<a href="https://segmentfault.com/write?freshman=1" target="_blank" rel="external">https://segmentfault.com/write?freshman=1</a>‘,<br>  animated: “true”<br>})<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">新建一个vue文件，使用weex的web标签包一层，然后打包成weex.js格式，普通调用就好了。</div><div class="line">```&lt;web <span class="keyword">class</span>=<span class="string">"content"</span> :src=<span class="string">"url"</span>&gt;&lt;/web&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>跳转weex.js页面传参</p>
+<h5 id="解决：-5"><a href="#解决：-5" class="headerlink" title="解决："></a>解决：</h5><p>直接在url后面拼接参数，新页面使用this.$getConfig().bundleUrl获取url解析一下就好了。<br>post提交数据的是后报错415</p>
+<h5 id="解决：-6"><a href="#解决：-6" class="headerlink" title="解决："></a>解决：</h5><p>头部信息一定要和后端协议好，不允许不一致。</p>
+</blockquote>
+<h5 id="转自-我的weex开发之路"><a href="#转自-我的weex开发之路" class="headerlink" title="[转自] 我的weex开发之路"></a>[转自] <a href="https://segmentfault.com/a/1190000009873690" target="_blank" rel="external">我的weex开发之路</a></h5>
           
         
       
@@ -748,7 +465,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -782,7 +499,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -794,7 +511,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

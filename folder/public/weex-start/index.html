@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="简体中文">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。1. 构建项目创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。 weex-toolkit（创建的weex项目没有ios和android包） weex init weex 创建项目 修改weex.html文件，将12- cnpm install 加载依赖">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="weex-start">
+<meta property="og:url" content="https://github.com/stardew/weex-start/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。1. 构建项目创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。 weex-toolkit（创建的weex项目没有ios和android包） weex init weex 创建项目 修改weex.html文件，将12- cnpm install 加载依赖">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAmL">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAly">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAfS">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAgs">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAgM">
+<meta property="og:image" content="https://segmentfault.com/img/bVPAyC">
+<meta property="og:image" content="https://segmentfault.com/img/bVPz7b">
+<meta property="og:image" content="https://segmentfault.com/img/bVPz6u">
+<meta property="og:image" content="https://segmentfault.com/img/bVPABE">
+<meta property="og:image" content="https://segmentfault.com/img/bVPABf">
+<meta property="og:updated_time" content="2018-06-27T11:10:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex-start">
+<meta name="twitter:description" content="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。1. 构建项目创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。 weex-toolkit（创建的weex项目没有ios和android包） weex init weex 创建项目 修改weex.html文件，将12- cnpm install 加载依赖">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVPAmL">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/stardew/weex-start/"/>
+
+
+
+
+
+  <title>weex-start | stardew的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="简体中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stardew的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/weex-start/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lu.wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stardew的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">weex-start</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-24T08:00:00+08:00">
+                2017-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/weex-start/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="weex-start/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。"><a href="#认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。" class="headerlink" title="认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。"></a>认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。</h5><h1 id="1-构建项目"><a href="#1-构建项目" class="headerlink" title="1. 构建项目"></a>1. 构建项目</h1><p>创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。</p>
+<h4 id="weex-toolkit（创建的weex项目没有ios和android包）"><a href="#weex-toolkit（创建的weex项目没有ios和android包）" class="headerlink" title="weex-toolkit（创建的weex项目没有ios和android包）"></a>weex-toolkit（创建的weex项目没有ios和android包）</h4><ul>
+<li>weex init weex 创建项目</li>
+<li><p>修改weex.html文件，将<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- cnpm install 加载依赖包</div><div class="line">- package.json中的scripts配置```&quot;app&quot;: &quot;npm run build &amp; npm run dev &amp; npm run server&quot;</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>npm run app 启动项目</p>
+</li>
+</ul>
+<p>目录结构如下图：<br><img src="https://segmentfault.com/img/bVPAmL" alt="clipboard.png"></p>
+<h4 id="weexpack-（创建的weex项目有ios和android包）"><a href="#weexpack-（创建的weex项目有ios和android包）" class="headerlink" title="weexpack （创建的weex项目有ios和android包）"></a>weexpack （创建的weex项目有ios和android包）</h4><ul>
+<li>weexpack create weex 创建项目</li>
+<li>weexpack platform add android 添加android</li>
+<li>weexpack platform add ios 添加ios</li>
+<li>weexpack run ios 模拟器运行</li>
+</ul>
+<p>目录结构如下图：<br><img src="https://segmentfault.com/img/bVPAly" alt="clipboard.png"></p>
+<p>因为我们不打包android和ios，只需要将写好的页面打包成.weex.js文件供ios和android开发人员调用，所以采用了weex init的构建方式。</p>
+<h1 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h1><h4 id="Weex-Devtools"><a href="#Weex-Devtools" class="headerlink" title="Weex Devtools"></a>Weex Devtools</h4><p>Weex Devtools是Weex开发调试必备的神器，安装好后，终端进入到项目目录，运行weex debug 会自动打开页面</p>
+<p><img src="https://segmentfault.com/img/bVPAfS" alt="clipboard.png"></p>
+<p>扫二维码后</p>
+<p><img src="https://segmentfault.com/img/bVPAgs" alt="clipboard.png"></p>
+<p>点击Inspector可以看页面信息，我们打开Debugger，然后扫描打包好的js文件二维码就可以开始调试了。</p>
+<p><img src="https://segmentfault.com/img/bVPAgM" alt="clipboard.png"></p>
+<p>注： 箭头所指处选debugger，我因为手贱选了个别的，导致好几天console里没有内容提示，还以为版本问题，后来研究了下，发现这里选错了。</p>
+<h1 id="3-遇到的问题"><a href="#3-遇到的问题" class="headerlink" title="3. 遇到的问题"></a>3. 遇到的问题</h1><blockquote>
+<p>官方demo跑不通</p>
+<h5 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h5><p>高一点版本的weex-vue-render里index.js路径改变，导致。修改weex.html文件，将<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; 使用vue-resources获取接口数据, weex web上好的，但是weex-playground中跑不通，一片空白，错误信息：</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>[undefined:344:31] ReferenceError: Can’t find variable: document<br>addStyle<br>addStylesToDom<br>exports</p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p><strong>webpack_require</strong></p>
+<p>anonymous<br>a@main.js:4:16690<br>main.js:7:8740<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">weex中不支持document和window，换成其它方式。weex不支持vue-resources，改成weex支持的fetch</div><div class="line">&gt; &lt;scroll&gt;里loading一直没效果</div><div class="line">##### 解决：</div><div class="line">&lt;scroll&gt;中使用refresh就没法用loading，去掉refresh模块</div><div class="line">&gt; webpack报错，错误信息 ```ERROR <span class="keyword">in</span> Entry <span class="keyword">module</span> not found: Error: Cannot resolve <span class="string">'file'</span> or <span class="string">'directory'</span> /Users/xx/xx/<span class="keyword">code</span>/weex/app.js <span class="keyword">in</span> /Users/xx/xx/<span class="keyword">code</span>/weex</div></pre></td></tr></table></figure></p>
+<h5 id="解决：-1"><a href="#解决：-1" class="headerlink" title="解决："></a>解决：</h5><p>开始一直以为是webpack入口没配置对，检查很多遍，各种测试后，发现这里真的没问题<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// entry: entries</span></div><div class="line"><span class="attribute">entry</span>: &#123;</div><div class="line">  <span class="attribute">app</span>: path.resolve(<span class="string">'./app.js'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>后来找到问题出自<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">resolve</span>: &#123;</div><div class="line">  <span class="attribute">extensions</span>: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>原因是修改了默认的这个配置后，第一个空项不能省略，应该配置为<br><figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">  extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.vue&apos;, &apos;.json&apos;]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>错误信息 <figure class="highlight plain"><figcaption><span>resolve module 'sass-loader'```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">缺少node-sass 或 sass-loader</div><div class="line">```npm install node-sass sass-loader --save-dev</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>把sass-loader安装成了”scss-loader”: “0.0.1”,也是服了我自己。</p>
+<blockquote>
+<p>接口地址只能获取本地数据，配置test环境失败</p>
+<h5 id="解决：-2"><a href="#解决：-2" class="headerlink" title="解决："></a>解决：</h5><p>server.js中加一层代理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'http-proxy-middleware'</span>)</div><div class="line"></div><div class="line"><span class="comment">// api代理</span></div><div class="line"><span class="keyword">var</span> proxyTable = config.test.proxyTable</div><div class="line"><span class="built_in">Object</span>.keys(proxyTable).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> options = proxyTable[context]</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> options === <span class="string">'string'</span>) &#123;</div><div class="line">    options = &#123; <span class="attr">target</span>: options &#125;</div><div class="line">  &#125;</div><div class="line">  server.use(proxyMiddleware(context, options))</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// proxyTable数据</span></div><div class="line">proxyTable: &#123;</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    <span class="comment">// 测试服务器</span></div><div class="line">    target: <span class="string">'http://ip地址:端口号/xx'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>weex接口调用，fetch的headers某些字段始终设置不上</p>
+<h5 id="解决：-3"><a href="#解决：-3" class="headerlink" title="解决："></a>解决：</h5><p>fetch的headers只能设置下面这些字段<br>参考： <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS</a></p>
+<hr>
+<p>  ● 人为设置了对CORS安全的首部字段集合之外的其他首部字段。该集合为：<br>    ○ Accept<br>    ○ Accept-Language<br>    ○ Content-Language<br>    ○ Content-Type (but note the additional requirements below)<br>    ○ DPR<br>    ○ Downlink<br>    ○ Save-Data<br>    ○ Viewport-Width<br>    ○ Width<br>  ●  Content-Type 的值不属于下列之一:<br>    ○ application/x-www-form-urlencoded<br>    ○ multipart/form-data<br>    ○ text/plain</p>
+<hr>
+<p>stream的fetch使用get方式请求接口，url都会自动加上&amp;undefined，官网的例子也不例外。原本普通接口多加一个undefined也没太大影响，但是我们项目是需要根据url参数计算签名的，所以一直签名不通过。</p>
+</blockquote>
+<p><img src="https://segmentfault.com/img/bVPAyC" alt="clipboard.png"></p>
+<h5 id="解决：-4"><a href="#解决：-4" class="headerlink" title="解决："></a>解决：</h5><p>找到源码出处<br><img src="https://segmentfault.com/img/bVPz7b" alt="clipboard.png"><br><img src="https://segmentfault.com/img/bVPz6u" alt="clipboard.png"><br><img src="https://segmentfault.com/img/bVPABE" alt="clipboard.png"></p>
+<p>weex-vue-render第2753行对get进行了特别处理，第2764行的url拼接了body和hash，因为body没有传值，所以是undefined，注释掉url+=这行就没有undefined了，但是修改node_modules中的包内容显然不是一个合理的解决方案。<br>于是把get方式传值改为body传过来，web端好了，签名没有问题，但是真机上还是报错，排查后发现问题出在get中使用了body传值，找到开发文档，<br><a href="http://weex.apache.org/cn/references/modules/stream.html" target="_blank" rel="external">http://weex.apache.org/cn/references/modules/stream.html</a><br><img src="https://segmentfault.com/img/bVPABf" alt="clipboard.png"><br>然后我凌乱了，为什么明明不能传body你的源码里又要有那么一行代码<figure class="highlight plain"><figcaption><span>+= (config.url.indexOf('?') <= -1="" ?="" '?'="" :="" '&')="" +="" body="" hash;```。没办法，最后使用了一个超级笨的办法解决了。在签名计算的时候人为的给url加上“&undefined",计算好签名后，web中fetch参数中的url也要加上“&undefined"，但是真机上是不会有&undefined的，所以真机上的url需要去掉undefined，好了问题解决了。<="" span=""></=></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt; storage中的```getItem(key, callback)```封装后，页面没拿到数据。</div><div class="line">##### 解决：</div><div class="line">storage异步造成的，使用promise解决</div></pre></td></tr></table></figure></p>
+<p>const p1 = new Promise(function (resolve) {<br>    storage.getItem(key, event =&gt; {<br>      let ls = event.data || ‘’<br>      let d = secret.decrypt(ls) // 对密文字符串进行解密。<br>      d = typeof d === ‘object’ ? JSON.parse(d) : d<br>      resolve(d)<br>    })<br>  })<br>  Promise.all([p1]).then(function (result) {<br>    callback(result)<br>  }).catch(function(err){<br>    console.log(‘error’, err)<br>  })<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> 页面跳转外部非js链接，在网页上是好的，但真机上一片空白</span></div></pre></td></tr></table></figure></p>
+<p>navigator.push({<br>  url: ‘<a href="https://segmentfault.com/write?freshman=1" target="_blank" rel="external">https://segmentfault.com/write?freshman=1</a>‘,<br>  animated: “true”<br>})<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">##### 解决：</div><div class="line">新建一个vue文件，使用weex的web标签包一层，然后打包成weex.js格式，普通调用就好了。</div><div class="line">```&lt;web <span class="keyword">class</span>=<span class="string">"content"</span> :src=<span class="string">"url"</span>&gt;&lt;/web&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>跳转weex.js页面传参</p>
+<h5 id="解决：-5"><a href="#解决：-5" class="headerlink" title="解决："></a>解决：</h5><p>直接在url后面拼接参数，新页面使用this.$getConfig().bundleUrl获取url解析一下就好了。<br>post提交数据的是后报错415</p>
+<h5 id="解决：-6"><a href="#解决：-6" class="headerlink" title="解决："></a>解决：</h5><p>头部信息一定要和后端协议好，不允许不一致。</p>
+</blockquote>
+<h5 id="转自-我的weex开发之路"><a href="#转自-我的weex开发之路" class="headerlink" title="[转自] 我的weex开发之路"></a>[转自] <a href="https://segmentfault.com/a/1190000009873690" target="_blank" rel="external">我的weex开发之路</a></h5>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/regexp-password/" rel="next" title="regexp-password">
+                <i class="fa fa-chevron-left"></i> regexp-password
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/vueresource-405/" rel="prev" title="vueresource-405">
+                vueresource-405 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://segmentfault.com/img/bVbcOD7"
+               alt="lu.wei" />
+          <p class="site-author-name" itemprop="name">lu.wei</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。"><span class="nav-number">1.</span> <span class="nav-text">认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-构建项目"><span class="nav-number"></span> <span class="nav-text">1. 构建项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#weex-toolkit（创建的weex项目没有ios和android包）"><span class="nav-number"></span> <span class="nav-text">weex-toolkit（创建的weex项目没有ios和android包）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#weexpack-（创建的weex项目有ios和android包）"><span class="nav-number"></span> <span class="nav-text">weexpack （创建的weex项目有ios和android包）</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-工具"><span class="nav-number"></span> <span class="nav-text">2. 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Weex-Devtools"><span class="nav-number"></span> <span class="nav-text">Weex Devtools</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-遇到的问题"><span class="nav-number"></span> <span class="nav-text">3. 遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决："><span class="nav-number">1.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-1"><span class="nav-number">2.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-2"><span class="nav-number">3.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-3"><span class="nav-number">4.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-4"><span class="nav-number">5.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-5"><span class="nav-number">6.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决：-6"><span class="nav-number">7.</span> <span class="nav-text">解决：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-我的weex开发之路"><span class="nav-number">8.</span> <span class="nav-text">[转自] 我的weex开发之路</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lu.wei</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/weex-start/';
+          this.page.identifier = 'weex-start/';
+          this.page.title = 'weex-start';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

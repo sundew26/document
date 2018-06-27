@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/autojump/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/atom/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/autojump/" itemprop="url">autojump</a></h2>
+                <a class="post-title-link" href="/atom/" itemprop="url">atom</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T18:52:00Z">
-                2016-12-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T00:00:00Z">
+                2018-05-27
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/autojump/#comments" itemprop="discussionUrl">
+                <a href="/atom/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="autojump/" itemprop="commentCount"></span>
+                        data-disqus-identifier="atom/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,23 +365,9 @@
       
         
           
-            <h2 id="mac安装autojump"><a href="#mac安装autojump" class="headerlink" title="mac安装autojump"></a>mac安装autojump</h2><pre><code>autojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。  
-</code></pre><ol>
-<li>安装zsh：<br> <code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></li>
-<li>将zsh设置成默认的shell：<code>chsh -s /bin/zsh</code> (重启shell)</li>
-<li><code>echo $SHELL</code>可以查看用的哪个shell（bash or zsh）</li>
-<li>安装autojump：<code>brew install autojump</code>（确保有brew）</li>
-<li>使用<code>vim .zshrc</code>打开.zshrc（有些人会找不到.zshrc这个文件，其实安装了zsh才会有.zshrc ，在默认打开的终端目录下。可以打开终端并且ls -a查看）。<ul>
-<li>找到 plugins=，在后面添加autojump：<code>plugins=(git autojump)</code></li>
-<li>新开一行，添加：<code>[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh</code></li>
-<li><code>：wq</code>保存退出</li>
-</ul>
-</li>
-<li><p>重启终端，autojump就可以使用了，例如：<br>   添加一条快捷键：<code>j -a s &#39;/Users/XXX/Desktop/code/shark’</code>（j -a 你定义的快捷命令 ‘需要跳转的目录位置’）</p>
-<p>   进入shark：<code>j s</code></p>
-</li>
-</ol>
-<h5 id="转自-mac安装autojump"><a href="#转自-mac安装autojump" class="headerlink" title="[转自] mac安装autojump"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/804679" target="_blank" rel="external">mac安装autojump</a></h5>
+            <p>Atom 是github专门为程序员推出的一个跨平台文本编辑器。文件太大时容易卡死，但是目前对于我们前端开发的项目还是完全可以支撑的，打开项目快的简直要飞起来（相比之前使用webstorm而言，个人不太喜欢sublime。）。安装以下一些插件后，使用起来非常酷炫。</p>
+<p>cd ~/.atom/packages<br>apm install atom-beautify 代码格式一键美化<br>apm install language-vuejs 安装vue<br>apm install minimap  代码小地图<br>apm install tree-view-git-status 代码Git状态图标<br>apm install script 运行多种开发语言脚本<br>apm install Emmet 使用缩写语法快速编写 HTML、CSS 以及实现其他的功能<br>apm install color-picker 颜色选择器<br>apm install file-type-icons 更改左侧分级视图的文件图标和颜色<br>apm install linter-csslint css样式检测<br>apm install autocomplete-paths 自动提示文件路径<br>apm install autocomplete-paths 路径补全<br>apm install autoclose-html html 自动补全关闭标签<br>apm install activate-power-mode  这个很酷炫的，你可以试试<br>apm install language-wepy 支持wepy （微信小程序）<br>apm install sync-settings 配置你个人的 Github access token。然后在 Atom Command Palette 中输入 sync-settings:backup，会自动将 Atom 的配置备份在 gist 中</p>
+<h5 id="转自-Atom一个跨平台文本编辑器"><a href="#转自-Atom一个跨平台文本编辑器" class="headerlink" title="[转自] Atom一个跨平台文本编辑器"></a>[转自] <a href="https://segmentfault.com/a/1190000014899093" target="_blank" rel="external">Atom一个跨平台文本编辑器</a></h5>
           
         
       
@@ -420,7 +406,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -454,7 +440,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -466,7 +452,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/mouse-move-trouble/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/regexp-password/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/mouse-move-trouble/" itemprop="url">mouse-move-trouble</a></h2>
+                <a class="post-title-link" href="/regexp-password/" itemprop="url">regexp-password</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-07-29T13:03:00Z">
-                2015-07-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-06T11:35:00Z">
+                2017-04-06
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/mouse-move-trouble/#comments" itemprop="discussionUrl">
+                <a href="/regexp-password/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="mouse-move-trouble/" itemprop="commentCount"></span>
+                        data-disqus-identifier="regexp-password/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,20 +365,11 @@
       
         
           
-            <h2 id="mouseover、mouseout防止多次触发"><a href="#mouseover、mouseout防止多次触发" class="headerlink" title="mouseover、mouseout防止多次触发"></a>mouseover、mouseout防止多次触发</h2><p>今天做一个信息提示功能时，发现用mouseover展示提示信息，mouseout收起信息时，一直闪烁，开始以为层级关系出问题，修改许久未见成效，最后发现是因为内部元素在鼠标移上的时候会向它的父对…  </p>
-<p><img src="http://static.oschina.net/uploads/space/2015/0729/125346_K5Kp_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2015/0729/124752_Lwdz_255575.png" alt=""></p>
-<pre><code>下面这段文字是摘抄的：  
-
-    在用到mouseover和mouseout事件来作为事件触发的条件，但是如果我们用做触发的元素内部有其他的元素的时候当鼠标移上的时候会反复的触发mouseover和mouseout事件。因为内部元素在鼠标移上的时候会向它的父对象派发事件，所以外面元素相当于也触发了mouseover 事件。
-
-    为了阻止mouseover和mouseout的反复触发，这里要用到event对象的一个属性relatedTarget，这个属性就是用来判断 mouseover和mouseout事件目标节点的相关节点的属性。简单的来说就是当触发mouseover事件时，relatedTarget属性代表的就是鼠标刚刚离开的那个节点，当触发mouseout事件时它代表的是鼠标移向的那个对象。由于MSIE不支持这个属性，不过它有代替的属性，分别是 fromElement和toElement。
-
-有了这个属性，我们就能够清楚的知道我们的鼠标是从哪个对象移过来，又是要移动到哪里去了。这样我们就能够通过判断这个相关联的对象是否在我们要触发事件的对象的内部，或者是不是就是这个对象本身。通过这个判断我们就能够合理的选择是否真的要触发事件。
-
-这里我们还用到了一个用于检查一个对象是否包含在另外一个对象中的方法，contains方法。MSIE和FireFox分别提供了检查的方法，这里封装了一个函数。
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*鼠标移入移出事件 防止多次触发*/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contains</span>(<span class="params">parentNode, childNode</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (parentNode.contains) &#123;</div><div class="line">        <span class="keyword">return</span> parentNode != childNode &amp;&amp; parentNode.contains(childNode);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> !!(parentNode.compareDocumentPosition(childNode) &amp; <span class="number">16</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkHover</span>(<span class="params">e,target</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span> (getEvent(e).type==<span class="string">"mouseover"</span>)  &#123;</div><div class="line">        <span class="keyword">return</span> !contains(target,getEvent(e).relatedTarget||getEvent(e).fromElement) &amp;&amp; !((getEvent(e).relatedTarget||getEvent(e).fromElement)===target);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> !contains(target,getEvent(e).relatedTarget||getEvent(e).toElement) &amp;&amp; !((getEvent(e).relatedTarget||getEvent(e).toElement)===target);</div><div class="line">    &#125;</div><div class="line">&#125;<span class="function"><span class="keyword">function</span> <span class="title">getEvent</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> e||<span class="built_in">window</span>.event;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*鼠标移入移出事件 防止多次触发*/</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).on(<span class="string">"mouseover"</span>,<span class="string">".messages"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(checkHover(e,<span class="keyword">this</span>)) &#123;</div><div class="line">        $(<span class="keyword">this</span>).addClass(<span class="string">"on"</span>);</div><div class="line">        $(<span class="keyword">this</span>).find(<span class="string">".m-txt"</span>).animate(&#123;<span class="attr">right</span>: <span class="string">"60px"</span>&#125;, <span class="number">100</span>);</div><div class="line">    &#125;</div><div class="line">&#125;).on(<span class="string">"mouseout"</span>,<span class="string">".messages"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(checkHover(e,<span class="keyword">this</span>)) &#123;</div><div class="line">        $(<span class="keyword">this</span>).removeClass(<span class="string">"on"</span>);</div><div class="line">        $(<span class="keyword">this</span>).find(<span class="string">".m-txt"</span>).animate(&#123;<span class="attr">right</span>: <span class="string">"-200px"</span>&#125;, <span class="number">100</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h5 id="转自-mouseover、mouseout防止多次触发"><a href="#转自-mouseover、mouseout防止多次触发" class="headerlink" title="[转自] mouseover、mouseout防止多次触发"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/485108" target="_blank" rel="external">mouseover、mouseout防止多次触发</a></h5>
+            <h2 id="正则校验密码规则"><a href="#正则校验密码规则" class="headerlink" title="正则校验密码规则"></a>正则校验密码规则</h2><p>1. 8-16位数字、字母和特殊字符~!@#$%^&amp;*-+=_.<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;  </div><div class="line">var str = '<span class="number">1</span>wfwe@<span class="number">99</span>$;' <span class="comment">// 有分号  </span></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure></p>
+<p>2. 8-16位，且必须只包含数字、字母和特殊字符~!@#$%^&amp;*-+=_.<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[~!@#$%^&amp;*\\-+=_.\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[<span class="number">0</span><span class="number">-9</span>\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[a-zA-Z\])\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;</div><div class="line">var str = '<span class="number">1</span>w@<span class="number">2812</span>fhif94#$%<span class="number">1</span>'    <span class="comment">// 17位</span></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure></p>
+<p>3. 感觉上面的有点长，replace了一下，但是看着也没多好，将就下吧。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">注：</div><div class="line">x = <span class="string">'~!@#$%^&amp;*\\\-+=_.'</span>  <span class="comment">// 特殊字符</span></div><div class="line">d = <span class="string">'0-9'</span>  <span class="comment">// 数字</span></div><div class="line">w = <span class="string">'a-zA-Z'</span> <span class="comment">// 字母</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> reg = <span class="string">'^(?=\[xdw\]*\[x\])(?=\[xdw\]*\[d\])(?=\[xdw\]*\[w\])\[xdw\]&#123;8,16&#125;$'</span>.replace(<span class="regexp">/x/gi</span>, <span class="string">'~!@#$%^&amp;*\\\-+=_.'</span>).replace(<span class="regexp">/d/gi</span>, <span class="string">'0-9'</span>).replace(<span class="regexp">/w/gi</span>, <span class="string">'a-zA-Z'</span>);</div><div class="line">reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(reg);</div><div class="line"><span class="keyword">var</span> str = <span class="string">'1w@28194#$%&lt;'</span> <span class="comment">// 有&lt;</span></div><div class="line"><span class="built_in">console</span>.log(reg, reg.test(str))</div></pre></td></tr></table></figure></p>
+<p>注：特殊字符里的‘-’需要转义‘\-’, 3中需要‘\-’</p>
+<h5 id="转自-正则校验密码规则"><a href="#转自-正则校验密码规则" class="headerlink" title="[转自] 正则校验密码规则"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/873937" target="_blank" rel="external">正则校验密码规则</a></h5>
           
         
       
@@ -417,7 +408,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -451,7 +442,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -463,7 +454,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

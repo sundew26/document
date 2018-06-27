@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/vue-drag-and-drop/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/hexo-css-build/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/vue-drag-and-drop/" itemprop="url">vue-drag-and-drop</a></h2>
+                <a class="post-title-link" href="/hexo-css-build/" itemprop="url">hexo-css-build</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-21T11:59:00Z">
-                2016-09-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-05T00:00:00Z">
+                2017-09-05
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/vue-drag-and-drop/#comments" itemprop="discussionUrl">
+                <a href="/hexo-css-build/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="vue-drag-and-drop/" itemprop="commentCount"></span>
+                        data-disqus-identifier="hexo-css-build/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,34 +365,97 @@
       
         
           
-            <h2 id="输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>输入内容转图片（vue + html2canvas + vue-drag-and-drop）</h2><p>最近做了一个小工具，把输入的内容转成图片输出。使用插件 html2canvas，vue-drag-and-drop  </p>
-<p>功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。  </p>
-<p>基本思路：把html转成canvas，然后把canvas存成图片。  </p>
-<p>完成：用插件vue-drag-and-drop，使输入列表可拖拽；刚开始自己根据输入的内容用canvas画图，但是考虑到可扩展性，最后选择html2canvas工具把html转成canvas。  </p>
-<p>遇到的问题及解决办法：  </p>
-<p>1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。  </p>
-<p>问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。  </p>
-<p>解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取段落真实长度,包括中英文</span></div><div class="line">getTrueLength: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> truelen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      truelen += <span class="number">2</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      truelen += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> truelen</div><div class="line">&#125;,</div><div class="line"><span class="comment">// canvas画图时,文字切割</span></div><div class="line">cutString: <span class="function"><span class="keyword">function</span> (<span class="params">str, leng</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> tlen = len</div><div class="line">  <span class="keyword">let</span> nlen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">2</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">2</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">1</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">1</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> tlen</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<p>2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。  </p>
-<p>问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。  </p>
-<p>解决：转义一下，空格替换成&nbsp;换行\r\n换为<code>&lt;br&gt;</code>，template里使用&#123;&#123;&#123;&#125;&#125;&#125;而非&#123;&#123;&#125;&#125;解析。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">nl2br: <span class="function"><span class="keyword">function</span> (<span class="params">str, idx, tag, isXhtml</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> blankTag = <span class="string">'&amp;nbsp;'</span></div><div class="line">  <span class="keyword">let</span> breakTag = (isXhtml || <span class="keyword">typeof</span> isXhtml === <span class="string">'undefined'</span>) ? <span class="string">'&lt;br /&gt;'</span> : <span class="string">'&lt;br&gt;'</span></div><div class="line">  <span class="keyword">let</span> newStr = (str + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\s]?)(\s)/g</span>, <span class="string">'$1'</span> + blankTag + <span class="string">'$2'</span>)</div><div class="line">  newStr = (newStr + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\r\n]?)(\r\n|\n\r|\r|\n)/g</span>, <span class="string">'$1'</span> + breakTag + <span class="string">'$2'</span>)</div><div class="line">  <span class="keyword">if</span> (tag) &#123;</div><div class="line">    <span class="keyword">this</span>.changeData[idx][tag] = newStr</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newStr</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p>3. 画成的canvas，存成图片模糊。</p>
-<p>问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。  </p>
-<p>解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; canvas width 1960，img width: 980  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息保存成图片</span></div><div class="line">saveImageInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> mycanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = mycanvas.toDataURL(<span class="string">'image/png'</span>)</div><div class="line">  <span class="keyword">let</span> w = <span class="built_in">window</span>.open(<span class="string">'about:blank'</span>, <span class="string">'image from canvas'</span>)</div><div class="line">  w.document.write(<span class="string">'&lt;img src="'</span> + image + <span class="string">'" alt="from canvas" style="width: 980px; margin: 0 auto; display: block; height: '</span> + (<span class="keyword">this</span>.canvasHeight / <span class="number">2</span>) + <span class="string">'px"/&gt;'</span>)</div><div class="line">&#125;,</div><div class="line"><span class="comment">// 存为本地图片</span></div><div class="line">saveAsLocalImage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> myCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = myCanvas.toDataURL(<span class="string">'image/png'</span>).replace(<span class="string">'image/png'</span>, <span class="string">'image/octet-stream'</span>)</div><div class="line">  <span class="built_in">window</span>.location.href = image</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas把html页面存成图片时，图片不全。</li>
+            <h2 id="一、什么是hexo"><a href="#一、什么是hexo" class="headerlink" title="一、什么是hexo"></a>一、什么是hexo</h2><p>Hexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。</p>
+<h2 id="二、hexo的安装"><a href="#二、hexo的安装" class="headerlink" title="二、hexo的安装"></a>二、hexo的安装</h2><p>安装hexo前，确保电脑中已经安装了node和git。</p>
+<h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">方法一、</div><div class="line">    直接安装<span class="keyword">node</span><span class="title">：ruby</span> -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">方法二、</div><div class="line">    先安装homebrew： /usr/bin/ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">    后安装<span class="keyword">node</span><span class="title">：brew</span> install <span class="keyword">node</span><span class="title"></span></div></pre></td></tr></table></figure>
+<h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">先安装homebrew： /usr/<span class="keyword">bin/ruby </span>-e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">后安装git：<span class="keyword">brew </span>install git</div></pre></td></tr></table></figure>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-<span class="keyword">cli</span></div></pre></td></tr></table></figure>
+<h2 id="三、创建项目"><a href="#三、创建项目" class="headerlink" title="三、创建项目"></a>三、创建项目</h2><ol>
+<li>新建项目: <code>hexo init folder</code></li>
+<li>进入: <code>cd folder&gt;</code></li>
+<li>安装依赖包: <code>npm install</code></li>
+<li>新建一篇文章: <code>hexo new iOS-APIs</code> (文件会在/source/_posts下)</li>
+<li>启动: <code>hexo server</code></li>
+<li>浏览器打开: <code>http://localhost:4000/document/</code></li>
 </ol>
-<p>问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图  </p>
-<p>解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息画成canvas</span></div><div class="line">draw: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> y = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</div><div class="line">  <span class="built_in">window</span>.html2canvas(<span class="built_in">document</span>.querySelector(<span class="string">'#drawImg'</span>), &#123;<span class="attr">allowTaint</span>: <span class="literal">false</span>, <span class="attr">taintTest</span>: <span class="literal">false</span>&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">canvas</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ob.innerHTML = <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.ob.appendChild(canvas)</div><div class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, y)</div><div class="line">    callback &amp;&amp; callback()</div><div class="line">  &#125;.bind(<span class="keyword">this</span>))</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas画出来的图片也模糊。</li>
+<h2 id="四、hexo配置"><a href="#四、hexo配置" class="headerlink" title="四、hexo配置"></a>四、hexo配置</h2><p>配置文件为_config.yml<br>参考: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a><br>github: <a href="https://github.com/hexojs/hexo/">https://github.com/hexojs/hexo/</a></p>
+<h3 id="Site-（网站）"><a href="#Site-（网站）" class="headerlink" title="Site （网站）"></a>Site （网站）</h3><ol>
+<li>网站标题<br>title: weex使用手册</li>
+<li>网站副标题<br>subtitle: weex中文手册</li>
+<li>网站描述<br>description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移</li>
+<li>作者名字<br>author: lu.wei</li>
+<li>网站使用的语言<br>language: 简体中文</li>
+<li>网站时区Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。<br>timezone: UTC</li>
 </ol>
-<p>问题成因：如3  </p>
-<p>解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。  </p>
-<h5 id="转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/749569" target="_blank" rel="external">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</a></h5>
+<h3 id="URL-（网址）"><a href="#URL-（网址）" class="headerlink" title="URL （网址）"></a>URL （网址）</h3><p>如果您的网站存放在子目录中，例如 <a href="http://yoursite.com/blog，则请将您的" target="_blank" rel="external">http://yoursite.com/blog，则请将您的</a> url 设为 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> 并把 root 设为 /blog/。</p>
+<ol>
+<li>网址<br>url: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a></li>
+<li>网站根目录<br>root: /document/</li>
+<li>文章的 永久链接 格式<br>permalink: :year/:month/:day/:title/</li>
+<li>永久链接中各部分的默认值<br>permalink_defaults:</li>
+</ol>
+<h3 id="Directory-（目录）"><a href="#Directory-（目录）" class="headerlink" title="Directory （目录）"></a>Directory （目录）</h3><ol>
+<li>资源文件夹，这个文件夹用来存放内容。<br>source_dir: source</li>
+<li>公共文件夹，这个文件夹用于存放生成的站点文件。<br>public_dir: public</li>
+<li>标签文件夹<br>tag_dir: tags</li>
+<li>归档文件夹<br>archive_dir: archives</li>
+<li>分类文件夹<br>category_dir: categories</li>
+<li>Include code 文件夹<br>code_dir: downloads/code</li>
+<li>国际化（i18n）文件夹<br>i18n_dir: :lang</li>
+<li>跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。<br>skip_render:</li>
+</ol>
+<h3 id="Writing-（文章）"><a href="#Writing-（文章）" class="headerlink" title="Writing （文章）"></a>Writing （文章）</h3><ol>
+<li>新建文章的文件名称<br>new_post_name: :title.md</li>
+<li>预设布局<br>default_layout: post</li>
+<li>在中文和英文之间加入空格<br>auto_spacing: false</li>
+<li>把标题转换为 title case<br>titlecase: false</li>
+<li>在新标签中打开链接<br>external_link: true</li>
+<li>把文件名称转换为 (1) 小写或 (2) 大写<br>filename_case: 0</li>
+<li>显示草稿<br>render_drafts: false</li>
+<li>启动 Asset 文件夹<br>post_asset_folder: true</li>
+<li>把链接改为与根目录的相对位址<br>relative_link: false</li>
+<li>显示未来的文章<br>future: true</li>
+<li>代码块的设置<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: true<br>  tab_replace:</li>
+</ol>
+<h3 id="Home-page-setting-（主页设置）"><a href="#Home-page-setting-（主页设置）" class="headerlink" title="Home page setting （主页设置）"></a>Home page setting （主页设置）</h3><pre><code>1. path: 博客索引页的跟路径,默认为空
+2. per_page: 每页展示的文章量, 为0时表示不分页
+3. order_by: 排序, 默认日期降序
+index_generator:
+  path: &apos;&apos;
+  per_page: 10
+  order_by: -date
+</code></pre><h3 id="Category-amp-Tag-（分类-amp-标签）"><a href="#Category-amp-Tag-（分类-amp-标签）" class="headerlink" title="Category &amp; Tag （分类 &amp; 标签）"></a>Category &amp; Tag （分类 &amp; 标签）</h3><ol>
+<li>默认分类<br>default_category: uncategorized</li>
+<li>分类别名<br>category_map:</li>
+<li>标签别名<br>tag_map:</li>
+</ol>
+<h3 id="Date-Time-format-（日期-时间格式）"><a href="#Date-Time-format-（日期-时间格式）" class="headerlink" title="Date / Time format （日期 / 时间格式）"></a>Date / Time format （日期 / 时间格式）</h3><p>hexo使用Moment.js来解析和显示时间。<br>可以参照<a href="http://momentjs.com/docs/#/displaying/format/来自定义日期格式。" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/来自定义日期格式。</a></p>
+<ol>
+<li>日期格式<br>date_format: YYYY-MM-DD</li>
+<li>时间格式<br>time_format: HH:mm:ss</li>
+</ol>
+<h3 id="Pagination-（分页）"><a href="#Pagination-（分页）" class="headerlink" title="Pagination （分页）"></a>Pagination （分页）</h3><ol>
+<li>每页显示的文章量 (0 = 关闭分页功能)<br>per_page: 10</li>
+<li>分页目录<br>pagination_dir: page</li>
+</ol>
+<h3 id="Extensions-（扩展）"><a href="#Extensions-（扩展）" class="headerlink" title="Extensions （扩展）"></a>Extensions （扩展）</h3><p>插件: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a><br>主题: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
+<ol>
+<li>当前主题名称。值为false时禁用主题<br>theme: landscape</li>
+</ol>
+<h3 id="Deployment-（部署）"><a href="#Deployment-（部署）" class="headerlink" title="Deployment （部署）"></a>Deployment （部署）</h3><p>参考: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></p>
+<ol>
+<li>部署部分的配置<br> deploy:<br>   type: git<br>   repo: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a><br>   branch: master<br>   message: hexo + css</li>
+</ol>
+<h2 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h2><p>github上部署:</p>
+<ol>
+<li>安装hexo-deployer-git: <code>npm install hexo-deployer-git --save</code></li>
+<li><p>_config.yml 中配置</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 部署部分的设置</span></div><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> https:<span class="comment">//github.com/stardew516/document</span></div><div class="line"><span class="symbol">  branch:</span> master</div><div class="line"><span class="symbol">  message:</span> hexo + css</div></pre></td></tr></table></figure>
+</li>
+<li><p>终端进入目录,运行: <code>hexo deploy</code></p>
+</li>
+</ol>
+<h5 id="转自-hexo-css创建自己的blog（搭建）"><a href="#转自-hexo-css创建自己的blog（搭建）" class="headerlink" title="[转自] hexo+css创建自己的blog（搭建）"></a>[转自] <a href="https://segmentfault.com/a/1190000011020260" target="_blank" rel="external">hexo+css创建自己的blog（搭建）</a></h5>
           
         
       
@@ -431,7 +494,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -465,7 +528,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -477,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

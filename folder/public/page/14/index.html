@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/who-loves-me/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/track-by/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/who-loves-me/" itemprop="url">who-loves-me</a></h2>
+                <a class="post-title-link" href="/track-by/" itemprop="url">track-by</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-02-25T16:29:00Z">
-                2015-02-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-25T16:20:00Z">
+                2016-10-25
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/who-loves-me/#comments" itemprop="discussionUrl">
+                <a href="/track-by/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="who-loves-me/" itemprop="commentCount"></span>
+                        data-disqus-identifier="track-by/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,8 +365,25 @@
       
         
           
-            <h2 id="谁执我之手"><a href="#谁执我之手" class="headerlink" title="谁执我之手"></a>谁执我之手</h2><p>以前一直以为是仓央嘉措写的，但是今天看又有人说是一度君华写的，不管是谁写的了，只要是好诗就值得珍藏。<br>　　谁，执我之手，敛我半世癫狂；<br>　　谁，吻我之眸，遮我半世流离；<br>　　谁，抚我之面，慰我半世哀伤；<br>　　谁，携我之心，融我半世冰霜；<br>　　伊，覆我之唇，祛我前世流离；<br>　　伊，揽我之怀，除我前世轻浮。<br>　　执子之手，陪你痴狂千生；<br>　　深吻子眸，伴你万世轮回。<br>　　我， 牵尔玉手， 收你此生所有；<br>　　我， 抚尔秀颈， 挡你此生风雨。<br>　　谁，扶我之肩，驱我一世沉寂。<br>　　谁，唤我之心，掩我一生凌轹。<br>　　谁，可明我意，使我此生无憾；<br>　　谁，可倾我心，寸土恰似虚弥；<br>　　伊，覆我之唇，祛我前世流离；<br>　　伊，揽我之怀，除我前世轻浮。<br>　　执子之手，共你一世风霜；<br>　　吻子之眸，赠你一世深情。<br>　　我， 牵尔玉手， 收你此生所有；<br>　　我， 抚尔秀颈， 挡你此生风雨。<br>　　我， 抚尔秀颈， 挡你此生风雨。  </p>
-<h5 id="转自-谁执我之手"><a href="#转自-谁执我之手" class="headerlink" title="[转自] 谁执我之手"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/379917" target="_blank" rel="external">谁执我之手</a></h5>
+            <h2 id="vue中track-by的理解"><a href="#vue中track-by的理解" class="headerlink" title="vue中track-by的理解"></a>vue中track-by的理解</h2><p>api：<a href="http://cn.vuejs.org/guide/list.html#track-by" target="_blank" rel="external">http://cn.vuejs.org/guide/list.html#track-by</a></p>
+<p>示例地址：<a href="https://jsfiddle.net/stardew/f1eju0ku/5/" target="_blank" rel="external">https://jsfiddle.net/stardew/f1eju0ku/5/</a></p>
+<p>无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到）</p>
+<p>加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在dom才被重新渲染</p>
+<p>track-by的两种使用方法：</p>
+<p>1. 使用数据中某唯一字段，例如_uid</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"_uid"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始数据</span></div><div class="line">items: [</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'222222'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'333'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'444444'</span>, <span class="attr">message</span>: <span class="string">'444'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'555555'</span>, <span class="attr">message</span>: <span class="string">'555'</span> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 修改成</span></div><div class="line">modify: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.items = [</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'666666'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'3333'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'888888'</span>, <span class="attr">message</span>: <span class="string">'4444'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'999999'</span>, <span class="attr">message</span>: <span class="string">'5555'</span> &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>渲染效果如下图右(左边无track-by，右边有track-by)，_uid和message都不变的情况下，才不被重新渲染，只有第一组符合条件。</p>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/155631_7GXl_255575.png" alt=""></p>
+<p>2. 使用$index，其它条件同上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>渲染效果如下图右，message的值第一、二条都没改变，所以一、二都没有重新渲染。</p>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161002_B1YX_255575.png" alt=""></p>
+<p>模板中同时使用message和_uid时，只有两者都不变的情况下才不重新渲染，如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;  &#123;&#123;item._uid&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png" alt=""></p>
+<h5 id="转自-vue中track-by的理解"><a href="#转自-vue中track-by的理解" class="headerlink" title="[转自] vue中track-by的理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/775534" target="_blank" rel="external">vue中track-by的理解</a></h5>
           
         
       
@@ -405,7 +422,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -439,7 +456,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -451,7 +468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="简体中文">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、什么是hexoHexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。 二、hexo的安装安装hexo前，确保电脑中已经安装了node和git。 node安装12345方法一、    直接安装node：ruby -e &quot;$(curl -fsSL https:">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo-css-build">
+<meta property="og:url" content="https://github.com/stardew/hexo-css-build/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="一、什么是hexoHexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。 二、hexo的安装安装hexo前，确保电脑中已经安装了node和git。 node安装12345方法一、    直接安装node：ruby -e &quot;$(curl -fsSL https:">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-06-27T11:15:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo-css-build">
+<meta name="twitter:description" content="一、什么是hexoHexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。 二、hexo的安装安装hexo前，确保电脑中已经安装了node和git。 node安装12345方法一、    直接安装node：ruby -e &quot;$(curl -fsSL https:">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/stardew/hexo-css-build/"/>
+
+
+
+
+
+  <title>hexo-css-build | stardew的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="简体中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stardew的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/hexo-css-build/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lu.wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stardew的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">hexo-css-build</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-05T08:00:00+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/hexo-css-build/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="hexo-css-build/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、什么是hexo"><a href="#一、什么是hexo" class="headerlink" title="一、什么是hexo"></a>一、什么是hexo</h2><p>Hexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。</p>
+<h2 id="二、hexo的安装"><a href="#二、hexo的安装" class="headerlink" title="二、hexo的安装"></a>二、hexo的安装</h2><p>安装hexo前，确保电脑中已经安装了node和git。</p>
+<h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">方法一、</div><div class="line">    直接安装<span class="keyword">node</span><span class="title">：ruby</span> -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">方法二、</div><div class="line">    先安装homebrew： /usr/bin/ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">    后安装<span class="keyword">node</span><span class="title">：brew</span> install <span class="keyword">node</span><span class="title"></span></div></pre></td></tr></table></figure>
+<h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">先安装homebrew： /usr/<span class="keyword">bin/ruby </span>-e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">后安装git：<span class="keyword">brew </span>install git</div></pre></td></tr></table></figure>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-<span class="keyword">cli</span></div></pre></td></tr></table></figure>
+<h2 id="三、创建项目"><a href="#三、创建项目" class="headerlink" title="三、创建项目"></a>三、创建项目</h2><ol>
+<li>新建项目: <code>hexo init folder</code></li>
+<li>进入: <code>cd folder&gt;</code></li>
+<li>安装依赖包: <code>npm install</code></li>
+<li>新建一篇文章: <code>hexo new iOS-APIs</code> (文件会在/source/_posts下)</li>
+<li>启动: <code>hexo server</code></li>
+<li>浏览器打开: <code>http://localhost:4000/document/</code></li>
+</ol>
+<h2 id="四、hexo配置"><a href="#四、hexo配置" class="headerlink" title="四、hexo配置"></a>四、hexo配置</h2><p>配置文件为_config.yml<br>参考: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a><br>github: <a href="https://github.com/hexojs/hexo/">https://github.com/hexojs/hexo/</a></p>
+<h3 id="Site-（网站）"><a href="#Site-（网站）" class="headerlink" title="Site （网站）"></a>Site （网站）</h3><ol>
+<li>网站标题<br>title: weex使用手册</li>
+<li>网站副标题<br>subtitle: weex中文手册</li>
+<li>网站描述<br>description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移</li>
+<li>作者名字<br>author: lu.wei</li>
+<li>网站使用的语言<br>language: 简体中文</li>
+<li>网站时区Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。<br>timezone: UTC</li>
+</ol>
+<h3 id="URL-（网址）"><a href="#URL-（网址）" class="headerlink" title="URL （网址）"></a>URL （网址）</h3><p>如果您的网站存放在子目录中，例如 <a href="http://yoursite.com/blog，则请将您的" target="_blank" rel="external">http://yoursite.com/blog，则请将您的</a> url 设为 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> 并把 root 设为 /blog/。</p>
+<ol>
+<li>网址<br>url: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a></li>
+<li>网站根目录<br>root: /document/</li>
+<li>文章的 永久链接 格式<br>permalink: :year/:month/:day/:title/</li>
+<li>永久链接中各部分的默认值<br>permalink_defaults:</li>
+</ol>
+<h3 id="Directory-（目录）"><a href="#Directory-（目录）" class="headerlink" title="Directory （目录）"></a>Directory （目录）</h3><ol>
+<li>资源文件夹，这个文件夹用来存放内容。<br>source_dir: source</li>
+<li>公共文件夹，这个文件夹用于存放生成的站点文件。<br>public_dir: public</li>
+<li>标签文件夹<br>tag_dir: tags</li>
+<li>归档文件夹<br>archive_dir: archives</li>
+<li>分类文件夹<br>category_dir: categories</li>
+<li>Include code 文件夹<br>code_dir: downloads/code</li>
+<li>国际化（i18n）文件夹<br>i18n_dir: :lang</li>
+<li>跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。<br>skip_render:</li>
+</ol>
+<h3 id="Writing-（文章）"><a href="#Writing-（文章）" class="headerlink" title="Writing （文章）"></a>Writing （文章）</h3><ol>
+<li>新建文章的文件名称<br>new_post_name: :title.md</li>
+<li>预设布局<br>default_layout: post</li>
+<li>在中文和英文之间加入空格<br>auto_spacing: false</li>
+<li>把标题转换为 title case<br>titlecase: false</li>
+<li>在新标签中打开链接<br>external_link: true</li>
+<li>把文件名称转换为 (1) 小写或 (2) 大写<br>filename_case: 0</li>
+<li>显示草稿<br>render_drafts: false</li>
+<li>启动 Asset 文件夹<br>post_asset_folder: true</li>
+<li>把链接改为与根目录的相对位址<br>relative_link: false</li>
+<li>显示未来的文章<br>future: true</li>
+<li>代码块的设置<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: true<br>  tab_replace:</li>
+</ol>
+<h3 id="Home-page-setting-（主页设置）"><a href="#Home-page-setting-（主页设置）" class="headerlink" title="Home page setting （主页设置）"></a>Home page setting （主页设置）</h3><pre><code>1. path: 博客索引页的跟路径,默认为空
+2. per_page: 每页展示的文章量, 为0时表示不分页
+3. order_by: 排序, 默认日期降序
+index_generator:
+  path: &apos;&apos;
+  per_page: 10
+  order_by: -date
+</code></pre><h3 id="Category-amp-Tag-（分类-amp-标签）"><a href="#Category-amp-Tag-（分类-amp-标签）" class="headerlink" title="Category &amp; Tag （分类 &amp; 标签）"></a>Category &amp; Tag （分类 &amp; 标签）</h3><ol>
+<li>默认分类<br>default_category: uncategorized</li>
+<li>分类别名<br>category_map:</li>
+<li>标签别名<br>tag_map:</li>
+</ol>
+<h3 id="Date-Time-format-（日期-时间格式）"><a href="#Date-Time-format-（日期-时间格式）" class="headerlink" title="Date / Time format （日期 / 时间格式）"></a>Date / Time format （日期 / 时间格式）</h3><p>hexo使用Moment.js来解析和显示时间。<br>可以参照<a href="http://momentjs.com/docs/#/displaying/format/来自定义日期格式。" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/来自定义日期格式。</a></p>
+<ol>
+<li>日期格式<br>date_format: YYYY-MM-DD</li>
+<li>时间格式<br>time_format: HH:mm:ss</li>
+</ol>
+<h3 id="Pagination-（分页）"><a href="#Pagination-（分页）" class="headerlink" title="Pagination （分页）"></a>Pagination （分页）</h3><ol>
+<li>每页显示的文章量 (0 = 关闭分页功能)<br>per_page: 10</li>
+<li>分页目录<br>pagination_dir: page</li>
+</ol>
+<h3 id="Extensions-（扩展）"><a href="#Extensions-（扩展）" class="headerlink" title="Extensions （扩展）"></a>Extensions （扩展）</h3><p>插件: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a><br>主题: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
+<ol>
+<li>当前主题名称。值为false时禁用主题<br>theme: landscape</li>
+</ol>
+<h3 id="Deployment-（部署）"><a href="#Deployment-（部署）" class="headerlink" title="Deployment （部署）"></a>Deployment （部署）</h3><p>参考: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></p>
+<ol>
+<li>部署部分的配置<br> deploy:<br>   type: git<br>   repo: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a><br>   branch: master<br>   message: hexo + css</li>
+</ol>
+<h2 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h2><p>github上部署:</p>
+<ol>
+<li>安装hexo-deployer-git: <code>npm install hexo-deployer-git --save</code></li>
+<li><p>_config.yml 中配置</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 部署部分的设置</span></div><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> https:<span class="comment">//github.com/stardew516/document</span></div><div class="line"><span class="symbol">  branch:</span> master</div><div class="line"><span class="symbol">  message:</span> hexo + css</div></pre></td></tr></table></figure>
+</li>
+<li><p>终端进入目录,运行: <code>hexo deploy</code></p>
+</li>
+</ol>
+<h5 id="转自-hexo-css创建自己的blog（搭建）"><a href="#转自-hexo-css创建自己的blog（搭建）" class="headerlink" title="[转自] hexo+css创建自己的blog（搭建）"></a>[转自] <a href="https://segmentfault.com/a/1190000011020260" target="_blank" rel="external">hexo+css创建自己的blog（搭建）</a></h5>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/vueresource-405/" rel="next" title="vueresource-405">
+                <i class="fa fa-chevron-left"></i> vueresource-405
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo-css-document/" rel="prev" title="hexo-css-document">
+                hexo-css-document <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://segmentfault.com/img/bVbcOD7"
+               alt="lu.wei" />
+          <p class="site-author-name" itemprop="name">lu.wei</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、什么是hexo"><span class="nav-number">1.</span> <span class="nav-text">一、什么是hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、hexo的安装"><span class="nav-number">2.</span> <span class="nav-text">二、hexo的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#node安装"><span class="nav-number">2.1.</span> <span class="nav-text">node安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git安装"><span class="nav-number">2.2.</span> <span class="nav-text">git安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装"><span class="nav-number">2.3.</span> <span class="nav-text">hexo安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、创建项目"><span class="nav-number">3.</span> <span class="nav-text">三、创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、hexo配置"><span class="nav-number">4.</span> <span class="nav-text">四、hexo配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Site-（网站）"><span class="nav-number">4.1.</span> <span class="nav-text">Site （网站）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-（网址）"><span class="nav-number">4.2.</span> <span class="nav-text">URL （网址）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directory-（目录）"><span class="nav-number">4.3.</span> <span class="nav-text">Directory （目录）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Writing-（文章）"><span class="nav-number">4.4.</span> <span class="nav-text">Writing （文章）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Home-page-setting-（主页设置）"><span class="nav-number">4.5.</span> <span class="nav-text">Home page setting （主页设置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Category-amp-Tag-（分类-amp-标签）"><span class="nav-number">4.6.</span> <span class="nav-text">Category & Tag （分类 & 标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-Time-format-（日期-时间格式）"><span class="nav-number">4.7.</span> <span class="nav-text">Date / Time format （日期 / 时间格式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pagination-（分页）"><span class="nav-number">4.8.</span> <span class="nav-text">Pagination （分页）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Extensions-（扩展）"><span class="nav-number">4.9.</span> <span class="nav-text">Extensions （扩展）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deployment-（部署）"><span class="nav-number">4.10.</span> <span class="nav-text">Deployment （部署）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、部署"><span class="nav-number">5.</span> <span class="nav-text">五、部署</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-hexo-css创建自己的blog（搭建）"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">[转自] hexo+css创建自己的blog（搭建）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lu.wei</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/hexo-css-build/';
+          this.page.identifier = 'hexo-css-build/';
+          this.page.title = 'hexo-css-build';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

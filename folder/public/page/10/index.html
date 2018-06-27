@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
 
 
 
@@ -283,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/nginx-reinstall/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/vueresource-405/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/nginx-reinstall/" itemprop="url">nginx-reinstall</a></h2>
+                <a class="post-title-link" href="/vueresource-405/" itemprop="url">vueresource-405</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-04T10:55:00Z">
-                2016-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00Z">
+                2017-07-25
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/nginx-reinstall/#comments" itemprop="discussionUrl">
+                <a href="/vueresource-405/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="nginx-reinstall/" itemprop="commentCount"></span>
+                        data-disqus-identifier="vueresource-405/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,18 +365,36 @@
       
         
           
-            <h2 id="mac下重装nginx"><a href="#mac下重装nginx" class="headerlink" title="mac下重装nginx"></a>mac下重装nginx</h2><p>mac下彻底卸载nginx，并且重装。  </p>
-<ol>
-<li><p>nginx -s stop 停止nginx进程</p>
-</li>
-<li><p>which nginx 查看nginx所在目录  删除</p>
-</li>
-<li><p>brew remove nginx</p>
-</li>
-<li><p>brew install nginx</p>
-</li>
-</ol>
-<h5 id="转自-mac下重装nginx"><a href="#转自-mac下重装nginx" class="headerlink" title="[转自] mac下重装nginx"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/669474" target="_blank" rel="external">mac下重装nginx</a></h5>
+            <p>vue-resource(github)地址：<a href="https://github.com/pagekit/vue-resource">https://github.com/pagekit/vue-resource</a></p>
+<h2 id="一、基本使用"><a href="#一、基本使用" class="headerlink" title="一、基本使用"></a>一、基本使用</h2><h5 id="1-页面引入"><a href="#1-页面引入" class="headerlink" title="1.页面引入"></a>1.页面引入</h5><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> vueResource <span class="keyword">from</span> <span class="string">'vue-resource'</span></div><div class="line">Vue.use(vueResource)</div></pre></td></tr></table></figure>
+<h5 id="2-调取接口"><a href="#2-调取接口" class="headerlink" title="2. 调取接口"></a>2. 调取接口</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Vue.http.post(url, &#123;</div><div class="line">  <span class="string">'data1'</span>: data1,</div><div class="line">  <span class="string">'data2'</span>: <span class="string">'data2'</span></div><div class="line">&#125;).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'success'</span>, response)</div><div class="line">&#125;, <span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'error'</span>, response)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="二、报错450"><a href="#二、报错450" class="headerlink" title="二、报错450"></a>二、报错450</h2><p>定位错误信息：请求header没有完全一一对应。<figure class="highlight plain"><figcaption><span>application/x-www-form-urlencoded; charset=UTF-8```应为```Content-Type: application/json; charset=UTF-8```，检查页面代码，发现已经设置了</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">Vue.http.interceptors.push(function (request, next) &#123;</div><div class="line">  request.headers.set(&apos;Content-Type&apos;, &apos;application/json; charset=UTF-8&apos;)</div><div class="line">  request.headers.set(&apos;Content-Type&apos;, &apos;application/json&apos;)</div><div class="line">  next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>只是页面没有起作用而已，那究竟是什么原因导致页面设置的Content-Type失效了呢？继续追溯，发现跟这行代码有关<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Vue.http.options.crossOrigin = true </span></div><div class="line"><span class="comment">// Vue.http.options.emulateHTTP = true</span></div><div class="line">Vue<span class="selector-class">.http</span><span class="selector-class">.options</span><span class="selector-class">.emulateJSON</span> = true <span class="comment">//（跟这行代码有关）</span></div></pre></td></tr></table></figure></p>
+<h2 id="三、分析"><a href="#三、分析" class="headerlink" title="三、分析"></a>三、分析</h2><p>下面分别来讲一下这几行代码的用处，以及emulateJSON是怎么影响到Content-Type设置的。</p>
+<h5 id="1-Vue-http-options-crossOrigin"><a href="#1-Vue-http-options-crossOrigin" class="headerlink" title="1. Vue.http.options.crossOrigin"></a>1. Vue.http.options.crossOrigin</h5><p>这个很明显是设置跨域的，此处不多讲。</p>
+<h5 id="2-Vue-http-options-emulateHTTP"><a href="#2-Vue-http-options-emulateHTTP" class="headerlink" title="2. Vue.http.options.emulateHTTP"></a>2. Vue.http.options.emulateHTTP</h5><p>参考地址：<a href="https://github.com/pagekit/vue-resource/blob/develop/src/http/interceptor/method.js">https://github.com/pagekit/vue-resource/blob/develop/src/http/interceptor/method.js</a><br>摘出源码<br><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * HTTP method override Interceptor.</div><div class="line"> */</div><div class="line"></div><div class="line">export <span class="keyword">default</span> <span class="keyword">function</span> (<span class="built_in">request</span>, <span class="keyword">next</span>) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">request</span>.emulateHTTP &amp;&amp; /^(PUT|PATCH|DELETE)$/i.test(<span class="built_in">request</span>.method)) &#123;</div><div class="line">        <span class="built_in">request</span>.headers.<span class="keyword">set</span>(<span class="comment">'X-HTTP-Method-Override', request.method);</span></div><div class="line">        <span class="built_in">request</span>.method = <span class="comment">'POST';</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">next</span>();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>大概的意思就是如果请求方式为PUT|PATCH|DELETE，服务器又没法处理这几类请求的时候，设置<figure class="highlight plain"><figcaption><span>= true```的话可以将X-HTTP-Method-Override设置为PUT|PATCH|DELETE，然后使用普通的post进行请求。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">关于X-HTTP-Method-Override讲一下，它的使用场景是：</div><div class="line">在某些HTTP代理不支持类似PUT|PATCH|DELETE这些类型HTTP请求的情况下，可以通过另一种完全违背协议的HTTP方法来&quot;代理&quot;。这种协议就是，使客户端发出HTTP POST请求并设置header里X-HTTP-Method-Override值为PUT|PATCH|DELETE。</div><div class="line">##### 3. Vue.http.options.emulateJSON</div><div class="line"></div><div class="line">参考地址：https://github.com/pagekit/vue-resource/blob/develop/src/http/interceptor/form.js</div><div class="line">摘出源码</div></pre></td></tr></table></figure></p>
+<p>/**</p>
+<ul>
+<li>Form data Interceptor.<br>*/</li>
+</ul>
+<p>import Url from ‘../../url/index’;<br>import { isObject, isFormData } from ‘../../util’;</p>
+<p>export default function (request, next) {</p>
+<pre><code>if (isFormData(request.body)) {
+
+    request.headers.delete(&apos;Content-Type&apos;);
+
+} else if (isObject(request.body) &amp;&amp; request.emulateJSON) {
+
+    request.body = Url.params(request.body);
+    request.headers.set(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);
+}
+
+next();
+</code></pre><p>}</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">从第<span class="number">17</span>行可以看到，如果设置了emulateJSON的话会默认加上这句</div></pre></td></tr></table></figure>
+<p>request.headers.set(‘Content-Type’, ‘application/x-www-form-urlencoded’);<br>```<br>这就是为什么我们设置的Content-Type失效了。只要去掉Vue.http.options.emulateHTTP = true 或者直接置为false就可以了。</p>
+<h5 id="转自-vue-resource报错450的解决方案"><a href="#转自-vue-resource报错450的解决方案" class="headerlink" title="[转自] vue-resource报错450的解决方案"></a>[转自] <a href="https://segmentfault.com/a/1190000010321126" target="_blank" rel="external">vue-resource报错450的解决方案</a></h5>
           
         
       
@@ -415,7 +433,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -449,7 +467,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
+               src="https://segmentfault.com/img/bVbcOD7"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
@@ -461,7 +479,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico
+favicon: https://segmentfault.com/img/bVbcOD7
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
@@ -126,7 +126,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg
+avatar: https://segmentfault.com/img/bVbcOD7
 
 # Table Of Contents in the Sidebar
 toc:
