@@ -25,7 +25,7 @@ github上部署:
     branch: master
     message: hexo + css
   ```
-4. 生成文件: hexo generate
+4. 生成文件: hexo generate(hexo clean && hexo g && hexo d)
 5. 部署: hexo deploy
 6. 访问: https://stardew516.github.io/
 

@@ -6,7 +6,7 @@ tags: front
 
 ## 微信小程序，试试水。
 
-1. https://mp.weixin.qq.com注册一个公众号，成为开发者，拿到一个appId。
+1\. https://mp.weixin.qq.com注册一个公众号，成为开发者，拿到一个appId。
 
 2\. 下载微信开发者工具，https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1476197489869。
 
