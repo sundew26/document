@@ -52,4 +52,4 @@ tags: joy
 
 * 一个普通朋友让你近墨者黑，一个真正朋友让你知道近墨者会黑。
 
-##### 转自[真正的朋友](https://my.oschina.net/luweiweiwei/blog/388815)
+##### [转自] [真正的朋友](https://my.oschina.net/luweiweiwei/blog/388815)

@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
 
 
 
@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="stardew的博客">
 <meta property="og:description" content="正则表达式重点总结1. 贪婪模式 （尽可能多的去匹配符合条件的字符串） 1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr); // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC *">
 <meta property="og:locale" content="简体中文">
-<meta property="og:updated_time" content="2018-06-27T07:12:01.000Z">
+<meta property="og:updated_time" content="2018-06-27T10:51:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regexp-important">
 <meta name="twitter:description" content="正则表达式重点总结1. 贪婪模式 （尽可能多的去匹配符合条件的字符串） 1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr); // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC *">
@@ -181,7 +181,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">做个安静大气的美女子</p>
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
       
   </div>
 
@@ -207,6 +207,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
           </a>
         </li>
       
@@ -268,7 +288,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -280,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">regexp-important</h1>
+          <h2 class="post-title" itemprop="name headline">regexp-important</h2>
         
 
         <div class="post-meta">
@@ -305,6 +325,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/regexp-important/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="regexp-important/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -373,7 +404,7 @@
 <p>**compile：用于改变和重新编译正则表达式(基本等同于构造方法方式，已被废弃)</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/bc/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr); reg=<span class="regexp">/ab/gi</span>; </div><div class="line">reg.compile(reg); </div><div class="line">newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
 <p>// 结果：aaabbb笨蛋ccccAAABBB笨蛋CCCC     aa笨蛋bbbcccccAA笨蛋BBBCCCCC   使用与否好像并没有区别，可以试试</p>
-<h5 id="转自正则表达式重点总结"><a href="#转自正则表达式重点总结" class="headerlink" title="转自正则表达式重点总结"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/761840" target="_blank" rel="external">正则表达式重点总结</a></h5>
+<h5 id="转自-正则表达式重点总结"><a href="#转自-正则表达式重点总结" class="headerlink" title="[转自] 正则表达式重点总结"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/761840" target="_blank" rel="external">正则表达式重点总结</a></h5>
       
     </div>
     
@@ -434,6 +465,44 @@
 
     <div class="post-spread">
       
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -444,6 +513,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -480,19 +556,19 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
-              <p class="site-description motion-element" itemprop="description">平时知识积累，站点博客迁移</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -540,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式重点总结"><span class="nav-number">1.</span> <span class="nav-text">正则表达式重点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自正则表达式重点总结"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">转自正则表达式重点总结</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式重点总结"><span class="nav-number">1.</span> <span class="nav-text">正则表达式重点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-正则表达式重点总结"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">[转自] 正则表达式重点总结</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -676,6 +752,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/regexp-important/';
+          this.page.identifier = 'regexp-important/';
+          this.page.title = 'regexp-important';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -688,10 +784,6 @@
   
 
 
-
-
-
-  
 
 
 

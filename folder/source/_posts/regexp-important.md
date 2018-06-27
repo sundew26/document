@@ -157,4 +157,4 @@ console.log(newStr);
 
 // 结果：aaabbb笨蛋ccccAAABBB笨蛋CCCC     aa笨蛋bbbcccccAA笨蛋BBBCCCCC   使用与否好像并没有区别，可以试试
 
-##### 转自[正则表达式重点总结](https://my.oschina.net/luweiweiwei/blog/761840)
+##### [转自] [正则表达式重点总结](https://my.oschina.net/luweiweiwei/blog/761840)

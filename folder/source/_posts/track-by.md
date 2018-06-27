@@ -86,4 +86,4 @@ modify: function () {
 
 ![](http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png)![](http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png)
 
-##### 转自[vue中track-by的理解](https://my.oschina.net/luweiweiwei/blog/775534)
+##### [转自] [vue中track-by的理解](https://my.oschina.net/luweiweiwei/blog/775534)

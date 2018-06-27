@@ -87,25 +87,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。    何为正则表达式？ 通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：[\w!#$%&amp;amp;’+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;amp;’+/=?^_`{|}~-]+)@(?:[\w](?:[\w-][\w])?\.)+[\">
+<meta name="description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。   1. 何为正则表达式？通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+)*@(?:\[\">
 <meta name="keywords" content="joy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="regexp-basic">
 <meta property="og:url" content="https://github.com/stardew/regexp-basic/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。    何为正则表达式？ 通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：[\w!#$%&amp;amp;’+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;amp;’+/=?^_`{|}~-]+)@(?:[\w](?:[\w-][\w])?\.)+[\">
+<meta property="og:description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。   1. 何为正则表达式？通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+)*@(?:\[\">
 <meta property="og:locale" content="简体中文">
-<meta property="og:updated_time" content="2018-06-27T07:09:51.000Z">
+<meta property="og:updated_time" content="2018-06-27T10:52:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regexp-basic">
-<meta name="twitter:description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。    何为正则表达式？ 通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：[\w!#$%&amp;amp;’+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;amp;’+/=?^_`{|}~-]+)@(?:[\w](?:[\w-][\w])?\.)+[\">
+<meta name="twitter:description" content="我对正则表达式的一点理解前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。   1. 何为正则表达式？通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;amp;&amp;apos;*+/=?^_`{|}~-\]+)*@(?:\[\">
 
 
 
@@ -181,7 +181,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">做个安静大气的美女子</p>
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
       
   </div>
 
@@ -207,6 +207,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
           </a>
         </li>
       
@@ -268,7 +288,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -280,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">regexp-basic</h1>
+          <h2 class="post-title" itemprop="name headline">regexp-basic</h2>
         
 
         <div class="post-meta">
@@ -305,6 +325,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/regexp-basic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="regexp-basic/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -331,20 +362,14 @@
 
       
         <h2 id="我对正则表达式的一点理解"><a href="#我对正则表达式的一点理解" class="headerlink" title="我对正则表达式的一点理解"></a>我对正则表达式的一点理解</h2><p>前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。  </p>
-<ol>
-<li><p>何为正则表达式？</p>
-<p>通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：[\w!#$%&amp;’<em>+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;’</em>+/=?^_`{|}~-]+)<em>@(?:[\w](?:[\w-]</em>[\w])?\.)+[\w](?:[\w-]*[\w])?），没错，正则表达式就是符合某一类规则的一串表达式。</p>
-</li>
-<li><p>什么情况下会用到正则表达式？</p>
-<p>通常我们会在字符串的查找匹配，替换中使用到正则。</p>
-</li>
-<li><p>如何使用正则表达式？</p>
-<p>前面也说过，正则表达式需要符合一定的规则，也就是说，按规则来书写，就基本可以满足需求，当然，只是满足基本，在实际应用中还应该考虑各种情况，这就需要添加更多的限定条件。我们先拿前面提到的正则式来举个例子。</p>
-<p>[\w!#$%&amp;’<em>+/=?^_`{|}~-]+(?:\.[\w!#$%&amp;’</em>+/=?^_`{|}~-]+)<em>@(?:[\w](?:[\w-]</em>[\w])?\.)+[\w](?:[\w-]*[\w])?</p>
-<p>看着这么一大串乱七八糟的字符有没有很头疼呢，我们且不说这是干什么用的，先根据附录中的规则分解剖析一番，把这个表达式分几部分</p>
-</li>
-</ol>
-<ol>
+<h4 id="1-何为正则表达式？"><a href="#1-何为正则表达式？" class="headerlink" title="1. 何为正则表达式？"></a>1. 何为正则表达式？</h4><pre><code>通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?），没错，正则表达式就是符合某一类规则的一串表达式。
+</code></pre><h4 id="2-什么情况下会用到正则表达式？"><a href="#2-什么情况下会用到正则表达式？" class="headerlink" title="2. 什么情况下会用到正则表达式？"></a>2. 什么情况下会用到正则表达式？</h4><pre><code>通常我们会在字符串的查找匹配，替换中使用到正则。
+</code></pre><h4 id="3-如何使用正则表达式？"><a href="#3-如何使用正则表达式？" class="headerlink" title="3. 如何使用正则表达式？"></a>3. 如何使用正则表达式？</h4><pre><code>前面也说过，正则表达式需要符合一定的规则，也就是说，按规则来书写，就基本可以满足需求，当然，只是满足基本，在实际应用中还应该考虑各种情况，这就需要添加更多的限定条件。我们先拿前面提到的正则式来举个例子。
+
+\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?
+
+看着这么一大串乱七八糟的字符有没有很头疼呢，我们且不说这是干什么用的，先根据附录中的规则分解剖析一番，把这个表达式分几部分
+</code></pre><ol>
 <li><p>[\w!#$%&amp;’*+/=?^_`{|}~-]+ </p>
 <p>中括号[]里面是我们要匹配的字符，后面的+是重复至少一次的意思，\w是指此字符串以下划线、数字或字母打头，或者以!#$%&amp;’<em>+/=?^_`{|}~-中的任何一个打头，!#$%&amp;’</em>+/=?^_`{|}~-这么一大串其实就是我们键盘顶部那些字符。</p>
 </li>
@@ -577,12 +602,110 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td>\a</td>
+<td>报警字符(打印它的效果是电脑嘀一声)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>通常是单词分界位置，但如果在字符类里使用代表退格</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表符，Tab</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>竖向制表符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行符</td>
+</tr>
+<tr>
+<td>\e</td>
+<td>Escape</td>
+</tr>
+<tr>
+<td>\0nn</td>
+<td>ASCII代码中八进制代码为nn的字符</td>
+</tr>
+<tr>
+<td>\xnn</td>
+<td>ASCII代码中十六进制代码为nn的字符</td>
+</tr>
+<tr>
+<td>\unnnn</td>
+<td>Unicode代码中十六进制代码为nnnn的字符</td>
+</tr>
+<tr>
+<td>\cN</td>
+<td>ASCII控制字符。比如\cC代表Ctrl+C</td>
+</tr>
+<tr>
+<td>\A</td>
+<td>字符串开头(类似^，但不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>字符串结尾或行尾(不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td>\z</td>
+<td>字符串结尾(类似$，但不受处理多行选项的影响)</td>
+</tr>
+<tr>
+<td>\G</td>
+<td>当前搜索的开头</td>
+</tr>
+<tr>
+<td>\p{name}</td>
+<td>Unicode中命名为name的字符类，例如\p{IsGreek}</td>
+</tr>
+<tr>
+<td>(?&gt;exp)</td>
+<td>贪婪子表达式</td>
+</tr>
+<tr>
+<td>(?<x>-<y>exp)</y></x></td>
+<td>平衡组</td>
+</tr>
+<tr>
+<td>(?im-nsx:exp)</td>
+<td>在子表达式exp中改变处理选项</td>
+</tr>
+<tr>
+<td>(?im-nsx)</td>
+<td>为表达式后面的部分改变处理选项</td>
+</tr>
+<tr>
+<td>(?(exp)yes</td>
+<td>no)</td>
+<td>把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no</td>
+</tr>
+<tr>
+<td>(?(exp)yes)</td>
+<td>同上，只是使用空表达式作为no</td>
+</tr>
+<tr>
+<td>(?(name)yes</td>
+<td>no)</td>
+<td>如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</td>
+</tr>
+<tr>
+<td>(?(name)yes)</td>
+<td>同上，只是使用空表达式作为no</td>
 </tr>
 </tbody>
 </table>
-<p>\a | 报警字符(打印它的效果是电脑嘀一声)<br>\b | 通常是单词分界位置，但如果在字符类里使用代表退格<br>\t | 制表符，Tab<br>\r | 回车<br>\v | 竖向制表符<br>\f | 换页符<br>\n | 换行符<br>\e | Escape<br>\0nn | ASCII代码中八进制代码为nn的字符<br>\xnn | ASCII代码中十六进制代码为nn的字符<br>\unnnn | Unicode代码中十六进制代码为nnnn的字符<br>\cN | ASCII控制字符。比如\cC代表Ctrl+C<br>\A | 字符串开头(类似^，但不受处理多行选项的影响)<br>\Z | 字符串结尾或行尾(不受处理多行选项的影响)<br>\z | 字符串结尾(类似$，但不受处理多行选项的影响)<br>\G | 当前搜索的开头<br>\p{name} | Unicode中命名为name的字符类，例如\p{IsGreek}<br>(?&gt;exp) | 贪婪子表达式<br>(?<x>-<y>exp) | 平衡组<br>(?im-nsx:exp) | 在子表达式exp中改变处理选项<br>(?im-nsx) | 为表达式后面的部分改变处理选项<br>(?(exp)yes|no) | 把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no<br>(?(exp)yes) | 同上，只是使用空表达式作为no<br>(?(name)yes|no) | 如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no<br>(?(name)yes) | 同上，只是使用空表达式作为no</y></x></p>
-<h5 id="转自我对正则表达式的一点理解"><a href="#转自我对正则表达式的一点理解" class="headerlink" title="转自我对正则表达式的一点理解"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/599739" target="_blank" rel="external">我对正则表达式的一点理解</a></h5>
+<h5 id="转自-我对正则表达式的一点理解"><a href="#转自-我对正则表达式的一点理解" class="headerlink" title="[转自] 我对正则表达式的一点理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/599739" target="_blank" rel="external">我对正则表达式的一点理解</a></h5>
       
     </div>
     
@@ -643,6 +766,44 @@
 
     <div class="post-spread">
       
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -653,6 +814,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -689,19 +857,19 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
-              <p class="site-description motion-element" itemprop="description">平时知识积累，站点博客迁移</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -749,7 +917,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我对正则表达式的一点理解"><span class="nav-number">1.</span> <span class="nav-text">我对正则表达式的一点理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-附录："><span class="nav-number">1.0.1.</span> <span class="nav-text">4. 附录：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自我对正则表达式的一点理解"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">转自我对正则表达式的一点理解</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我对正则表达式的一点理解"><span class="nav-number">1.</span> <span class="nav-text">我对正则表达式的一点理解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-何为正则表达式？"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 何为正则表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-什么情况下会用到正则表达式？"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 什么情况下会用到正则表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-如何使用正则表达式？"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 如何使用正则表达式？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-附录："><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 附录：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-我对正则表达式的一点理解"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">[转自] 我对正则表达式的一点理解</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -885,6 +1053,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/regexp-basic/';
+          this.page.identifier = 'regexp-basic/';
+          this.page.title = 'regexp-basic';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -897,10 +1085,6 @@
   
 
 
-
-
-
-  
 
 
 

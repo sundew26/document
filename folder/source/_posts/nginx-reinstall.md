@@ -16,4 +16,4 @@ mac下彻底卸载nginx，并且重装。
     
 4.  brew install nginx
 
-##### 转自[mac下重装nginx](https://my.oschina.net/luweiweiwei/blog/669474)
+##### [转自] [mac下重装nginx](https://my.oschina.net/luweiweiwei/blog/669474)

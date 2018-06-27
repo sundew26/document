@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
 
 
 
@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/161002_B1YX_255575.png">
 <meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png">
 <meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png">
-<meta property="og:updated_time" content="2018-06-27T07:12:24.000Z">
+<meta property="og:updated_time" content="2018-06-27T10:51:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="track-by">
 <meta name="twitter:description" content="vue中track-by的理解api：http://cn.vuejs.org/guide/list.html#track-by 示例地址：https://jsfiddle.net/stardew/f1eju0ku/5/ 无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到） 加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在">
@@ -188,7 +188,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">做个安静大气的美女子</p>
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
       
   </div>
 
@@ -214,6 +214,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
           </a>
         </li>
       
@@ -275,7 +295,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -287,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">track-by</h1>
+          <h2 class="post-title" itemprop="name headline">track-by</h2>
         
 
         <div class="post-meta">
@@ -312,6 +332,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/track-by/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="track-by/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -355,7 +386,7 @@
 <p>模板中同时使用message和_uid时，只有两者都不变的情况下才不重新渲染，如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;  &#123;&#123;item._uid&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png" alt=""></p>
-<h5 id="转自vue中track-by的理解"><a href="#转自vue中track-by的理解" class="headerlink" title="转自vue中track-by的理解"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/775534" target="_blank" rel="external">vue中track-by的理解</a></h5>
+<h5 id="转自-vue中track-by的理解"><a href="#转自-vue中track-by的理解" class="headerlink" title="[转自] vue中track-by的理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/775534" target="_blank" rel="external">vue中track-by的理解</a></h5>
       
     </div>
     
@@ -416,6 +447,44 @@
 
     <div class="post-spread">
       
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
     </div>
   </div>
 
@@ -426,6 +495,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -462,19 +538,19 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
-              <p class="site-description motion-element" itemprop="description">平时知识积累，站点博客迁移</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -522,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue中track-by的理解"><span class="nav-number">1.</span> <span class="nav-text">vue中track-by的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自vue中track-by的理解"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">转自vue中track-by的理解</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue中track-by的理解"><span class="nav-number">1.</span> <span class="nav-text">vue中track-by的理解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-vue中track-by的理解"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">[转自] vue中track-by的理解</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -658,6 +734,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/track-by/';
+          this.page.identifier = 'track-by/';
+          this.page.title = 'track-by';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -670,10 +766,6 @@
   
 
 
-
-
-
-  
 
 
 

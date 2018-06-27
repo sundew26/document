@@ -33,4 +33,4 @@ require(['jquery','mCustomScrollbar'],function($,mCustomScrollbar){
 .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height: 8px;margin: 4px 0;}
 ```
 
-##### 转自[mCustomScrollbar常用配置](https://my.oschina.net/luweiweiwei/blog/369341)
+##### [转自] [mCustomScrollbar常用配置](https://my.oschina.net/luweiweiwei/blog/369341)

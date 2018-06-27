@@ -34,4 +34,4 @@ tags: front
 
 ![](https://static.oschina.net/uploads/space/2016/1012/160338_U0AQ_255575.png)
 
-##### 转自[微信小程序，试试水。](https://my.oschina.net/luweiweiwei/blog/757534)
+##### [转自] [微信小程序，试试水。](https://my.oschina.net/luweiweiwei/blog/757534)

@@ -87,7 +87,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/stardew516/statics/master/favicon.ico?v=5.1.2" />
 
 
 
@@ -181,7 +181,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">做个安静大气的美女子</p>
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
       
   </div>
 
@@ -207,6 +207,26 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
           </a>
         </li>
       
@@ -263,12 +283,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/vue-drag-and-drop/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/nginx-reinstall/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -280,9 +300,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/vue-drag-and-drop/" itemprop="url">vue-drag-and-drop</a></h1>
+                <a class="post-title-link" href="/nginx-reinstall/" itemprop="url">nginx-reinstall</a></h2>
         
 
         <div class="post-meta">
@@ -294,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-21T11:59:00Z">
-                2016-09-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-04T10:55:00Z">
+                2016-05-04
               </time>
             
 
@@ -307,6 +327,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/nginx-reinstall/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="nginx-reinstall/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -334,30 +365,18 @@
       
         
           
-            <h2 id="输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>输入内容转图片（vue + html2canvas + vue-drag-and-drop）</h2><p>最近做了一个小工具，把输入的内容转成图片输出。使用插件 html2canvas，vue-drag-and-drop  </p>
-<p>功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。  </p>
-<p>基本思路：把html转成canvas，然后把canvas存成图片。  </p>
-<p>完成：用插件vue-drag-and-drop，使输入列表可拖拽；刚开始自己根据输入的内容用canvas画图，但是考虑到可扩展性，最后选择html2canvas工具把html转成canvas。  </p>
-<p>遇到的问题及解决办法：  </p>
+            <h2 id="mac下重装nginx"><a href="#mac下重装nginx" class="headerlink" title="mac下重装nginx"></a>mac下重装nginx</h2><p>mac下彻底卸载nginx，并且重装。  </p>
 <ol>
-<li>开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。  </li>
+<li><p>nginx -s stop 停止nginx进程</p>
+</li>
+<li><p>which nginx 查看nginx所在目录  删除</p>
+</li>
+<li><p>brew remove nginx</p>
+</li>
+<li><p>brew install nginx</p>
+</li>
 </ol>
-<p>问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。  </p>
-<p>解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取段落真实长度,包括中英文</span></div><div class="line">getTrueLength: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> truelen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      truelen += <span class="number">2</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      truelen += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> truelen</div><div class="line">&#125;,</div><div class="line"><span class="comment">// canvas画图时,文字切割</span></div><div class="line">cutString: <span class="function"><span class="keyword">function</span> (<span class="params">str, leng</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> tlen = len</div><div class="line">  <span class="keyword">let</span> nlen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">2</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">2</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">1</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">1</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> tlen</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<ol>
-<li>textarea里输入的换行、空格直接存到所需样式的div里时，没效果。  </li>
-</ol>
-<p>问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。  </p>
-<p>解决：转义一下，空格替换成&nbsp;换行\r\n换为<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-<p>nl2br: function (str, idx, tag, isXhtml) {<br>  let blankTag = ‘&nbsp;’<br>  let breakTag = (isXhtml || typeof isXhtml === ‘undefined’) ? ‘<br>‘ : ‘<br>‘<br>  let newStr = (str + ‘’).replace(/([^&gt;\s]?)(\s)/g, ‘$1’ + blankTag + ‘$2’)<br>  newStr = (newStr + ‘’).replace(/([^&gt;\r\n]?)(\r\n|\n\r|\r|\n)/g, ‘$1’ + breakTag + ‘$2’)<br>  if (tag) {<br>    this.changeData[idx][tag] = newStr<br>  }<br>  return newStr<br>},<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">3.</span> 画成的<span class="keyword">canvas</span>，存成图片模糊。</div><div class="line"></div><div class="line">问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。  </div><div class="line"></div><div class="line">解决：知道了问题的成因就好办了，可是把<span class="keyword">canvas</span>画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍<span class="keyword">canvas</span>高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; <span class="keyword">canvas</span> width <span class="number">1960</span>，img width: <span class="number">980</span></div></pre></td></tr></table></figure></p>
-<p>// 文本信息保存成图片<br>saveImageInfo: function () {<br>  let mycanvas = document.getElementById(‘canvas’)<br>  let image = mycanvas.toDataURL(‘image/png’)<br>  let w = window.open(‘about:blank’, ‘image from canvas’)<br>  w.document.write(‘<img src="/stardew/vue-drag-and-drop/' + image + '" alt="from canvas" style="width: 980px; margin: 0 auto; display: block; height: ' + (this.canvasHeight / 2) + 'px">‘)<br>},<br>// 存为本地图片<br>saveAsLocalImage: function () {<br>  let myCanvas = document.getElementById(‘canvas’)<br>  let image = myCanvas.toDataURL(‘image/png’).replace(‘image/png’, ‘image/octet-stream’)<br>  window.location.href = image<br>},<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">4.</span> html2canvas把html页面存成图片时，图片不全。</div><div class="line"></div><div class="line">问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图  </div><div class="line"></div><div class="line">解决办法：先记录当前scrollTop值，window.scrollTo(<span class="number">0</span>,<span class="number">0</span>)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。</div></pre></td></tr></table></figure></p>
-<p>// 文本信息画成canvas<br>draw: function (callback) {<br>  let y = document.body.scrollTop || document.documentElement.scrollTop || 0<br>  window.scrollTo(0, 0)<br>  window.html2canvas(document.querySelector(‘#drawImg’), {allowTaint: false, taintTest: false}).then(function (canvas) {<br>    this.ob.innerHTML = ‘’<br>    this.ob.appendChild(canvas)<br>    window.scrollTo(0, y)<br>    callback &amp;&amp; callback()<br>  }.bind(this))<br>},<br>```</p>
-<ol>
-<li>html2canvas画出来的图片也模糊。</li>
-</ol>
-<p>问题成因：如3  </p>
-<p>解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。  </p>
-<h5 id="转自输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#转自输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="转自输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>转自<a href="https://my.oschina.net/luweiweiwei/blog/749569" target="_blank" rel="external">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</a></h5>
+<h5 id="转自-mac下重装nginx"><a href="#转自-mac下重装nginx" class="headerlink" title="[转自] mac下重装nginx"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/669474" target="_blank" rel="external">mac下重装nginx</a></h5>
           
         
       
@@ -396,7 +415,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -430,19 +449,19 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="https://raw.githubusercontent.com/stardew516/statics/master/avator.jpeg"
                alt="lu.wei" />
           <p class="site-author-name" itemprop="name">lu.wei</p>
            
-              <p class="site-description motion-element" itemprop="description">平时知识积累，站点博客迁移</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -610,6 +629,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -622,10 +649,6 @@
   
 
 
-
-
-
-  
 
 
 
