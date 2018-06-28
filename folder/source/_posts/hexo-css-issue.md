@@ -1,7 +1,8 @@
 ---
 title: hexo-css-issue
 date: 2017/09/06
-tags: javascript
+tags: blog
+categories: 博客
 ---
 
 ## hexo+css遇到的unexpected token问题

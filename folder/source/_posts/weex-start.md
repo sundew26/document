@@ -1,7 +1,8 @@
 ---
 title: weex-start
 date: 2017/07/24
-tags: javascript
+tags: weex
+categories: 探索
 ---
 
 # 我的weex开发之路 #

@@ -2,6 +2,7 @@
 title: extend
 date: 2016/12/9
 tags: javascript
+categories: 前端基础
 ---
 
 大多数面向对象语言都支持两种继承方式：接口继承和实现继承。  

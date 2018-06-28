@@ -2,6 +2,7 @@
 title: data-structure
 date: 2016/12/09
 tags: javascript
+categories: 前端基础
 ---
 
 # 数据结构基础 #

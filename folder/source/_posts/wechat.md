@@ -1,7 +1,8 @@
 ---
 title: wechat
 date: 2016/10/12 16:07
-tags: front
+tags: javascript
+categories: 探索
 ---
 
 ## 微信小程序，试试水。

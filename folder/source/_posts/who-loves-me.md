@@ -2,6 +2,7 @@
 title: who-loves-me
 date: 2015/02/25 16:29
 tags: joy
+categories: 娱乐
 ---
 
 ## 谁执我之手

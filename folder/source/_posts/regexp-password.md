@@ -2,6 +2,7 @@
 title: regexp-password
 date: 2017/04/06 11:35
 tags: javascript
+categories: 前端基础
 ---
 
 ## 正则校验密码规则

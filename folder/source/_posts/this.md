@@ -2,6 +2,7 @@
 title: this
 date: 2017/02/10
 tags: javascript
+categories: 前端基础
 ---
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3FiaxWvAb4GHrpmBlIphvVkCnqBAm6o9AYoVRKPddk6L4OdlLQcxKUheTgR7QpvcIloHAKFiahA4CsQ/0?wx_fmt=jpeg)

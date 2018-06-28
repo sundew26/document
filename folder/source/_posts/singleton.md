@@ -2,6 +2,7 @@
 title: singleton
 date: 2016/12/7
 tags: javascript
+categories: 前端基础
 ---
 
 # 单例模式（创建型） #

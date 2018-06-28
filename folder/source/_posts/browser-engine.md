@@ -2,6 +2,7 @@
 title: browser-engine
 date: 2016/12/11
 tags: javascript
+categories: 前端基础
 ---
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3GOYRA04Ftx3MiaoktLhNaxL1zXGTaickibicFvOY1ic0ap6YnOoUXaOrjEBU9fgaSJurvla8ukicEAdVMg/0?wx_fmt=png)

@@ -2,6 +2,7 @@
 title: sort-algorithm
 date: 2011/01/01
 tags: javascript
+categories: 前端基础
 ---
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIQuBbqgJUpWpwoCzwvUsyBBLzwRs3xzJiczn5iaYxlETqInbX1T8YFF8EGl1PyCg9Dr4MoVyQTKrw/0?wx_fmt=jpeg)

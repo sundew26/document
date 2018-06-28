@@ -2,6 +2,7 @@
 title: url-page-process
 date: 2016/12/19
 tags: javascript
+categories: 前端基础
 ---
 
 # 输入网址到打开页面的过程 #

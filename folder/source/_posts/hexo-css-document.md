@@ -1,7 +1,8 @@
 ---
 title: hexo-css-document
 date: 2017/09/05
-tags: javascript
+tags: blog
+categories: 博客
 ---
 
 ## hexo语法使用手册 ##

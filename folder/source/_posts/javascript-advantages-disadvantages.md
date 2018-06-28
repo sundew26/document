@@ -2,6 +2,7 @@
 title: javascript-advantages-disadvantages
 date: 2016/12/06
 tags: javascript
+categories: 前端基础
 ---
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3E7oG0qEetwfwjeeSAEPKIpTDjXAEGwbhAQrP9MY9eXawxmbibTvvfkE0abiacTiafjR1TZYY6OEr0qQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5)

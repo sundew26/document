@@ -2,6 +2,7 @@
 title: track-by
 date: 2016/10/25 16:20
 tags: vue
+categories: 探索
 ---
 
 ## vue中track-by的理解

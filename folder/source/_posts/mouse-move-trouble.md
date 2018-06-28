@@ -1,7 +1,8 @@
 ---
 title: mouse-move-trouble
 date: 2015/07/29 13:03
-tags: others
+tags: javascript
+categories: 问题总结
 ---
 
 ## mouseover、mouseout防止多次触发

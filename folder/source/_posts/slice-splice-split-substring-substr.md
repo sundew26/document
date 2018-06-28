@@ -2,6 +2,7 @@
 title: slice-splice-split-substring-substr
 date: 2017/02/20
 tags: javascript
+categories: 前端基础
 ---
 
 # slice，splice，split，substring，substr区别 #

@@ -2,6 +2,7 @@
 title: wechat-public
 date: 2018/06/21
 tags: javascript
+categories: 问题总结
 ---
 
 ## 如何判断用户是否已关注公众号

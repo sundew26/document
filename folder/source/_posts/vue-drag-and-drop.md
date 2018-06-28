@@ -2,6 +2,7 @@
 title: vue-drag-and-drop
 date: 2016/09/21 11:59
 tags: vue
+categories: 小例子
 ---
 
 ## 输入内容转图片（vue + html2canvas + vue-drag-and-drop）

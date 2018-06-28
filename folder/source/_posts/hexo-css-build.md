@@ -1,7 +1,8 @@
 ---
 title: hexo-css-build
 date: 2017/09/05
-tags: javascript
+tags: blog
+categories: 博客
 ---
 
 # hexo+css创建自己的blog（搭建） #

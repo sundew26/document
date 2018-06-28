@@ -1,7 +1,8 @@
 ---
 title: regexp-basic
 date: 2016/01/08 15:49
-tags: joy
+tags: javascript
+categories: 前端基础
 ---
 
 ## 我对正则表达式的一点理解

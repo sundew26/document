@@ -2,6 +2,7 @@
 title: autojump
 date: 2016/12/12 18:52
 tags: tools
+categories: 工具类
 ---
 
 ## mac安装autojump

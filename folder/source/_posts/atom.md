@@ -1,7 +1,8 @@
 ---
 title: atom
 date: 2018/05/27
-tags: javascript
+tags: tools
+categories: 工具类
 ---
 
 ## Atom一个跨平台文本编辑器

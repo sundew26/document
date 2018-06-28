@@ -1,7 +1,8 @@
 ---
 title: hexo-css-weex-document
 date: 2017/09/21
-tags: javascript
+tags: blog
+categories: 博客
 ---
 
 # hexo+css项目部署到github #

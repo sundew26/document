@@ -2,6 +2,7 @@
 title: regexp-important
 date: 2016/10/21 16:56
 tags: javascript
+categories: 前端基础
 ---
 
 ## 正则表达式重点总结

@@ -2,6 +2,7 @@
 title: heaps-stacks-heapstacks-queues-arrays-chain
 date: 2016/12/28
 tags: javascript
+categories: 前端基础
 ---
 
 # 堆、栈、堆栈、队列、数组、链表 #

@@ -2,6 +2,7 @@
 title: nginx-reinstall
 date: 2016/05/04 10:55
 tags: tools
+categories: 工具类
 ---
 
 ## mac下重装nginx

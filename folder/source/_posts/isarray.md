@@ -2,6 +2,7 @@
 title: isarray
 date: 2017/02/17
 tags: javascript
+categories: 前端基础
 ---
 
 # 鉴别数组 #

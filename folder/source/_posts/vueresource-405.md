@@ -1,7 +1,8 @@
 ---
 title: vueresource-405
 date: 2017/07/25
-tags: javascript
+tags: vue
+categories: 问题总结
 ---
 
 # vue-resource报错450的解决方案 #

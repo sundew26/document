@@ -2,6 +2,7 @@
 title: true-friend
 date: 2015/03/19 10:37
 tags: joy
+categories: 娱乐
 ---
 
 ## 真正的朋友

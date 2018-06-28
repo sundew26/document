@@ -2,6 +2,7 @@
 title: root-shadow
 date: 2018/06/22
 tags: javascript
+categories: 前端基础
 ---
 
 ## 如何查看控制台隐藏样式shadow-root

@@ -1,7 +1,8 @@
 ---
 title: mCustomScrollbar-config
 date: 2015/01/19 15:54
-tags: tools
+tags: components
+categories: 组件
 ---
 
 ## mCustomScrollbar常用配置
