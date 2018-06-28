@@ -4,7 +4,7 @@ date: 2016/12/7
 tags: javascript
 ---
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/0?wx_fmt=png)
+# 单例模式（创建型） #
 
 定义：一个类仅有一个实例，并提供一个访问它的全局访问点。  
 
@@ -85,4 +85,4 @@ var createMask = singleton(function () {
 });
 ```
 
-##### [转自] [单例模式（创建型）](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483672&idx=1&sn=a822fbd05849d6a8e3d20f6f375f75d5&chksm=eb02a16edc752878389816993313491fa62e7e0271a283a232040170774a68461469e8e801ef&scene=0&key=ef4707cb1c7d18b4e5e2a5765dd943b6ec10570d1b5a4bac3e4ebc38b2208e232dd17bd09cee2f65f364d8c7d2158792d61759754ae4ca46c47c72b1d68a86a777b7a454e3f77fa3442856a4c18ca988&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195)&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)
+##### [转自] [单例模式（创建型）](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483672&idx=1&sn=a822fbd05849d6a8e3d20f6f375f75d5&chksm=eb02a16edc752878389816993313491fa62e7e0271a283a232040170774a68461469e8e801ef&scene=0&key=ef4707cb1c7d18b4e5e2a5765dd943b6ec10570d1b5a4bac3e4ebc38b2208e232dd17bd09cee2f65f364d8c7d2158792d61759754ae4ca46c47c72b1d68a86a777b7a454e3f77fa3442856a4c18ca988&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)

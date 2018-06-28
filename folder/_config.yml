@@ -10,9 +10,9 @@ subtitle: 做个安静大气的美女子
 # 网站描述
 description: 平时知识积累，站点博客迁移
 # 作者名字
-author: lu.wei
+author: stardew
 # 网站使用的语言
-language: 简体中文
+language: zh-Hans
 # 网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。
 timezone: UTC
 

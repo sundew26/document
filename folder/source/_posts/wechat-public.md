@@ -4,6 +4,8 @@ date: 2018/06/21
 tags: javascript
 ---
 
+## 如何判断用户是否已关注公众号
+
 一、微信公众平台配置
 ---
 ### 1. 获取appid, appsecret，添加白名单

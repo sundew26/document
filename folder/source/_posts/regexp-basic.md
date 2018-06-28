@@ -147,9 +147,9 @@ ExplicitCapture(显式捕获) | 仅捕获已被显式命名的组。
 (?<x>-<y>exp) | 平衡组
 (?im-nsx:exp) | 在子表达式exp中改变处理选项
 (?im-nsx) | 为表达式后面的部分改变处理选项
-(?(exp)yes|no) | 把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no
+(?(exp)yes\|no) | 把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no
 (?(exp)yes) | 同上，只是使用空表达式作为no
-(?(name)yes|no) | 如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no
+(?(name)yes\|no) | 如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no
 (?(name)yes) | 同上，只是使用空表达式作为no
 
 ##### [转自] [我对正则表达式的一点理解](https://my.oschina.net/luweiweiwei/blog/599739)

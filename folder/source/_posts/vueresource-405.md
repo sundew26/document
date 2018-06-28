@@ -4,6 +4,8 @@ date: 2017/07/25
 tags: javascript
 ---
 
+# vue-resource报错450的解决方案 #
+
 vue-resource(github)地址：https://github.com/pagekit/vue-resource
 
 一、基本使用
@@ -29,7 +31,7 @@ Vue.http.post(url, {
 二、报错450
 -------
 
-定位错误信息：请求header没有完全一一对应。```Content-Type: application/x-www-form-urlencoded; charset=UTF-8```应为```Content-Type: application/json; charset=UTF-8```，检查页面代码，发现已经设置了
+定位错误信息：请求header没有完全一一对应。`Content-Type: application/x-www-form-urlencoded; charset=UTF-8`应为`Content-Type: application/json; charset=UTF-8`，检查页面代码，发现已经设置了
 ```
 Vue.http.interceptors.push(function (request, next) {
   request.headers.set('Content-Type', 'application/json; charset=UTF-8')
@@ -69,9 +71,10 @@ export default function (request, next) {
     next();
 }
 ```
-大概的意思就是如果请求方式为PUT|PATCH|DELETE，服务器又没法处理这几类请求的时候，设置```Vue.http.options.emulateHTTP = true```的话可以将X-HTTP-Method-Override设置为PUT|PATCH|DELETE，然后使用普通的post进行请求。
+大概的意思就是如果请求方式为PUT|PATCH|DELETE，服务器又没法处理这几类请求的时候，设置`Vue.http.options.emulateHTTP = true`的话可以将X-HTTP-Method-Override设置为PUT|PATCH|DELETE，然后使用普通的post进行请求。
 关于X-HTTP-Method-Override讲一下，它的使用场景是：
 在某些HTTP代理不支持类似PUT|PATCH|DELETE这些类型HTTP请求的情况下，可以通过另一种完全违背协议的HTTP方法来"代理"。这种协议就是，使客户端发出HTTP POST请求并设置header里X-HTTP-Method-Override值为PUT|PATCH|DELETE。
+
 ##### 3. Vue.http.options.emulateJSON
 
 参考地址：https://github.com/pagekit/vue-resource/blob/develop/src/http/interceptor/form.js

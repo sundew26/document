@@ -16,7 +16,7 @@ api：[http://cn.vuejs.org/guide/list.html#track-by](http://cn.vuejs.org/guide/l
 
 track-by的两种使用方法：
 
-1\. 使用数据中某唯一字段，例如_uid
+### 1\. 使用数据中某唯一字段，例如_uid
 
 ```html
 <div  id="example">
@@ -56,7 +56,7 @@ modify: function () {
 
 ![](http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png)![](http://static.oschina.net/uploads/space/2016/1025/155631_7GXl_255575.png)
 
-2\. 使用$index，其它条件同上
+### 2\. 使用$index，其它条件同上
 
 ```html
 <div  id="example">

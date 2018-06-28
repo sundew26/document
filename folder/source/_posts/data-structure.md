@@ -4,6 +4,8 @@ date: 2016/12/09
 tags: javascript
 ---
 
+# 数据结构基础 #
+
 ![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkCe9RdE3enpa4Um5Xc8F1bk0I1WywW3j1m8ykOhGNgcJcz0CIZ7JRQg/0?wx_fmt=png)
 
 数据结构是相互之间存在一种或多种特定关系的数据元素的集合。  
@@ -150,4 +152,4 @@ WPL=3*5 + 5*5 + 7*4 + 8*3 + 11*3 + 14*3 + 23*2 +29*2 = 271
 
 2. 堆区：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。它与数据结构中的堆是两回事，分配方式倒是类似于链表。
 
-##### [转自] [数据结构基础](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483751&idx=1&sn=7e36feb69c0f2a5049fb23b1c77624e8&chksm=eb02a111dc752807118a7db38335be7efe667a88c9e6a16fec2b8a40b76efe0d2dcbbba7a263&scene=0&key=aa3a7cd9173eb9043a79b0edce43c5ec046454ba47464922369ebba4e583a0cea87885455878181c435dcd5f116a111177f2d2b3bee812558f528e290c8e0da6def301d0405c05fecf148e78fb829e29&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195)&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)
+##### [转自] [数据结构基础](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483751&idx=1&sn=7e36feb69c0f2a5049fb23b1c77624e8&chksm=eb02a111dc752807118a7db38335be7efe667a88c9e6a16fec2b8a40b76efe0d2dcbbba7a263&scene=0&key=aa3a7cd9173eb9043a79b0edce43c5ec046454ba47464922369ebba4e583a0cea87885455878181c435dcd5f116a111177f2d2b3bee812558f528e290c8e0da6def301d0405c05fecf148e78fb829e29&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)

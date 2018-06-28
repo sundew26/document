@@ -4,6 +4,8 @@ date: 2017/07/24
 tags: javascript
 ---
 
+# 我的weex开发之路 #
+
 ##### 认识比较浅薄，单纯从使用方面入手，整理了两个半小时，有错误的地方还请指出。
 
 # 1. 构建项目
@@ -11,9 +13,9 @@ tags: javascript
 创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。
 #### weex-toolkit（创建的weex项目没有ios和android包）
 - weex init weex 创建项目
-- 修改weex.html文件，将```./node_modules/weex-vue-render/index.js```修改为```./node_modules/weex-vue-render/dist/index.js```
+- 修改weex.html文件，将`./node_modules/weex-vue-render/index.js`修改为`./node_modules/weex-vue-render/dist/index.js`
 - cnpm install 加载依赖包
-- package.json中的scripts配置```"app": "npm run build & npm run dev & npm run server"```
+- package.json中的scripts配置`"app": "npm run build & npm run dev & npm run server"`
 - npm run app 启动项目
 
 目录结构如下图：
@@ -50,7 +52,7 @@ Weex Devtools是Weex开发调试必备的神器，安装好后，终端进入到
 # 3. 遇到的问题
 > 官方demo跑不通
 ##### 解决： 
-高一点版本的weex-vue-render里index.js路径改变，导致。修改weex.html文件，将```./node_modules/weex-vue-render/index.js```修改为```./node_modules/weex-vue-render/dist/index.js```
+高一点版本的weex-vue-render里index.js路径改变，导致。修改weex.html文件，将`./node_modules/weex-vue-render/index.js`修改为`./node_modules/weex-vue-render/dist/index.js`
 > 使用vue-resources获取接口数据, weex web上好的，但是weex-playground中跑不通，一片空白，错误信息：
 ```
 [undefined:344:31] ReferenceError: Can't find variable: document
@@ -75,7 +77,7 @@ weex中不支持document和window，换成其它方式。weex不支持vue-resour
 > <scroll>里loading一直没效果
 ##### 解决：
 <scroll>中使用refresh就没法用loading，去掉refresh模块
-> webpack报错，错误信息 ```ERROR in Entry module not found: Error: Cannot resolve 'file' or 'directory' /Users/xx/xx/code/weex/app.js in /Users/xx/xx/code/weex```
+> webpack报错，错误信息 `ERROR in Entry module not found: Error: Cannot resolve 'file' or 'directory' /Users/xx/xx/code/weex/app.js in /Users/xx/xx/code/weex`
 ##### 解决：
 开始一直以为是webpack入口没配置对，检查很多遍，各种测试后，发现这里真的没问题
 ```
@@ -95,10 +97,10 @@ resolve: {
   extensions: ['', '.js', '.vue', '.json']
 },
 ```
-> 错误信息 ```Cannot resolve module 'sass-loader'```
+> 错误信息 `Cannot resolve module 'sass-loader'`
 ##### 解决：
 缺少node-sass 或 sass-loader
-```npm install node-sass sass-loader --save-dev```
+`npm install node-sass sass-loader --save-dev`
 把sass-loader安装成了"scss-loader": "0.0.1",也是服了我自己。
 > 接口地址只能获取本地数据，配置test环境失败
 ##### 解决：
@@ -164,9 +166,9 @@ weex-vue-render第2753行对get进行了特别处理，第2764行的url拼接了
 于是把get方式传值改为body传过来，web端好了，签名没有问题，但是真机上还是报错，排查后发现问题出在get中使用了body传值，找到开发文档，
 http://weex.apache.org/cn/references/modules/stream.html
 ![clipboard.png](https://segmentfault.com/img/bVPABf)
-然后我凌乱了，为什么明明不能传body你的源码里又要有那么一行代码```url += (config.url.indexOf('?') <= -1 ? '?' : '&') + body + hash;```。没办法，最后使用了一个超级笨的办法解决了。在签名计算的时候人为的给url加上“&undefined",计算好签名后，web中fetch参数中的url也要加上“&undefined"，但是真机上是不会有&undefined的，所以真机上的url需要去掉undefined，好了问题解决了。
+然后我凌乱了，为什么明明不能传body你的源码里又要有那么一行代码`url += (config.url.indexOf('?') <= -1 ? '?' : '&') + body + hash;`。没办法，最后使用了一个超级笨的办法解决了。在签名计算的时候人为的给url加上“&undefined",计算好签名后，web中fetch参数中的url也要加上“&undefined"，但是真机上是不会有&undefined的，所以真机上的url需要去掉undefined，好了问题解决了。
 
-> storage中的```getItem(key, callback)```封装后，页面没拿到数据。
+> storage中的`getItem(key, callback)`封装后，页面没拿到数据。
 ##### 解决：
 storage异步造成的，使用promise解决
 ```
@@ -193,7 +195,7 @@ navigator.push({
 ```
 ##### 解决：
 新建一个vue文件，使用weex的web标签包一层，然后打包成weex.js格式，普通调用就好了。
-```<web class="content" :src="url"></web>```
+`<web class="content" :src="url"></web>`
 > 跳转weex.js页面传参
 ##### 解决：
 直接在url后面拼接参数，新页面使用this.$getConfig().bundleUrl获取url解析一下就好了。

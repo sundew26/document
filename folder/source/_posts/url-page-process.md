@@ -4,6 +4,8 @@ date: 2016/12/19
 tags: javascript
 ---
 
+# 输入网址到打开页面的过程 #
+
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3FvHpzCpd15vUb1B1M6ox9gdJKt7pwvGeCaaMGYzPXXI2pN5P66Cvz4ONOiarnIO51yqFRGCQlyjUQ/0?wx_fmt=jpeg)
 
 输入网址到打开页面步骤如下：  
@@ -24,7 +26,7 @@ tags: javascript
 
 附1. DNS域名解析
 
-（1）在浏览器中输入www.kaistart.com域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。  
+（1）在浏览器中输入www.baidu.com域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。  
 
 （2）如果hosts里没有这个域名的映射，则查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析。  
 
@@ -32,7 +34,7 @@ tags: javascript
 
 （4）如果要查询的域名，不由本地DNS服务器区域解析，但该服务器已缓存了此网址映射关系，则调用这个IP地址映射，完成域名解析，此解析不具有权威性。  
 
-（5）如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询（ISP查询），如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(kaistart.com)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找kaistart.com域服务器，重复上面的动作，进行查询，直至找到www.kaistart.com主机。  
+（5）如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询（ISP查询），如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(baidu.com)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找baidu.com域服务器，重复上面的动作，进行查询，直至找到www.baidu.com主机。  
 
 （6）如果用的是转发模式，此DNS服务器就会把请求转发至上一级DNS服务器，由上一级服务器进行解析，上一级服务器如果不能解析，或找根DNS或把转请求转至上上级，以此循环。不管是本地DNS服务器用是是转发，还是根提示，最后都是把结果返回给本地DNS服务器，由此DNS服务器再返回给客户机。  
 
@@ -118,6 +120,7 @@ http请求包括请求头和请求体，重点主要在请求头部分，分为R
 
 http Request Header 请求头
 
+字段 | 描述 | 使用
 --- | --- | ---
 Accept | 指定客户端能够接收的内容类型 | Accept: application/json, text/plain, */*
 Accept-Charset | 浏览器可以接受的字符编码集 | Accept-Charset: iso-8859-5
@@ -133,7 +136,7 @@ Content-Type | 请求的与实体对应的MIME信息 | Content-Type: application
 Date | 请求发送的日期和时间 | Date: Tue, 13 Dec 2016 12:09:40 GMT
 Expect | 请求的特定的服务器行为 | Expect: 100-continue
 From | 发出请求的用户的Email | From: user@mail.com
-Host | 指定请求的服务器的域名和端口号 | Host: www.kaistart.com
+Host | 指定请求的服务器的域名和端口号 | Host: www.baidu.com
 If-Match | 只有请求内容与实体相匹配才有效 | If-Match: “51859185185918518591851859185185918”
 If-Modified-Since | 如果请求的部分在指定时间之后被修改则请求成功，未被修改则返回304代码 | If-Modified-Since: Tue, 13 Dec 2016 12:09:40 GMT
 If-None-Match | 如果内容未改变返回304代码，参数为服务器先前发送的Etag，与服务器回应的Etag比较判断是否改变 | If-None-Match: “51859185185918518591851859185185918”
@@ -143,7 +146,7 @@ Max-Forwards | 限制信息通过代理和网关传送的时间 | Max-Forwards: 
 Pragma | 用来包含实现特定的指令 | Pragma: no-cache
 Proxy-Authorization | 连接到代理的授权证书 | Proxy-Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 Range | 只请求实体的一部分，指定范围 | Range: bytes=500-999
-Referer | 先前网页的地址，当前请求网页紧随其后,即来路 | Referer: http://www.kaistart.com/
+Referer | 先前网页的地址，当前请求网页紧随其后,即来路 | Referer: http://www.baidu.com/
 TE | 客户端愿意接受的传输编码，并通知服务器接受接受尾加头信息 | TE: trailers,deflate;q=0.5
 Upgrade | 向服务器指定某种传输协议以便服务器进行转换（如果支持 | Upgrade: HTTP/2.0, SHTTP/1.3, IRC/6.9, RTA/x11
 User-Agent | User-Agent的内容包含发出请求的用户信息 | User-Agent: Mozilla/5.0 (Linux; X11)
@@ -152,6 +155,7 @@ Warning | 关于消息实体的警告信息 | Warn: 188 Miscellaneous warning
 
 HTTP Responses Header 响应头  
 
+字段 | 描述 | 使用
 --- | --- | ---
 Accept-Ranges | 表明服务器是否支持指定范围请求及哪种类型的分段请求 | Accept-Ranges: bytes
 Age | 从原始服务器到代理缓存形成的估算时间（以秒计，非负 | Age: 58
@@ -171,7 +175,7 @@ Last-Modified | 请求资源的最后修改时间 | Last-Modified: Tue, 13 Dec 2
 Location | 用来重定向接收方到非请求URL的位置来完成请求或标识新的资源 | Location: www.baidu.com
 Pragma | 包括实现特定的指令，它可应用到响应链上的任何接收方 | Pragma: no-cache
 Proxy-Authenticate | 它指出认证方案和可应用到代理的该URL上的参数 | Proxy-Authenticate: Basic
-refresh | 应用于重定向或一个新的资源被创造，在5秒之后重定向（由网景提出，被大部分浏览器支持） | Refresh: 5; url=www.kaistart.com
+refresh | 应用于重定向或一个新的资源被创造，在5秒之后重定向（由网景提出，被大部分浏览器支持） | Refresh: 5; url=www.baidu.com
 Retry-After | 如果实体暂时不可取，通知客户端在指定时间之后再次尝试 | Retry-After: 58
 Server | web服务器软件名称 | server: Cowboy
 Set-Cookie | 设置Http Cookie | Set-Cookie: UserID=lujiang; Max-Age=3600; Version=1
@@ -213,4 +217,4 @@ http状态码
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3FvHpzCpd15vUb1B1M6ox9g1iaTqOeXUfRRGEZofTXHEgJN0GjIH2oLKwIZYLrnSSqP2uNdTMNJ4Zg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
-##### [转自] [输入网址到打开页面的过程](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483767&idx=1&sn=bf2be5a9e0da6d2117f5b2b0b929a5ea&chksm=eb02a101dc752817b4acd6f8b085df53ec6fd93f529157887486d9b31cb0bc8b5bea80c554f2&mpshare=1&scene=1&srcid=0628OSEkto1v08f4BuxW9Haw&key=aa3a7cd9173eb904beb6605ace304c265733da98e3be4793ef9c1e2ce6c9a78c3bc2b117ed16becf0753b390be23a2bae7833aab92d7477bda1ae2b613be714d3d37d69d4368686b1e30a03353f690e7&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195)&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)
+##### [转自] [输入网址到打开页面的过程](https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&mid=2247483767&idx=1&sn=bf2be5a9e0da6d2117f5b2b0b929a5ea&chksm=eb02a101dc752817b4acd6f8b085df53ec6fd93f529157887486d9b31cb0bc8b5bea80c554f2&mpshare=1&scene=1&srcid=0628OSEkto1v08f4BuxW9Haw&key=aa3a7cd9173eb904beb6605ace304c265733da98e3be4793ef9c1e2ce6c9a78c3bc2b117ed16becf0753b390be23a2bae7833aab92d7477bda1ae2b613be714d3d37d69d4368686b1e30a03353f690e7&ascene=0&uin=NzgyNzAwMTAx&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)

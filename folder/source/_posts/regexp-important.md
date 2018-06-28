@@ -8,7 +8,7 @@ tags: javascript
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIqLmAuHfMbLCr6Ad3C6Gw0KGt7ykePwac4YibOQzae5qjqIRmrgQXN0iaRpCOaSGk565SlfbWrSpw/0?wx_fmt=jpeg)
 
-1\. 贪婪模式 （尽可能多的去匹配符合条件的字符串）
+### 1\. 贪婪模式 （尽可能多的去匹配符合条件的字符串）
 
 ```javascript
 var str = "aaabbbbcccccAAABBBBCCCCC"; 
@@ -30,7 +30,7 @@ console.log(newStr);
 
 // 结果：笨蛋bbbccccc笨蛋BBBCCCCC  匹配了aaabbbbcccccAAABBBBCCCCC
 
-2\. 捕获组
+### 2\. 捕获组
 
 **捕获型：
 

@@ -1,7 +1,7 @@
 新建项目: hexo init <folder>
 进入: cd <folder>
 安装包: npm install
-新建一篇文章: hexo new iOS-APIs (文件会在/source/_posts下)
+新建一篇文章: hexo new main (文件会在/source/_posts下)
 启动: hexo server
 浏览器打开: http://localhost:4000/document/
 

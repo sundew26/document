@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="简体中文">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -101,8 +101,8 @@
 <meta property="og:url" content="https://github.com/stardew/vue-drag-and-drop/index.html">
 <meta property="og:site_name" content="stardew的博客">
 <meta property="og:description" content="输入内容转图片（vue + html2canvas + vue-drag-and-drop）最近做了一个小工具，把输入的内容转成图片输出。使用插件 html2canvas，vue-drag-and-drop   功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。   基本思路：把html转成canvas，然后把canvas存成图片。   完成：用插件vue-drag-and-dr">
-<meta property="og:locale" content="简体中文">
-<meta property="og:updated_time" content="2018-06-27T10:51:33.000Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-28T07:29:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-drag-and-drop">
 <meta name="twitter:description" content="输入内容转图片（vue + html2canvas + vue-drag-and-drop）最近做了一个小工具，把输入的内容转成图片输出。使用插件 html2canvas，vue-drag-and-drop   功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。   基本思路：把html转成canvas，然后把canvas存成图片。   完成：用插件vue-drag-and-dr">
@@ -113,14 +113,14 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
     duoshuo: {
-      userId: '0',
-      author: 'Author'
+      userId: 'undefined',
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -158,7 +158,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="简体中文">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -216,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            分类
           </a>
         </li>
       
@@ -226,7 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            关于
           </a>
         </li>
       
@@ -236,7 +236,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -246,15 +246,53 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -286,7 +324,7 @@
     <link itemprop="mainEntityOfPage" href="https://github.com/stardew/vue-drag-and-drop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lu.wei">
+      <meta itemprop="name" content="stardew">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
     </span>
@@ -310,9 +348,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-21T19:59:00+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-21T19:59:00+08:00">
                 2016-09-21
               </time>
             
@@ -366,29 +404,11 @@
 <p>基本思路：把html转成canvas，然后把canvas存成图片。  </p>
 <p>完成：用插件vue-drag-and-drop，使输入列表可拖拽；刚开始自己根据输入的内容用canvas画图，但是考虑到可扩展性，最后选择html2canvas工具把html转成canvas。  </p>
 <p>遇到的问题及解决办法：  </p>
-<p>1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。  </p>
-<p>问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。  </p>
-<p>解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取段落真实长度,包括中英文</span></div><div class="line">getTrueLength: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> truelen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      truelen += <span class="number">2</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      truelen += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> truelen</div><div class="line">&#125;,</div><div class="line"><span class="comment">// canvas画图时,文字切割</span></div><div class="line">cutString: <span class="function"><span class="keyword">function</span> (<span class="params">str, leng</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> tlen = len</div><div class="line">  <span class="keyword">let</span> nlen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">2</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">2</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">1</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">1</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> tlen</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<p>2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。  </p>
-<p>问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。  </p>
-<p>解决：转义一下，空格替换成&nbsp;换行\r\n换为<code>&lt;br&gt;</code>，template里使用&#123;&#123;&#123;&#125;&#125;&#125;而非&#123;&#123;&#125;&#125;解析。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">nl2br: <span class="function"><span class="keyword">function</span> (<span class="params">str, idx, tag, isXhtml</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> blankTag = <span class="string">'&amp;nbsp;'</span></div><div class="line">  <span class="keyword">let</span> breakTag = (isXhtml || <span class="keyword">typeof</span> isXhtml === <span class="string">'undefined'</span>) ? <span class="string">'&lt;br /&gt;'</span> : <span class="string">'&lt;br&gt;'</span></div><div class="line">  <span class="keyword">let</span> newStr = (str + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\s]?)(\s)/g</span>, <span class="string">'$1'</span> + blankTag + <span class="string">'$2'</span>)</div><div class="line">  newStr = (newStr + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\r\n]?)(\r\n|\n\r|\r|\n)/g</span>, <span class="string">'$1'</span> + breakTag + <span class="string">'$2'</span>)</div><div class="line">  <span class="keyword">if</span> (tag) &#123;</div><div class="line">    <span class="keyword">this</span>.changeData[idx][tag] = newStr</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newStr</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p>3. 画成的canvas，存成图片模糊。</p>
-<p>问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。  </p>
-<p>解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; canvas width 1960，img width: 980  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息保存成图片</span></div><div class="line">saveImageInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> mycanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = mycanvas.toDataURL(<span class="string">'image/png'</span>)</div><div class="line">  <span class="keyword">let</span> w = <span class="built_in">window</span>.open(<span class="string">'about:blank'</span>, <span class="string">'image from canvas'</span>)</div><div class="line">  w.document.write(<span class="string">'&lt;img src="'</span> + image + <span class="string">'" alt="from canvas" style="width: 980px; margin: 0 auto; display: block; height: '</span> + (<span class="keyword">this</span>.canvasHeight / <span class="number">2</span>) + <span class="string">'px"/&gt;'</span>)</div><div class="line">&#125;,</div><div class="line"><span class="comment">// 存为本地图片</span></div><div class="line">saveAsLocalImage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> myCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = myCanvas.toDataURL(<span class="string">'image/png'</span>).replace(<span class="string">'image/png'</span>, <span class="string">'image/octet-stream'</span>)</div><div class="line">  <span class="built_in">window</span>.location.href = image</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas把html页面存成图片时，图片不全。</li>
-</ol>
-<p>问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图  </p>
-<p>解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息画成canvas</span></div><div class="line">draw: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> y = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</div><div class="line">  <span class="built_in">window</span>.html2canvas(<span class="built_in">document</span>.querySelector(<span class="string">'#drawImg'</span>), &#123;<span class="attr">allowTaint</span>: <span class="literal">false</span>, <span class="attr">taintTest</span>: <span class="literal">false</span>&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">canvas</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ob.innerHTML = <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.ob.appendChild(canvas)</div><div class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, y)</div><div class="line">    callback &amp;&amp; callback()</div><div class="line">  &#125;.bind(<span class="keyword">this</span>))</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas画出来的图片也模糊。</li>
-</ol>
-<p>问题成因：如3  </p>
-<p>解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。  </p>
-<h5 id="转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/749569" target="_blank" rel="external">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</a></h5>
+<h3 id="1-开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。"><a href="#1-开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。" class="headerlink" title="1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。"></a>1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。</h3><h4 id="问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。"><a href="#问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。" class="headerlink" title="问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。"></a>问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。</h4><h4 id="解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。"><a href="#解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。" class="headerlink" title="解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。"></a>解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取段落真实长度,包括中英文</span></div><div class="line">getTrueLength: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> truelen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      truelen += <span class="number">2</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      truelen += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> truelen</div><div class="line">&#125;,</div><div class="line"><span class="comment">// canvas画图时,文字切割</span></div><div class="line">cutString: <span class="function"><span class="keyword">function</span> (<span class="params">str, leng</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> tlen = len</div><div class="line">  <span class="keyword">let</span> nlen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">2</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">2</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">1</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">1</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> tlen</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h3 id="2-textarea里输入的换行、空格直接存到所需样式的div里时，没效果。"><a href="#2-textarea里输入的换行、空格直接存到所需样式的div里时，没效果。" class="headerlink" title="2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。"></a>2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。</h3><h4 id="问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。"><a href="#问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。" class="headerlink" title="问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。"></a>问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。</h4><h4 id="解决：转义一下，空格替换成-nbsp-换行-r-n换为-lt-br-gt-，template里使用-123-123-123-125-125-125-而非-123-123-125-125-解析。"><a href="#解决：转义一下，空格替换成-nbsp-换行-r-n换为-lt-br-gt-，template里使用-123-123-123-125-125-125-而非-123-123-125-125-解析。" class="headerlink" title="解决：转义一下，空格替换成&nbsp;换行\r\n换为&lt;br&gt;，template里使用&#123;&#123;&#123;&#125;&#125;&#125;而非&#123;&#123;&#125;&#125;解析。"></a>解决：转义一下，空格替换成&nbsp;换行\r\n换为<code>&lt;br&gt;</code>，template里使用&#123;&#123;&#123;&#125;&#125;&#125;而非&#123;&#123;&#125;&#125;解析。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">nl2br: <span class="function"><span class="keyword">function</span> (<span class="params">str, idx, tag, isXhtml</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> blankTag = <span class="string">'&amp;nbsp;'</span></div><div class="line">  <span class="keyword">let</span> breakTag = (isXhtml || <span class="keyword">typeof</span> isXhtml === <span class="string">'undefined'</span>) ? <span class="string">'&lt;br /&gt;'</span> : <span class="string">'&lt;br&gt;'</span></div><div class="line">  <span class="keyword">let</span> newStr = (str + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\s]?)(\s)/g</span>, <span class="string">'$1'</span> + blankTag + <span class="string">'$2'</span>)</div><div class="line">  newStr = (newStr + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\r\n]?)(\r\n|\n\r|\r|\n)/g</span>, <span class="string">'$1'</span> + breakTag + <span class="string">'$2'</span>)</div><div class="line">  <span class="keyword">if</span> (tag) &#123;</div><div class="line">    <span class="keyword">this</span>.changeData[idx][tag] = newStr</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newStr</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h3 id="3-画成的canvas，存成图片模糊。"><a href="#3-画成的canvas，存成图片模糊。" class="headerlink" title="3. 画成的canvas，存成图片模糊。"></a>3. 画成的canvas，存成图片模糊。</h3><h4 id="问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。"><a href="#问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。" class="headerlink" title="问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。"></a>问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。</h4><h4 id="解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成-jpg图片，然后图片展示时缩放一倍。-gt-canvas-width-1960，img-width-980"><a href="#解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成-jpg图片，然后图片展示时缩放一倍。-gt-canvas-width-1960，img-width-980" class="headerlink" title="解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; canvas width 1960，img width: 980"></a>解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; canvas width 1960，img width: 980</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息保存成图片</span></div><div class="line">saveImageInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> mycanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = mycanvas.toDataURL(<span class="string">'image/png'</span>)</div><div class="line">  <span class="keyword">let</span> w = <span class="built_in">window</span>.open(<span class="string">'about:blank'</span>, <span class="string">'image from canvas'</span>)</div><div class="line">  w.document.write(<span class="string">'&lt;img src="'</span> + image + <span class="string">'" alt="from canvas" style="width: 980px; margin: 0 auto; display: block; height: '</span> + (<span class="keyword">this</span>.canvasHeight / <span class="number">2</span>) + <span class="string">'px"/&gt;'</span>)</div><div class="line">&#125;,</div><div class="line"><span class="comment">// 存为本地图片</span></div><div class="line">saveAsLocalImage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> myCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = myCanvas.toDataURL(<span class="string">'image/png'</span>).replace(<span class="string">'image/png'</span>, <span class="string">'image/octet-stream'</span>)</div><div class="line">  <span class="built_in">window</span>.location.href = image</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h3 id="4-html2canvas把html页面存成图片时，图片不全。"><a href="#4-html2canvas把html页面存成图片时，图片不全。" class="headerlink" title="4. html2canvas把html页面存成图片时，图片不全。"></a>4. html2canvas把html页面存成图片时，图片不全。</h3><h4 id="问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图"><a href="#问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图" class="headerlink" title="问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图"></a>问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图</h4><h4 id="解决办法：先记录当前scrollTop值，window-scrollTo-0-0-到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。"><a href="#解决办法：先记录当前scrollTop值，window-scrollTo-0-0-到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。" class="headerlink" title="解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。"></a>解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息画成canvas</span></div><div class="line">draw: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> y = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</div><div class="line">  <span class="built_in">window</span>.html2canvas(<span class="built_in">document</span>.querySelector(<span class="string">'#drawImg'</span>), &#123;<span class="attr">allowTaint</span>: <span class="literal">false</span>, <span class="attr">taintTest</span>: <span class="literal">false</span>&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">canvas</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ob.innerHTML = <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.ob.appendChild(canvas)</div><div class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, y)</div><div class="line">    callback &amp;&amp; callback()</div><div class="line">  &#125;.bind(<span class="keyword">this</span>))</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h3 id="5-html2canvas画出来的图片也模糊。"><a href="#5-html2canvas画出来的图片也模糊。" class="headerlink" title="5. html2canvas画出来的图片也模糊。"></a>5. html2canvas画出来的图片也模糊。</h3><h4 id="问题成因：如3"><a href="#问题成因：如3" class="headerlink" title="问题成因：如3"></a>问题成因：如3</h4><h4 id="解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。"><a href="#解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。" class="headerlink" title="解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。"></a>解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。</h4><h5 id="转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/749569" target="_blank" rel="external">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</a></h5>
       
     </div>
     
@@ -529,10 +549,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            站点概览
           </li>
         </ul>
       
@@ -541,8 +561,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://segmentfault.com/img/bVbcOD7"
-               alt="lu.wei" />
-          <p class="site-author-name" itemprop="name">lu.wei</p>
+               alt="stardew" />
+          <p class="site-author-name" itemprop="name">stardew</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
            
@@ -553,7 +573,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">35</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -566,7 +586,7 @@
             <div class="site-state-item site-state-tags">
               
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">标签</span>
               
             </div>
           
@@ -600,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><span class="nav-number">1.</span> <span class="nav-text">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><span class="nav-number">1.</span> <span class="nav-text">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。"><span class="nav-number">1.1.</span> <span class="nav-text">1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。"><span class="nav-number">1.1.1.</span> <span class="nav-text">问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。"><span class="nav-number">1.1.2.</span> <span class="nav-text">解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-textarea里输入的换行、空格直接存到所需样式的div里时，没效果。"><span class="nav-number">1.2.</span> <span class="nav-text">2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。"><span class="nav-number">1.2.1.</span> <span class="nav-text">问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：转义一下，空格替换成-nbsp-换行-r-n换为-lt-br-gt-，template里使用-123-123-123-125-125-125-而非-123-123-125-125-解析。"><span class="nav-number">1.2.2.</span> <span class="nav-text">解决：转义一下，空格替换成 换行\r\n换为<br>，template里使用{{{}}}而非{{}}解析。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-画成的canvas，存成图片模糊。"><span class="nav-number">1.3.</span> <span class="nav-text">3. 画成的canvas，存成图片模糊。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。"><span class="nav-number">1.3.1.</span> <span class="nav-text">问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成-jpg图片，然后图片展示时缩放一倍。-gt-canvas-width-1960，img-width-980"><span class="nav-number">1.3.2.</span> <span class="nav-text">解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = > canvas width 1960，img width: 980</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-html2canvas把html页面存成图片时，图片不全。"><span class="nav-number">1.4.</span> <span class="nav-text">4. html2canvas把html页面存成图片时，图片不全。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图"><span class="nav-number">1.4.1.</span> <span class="nav-text">问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法：先记录当前scrollTop值，window-scrollTo-0-0-到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。"><span class="nav-number">1.4.2.</span> <span class="nav-text">解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-html2canvas画出来的图片也模糊。"><span class="nav-number">1.5.</span> <span class="nav-text">5. html2canvas画出来的图片也模糊。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题成因：如3"><span class="nav-number">1.5.1.</span> <span class="nav-text">问题成因：如3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。"><span class="nav-number">1.5.2.</span> <span class="nav-text">解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -627,18 +647,18 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">lu.wei</span>
+  <span class="author" itemprop="copyrightHolder">stardew</span>
 </div>
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Gemini
   </a>
 </div>
 
@@ -718,6 +738,13 @@
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
@@ -776,13 +803,358 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.2"></script>
 
 
 
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

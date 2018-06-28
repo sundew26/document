@@ -4,6 +4,8 @@ date: 2017/09/05
 tags: javascript
 ---
 
+# hexo+css创建自己的blog（搭建） #
+
 ## 一、什么是hexo
 Hexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。
 
@@ -50,7 +52,7 @@ subtitle: weex中文手册
 3. 网站描述
 description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移
 4. 作者名字
-author: lu.wei
+author: stardew
 5. 网站使用的语言
 language: 简体中文
 6. 网站时区Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。

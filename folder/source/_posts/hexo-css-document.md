@@ -6,13 +6,6 @@ tags: javascript
 
 ## hexo语法使用手册 ##
 
-title: Manual
-date: 2017-09-05 15:11:08
-updated: 2017-09-05 15:11:08
-tags:
-
----
-
 注意：因语法问题，有些hexo的效果在segmentfault中无法正常显示。
 
 ### 1. 列表
