@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/vue-drag-and-drop/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/autojump/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/vue-drag-and-drop/" itemprop="url">vue-drag-and-drop</a></h2>
+                <a class="post-title-link" href="/autojump/" itemprop="url">autojump</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-09-21T11:59:00Z">
-                2016-09-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T18:52:00Z">
+                2016-12-12
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/vue-drag-and-drop/#comments" itemprop="discussionUrl">
+                <a href="/autojump/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="vue-drag-and-drop/" itemprop="commentCount"></span>
+                        data-disqus-identifier="autojump/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,34 +365,23 @@
       
         
           
-            <h2 id="输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>输入内容转图片（vue + html2canvas + vue-drag-and-drop）</h2><p>最近做了一个小工具，把输入的内容转成图片输出。使用插件 html2canvas，vue-drag-and-drop  </p>
-<p>功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。  </p>
-<p>基本思路：把html转成canvas，然后把canvas存成图片。  </p>
-<p>完成：用插件vue-drag-and-drop，使输入列表可拖拽；刚开始自己根据输入的内容用canvas画图，但是考虑到可扩展性，最后选择html2canvas工具把html转成canvas。  </p>
-<p>遇到的问题及解决办法：  </p>
-<p>1. 开始自己根据输入所得数据用canvas一行一行画，文字断行处右边对不齐。  </p>
-<p>问题成因：因为输入的文字有中文英文等，占位不同，固定每行截取字符的长度导致右端不对齐。  </p>
-<p>解决：所有文字都转为英文字符数，中文占两字符，其它占一个字符，计算出行数；每行英文字符占位是固定的x，然后从开始位置往后计算x长度时，正常文字所在位置，substr截取出来，canvas画上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取段落真实长度,包括中英文</span></div><div class="line">getTrueLength: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> truelen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      truelen += <span class="number">2</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      truelen += <span class="number">1</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> truelen</div><div class="line">&#125;,</div><div class="line"><span class="comment">// canvas画图时,文字切割</span></div><div class="line">cutString: <span class="function"><span class="keyword">function</span> (<span class="params">str, leng</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> len = str.length</div><div class="line">  <span class="keyword">let</span> tlen = len</div><div class="line">  <span class="keyword">let</span> nlen = <span class="number">0</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">0</span>; x &lt; len; x++) &#123;</div><div class="line">    <span class="keyword">if</span> (str.charCodeAt(x) &gt; <span class="number">128</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">2</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">2</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">if</span> (nlen + <span class="number">1</span> &lt; leng) &#123;</div><div class="line">        nlen += <span class="number">1</span></div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tlen = x</div><div class="line">        <span class="keyword">break</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> tlen</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
-<p>2. textarea里输入的换行、空格直接存到所需样式的div里时，没效果。  </p>
-<p>问题成因：编码格式不统一，textarea内容存到textarea里格式是一致的。  </p>
-<p>解决：转义一下，空格替换成&nbsp;换行\r\n换为<code>&lt;br&gt;</code>，template里使用&#123;&#123;&#123;&#125;&#125;&#125;而非&#123;&#123;&#125;&#125;解析。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">nl2br: <span class="function"><span class="keyword">function</span> (<span class="params">str, idx, tag, isXhtml</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> blankTag = <span class="string">'&amp;nbsp;'</span></div><div class="line">  <span class="keyword">let</span> breakTag = (isXhtml || <span class="keyword">typeof</span> isXhtml === <span class="string">'undefined'</span>) ? <span class="string">'&lt;br /&gt;'</span> : <span class="string">'&lt;br&gt;'</span></div><div class="line">  <span class="keyword">let</span> newStr = (str + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\s]?)(\s)/g</span>, <span class="string">'$1'</span> + blankTag + <span class="string">'$2'</span>)</div><div class="line">  newStr = (newStr + <span class="string">''</span>).replace(<span class="regexp">/([^&gt;\r\n]?)(\r\n|\n\r|\r|\n)/g</span>, <span class="string">'$1'</span> + breakTag + <span class="string">'$2'</span>)</div><div class="line">  <span class="keyword">if</span> (tag) &#123;</div><div class="line">    <span class="keyword">this</span>.changeData[idx][tag] = newStr</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newStr</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p>3. 画成的canvas，存成图片模糊。</p>
-<p>问题成因：屏幕显示和屏幕像素一样大小的图片时，尺寸相符，一个屏幕像素对应一个图像像素，显示清晰，但是一个比屏幕像素小的图片展示时，屏幕像素比图片像素多，一个图片像素要用一个多屏幕像素来显示，此时，图像显示驱动的平滑处理功能生效，显示驱动用插值算法在源图中扩展生成新的像素点，图片被拉伸，所以模糊了。  </p>
-<p>解决：知道了问题的成因就好办了，可是把canvas画大一点，图片比屏幕大了就不会模糊了，简单的解决办法是使用双倍canvas高宽，画成图，toDataUrl转成.jpg图片，然后图片展示时缩放一倍。 = &gt; canvas width 1960，img width: 980  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息保存成图片</span></div><div class="line">saveImageInfo: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> mycanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = mycanvas.toDataURL(<span class="string">'image/png'</span>)</div><div class="line">  <span class="keyword">let</span> w = <span class="built_in">window</span>.open(<span class="string">'about:blank'</span>, <span class="string">'image from canvas'</span>)</div><div class="line">  w.document.write(<span class="string">'&lt;img src="'</span> + image + <span class="string">'" alt="from canvas" style="width: 980px; margin: 0 auto; display: block; height: '</span> + (<span class="keyword">this</span>.canvasHeight / <span class="number">2</span>) + <span class="string">'px"/&gt;'</span>)</div><div class="line">&#125;,</div><div class="line"><span class="comment">// 存为本地图片</span></div><div class="line">saveAsLocalImage: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> myCanvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)</div><div class="line">  <span class="keyword">let</span> image = myCanvas.toDataURL(<span class="string">'image/png'</span>).replace(<span class="string">'image/png'</span>, <span class="string">'image/octet-stream'</span>)</div><div class="line">  <span class="built_in">window</span>.location.href = image</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas把html页面存成图片时，图片不全。</li>
+            <h2 id="mac安装autojump"><a href="#mac安装autojump" class="headerlink" title="mac安装autojump"></a>mac安装autojump</h2><pre><code>autojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。  
+</code></pre><ol>
+<li>安装zsh：<br> <code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></li>
+<li>将zsh设置成默认的shell：<code>chsh -s /bin/zsh</code> (重启shell)</li>
+<li><code>echo $SHELL</code>可以查看用的哪个shell（bash or zsh）</li>
+<li>安装autojump：<code>brew install autojump</code>（确保有brew）</li>
+<li>使用<code>vim .zshrc</code>打开.zshrc（有些人会找不到.zshrc这个文件，其实安装了zsh才会有.zshrc ，在默认打开的终端目录下。可以打开终端并且ls -a查看）。<ul>
+<li>找到 plugins=，在后面添加autojump：<code>plugins=(git autojump)</code></li>
+<li>新开一行，添加：<code>[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh</code></li>
+<li><code>：wq</code>保存退出</li>
+</ul>
+</li>
+<li><p>重启终端，autojump就可以使用了，例如：<br>   添加一条快捷键：<code>j -a s &#39;/Users/XXX/Desktop/code/shark’</code>（j -a 你定义的快捷命令 ‘需要跳转的目录位置’）</p>
+<p>   进入shark：<code>j s</code></p>
+</li>
 </ol>
-<p>问题成因：html2canvas只能把当前浏览器窗口内及以下部分的内容转成图片，任何已经滚动到浏览器顶部以上以及position、fixed后的非可视的内容都无法存图  </p>
-<p>解决办法：先记录当前scrollTop值，window.scrollTo(0,0)到顶部，然后画图，就可以解决了，完了再回到原来的scroll位置。  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 文本信息画成canvas</span></div><div class="line">draw: <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> y = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop || <span class="number">0</span></div><div class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</div><div class="line">  <span class="built_in">window</span>.html2canvas(<span class="built_in">document</span>.querySelector(<span class="string">'#drawImg'</span>), &#123;<span class="attr">allowTaint</span>: <span class="literal">false</span>, <span class="attr">taintTest</span>: <span class="literal">false</span>&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">canvas</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.ob.innerHTML = <span class="string">''</span></div><div class="line">    <span class="keyword">this</span>.ob.appendChild(canvas)</div><div class="line">    <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, y)</div><div class="line">    callback &amp;&amp; callback()</div><div class="line">  &#125;.bind(<span class="keyword">this</span>))</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<ol>
-<li>html2canvas画出来的图片也模糊。</li>
-</ol>
-<p>问题成因：如3  </p>
-<p>解决：因为插件里的内容别的地方可能也要用，所以不修改canvas画布大小的算法。画布的大小是所要画的html内容决定的，所以只要这个html整体放大一倍，图片再缩小一倍就可以解决了。  </p>
-<h5 id="转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）"><a href="#转自-输入内容转图片（vue-html2canvas-vue-drag-and-drop）" class="headerlink" title="[转自] 输入内容转图片（vue + html2canvas + vue-drag-and-drop）"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/749569" target="_blank" rel="external">输入内容转图片（vue + html2canvas + vue-drag-and-drop）</a></h5>
+<h5 id="转自-mac安装autojump"><a href="#转自-mac安装autojump" class="headerlink" title="[转自] mac安装autojump"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/804679" target="_blank" rel="external">mac安装autojump</a></h5>
           
         
       
@@ -431,7 +420,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -477,7 +466,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

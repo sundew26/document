@@ -6,6 +6,8 @@ tags: javascript
 
 ## 正则表达式重点总结
 
+![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIqLmAuHfMbLCr6Ad3C6Gw0KGt7ykePwac4YibOQzae5qjqIRmrgQXN0iaRpCOaSGk565SlfbWrSpw/0?wx_fmt=jpeg)
+
 1\. 贪婪模式 （尽可能多的去匹配符合条件的字符串）
 
 ```javascript

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="简体中文">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="slice，splice，split，substring，substr区别    123var arr = [1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5];var str = &apos;1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5&apos;; slice(): slice(i,[j])   描述: 截取数组，返回截取的数组，原数组不变">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slice-splice-split-substring-substr.md">
+<meta property="og:url" content="https://github.com/stardew/slice-splice-split-substring-substr/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="slice，splice，split，substring，substr区别    123var arr = [1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5];var str = &apos;1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5&apos;; slice(): slice(i,[j])   描述: 截取数组，返回截取的数组，原数组不变">
+<meta property="og:locale" content="简体中文">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3Fibq2EbGWGYvbPIBNIsInmickdIAeQ0olClsOQlVyTl2BIV1eqzXgicXiaXusPic1HXEIY7bOHibwEYDTw/0?wx_fmt=jpeg">
+<meta property="og:updated_time" content="2018-06-28T06:09:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="slice-splice-split-substring-substr.md">
+<meta name="twitter:description" content="slice，splice，split，substring，substr区别    123var arr = [1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5];var str = &apos;1, 3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5&apos;; slice(): slice(i,[j])   描述: 截取数组，返回截取的数组，原数组不变">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3Fibq2EbGWGYvbPIBNIsInmickdIAeQ0olClsOQlVyTl2BIV1eqzXgicXiaXusPic1HXEIY7bOHibwEYDTw/0?wx_fmt=jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/stardew/slice-splice-split-substring-substr/"/>
+
+
+
+
+
+  <title>slice-splice-split-substring-substr.md | stardew的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="简体中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stardew的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/slice-splice-split-substring-substr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lu.wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stardew的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">slice-splice-split-substring-substr.md</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T08:00:00+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/slice-splice-split-substring-substr/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="slice-splice-split-substring-substr/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>slice，splice，split，substring，substr区别  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3Fibq2EbGWGYvbPIBNIsInmickdIAeQ0olClsOQlVyTl2BIV1eqzXgicXiaXusPic1HXEIY7bOHibwEYDTw/0?wx_fmt=jpeg" alt=""></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"></div><div class="line">var str = '<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>';</div></pre></td></tr></table></figure>
+<p><code>slice(): slice(i,[j])</code>  </p>
+<p>描述: 截取数组，返回截取的数组，原数组不变  </p>
+<p>参数:  </p>
+<pre><code>i: 起始位置（可为负数）  
+
+j: 可选，结束位置，默认结尾  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">arr.slice(<span class="number">1</span>, <span class="number">6</span>)	<span class="comment">// [3, 5, 7, 9, 2]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">1</span>)	<span class="comment">// [3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-1</span>)	<span class="comment">// [5]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-1</span>, <span class="number">1</span>)	<span class="comment">// []</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-3</span>, <span class="number">-1</span>)	<span class="comment">// [3, 4]</span></div></pre></td></tr></table></figure>
+<p><code>splice(): splice(i, n, a1, ..., ax)</code>  </p>
+<p>描述: 可删除添加数组，原数组被改变，返回删除的数组  </p>
+<p>参数:  </p>
+<pre><code>i: 删除的位置（可为负数）  
+
+n: 删除数量  
+
+a1, ..., ax: 添加  
+</code></pre><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">arr</span><span class="selector-class">.splice</span>(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)	<span class="comment">// [7, 9, 2, 4]</span></div><div class="line"></div><div class="line">此时<span class="selector-tag">arr</span>: <span class="selector-attr">[1, 3, 5, 5, 6, 6, 8, 1, 2, 3, 4, 5]</span></div><div class="line"></div><div class="line"><span class="selector-attr">[1, 3, 5, (删除7, 9, 2, 4) （添加5, 6,） 6, 8, 1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<p><code>split(): split(s, n)</code>  </p>
+<p>描述: 字符串分割为数组  </p>
+<p>参数:  </p>
+<pre><code>s: 分隔符  
+
+n: 分割之后数组的长度  
+</code></pre><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str.split(<span class="string">','</span>)	<span class="regexp">//</span> [<span class="string">"1"</span>, <span class="string">" 3"</span>, <span class="string">" 5"</span>, <span class="string">" 7"</span>, <span class="string">" 9"</span>, <span class="string">" 2"</span>, <span class="string">" 4"</span>, <span class="string">" 6"</span>, <span class="string">" 8"</span>, <span class="string">" 1"</span>, <span class="string">" 2"</span>, <span class="string">" 3"</span>, <span class="string">" 4"</span>, <span class="string">" 5"</span>]</div><div class="line"></div><div class="line">str.split(<span class="string">','</span>, <span class="number">3</span>)	<span class="regexp">//</span> [<span class="string">"1"</span>, <span class="string">" 3"</span>, <span class="string">" 5"</span>]</div></pre></td></tr></table></figure>
+<p><code>substring(): substring(start, stop)</code>  </p>
+<p>描述: 字符串截取  </p>
+<p>参数:  </p>
+<pre><code>start: 字符串截取的起始位置  
+
+stop: 字符串结束位置  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">str.substring(<span class="number">3</span>, <span class="number">8</span>)	<span class="comment">// "3, 5,"</span></div><div class="line"></div><div class="line">等价于</div><div class="line"></div><div class="line">str.substring(<span class="number">8</span>, <span class="number">3</span>)	<span class="comment">// "3, 5,"</span></div></pre></td></tr></table></figure>
+<p><code>substr(): substr(start, length)</code>  </p>
+<p>描述: 字符串截取  </p>
+<p>参数:  </p>
+<pre><code>start: 字符串截取的起始位置  
+
+length: 截取字符串长度  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substr(<span class="number">3</span>, <span class="number">8</span>)	<span class="comment">// "3, 5, 7,"</span></div></pre></td></tr></table></figure>
+<h5 id="转自-slice-splice-split-substring-substr区别-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><a href="#转自-slice-splice-split-substring-substr区别-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" class="headerlink" title="[转自] slice, splice, split, substring, substr区别&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483780&amp;idx=1&amp;sn=61edd08ed65e29a20b445e68421b45c4&amp;chksm=eb02a1f2dc7528e46569efb9145fc9dbcd840aa387217b4e2e3122eda8c093b3c5f493dc6687&amp;mpshare=1&amp;scene=1&amp;srcid=0628QLDMllnLjDumF6woGRGX&amp;key=aa3a7cd9173eb904b4f6fb7db2efe2f8ac6b5b8b9dbc7dc6f008ac4056af8f714b6ed74a92e95797274fd5d5e565ec97a560d085d7db8c4ea07812c444f147750d8277e00e2ed2eaf4b201262a8db9ee&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195" target="_blank" rel="external">slice, splice, split, substring, substr区别</a>&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</h5>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/isarray/" rel="next" title="isarray">
+                <i class="fa fa-chevron-left"></i> isarray
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/regexp-password/" rel="prev" title="regexp-password">
+                regexp-password <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://segmentfault.com/img/bVbcOD7"
+               alt="lu.wei" />
+          <p class="site-author-name" itemprop="name">lu.wei</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-slice-splice-split-substring-substr区别-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><span class="nav-number">1.</span> <span class="nav-text">[转自] slice, splice, split, substring, substr区别&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lu.wei</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/slice-splice-split-substring-substr/';
+          this.page.identifier = 'slice-splice-split-substring-substr/';
+          this.page.title = 'slice-splice-split-substring-substr.md';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

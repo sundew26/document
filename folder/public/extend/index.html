@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="简体中文">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://segmentfault.com/img/bVbcOD7?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="extend">
+<meta property="og:url" content="https://github.com/stardew/extend/index.html">
+<meta property="og:site_name" content="stardew的博客">
+<meta property="og:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-06-28T02:22:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="extend">
+<meta name="twitter:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/stardew/extend/"/>
+
+
+
+
+
+  <title>extend | stardew的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="简体中文">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stardew的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">做个安静大气的美女子</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/extend/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lu.wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://segmentfault.com/img/bVbcOD7">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stardew的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">extend</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T08:00:00+08:00">
+                2016-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/extend/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="extend/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大多数面向对象语言都支持两种继承方式：接口继承和实现继承。  </p>
+<p>而ECMAScript中无法实现接口继承，只支持实现继承。  </p>
+<p>其实现继承主要依靠原型链来实现。  </p>
+<h5 id="1-原型链"><a href="#1-原型链" class="headerlink" title="1. 原型链"></a>1. 原型链</h5><p>基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'lujiang'</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">superObj.prototype.getSuperVal = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="string">'super '</span> + <span class="keyword">this</span>.name;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'weilu'</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">subObj.prototype = <span class="keyword">new</span> superObj();</div><div class="line"></div><div class="line">subObj.prototype.getSubVal = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="string">'sub '</span> + <span class="keyword">this</span>.name;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.getSuperVal());<span class="comment">// super weilu</span></div></pre></td></tr></table></figure></p>
+<h5 id="2-借用构造函数"><a href="#2-借用构造函数" class="headerlink" title="2. 借用构造函数"></a>2. 借用构造函数</h5><p>基本思想：在子类型构造函数的内部调用父类构造函数，通过call()和apply()方法在新创建的对象上执行构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	superObj.call(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line">obj.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.colors);<span class="comment">// ["yellow", "green", "blue", "purple"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> objj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(objj.colors);<span class="comment">// ["yellow", "green", "blue"]</span></div></pre></td></tr></table></figure></p>
+<h5 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h5><p>基本思想：将原型连和借用构造函数组合起来，发挥两者之长。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params">name</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">superObj.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'name = '</span> + <span class="keyword">this</span>.name);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line"></div><div class="line">	superObj.call(<span class="keyword">this</span>, name);</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">subObj.prototype = <span class="keyword">new</span> superObj();</div><div class="line"></div><div class="line">subObj.prototype.constructor = subObj;</div><div class="line"></div><div class="line">subObj.prototype.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'age = '</span> + <span class="keyword">this</span>.age);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj(<span class="string">'lujiang'</span>, <span class="number">25</span>);</div><div class="line"></div><div class="line">obj.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.colors);<span class="comment">// ["yellow", "green", "blue", "purple"]</span></div><div class="line"></div><div class="line">obj.getName();<span class="comment">// name = lujiang</span></div><div class="line"></div><div class="line">obj.getAge();<span class="comment">// age = 25</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> objj = <span class="keyword">new</span> subObj(<span class="string">'weilu'</span>, <span class="number">25.5</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(objj.colors);<span class="comment">// ["yellow", "green", "blue"]</span></div><div class="line"></div><div class="line">objj.getName();<span class="comment">// name = weilu</span></div><div class="line"></div><div class="line">objj.getAge();<span class="comment">// age = 25.5</span></div></pre></td></tr></table></figure></p>
+<h5 id="4-原型式继承"><a href="#4-原型式继承" class="headerlink" title="4. 原型式继承"></a>4. 原型式继承</h5><p>基本思想：借助原型基于已有对象创建新对象。<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span> <span class="params">(o)</span></span> &#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">F</span> <span class="params">()</span></span> &#123;&#125;</div><div class="line"></div><div class="line">	F.prototype = o;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> new F();</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var Person = &#123;</div><div class="line"></div><div class="line">	name: <span class="string">'lujiang'</span>,</div><div class="line"></div><div class="line">	colors: [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var secondPerson = object(Person);</div><div class="line"></div><div class="line">secondPerson.name = <span class="string">'weilu'</span>;</div><div class="line"></div><div class="line">secondPerson.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line">var thirdPerson = object(Person);</div><div class="line"></div><div class="line">thirdPerson.name = <span class="string">'dew'</span>;</div><div class="line"></div><div class="line">thirdPerson.colors.push(<span class="string">'golden'</span>);</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(Person, secondPerson, thirdPerson);</div><div class="line"></div><div class="line">// Object &#123;name: <span class="string">"lujiang"</span>, colors: Array[<span class="number">5</span>]&#125;</div><div class="line"></div><div class="line">// F &#123;name: <span class="string">"weilu"</span>&#125;</div><div class="line"></div><div class="line">// 如上，展示全：Fname: <span class="string">"weilu"</span>__proto__: Objectcolors: Array[<span class="number">5</span>]name: <span class="string">"lujiang"</span>__proto__: Object</div><div class="line"></div><div class="line">// F &#123;name: <span class="string">"dew"</span>&#125;</div><div class="line"></div><div class="line">// 如上，展示全：Fname: <span class="string">"dew"</span>__proto__: Objectcolors: Array[<span class="number">5</span>]name: <span class="string">"lujiang"</span>__proto__: Object</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">// ECMAScript5  Object.<span class="built_in">create</span> = 上述 <span class="function"><span class="keyword">function</span> <span class="title">Object</span></span></div><div class="line"><span class="function"></span></div><div class="line"><span class="function">// <span class="title">Object.create</span><span class="params">()</span></span> 方法创建一个拥有指定原型和若干个指定属性的对象。</div><div class="line"></div><div class="line">var Person = &#123;</div><div class="line"></div><div class="line">	name: <span class="string">'lujiang'</span>,</div><div class="line"></div><div class="line">	colors: [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">var secondPerson = Object.<span class="built_in">create</span>(Person);</div><div class="line"></div><div class="line">secondPerson.name = <span class="string">'weilu'</span>;</div><div class="line"></div><div class="line">secondPerson.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line">var thirdPerson = Object.<span class="built_in">create</span>(Person);</div><div class="line"></div><div class="line">thirdPerson.name = <span class="string">'dew'</span>;</div><div class="line"></div><div class="line">thirdPerson.colors.push(<span class="string">'golden'</span>);</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(Person.colors, secondPerson.colors, thirdPerson.colors);</div><div class="line"></div><div class="line">// [<span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"purple"</span>, <span class="string">"golden"</span>]</div><div class="line"></div><div class="line">// [<span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"purple"</span>, <span class="string">"golden"</span>]</div><div class="line"></div><div class="line">// [<span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"purple"</span>, <span class="string">"golden"</span>]</div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(secondPerson.__proto__ === thirdPerson.__proto__);// <span class="literal">true</span></div><div class="line"></div><div class="line">console.<span class="built_in">log</span>(secondPerson.__proto__ === Person);// <span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<h5 id="5-寄生式继承"><a href="#5-寄生式继承" class="headerlink" title="5. 寄生式继承"></a>5. 寄生式继承</h5><p>基本思想：创建一个仅用于封装继承过程的函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span> (<span class="params">orl</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> F = <span class="built_in">Object</span>(orl);</div><div class="line"></div><div class="line">	F.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'lujiang'</span>);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> F;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Person = &#123;</div><div class="line"></div><div class="line">	name: <span class="string">'lujiang'</span>,</div><div class="line"></div><div class="line">	colors: [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>]</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> secondPerson = extend(Person);</div><div class="line"></div><div class="line">secondPerson.getName(); <span class="comment">// lujiang</span></div></pre></td></tr></table></figure></p>
+<h5 id="6-寄生组合式继承"><a href="#6-寄生组合式继承" class="headerlink" title="6. 寄生组合式继承"></a>6. 寄生组合式继承</h5><p>基本思想：通过借用构造函数(2)来继承<em>属性</em>，通过原型链(1)与与原型式继承(4)形式来继承<em>方法</em>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span> (<span class="params">subObj, superObj</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> P = <span class="built_in">Object</span>(superObj.prototype);<span class="comment">// 通过原型链(1)与与原型式继承(4)形式来继承*方法*</span></div><div class="line"></div><div class="line">	P.constructor = subObj;</div><div class="line"></div><div class="line">	subObj.prototype = P;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params">name</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">superObj.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'name = '</span> + <span class="keyword">this</span>.name);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line"></div><div class="line">	superObj.call(<span class="keyword">this</span>, name);<span class="comment">// 通过借用构造函数(2)来继承*属性*</span></div><div class="line"></div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">extend(subObj, superObj);</div><div class="line"></div><div class="line">subObj.prototype.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'age = '</span> + <span class="keyword">this</span>.age);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj(<span class="string">'lujiang'</span>);</div><div class="line"></div><div class="line">obj.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.colors);<span class="comment">// ["yellow", "green", "blue", "purple"]</span></div><div class="line"></div><div class="line">obj.getName();<span class="comment">// name = lujiang</span></div></pre></td></tr></table></figure></p>
+<h5 id="转自-javascript的实现继承-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><a href="#转自-javascript的实现继承-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" class="headerlink" title="[转自] javascript的实现继承&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483754&amp;idx=1&amp;sn=7ed2b3a5ae099b35e5f58bf424d26b65&amp;chksm=eb02a11cdc75280aa0b6adfe31845639854d52bbd7345e113ecc1014a472a11c54b045688583&amp;scene=0&amp;key=aa3a7cd9173eb9048482ff51598554328984781eb73f34e7f10a49ea0da4ff2f46f2e2ae34d5fb7b9738ca250b9381ce27ce1943f532e4bbb5079777eea4c04bd535ff71a4b907405a55551a5f12265a&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195" target="_blank" rel="external">javascript的实现继承</a>&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</h5>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/singleton/" rel="next" title="singleton">
+                <i class="fa fa-chevron-left"></i> singleton
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/data-structure/" rel="prev" title="data-structure">
+                data-structure <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://segmentfault.com/img/bVbcOD7"
+               alt="lu.wei" />
+          <p class="site-author-name" itemprop="name">lu.wei</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-原型链"><span class="nav-number">1.</span> <span class="nav-text">1. 原型链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-借用构造函数"><span class="nav-number">2.</span> <span class="nav-text">2. 借用构造函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-组合继承"><span class="nav-number">3.</span> <span class="nav-text">3. 组合继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-原型式继承"><span class="nav-number">4.</span> <span class="nav-text">4. 原型式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-寄生式继承"><span class="nav-number">5.</span> <span class="nav-text">5. 寄生式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-寄生组合式继承"><span class="nav-number">6.</span> <span class="nav-text">6. 寄生组合式继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转自-javascript的实现继承-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><span class="nav-number">7.</span> <span class="nav-text">[转自] javascript的实现继承&version=12020610&nettype=WIFI&lang=zh_CN&fontScale=100&pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lu.wei</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://stardew516.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/stardew/extend/';
+          this.page.identifier = 'extend/';
+          this.page.title = 'extend';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://stardew516.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

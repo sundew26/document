@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/track-by/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/isarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/track-by/" itemprop="url">track-by</a></h2>
+                <a class="post-title-link" href="/isarray/" itemprop="url">isarray</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-25T16:20:00Z">
-                2016-10-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T00:00:00Z">
+                2017-02-17
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/track-by/#comments" itemprop="discussionUrl">
+                <a href="/isarray/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="track-by/" itemprop="commentCount"></span>
+                        data-disqus-identifier="isarray/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,25 +365,11 @@
       
         
           
-            <h2 id="vue中track-by的理解"><a href="#vue中track-by的理解" class="headerlink" title="vue中track-by的理解"></a>vue中track-by的理解</h2><p>api：<a href="http://cn.vuejs.org/guide/list.html#track-by" target="_blank" rel="external">http://cn.vuejs.org/guide/list.html#track-by</a></p>
-<p>示例地址：<a href="https://jsfiddle.net/stardew/f1eju0ku/5/" target="_blank" rel="external">https://jsfiddle.net/stardew/f1eju0ku/5/</a></p>
-<p>无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到）</p>
-<p>加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在dom才被重新渲染</p>
-<p>track-by的两种使用方法：</p>
-<p>1. 使用数据中某唯一字段，例如_uid</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"_uid"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 初始数据</span></div><div class="line">items: [</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'222222'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'333'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'444444'</span>, <span class="attr">message</span>: <span class="string">'444'</span> &#125;,</div><div class="line">  &#123; <span class="attr">_uid</span>: <span class="string">'555555'</span>, <span class="attr">message</span>: <span class="string">'555'</span> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 修改成</span></div><div class="line">modify: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.items = [</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'111111'</span>, <span class="attr">message</span>: <span class="string">'111'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'666666'</span>, <span class="attr">message</span>: <span class="string">'222'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'333333'</span>, <span class="attr">message</span>: <span class="string">'3333'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'888888'</span>, <span class="attr">message</span>: <span class="string">'4444'</span> &#125;,</div><div class="line">    &#123; <span class="attr">_uid</span>: <span class="string">'999999'</span>, <span class="attr">message</span>: <span class="string">'5555'</span> &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>渲染效果如下图右(左边无track-by，右边有track-by)，_uid和message都不变的情况下，才不被重新渲染，只有第一组符合条件。</p>
-<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/155631_7GXl_255575.png" alt=""></p>
-<p>2. 使用$index，其它条件同上</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>渲染效果如下图右，message的值第一、二条都没改变，所以一、二都没有重新渲染。</p>
-<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161002_B1YX_255575.png" alt=""></p>
-<p>模板中同时使用message和_uid时，只有两者都不变的情况下才不重新渲染，如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span> <span class="attr">track-by</span>=<span class="string">"$index"</span>&gt;</span></div><div class="line">    &#123;&#123;item.message&#125;&#125;  &#123;&#123;item._uid&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"修改"</span> @<span class="attr">click</span>=<span class="string">"modify"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"还原"</span> @<span class="attr">click</span>=<span class="string">"reduct"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p><img src="http://static.oschina.net/uploads/space/2016/1025/160552_0PEU_255575.png" alt=""><img src="http://static.oschina.net/uploads/space/2016/1025/161456_wP59_255575.png" alt=""></p>
-<h5 id="转自-vue中track-by的理解"><a href="#转自-vue中track-by的理解" class="headerlink" title="[转自] vue中track-by的理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/775534" target="_blank" rel="external">vue中track-by的理解</a></h5>
+            <p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3F22ruqIzJNWgnugCYFB4eOy83XFBiaS39FuXujVjpvicCMA1gNE3IIrInwmpExmfnRg0vcEVWwEHSg/0?wx_fmt=jpeg" alt=""></p>
+<p>判断一个对象是否是数组，有五种方法，如下：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123;a:1&#125;</span>;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">toString返回对象的字符串表示</div><div class="line"></div><div class="line">toString.apply(arr) === <span class="string">'[object Array]'</span>;  <span class="comment">// true</span></div><div class="line"></div><div class="line">toString.apply(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(arr) === <span class="string">'[object Array]'</span>; <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">arr instanceof <span class="keyword">Array</span>; <span class="comment">// true</span></div><div class="line"></div><div class="line">obj instanceof <span class="keyword">Array</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">Array</span>.isArray(arr); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">Array</span>.isArray(obj); <span class="comment">// false</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// constructor 指向创建当前对象的构造函数</span></div><div class="line"></div><div class="line">arr.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// true</span></div><div class="line"></div><div class="line">obj.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p>PS：基本数据类型只有五种：Null, Undifined, String, Number, Boolean  </p>
+<pre><code>引用类型：Array，Object，Function  
+</code></pre><h5 id="转自-鉴别数组-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><a href="#转自-鉴别数组-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" class="headerlink" title="[转自] 鉴别数组&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483777&amp;idx=1&amp;sn=afaa43f8aeda14494fc1f0548bea5f4a&amp;chksm=eb02a1f7dc7528e1ad1de8480cc960950aaf4fb48481a707c2b4049e8cf38a4f9869671abdd5&amp;mpshare=1&amp;scene=1&amp;srcid=0628bOSEN5a1yDfO54Rz1qKb&amp;key=d8aade18608a3d7081d281c4945d2a5ae2411e3cdb859bc5aef4f6045ad3c7c0b8f450da58d17806dda7df259b7ee472994a556c047ce7c8259165fbda1baf5614aa0777c33d4c2fb4ee1835056faa60&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195" target="_blank" rel="external">鉴别数组</a>&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</h5>
           
         
       
@@ -422,7 +408,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -468,7 +454,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

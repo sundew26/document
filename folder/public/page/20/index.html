@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/regexp-basic/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/data-structure/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/regexp-basic/" itemprop="url">regexp-basic</a></h2>
+                <a class="post-title-link" href="/data-structure/" itemprop="url">data-structure</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-01-08T15:49:00Z">
-                2016-01-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-09T00:00:00Z">
+                2016-12-09
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/regexp-basic/#comments" itemprop="discussionUrl">
+                <a href="/data-structure/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="regexp-basic/" itemprop="commentCount"></span>
+                        data-disqus-identifier="data-structure/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,351 +365,128 @@
       
         
           
-            <h2 id="我对正则表达式的一点理解"><a href="#我对正则表达式的一点理解" class="headerlink" title="我对正则表达式的一点理解"></a>我对正则表达式的一点理解</h2><p>前几日拜读jquery源码，发现里边有大量的正则表达式，看着着实头疼，今天特地研究了一下，自己稍微沉淀了一点东西。  </p>
-<h4 id="1-何为正则表达式？"><a href="#1-何为正则表达式？" class="headerlink" title="1. 何为正则表达式？"></a>1. 何为正则表达式？</h4><pre><code>通常情况下，我们所看到的正则表达式就是一串难懂的字符串（如：\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?），没错，正则表达式就是符合某一类规则的一串表达式。
-</code></pre><h4 id="2-什么情况下会用到正则表达式？"><a href="#2-什么情况下会用到正则表达式？" class="headerlink" title="2. 什么情况下会用到正则表达式？"></a>2. 什么情况下会用到正则表达式？</h4><pre><code>通常我们会在字符串的查找匹配，替换中使用到正则。
-</code></pre><h4 id="3-如何使用正则表达式？"><a href="#3-如何使用正则表达式？" class="headerlink" title="3. 如何使用正则表达式？"></a>3. 如何使用正则表达式？</h4><pre><code>前面也说过，正则表达式需要符合一定的规则，也就是说，按规则来书写，就基本可以满足需求，当然，只是满足基本，在实际应用中还应该考虑各种情况，这就需要添加更多的限定条件。我们先拿前面提到的正则式来举个例子。
-
-\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+(?:\\.\[\\w!#$%&amp;&apos;*+/=?^_`{|}~-\]+)*@(?:\[\\w\](?:\[\\w-\]*\[\\w\])?\\.)+\[\\w\](?:\[\\w-\]*\[\\w\])?
-
-看着这么一大串乱七八糟的字符有没有很头疼呢，我们且不说这是干什么用的，先根据附录中的规则分解剖析一番，把这个表达式分几部分
-</code></pre><ol>
-<li><p>[\w!#$%&amp;’*+/=?^_`{|}~-]+ </p>
-<p>中括号[]里面是我们要匹配的字符，后面的+是重复至少一次的意思，\w是指此字符串以下划线、数字或字母打头，或者以!#$%&amp;’<em>+/=?^_`{|}~-中的任何一个打头，!#$%&amp;’</em>+/=?^_`{|}~-这么一大串其实就是我们键盘顶部那些字符。</p>
+            <p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkCe9RdE3enpa4Um5Xc8F1bk0I1WywW3j1m8ykOhGNgcJcz0CIZ7JRQg/0?wx_fmt=png" alt=""></p>
+<p>数据结构是相互之间存在一种或多种特定关系的数据元素的集合。  </p>
+<p>数据元素相互之间的关系称为结构。  </p>
+<p>数据结构一共分四类：集合结构、线性结构、树型结构、图形结构。  </p>
+<p>集合结构：具有某种特定性质的具体的或抽象的对象汇总成的集体。除了同属于一种类型外，别无其它关系。  </p>
+<p>线性结构：元素之间存在一对一关系。  </p>
+<p>特点：  </p>
+<ol>
+<li><p>存在唯一的一个被称作“第一个”的数据元素  </p>
 </li>
-<li><p>(?:\.[\w!#$%&amp;’<em>+/=?^_`{|}~-]+)</em> </p>
-<p>这一串紧跟着首字符之后，小括号()里面是一个子表达式，用来分组的，(?:\.)见附录表4中的捕获，.是匹配除换行符以外的任意字符，而\.是转义之后的，单纯指.，.后必须跟字符或字符串。最后面的<em>指重复0次或更多次的意思，小括号里面还a中出现的[\w!#$%&amp;’</em>+/=?^_`{|}~-]+。</p>
+<li><p>存在唯一的一个被称作“最后一个”的数据元素  </p>
 </li>
-<li><p>@</p>
-<p>这个就是匹配单纯的@符号，必须出现的。</p>
+<li><p>除第第一个以外，集合中的每个数据元素均只有一个前驱  </p>
 </li>
-<li><p>(?:[\w](?:[\w-]*[\w])?\.)+ </p>
-<p>字符或字符串以.结束，内部还嵌套了一个子表达式(?:[\w-]*[\w])?，不难理解。</p>
-</li>
-<li><p>[\w](?:[\w-]*[\w])? </p>
-<p>d内部嵌套的子表达式一样。</p>
+<li><p>除最后一个以外，集合中每个数据元素均只有一个后继  </p>
 </li>
 </ol>
-<p>看完上面的解释，你一定也看出这个正则表达式的功能了吧，不错，正是用来匹配邮箱的。当然，上面匹配的比较严格，我们也可以简单的使用[\w+~!#$%^&amp;*()_+]+@\w+.\w+进行匹配，依项目需要了。看到这里，有没有觉得其实正则表达式并没有想象中那么可怕呢。下面我们来写一个简单的匹配电话号码的正则式（如：010-11111111,0101111111等）：</p>
-<p>^[0]\d{2}-?\d{8}|\[0]d{3}-?\d{7,8}$</p>
-<p>写完之后，可以在线（<a href="http://tool.oschina.net/regex/" target="_blank" rel="external">http://tool.oschina.net/regex/</a>）测试一下我们所写的正则式是否符合要求，</p>
-<h4 id="4-附录："><a href="#4-附录：" class="headerlink" title="4. 附录："></a>4. 附录：</h4><p>表1. 常用元字符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td>\w</td>
-<td>匹配字母或数字或下划线</td>
-</tr>
-<tr>
-<td>\s</td>
-<td>匹配任意的空白符</td>
-</tr>
-<tr>
-<td>\d</td>
-<td>匹配数字</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td>^</td>
-<td>匹配字符串的开始</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-<p>表2.常用的限定符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>重复零次或更多次</td>
-</tr>
-<tr>
-<td>+</td>
-<td>重复一次或更多次</td>
-</tr>
-<tr>
-<td>?</td>
-<td>重复零次或一次</td>
-</tr>
-<tr>
-<td>{n}</td>
-<td>重复n次</td>
-</tr>
-<tr>
-<td>{n,}</td>
-<td>重复n次或更多次</td>
-</tr>
-<tr>
-<td>{n,m}</td>
-<td>重复n到m次</td>
-</tr>
-</tbody>
-</table>
-<p>表3.常用的反义代码</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\W</td>
-<td>匹配任意不是字母，数字，下划线的字符</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>匹配任意不是空白符的字符</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配任意非数字的字符</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配不是单词开头或结束的位置</td>
-</tr>
-<tr>
-<td>[^x]</td>
-<td>匹配除了x以外的任意字符</td>
-</tr>
-<tr>
-<td>[^aeiou]</td>
-<td>匹配除了aeiou这几个字母以外的任意字符</td>
-</tr>
-</tbody>
-</table>
-<p>表4.常用分组语法</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>捕获：(exp)</td>
-<td>匹配exp,并捕获文本到自动命名的组里</td>
-</tr>
-<tr>
-<td>捕获：(?<name>exp)</name></td>
-<td>匹配exp,并捕获文本到名称为name的组里，也可以写成(?’name’exp)</td>
-</tr>
-<tr>
-<td>捕获：(?:exp)</td>
-<td>匹配exp,不捕获匹配的文本，也不给此分组分配组号</td>
-</tr>
-<tr>
-<td>零宽断言：(?=exp)</td>
-<td>匹配exp前面的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?&lt;=exp)</td>
-<td>匹配exp后面的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?!exp)</td>
-<td>匹配后面跟的不是exp的位置</td>
-</tr>
-<tr>
-<td>零宽断言：(?&lt;!exp)</td>
-<td>匹配前面不是exp的位置</td>
-</tr>
-<tr>
-<td>注释：(?#comment)</td>
-<td>这种类型的分组不对正则表达式的处理产生任何影响，用于提供注释让人阅读</td>
-</tr>
-</tbody>
-</table>
-<p>表5.懒惰限定符</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*?</td>
-<td>重复任意次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>+?</td>
-<td>重复1次或更多次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>??</td>
-<td>重复0次或1次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,m}?</td>
-<td>重复n到m次，但尽可能少重复</td>
-</tr>
-<tr>
-<td>{n,}?</td>
-<td>重复n次以上，但尽可能少重复</td>
-</tr>
-</tbody>
-</table>
-<p>表6.常用的处理选项</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>IgnoreCase(忽略大小写)</td>
-<td>匹配时不区分大小写。</td>
-</tr>
-<tr>
-<td>Multiline(多行模式)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)<br>Singleline(单行模式) | 更改.的含义，使它与每一个字符匹配（包括换行符\n）。<br>IgnorePatternWhitespace(忽略空白) | 忽略表达式中的非转义空白并启用由#标记的注释。<br>ExplicitCapture(显式捕获) | 仅捕获已被显式命名的组。</p>
-<p>表7.尚未详细讨论的语法</p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>\a</td>
-<td>报警字符(打印它的效果是电脑嘀一声)</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>通常是单词分界位置，但如果在字符类里使用代表退格</td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符，Tab</td>
-</tr>
-<tr>
-<td>\r</td>
-<td>回车</td>
-</tr>
-<tr>
-<td>\v</td>
-<td>竖向制表符</td>
-</tr>
-<tr>
-<td>\f</td>
-<td>换页符</td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符</td>
-</tr>
-<tr>
-<td>\e</td>
-<td>Escape</td>
-</tr>
-<tr>
-<td>\0nn</td>
-<td>ASCII代码中八进制代码为nn的字符</td>
-</tr>
-<tr>
-<td>\xnn</td>
-<td>ASCII代码中十六进制代码为nn的字符</td>
-</tr>
-<tr>
-<td>\unnnn</td>
-<td>Unicode代码中十六进制代码为nnnn的字符</td>
-</tr>
-<tr>
-<td>\cN</td>
-<td>ASCII控制字符。比如\cC代表Ctrl+C</td>
-</tr>
-<tr>
-<td>\A</td>
-<td>字符串开头(类似^，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\Z</td>
-<td>字符串结尾或行尾(不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\z</td>
-<td>字符串结尾(类似$，但不受处理多行选项的影响)</td>
-</tr>
-<tr>
-<td>\G</td>
-<td>当前搜索的开头</td>
-</tr>
-<tr>
-<td>\p{name}</td>
-<td>Unicode中命名为name的字符类，例如\p{IsGreek}</td>
-</tr>
-<tr>
-<td>(?&gt;exp)</td>
-<td>贪婪子表达式</td>
-</tr>
-<tr>
-<td>(?<x>-<y>exp)</y></x></td>
-<td>平衡组</td>
-</tr>
-<tr>
-<td>(?im-nsx:exp)</td>
-<td>在子表达式exp中改变处理选项</td>
-</tr>
-<tr>
-<td>(?im-nsx)</td>
-<td>为表达式后面的部分改变处理选项</td>
-</tr>
-<tr>
-<td>(?(exp)yes</td>
-<td>no)</td>
-<td>把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否则使用no</td>
-</tr>
-<tr>
-<td>(?(exp)yes)</td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-<tr>
-<td>(?(name)yes</td>
-<td>no)</td>
-<td>如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</td>
-</tr>
-<tr>
-<td>(?(name)yes)</td>
-<td>同上，只是使用空表达式作为no</td>
-</tr>
-</tbody>
-</table>
-<h5 id="转自-我对正则表达式的一点理解"><a href="#转自-我对正则表达式的一点理解" class="headerlink" title="[转自] 我对正则表达式的一点理解"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/599739" target="_blank" rel="external">我对正则表达式的一点理解</a></h5>
+<p>常见类型有：  </p>
+<ol>
+<li><p>数组，链表，队列，栈。  </p>
+</li>
+<li><p>它们之间在操作上有所区别。  </p>
+</li>
+<li><p>例如：链表可在任意位置插入或删除元素，而队列在队尾插入元素，队头删除元素，栈只能在栈顶进行插入，删除操作。  </p>
+</li>
+</ol>
+<p>树形结构：元素之间存在一对多关系。  </p>
+<p>常见类型有：  </p>
+<ol>
+<li><p>树</p>
+</li>
+<li><p>有许多特例：二叉树、平衡二叉树、查找树等。  </p>
+<p> a. 满二叉树：深度为k且有2k-1个节点的二叉树  </p>
+</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkDkRYDN823dVFSLicfxMDzTG9icrv1COm9HlDic1w2YmcZkGuIY19oCicgw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkdGWhDpgJzR9yeKv7Me3TyW8MReDeQkqPvodDhsFwnyQ222nruRLVqw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<pre><code>b. 完全二叉树：深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中编号从1至n的节点一一对应时，称之为完全二叉树。  
+</code></pre><p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkwUgjCicnRzMzUx7FAPFNk9ZZ43kTyT7VOWem0sDE66L6x6Uwph5UFHQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkWiaqibfUOKsfIp4zGCnrpVrY7QVuC61w8LNiaic39rMGVE9iaeFP2m3aQcA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<pre><code>c. huffman树：最优二叉树    
+
+    i. 路径：从树中一个节点到另一个节点之间的分支构成这两个节点之间的路径  
+
+    ii. 路径长度：路径上的分枝数目  
+
+    iii. 树的带权路径长度为：WPL=w1l1+w2l2+...+wnln  
+
+    iv. 假设有n个权值{w1,w2,…,wn}，试构造一颗有n个叶子节点的二叉树，每个叶子节点带权为wi，则其中带权路径长度WPL最小的二叉树称作最优二叉树（huffman树）  
+
+    v. w=(5, 29, 7, 8, 14, 23, 3, 11), n=8, m=15, 构造huffman树。  
+
+    教科书上结果：  
+</code></pre><p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkiamlT9xfXhjNGmAWevmUBP54Dgs1a94pge2ziaf46l7EWXibyo86SH57Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>WPL=3<em>4 + 5</em>4 + 7<em>4 + 8</em>4 + 11<em>3 + 14</em>3 + 23<em>2 + 29</em>2 = 271  </p>
+<p>自己构造思路：从小到大排好序{3，5，7，8，11，14，23，29}，两两之和（红圈）与未构造数字（黑圈）比较，取小构造。  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkDO2hYlCsibyEzlWPiaZMWgJrmibYtmXkU1XqTzZma1TG73CyyFqiaAv8YA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>WPL=3<em>5 + 5</em>5 + 7<em>4 + 8</em>3 + 11<em>3 + 14</em>3 + 23<em>2 +29</em>2 = 271<br>结论：huffman树构造结果不唯一。  </p>
+<p>图形结构：元素之间存在多对多关系，图形结构中每个结点的前驱结点数和后续结点多个数可以任意(任意多个)。  </p>
+<p>图的遍历包括深度优先遍历和广度优先遍历：  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkpiaabsicuCujibcP0Vmm5WtT5f0aqGucaHAibZJtq58pbqeiaormDBhehtw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>深度优先遍历：v1—&gt;v2—&gt;v4—&gt;v8—&gt;v5—&gt;v3—&gt;v6—&gt;v7  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkTeP5KRwmFJgQCDuvEIOUe3I7NGW99GLnoK5Q2kC2lQZxIhozvaWfGw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>广度优先遍历：v1—&gt;v2—&gt;v3—&gt;v4—&gt;v5—&gt;v6—&gt;v7—&gt;v8  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkjz654o9s9fUmsgVF4mKBY69GkQAX6NhtwLorTTt7icOHY8QgEpDHrxA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>最小生成树的问题：假设要在n个城市之间建立通信联络网，则连通n个城市只需要n-1条线路。这时。自然会考虑这样一个问题，如何在节省经费的前提下建立这个通信网。  </p>
+<p>辅助表各参数说明：  </p>
+<ol>
+<li><p>i行的1，2，3，4，5分别为（v2，v3，v4，v5，v6）  </p>
+</li>
+<li><p>k为最小边对应的i值  </p>
+</li>
+<li><p>例如第三组3-3中的v6和2，表示（v1，v3，v6）与v4的最小边为v4—v6的权值2。  </p>
+</li>
+</ol>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkK1jHAIlaeQIUoicVjKaazqp6M2IAEia6SXVgiclSOB0s6zfNxp00AbydQ/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""><br><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkXIObeic1VueF6p0ZS7p3hEiaa6st40bkoWlVG9tRF1kw1bicNU3d1puibA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>哈希表：根据哈希函数H(key)和处理冲突的方法将一组关键字映射到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“像”作为记录在表中的存储位置，这种表便称哈希表。  </p>
+<p>构造哈希表：  </p>
+<ol>
+<li><p>直接定址法</p>
+</li>
+<li><p>数字分析法</p>
+</li>
+<li><p>平方取中法</p>
+</li>
+<li><p>折叠法</p>
+</li>
+<li><p>除留取余法</p>
+</li>
+<li><p>随机数法</p>
+</li>
+</ol>
+<p>处理冲突的方法：  </p>
+<ol>
+<li><p>开放定址法</p>
+</li>
+<li><p>再哈希法</p>
+</li>
+<li><p>链地址法</p>
+</li>
+<li><p>建立一个公共溢出区</p>
+</li>
+</ol>
+<p>常见数据结构  </p>
+<ol>
+<li><p>队列：队尾插入元素，队头删除元素。</p>
+</li>
+<li><p>栈：栈顶进行插入、删除操作。</p>
+</li>
+<li><p>堆：数组对象，可以被视为一棵完全二叉树结构。特点是父节点的值大于（小于）两个子节点的值（分别称为大顶堆和小顶堆）。</p>
+</li>
+<li><p>链表：物理存储单元上非连续、非顺序的存储结构。插入删除有优势，查找弱势。</p>
+</li>
+<li><p>数组：查找有优势，插入删除弱势，后面所有元素都需移动。</p>
+</li>
+</ol>
+<p>存储  </p>
+<ol>
+<li><p>栈区：由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
+</li>
+<li><p>堆区：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。它与数据结构中的堆是两回事，分配方式倒是类似于链表。</p>
+</li>
+</ol>
+<h5 id="转自-数据结构基础-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><a href="#转自-数据结构基础-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" class="headerlink" title="[转自] 数据结构基础&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483751&amp;idx=1&amp;sn=7e36feb69c0f2a5049fb23b1c77624e8&amp;chksm=eb02a111dc752807118a7db38335be7efe667a88c9e6a16fec2b8a40b76efe0d2dcbbba7a263&amp;scene=0&amp;key=aa3a7cd9173eb9043a79b0edce43c5ec046454ba47464922369ebba4e583a0cea87885455878181c435dcd5f116a111177f2d2b3bee812558f528e290c8e0da6def301d0405c05fecf148e78fb829e29&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195" target="_blank" rel="external">数据结构基础</a>&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</h5>
           
         
       
@@ -748,7 +525,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -794,7 +571,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

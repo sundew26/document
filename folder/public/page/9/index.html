@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/hexo-css-build/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/hexo-css-document/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/hexo-css-build/" itemprop="url">hexo-css-build</a></h2>
+                <a class="post-title-link" href="/hexo-css-document/" itemprop="url">hexo-css-document</a></h2>
         
 
         <div class="post-meta">
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/hexo-css-build/#comments" itemprop="discussionUrl">
+                <a href="/hexo-css-document/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="hexo-css-build/" itemprop="commentCount"></span>
+                        data-disqus-identifier="hexo-css-document/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,97 +365,265 @@
       
         
           
-            <h2 id="一、什么是hexo"><a href="#一、什么是hexo" class="headerlink" title="一、什么是hexo"></a>一、什么是hexo</h2><p>Hexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。</p>
-<h2 id="二、hexo的安装"><a href="#二、hexo的安装" class="headerlink" title="二、hexo的安装"></a>二、hexo的安装</h2><p>安装hexo前，确保电脑中已经安装了node和git。</p>
-<h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">方法一、</div><div class="line">    直接安装<span class="keyword">node</span><span class="title">：ruby</span> -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">方法二、</div><div class="line">    先安装homebrew： /usr/bin/ruby -e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">    后安装<span class="keyword">node</span><span class="title">：brew</span> install <span class="keyword">node</span><span class="title"></span></div></pre></td></tr></table></figure>
-<h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">先安装homebrew： /usr/<span class="keyword">bin/ruby </span>-e <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></div><div class="line">后安装git：<span class="keyword">brew </span>install git</div></pre></td></tr></table></figure>
-<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-<span class="keyword">cli</span></div></pre></td></tr></table></figure>
-<h2 id="三、创建项目"><a href="#三、创建项目" class="headerlink" title="三、创建项目"></a>三、创建项目</h2><ol>
-<li>新建项目: <code>hexo init folder</code></li>
-<li>进入: <code>cd folder&gt;</code></li>
-<li>安装依赖包: <code>npm install</code></li>
-<li>新建一篇文章: <code>hexo new iOS-APIs</code> (文件会在/source/_posts下)</li>
-<li>启动: <code>hexo server</code></li>
-<li>浏览器打开: <code>http://localhost:4000/document/</code></li>
-</ol>
-<h2 id="四、hexo配置"><a href="#四、hexo配置" class="headerlink" title="四、hexo配置"></a>四、hexo配置</h2><p>配置文件为_config.yml<br>参考: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a><br>github: <a href="https://github.com/hexojs/hexo/">https://github.com/hexojs/hexo/</a></p>
-<h3 id="Site-（网站）"><a href="#Site-（网站）" class="headerlink" title="Site （网站）"></a>Site （网站）</h3><ol>
-<li>网站标题<br>title: weex使用手册</li>
-<li>网站副标题<br>subtitle: weex中文手册</li>
-<li>网站描述<br>description: 整理weex手册, 包括通用特性, 内建组件, 内建模块, CSS 单位, 通用事件, Native DOM APIs, Weex 实例变量, Web 标准, JS Service, Vue, 高阶知识, 迁移</li>
-<li>作者名字<br>author: lu.wei</li>
-<li>网站使用的语言<br>language: 简体中文</li>
-<li>网站时区Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。<br>timezone: UTC</li>
-</ol>
-<h3 id="URL-（网址）"><a href="#URL-（网址）" class="headerlink" title="URL （网址）"></a>URL （网址）</h3><p>如果您的网站存放在子目录中，例如 <a href="http://yoursite.com/blog，则请将您的" target="_blank" rel="external">http://yoursite.com/blog，则请将您的</a> url 设为 <a href="http://yoursite.com/blog" target="_blank" rel="external">http://yoursite.com/blog</a> 并把 root 设为 /blog/。</p>
+            <h2 id="hexo语法使用手册"><a href="#hexo语法使用手册" class="headerlink" title="hexo语法使用手册"></a>hexo语法使用手册</h2><p>title: Manual<br>date: 2017-09-05 15:11:08<br>updated: 2017-09-05 15:11:08<br>tags:</p>
+<hr>
+<p>注意：因语法问题，有些hexo的效果在segmentfault中无法正常显示。</p>
+<h3 id="1-列表"><a href="#1-列表" class="headerlink" title="1. 列表"></a>1. 列表</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">有序号:</div><div class="line"><span class="bullet">1. </span>第一点</div><div class="line"><span class="bullet">2. </span>第二点</div><div class="line"><span class="bullet">3. </span>第三点</div><div class="line"></div><div class="line">无序号:</div><div class="line"><span class="bullet">* </span>星号列表</div><div class="line"><span class="bullet">+ </span>加号列表</div><div class="line"><span class="bullet">- </span>减号列表</div></pre></td></tr></table></figure>
+<p>效果:</p>
 <ol>
-<li>网址<br>url: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a></li>
-<li>网站根目录<br>root: /document/</li>
-<li>文章的 永久链接 格式<br>permalink: :year/:month/:day/:title/</li>
-<li>永久链接中各部分的默认值<br>permalink_defaults:</li>
+<li>第一点</li>
+<li>第二点</li>
+<li>第三点</li>
 </ol>
-<h3 id="Directory-（目录）"><a href="#Directory-（目录）" class="headerlink" title="Directory （目录）"></a>Directory （目录）</h3><ol>
-<li>资源文件夹，这个文件夹用来存放内容。<br>source_dir: source</li>
-<li>公共文件夹，这个文件夹用于存放生成的站点文件。<br>public_dir: public</li>
-<li>标签文件夹<br>tag_dir: tags</li>
-<li>归档文件夹<br>archive_dir: archives</li>
-<li>分类文件夹<br>category_dir: categories</li>
-<li>Include code 文件夹<br>code_dir: downloads/code</li>
-<li>国际化（i18n）文件夹<br>i18n_dir: :lang</li>
-<li>跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。<br>skip_render:</li>
-</ol>
-<h3 id="Writing-（文章）"><a href="#Writing-（文章）" class="headerlink" title="Writing （文章）"></a>Writing （文章）</h3><ol>
-<li>新建文章的文件名称<br>new_post_name: :title.md</li>
-<li>预设布局<br>default_layout: post</li>
-<li>在中文和英文之间加入空格<br>auto_spacing: false</li>
-<li>把标题转换为 title case<br>titlecase: false</li>
-<li>在新标签中打开链接<br>external_link: true</li>
-<li>把文件名称转换为 (1) 小写或 (2) 大写<br>filename_case: 0</li>
-<li>显示草稿<br>render_drafts: false</li>
-<li>启动 Asset 文件夹<br>post_asset_folder: true</li>
-<li>把链接改为与根目录的相对位址<br>relative_link: false</li>
-<li>显示未来的文章<br>future: true</li>
-<li>代码块的设置<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: true<br>  tab_replace:</li>
-</ol>
-<h3 id="Home-page-setting-（主页设置）"><a href="#Home-page-setting-（主页设置）" class="headerlink" title="Home page setting （主页设置）"></a>Home page setting （主页设置）</h3><pre><code>1. path: 博客索引页的跟路径,默认为空
-2. per_page: 每页展示的文章量, 为0时表示不分页
-3. order_by: 排序, 默认日期降序
-index_generator:
-  path: &apos;&apos;
-  per_page: 10
-  order_by: -date
-</code></pre><h3 id="Category-amp-Tag-（分类-amp-标签）"><a href="#Category-amp-Tag-（分类-amp-标签）" class="headerlink" title="Category &amp; Tag （分类 &amp; 标签）"></a>Category &amp; Tag （分类 &amp; 标签）</h3><ol>
-<li>默认分类<br>default_category: uncategorized</li>
-<li>分类别名<br>category_map:</li>
-<li>标签别名<br>tag_map:</li>
-</ol>
-<h3 id="Date-Time-format-（日期-时间格式）"><a href="#Date-Time-format-（日期-时间格式）" class="headerlink" title="Date / Time format （日期 / 时间格式）"></a>Date / Time format （日期 / 时间格式）</h3><p>hexo使用Moment.js来解析和显示时间。<br>可以参照<a href="http://momentjs.com/docs/#/displaying/format/来自定义日期格式。" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/来自定义日期格式。</a></p>
-<ol>
-<li>日期格式<br>date_format: YYYY-MM-DD</li>
-<li>时间格式<br>time_format: HH:mm:ss</li>
-</ol>
-<h3 id="Pagination-（分页）"><a href="#Pagination-（分页）" class="headerlink" title="Pagination （分页）"></a>Pagination （分页）</h3><ol>
-<li>每页显示的文章量 (0 = 关闭分页功能)<br>per_page: 10</li>
-<li>分页目录<br>pagination_dir: page</li>
-</ol>
-<h3 id="Extensions-（扩展）"><a href="#Extensions-（扩展）" class="headerlink" title="Extensions （扩展）"></a>Extensions （扩展）</h3><p>插件: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a><br>主题: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
-<ol>
-<li>当前主题名称。值为false时禁用主题<br>theme: landscape</li>
-</ol>
-<h3 id="Deployment-（部署）"><a href="#Deployment-（部署）" class="headerlink" title="Deployment （部署）"></a>Deployment （部署）</h3><p>参考: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></p>
-<ol>
-<li>部署部分的配置<br> deploy:<br>   type: git<br>   repo: <a href="https://github.com/stardew516/document">https://github.com/stardew516/document</a><br>   branch: master<br>   message: hexo + css</li>
-</ol>
-<h2 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h2><p>github上部署:</p>
-<ol>
-<li>安装hexo-deployer-git: <code>npm install hexo-deployer-git --save</code></li>
-<li><p>_config.yml 中配置</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># 部署部分的设置</span></div><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> https:<span class="comment">//github.com/stardew516/document</span></div><div class="line"><span class="symbol">  branch:</span> master</div><div class="line"><span class="symbol">  message:</span> hexo + css</div></pre></td></tr></table></figure>
-</li>
-<li><p>终端进入目录,运行: <code>hexo deploy</code></p>
-</li>
-</ol>
-<h5 id="转自-hexo-css创建自己的blog（搭建）"><a href="#转自-hexo-css创建自己的blog（搭建）" class="headerlink" title="[转自] hexo+css创建自己的blog（搭建）"></a>[转自] <a href="https://segmentfault.com/a/1190000011020260" target="_blank" rel="external">hexo+css创建自己的blog（搭建）</a></h5>
+<ul>
+<li>星号列表</li>
+</ul>
+<ul>
+<li>加号列表</li>
+</ul>
+<ul>
+<li>减号列表</li>
+</ul>
+<h3 id="2-块注释"><a href="#2-块注释" class="headerlink" title="2. 块注释"></a>2. 块注释</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> 区块引用</span></div><div class="line"></div><div class="line">或者:</div><div class="line">&#123;% blockquote %&#125;</div><div class="line">普通的引用</div><div class="line">&#123;% endblockquote %&#125;</div><div class="line"></div><div class="line">嵌套引用</div><div class="line"><span class="meta">&gt;</span><span class="bash"> 一层引用</span></div><div class="line"><span class="meta">&gt;</span><span class="bash">&gt; 两层引用</span></div></pre></td></tr></table></figure>
+<p>效果:</p>
+<blockquote>
+<p>区块引用</p>
+</blockquote>
+<p>注：blockquote效果不显示<br><blockquote><p>普通的引用<br>下一行</p>
+</blockquote></p>
+<blockquote>
+<p>一层引用</p>
+<blockquote>
+<p>两层引用</p>
+</blockquote>
+</blockquote>
+<h3 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3. 分割线"></a>3. 分割线</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">**<span class="strong">*</span></div><div class="line"><span class="strong">---</span></div></pre></td></tr></table></figure>
+<p>效果:</p>
+<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><h3 id="4-链接"><a href="#4-链接" class="headerlink" title="4. 链接"></a>4. 链接</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="string">这是一个绝对路径的链接</span>](<span class="link">https://hexo.io/zh-cn/docs/writing.html</span>)</div><div class="line">[<span class="string">这是一个相对路径的链接</span>](<span class="link">/document/2017/08/07/hello-world/</span>)</div><div class="line">&#123;% link text url [external] [title] %&#125;</div><div class="line">你好,我是&#123;% link 百度 https://www.baidu.com/ 搜索  度娘 %&#125;.</div></pre></td></tr></table></figure>
+<p>效果：<br><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="external">这是一个绝对路径的链接</a><br><a href="/document/2017/08/07/hello-world/">这是一个相对路径的链接</a></p>
+<p>注：效果不显示<br>你好,我是<a href="https://www.baidu.com/" title="搜索 度娘" target="_blank" rel="external">百度</a>.</p>
+<h3 id="5-加粗"><a href="#5-加粗" class="headerlink" title="5. 加粗"></a>5. 加粗</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="strong">**双星加粗**</span></div><div class="line"><span class="strong">__双下划线加粗__</span></div></pre></td></tr></table></figure>
+<p>效果：<br><strong>双星加粗</strong><br><strong>双下划线加粗</strong></p>
+<h3 id="6-斜体"><a href="#6-斜体" class="headerlink" title="6. 斜体"></a>6. 斜体</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">*星号斜体*</div><div class="line"><span class="keyword">_</span>下划线斜体<span class="keyword">_</span></div></pre></td></tr></table></figure>
+<p>效果：<br><em>星号斜体</em><br><em>下划线斜体</em></p>
+<h3 id="7-图片"><a href="#7-图片" class="headerlink" title="7. 图片"></a>7. 图片</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">![<span class="string">图1. 我最爱的炮兵</span>](<span class="link">/document/assert/img.jpg "Title"</span>)</div><div class="line"></div><div class="line">![<span class="string">图2. 我的头像</span>](<span class="link">https://sfault-avatar.b0.upaiyun.com/267/966/2679662993-581186b9d2f8a_big64 "Title"</span>)</div><div class="line"></div><div class="line">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125;</div><div class="line"></div><div class="line">&#123;% img [box-model] http://weex.apache.org/cn/references/images/css-boxmodel.png 377 340 weex 盒模型 %&#125;</div></pre></td></tr></table></figure>
+<p>效果：<br><img src="/document/assert/img.jpg" alt="图1. 我最爱的炮兵" title="Title"></p>
+<p><img src="https://sfault-avatar.b0.upaiyun.com/267/966/2679662993-581186b9d2f8a_big64" alt="图2. 我的头像" title="Title"></p>
+<p>注：效果不显示<br><img src="http://weex.apache.org/cn/references/images/css-boxmodel.png" class="[box-model]" width="377" height="340" title="weex 盒模型"></p>
+<h3 id="8-代码"><a href="#8-代码" class="headerlink" title="8. 代码"></a>8. 代码</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">多行代码块使用三个`</div><div class="line">单行代码使用一个`</div><div class="line">console.log(<span class="string">'hello world!'</span>)</div></pre></td></tr></table></figure>
+<h3 id="9-标题"><a href="#9-标题" class="headerlink" title="9. 标题"></a>9. 标题</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">方法<span class="number">1</span>: - 和 = (任何数量等效)</div><div class="line">一级标题</div><div class="line">===</div><div class="line">二级标题</div><div class="line">---</div><div class="line"></div><div class="line">方法<span class="number">2</span>: #</div><div class="line"># 一级 H1</div><div class="line">## 二级 H2</div><div class="line">### 三级 H3</div><div class="line">#### 四级 H4</div><div class="line">##### 五级 H5</div><div class="line">###### 六级 H6</div></pre></td></tr></table></figure>
+<p>效果：<br>方法1: - 和 =</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p>方法2: #</p>
+<h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><h4 id="四级"><a href="#四级" class="headerlink" title="四级"></a>四级</h4><h5 id="五级"><a href="#五级" class="headerlink" title="五级"></a>五级</h5><h6 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h6><h3 id="10-jsfiddle"><a href="#10-jsfiddle" class="headerlink" title="10. jsfiddle"></a>10. jsfiddle</h3><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% jsfiddle shorttag <span class="string">[tabs]</span> <span class="string">[skin]</span> <span class="string">[width]</span> <span class="string">[height]</span> %&#125;</div><div class="line"></div><div class="line">&#123;% jsfiddle stardew/ffnm6Lsd/<span class="number">1</span>/ %&#125;  点击左上角fiddles</div></pre></td></tr></table></figure>
+<p>注：效果不显示<br><iframe scrolling="no" width="100%" height="300" src="//jsfiddle.net/stardew/ffnm6Lsd/1//embedded/js,resources,html,css,result/light" frameborder="0" allowfullscreen></iframe></p>
+<h3 id="11-iframe"><a href="#11-iframe" class="headerlink" title="11. iframe"></a>11. iframe</h3><figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% iframe url [width] [height] %&#125;</div><div class="line"></div><div class="line">&#123;% iframe https://www.baidu.com/ <span class="number">500</span> <span class="number">300</span> %&#125;</div></pre></td></tr></table></figure>
+<p>注：效果不显示<br><iframe src="https://www.baidu.com/" width="500" height="300" frameborder="0" allowfullscreen></iframe></p>
+<h3 id="12-表格"><a href="#12-表格" class="headerlink" title="12. 表格"></a>12. 表格</h3><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">左左中右对齐</div><div class="line"></div><div class="line"></div><div class="line">dog |<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">--- </span>|<span class="string"> ---- </span>|<span class="string"> ---</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">:---- </span>|<span class="string"> :---- </span>|<span class="string"> :----</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">:----: </span>|<span class="string"> :----: </span>|<span class="string"> :----:</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div><div class="line"></div><div class="line"><span class="string">dog </span>|<span class="string"> bird </span>|<span class="string"> cat</span></div><div class="line"><span class="string">----: </span>|<span class="string"> ----: </span>|<span class="string"> ----:</span></div><div class="line"><span class="string">foo </span>|<span class="string"> foo  </span>|<span class="string"> foo</span></div><div class="line"><span class="string">bar </span>|<span class="string"> bar  </span>|<span class="string"> bar</span></div><div class="line"><span class="string">baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">dog</th>
+<th style="text-align:left">bird</th>
+<th style="text-align:left">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">foo</td>
+<td style="text-align:left">foo</td>
+<td style="text-align:left">foo</td>
+</tr>
+<tr>
+<td style="text-align:left">bar</td>
+<td style="text-align:left">bar</td>
+<td style="text-align:left">bar</td>
+</tr>
+<tr>
+<td style="text-align:left">baz</td>
+<td style="text-align:left">baz</td>
+<td style="text-align:left">baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">dog</th>
+<th style="text-align:center">bird</th>
+<th style="text-align:center">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">foo</td>
+<td style="text-align:center">foo</td>
+<td style="text-align:center">foo</td>
+</tr>
+<tr>
+<td style="text-align:center">bar</td>
+<td style="text-align:center">bar</td>
+<td style="text-align:center">bar</td>
+</tr>
+<tr>
+<td style="text-align:center">baz</td>
+<td style="text-align:center">baz</td>
+<td style="text-align:center">baz</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">dog</th>
+<th style="text-align:right">bird</th>
+<th style="text-align:right">cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">foo</td>
+<td style="text-align:right">foo</td>
+<td style="text-align:right">foo</td>
+</tr>
+<tr>
+<td style="text-align:right">bar</td>
+<td style="text-align:right">bar</td>
+<td style="text-align:right">bar</td>
+</tr>
+<tr>
+<td style="text-align:right">baz</td>
+<td style="text-align:right">baz</td>
+<td style="text-align:right">baz</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-原生代码"><a href="#13-原生代码" class="headerlink" title="13. 原生代码"></a>13. 原生代码</h3><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">raw</span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="xml">content</span></div><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">endraw</span> %&#125;</span><span class="xml"></span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml">或者直接</span></div><div class="line"><span class="xml">content</span></div><div class="line"><span class="xml"></span></div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"color-box"</span> <span class="attr">style</span>=<span class="string">"background:#FF00FF;color:#FF00FF"</span>&gt;</span> yy <span class="tag">&lt;/<span class="name">span</span>&gt;</span> #FF00FF</span></div></pre></td></tr></table></figure>
+<p>注：效果不显示<br><span class="color-box" style="background:#FF00FF;color:#FF00FF"> yy </span> #FF00FF</p>
+<h3 id="14-转义"><a href="#14-转义" class="headerlink" title="14. 转义"></a>14. 转义</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">转义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&#33;</td>
+<td style="text-align:left"><code>&amp;#33;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#34;</td>
+<td style="text-align:left"><code>&amp;#34;</code> 或 <code>&amp;quot;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#35;</td>
+<td style="text-align:left"><code>&amp;#35;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#36;</td>
+<td style="text-align:left"><code>&amp;#36;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#37;</td>
+<td style="text-align:left"><code>&amp;#37;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#38;</td>
+<td style="text-align:left"><code>&amp;#38;</code> 或 <code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#39;</td>
+<td style="text-align:left"><code>&amp;#39;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#40;</td>
+<td style="text-align:left"><code>&amp;#40;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#41;</td>
+<td style="text-align:left"><code>&amp;#41;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#42;</td>
+<td style="text-align:left"><code>&amp;#42;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#43;</td>
+<td style="text-align:left"><code>&amp;#43;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#60;</td>
+<td style="text-align:left"><code>&amp;#60;</code> 或 <code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#61;</td>
+<td style="text-align:left"><code>&amp;#61;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#62;</td>
+<td style="text-align:left"><code>&amp;#62;</code> 或 <code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#63;</td>
+<td style="text-align:left"><code>&amp;#63;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#64;</td>
+<td style="text-align:left"><code>&amp;#64;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#91;</td>
+<td style="text-align:left"><code>&amp;#91;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#92;</td>
+<td style="text-align:left"><code>&amp;#92;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#93;</td>
+<td style="text-align:left"><code>&amp;#93;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#123;</td>
+<td style="text-align:left"><code>&amp;#123;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#124;</td>
+<td style="text-align:left"><code>&amp;#124;</code></td>
+</tr>
+<tr>
+<td style="text-align:left">&#125;</td>
+<td style="text-align:left"><code>&amp;#125;</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="转自-hexo-css创建自己的blog（语法手册）"><a href="#转自-hexo-css创建自己的blog（语法手册）" class="headerlink" title="[转自] hexo+css创建自己的blog（语法手册）"></a>[转自] <a href="https://segmentfault.com/a/1190000011021195" target="_blank" rel="external">hexo+css创建自己的blog（语法手册）</a></h5>
           
         
       
@@ -494,7 +662,7 @@ index_generator:
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -540,7 +708,7 @@ index_generator:
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>

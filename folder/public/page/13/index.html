@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/autojump/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/stardew/slice-splice-split-substring-substr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lu.wei">
@@ -302,7 +302,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/autojump/" itemprop="url">autojump</a></h2>
+                <a class="post-title-link" href="/slice-splice-split-substring-substr/" itemprop="url">slice-splice-split-substring-substr.md</a></h2>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T18:52:00Z">
-                2016-12-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-20T00:00:00Z">
+                2017-02-20
               </time>
             
 
@@ -333,9 +333,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/autojump/#comments" itemprop="discussionUrl">
+                <a href="/slice-splice-split-substring-substr/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="autojump/" itemprop="commentCount"></span>
+                        data-disqus-identifier="slice-splice-split-substring-substr/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -365,23 +365,47 @@
       
         
           
-            <h2 id="mac安装autojump"><a href="#mac安装autojump" class="headerlink" title="mac安装autojump"></a>mac安装autojump</h2><pre><code>autojump是一个命令行工具，它可以使用快捷命令，直接跳转到配置好的目录，而不用管现在身在何处。  
-</code></pre><ol>
-<li>安装zsh：<br> <code>sh -c &quot;$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></li>
-<li>将zsh设置成默认的shell：<code>chsh -s /bin/zsh</code> (重启shell)</li>
-<li><code>echo $SHELL</code>可以查看用的哪个shell（bash or zsh）</li>
-<li>安装autojump：<code>brew install autojump</code>（确保有brew）</li>
-<li>使用<code>vim .zshrc</code>打开.zshrc（有些人会找不到.zshrc这个文件，其实安装了zsh才会有.zshrc ，在默认打开的终端目录下。可以打开终端并且ls -a查看）。<ul>
-<li>找到 plugins=，在后面添加autojump：<code>plugins=(git autojump)</code></li>
-<li>新开一行，添加：<code>[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] &amp;&amp; . $(brew --prefix)/etc/profile.d/autojump.sh</code></li>
-<li><code>：wq</code>保存退出</li>
-</ul>
-</li>
-<li><p>重启终端，autojump就可以使用了，例如：<br>   添加一条快捷键：<code>j -a s &#39;/Users/XXX/Desktop/code/shark’</code>（j -a 你定义的快捷命令 ‘需要跳转的目录位置’）</p>
-<p>   进入shark：<code>j s</code></p>
-</li>
-</ol>
-<h5 id="转自-mac安装autojump"><a href="#转自-mac安装autojump" class="headerlink" title="[转自] mac安装autojump"></a>[转自] <a href="https://my.oschina.net/luweiweiwei/blog/804679" target="_blank" rel="external">mac安装autojump</a></h5>
+            <p>slice，splice，split，substring，substr区别  </p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3Fibq2EbGWGYvbPIBNIsInmickdIAeQ0olClsOQlVyTl2BIV1eqzXgicXiaXusPic1HXEIY7bOHibwEYDTw/0?wx_fmt=jpeg" alt=""></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"></div><div class="line">var str = '<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>';</div></pre></td></tr></table></figure>
+<p><code>slice(): slice(i,[j])</code>  </p>
+<p>描述: 截取数组，返回截取的数组，原数组不变  </p>
+<p>参数:  </p>
+<pre><code>i: 起始位置（可为负数）  
+
+j: 可选，结束位置，默认结尾  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">arr.slice(<span class="number">1</span>, <span class="number">6</span>)	<span class="comment">// [3, 5, 7, 9, 2]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">1</span>)	<span class="comment">// [3, 5, 7, 9, 2, 4, 6, 8, 1, 2, 3, 4, 5]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-1</span>)	<span class="comment">// [5]</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-1</span>, <span class="number">1</span>)	<span class="comment">// []</span></div><div class="line"></div><div class="line">arr.slice(<span class="number">-3</span>, <span class="number">-1</span>)	<span class="comment">// [3, 4]</span></div></pre></td></tr></table></figure>
+<p><code>splice(): splice(i, n, a1, ..., ax)</code>  </p>
+<p>描述: 可删除添加数组，原数组被改变，返回删除的数组  </p>
+<p>参数:  </p>
+<pre><code>i: 删除的位置（可为负数）  
+
+n: 删除数量  
+
+a1, ..., ax: 添加  
+</code></pre><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">arr</span><span class="selector-class">.splice</span>(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)	<span class="comment">// [7, 9, 2, 4]</span></div><div class="line"></div><div class="line">此时<span class="selector-tag">arr</span>: <span class="selector-attr">[1, 3, 5, 5, 6, 6, 8, 1, 2, 3, 4, 5]</span></div><div class="line"></div><div class="line"><span class="selector-attr">[1, 3, 5, (删除7, 9, 2, 4) （添加5, 6,） 6, 8, 1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<p><code>split(): split(s, n)</code>  </p>
+<p>描述: 字符串分割为数组  </p>
+<p>参数:  </p>
+<pre><code>s: 分隔符  
+
+n: 分割之后数组的长度  
+</code></pre><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str.split(<span class="string">','</span>)	<span class="regexp">//</span> [<span class="string">"1"</span>, <span class="string">" 3"</span>, <span class="string">" 5"</span>, <span class="string">" 7"</span>, <span class="string">" 9"</span>, <span class="string">" 2"</span>, <span class="string">" 4"</span>, <span class="string">" 6"</span>, <span class="string">" 8"</span>, <span class="string">" 1"</span>, <span class="string">" 2"</span>, <span class="string">" 3"</span>, <span class="string">" 4"</span>, <span class="string">" 5"</span>]</div><div class="line"></div><div class="line">str.split(<span class="string">','</span>, <span class="number">3</span>)	<span class="regexp">//</span> [<span class="string">"1"</span>, <span class="string">" 3"</span>, <span class="string">" 5"</span>]</div></pre></td></tr></table></figure>
+<p><code>substring(): substring(start, stop)</code>  </p>
+<p>描述: 字符串截取  </p>
+<p>参数:  </p>
+<pre><code>start: 字符串截取的起始位置  
+
+stop: 字符串结束位置  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">str.substring(<span class="number">3</span>, <span class="number">8</span>)	<span class="comment">// "3, 5,"</span></div><div class="line"></div><div class="line">等价于</div><div class="line"></div><div class="line">str.substring(<span class="number">8</span>, <span class="number">3</span>)	<span class="comment">// "3, 5,"</span></div></pre></td></tr></table></figure>
+<p><code>substr(): substr(start, length)</code>  </p>
+<p>描述: 字符串截取  </p>
+<p>参数:  </p>
+<pre><code>start: 字符串截取的起始位置  
+
+length: 截取字符串长度  
+</code></pre><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str.substr(<span class="number">3</span>, <span class="number">8</span>)	<span class="comment">// "3, 5, 7,"</span></div></pre></td></tr></table></figure>
+<h5 id="转自-slice-splice-split-substring-substr区别-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK"><a href="#转自-slice-splice-split-substring-substr区别-amp-version-12020610-amp-nettype-WIFI-amp-lang-zh-CN-amp-fontScale-100-amp-pass-ticket-3r5tdwajo-2Bn-2FJyql48TdVB-2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" class="headerlink" title="[转自] slice, splice, split, substring, substr区别&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483780&amp;idx=1&amp;sn=61edd08ed65e29a20b445e68421b45c4&amp;chksm=eb02a1f2dc7528e46569efb9145fc9dbcd840aa387217b4e2e3122eda8c093b3c5f493dc6687&amp;mpshare=1&amp;scene=1&amp;srcid=0628QLDMllnLjDumF6woGRGX&amp;key=aa3a7cd9173eb904b4f6fb7db2efe2f8ac6b5b8b9dbc7dc6f008ac4056af8f714b6ed74a92e95797274fd5d5e565ec97a560d085d7db8c4ea07812c444f147750d8277e00e2ed2eaf4b201262a8db9ee&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195" target="_blank" rel="external">slice, splice, split, substring, substr区别</a>&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK)</h5>
           
         
       
@@ -420,7 +444,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -466,7 +490,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
