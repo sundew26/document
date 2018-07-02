@@ -11,8 +11,14 @@ keywords: "Hexo, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
 
+plugin: hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+rss: /atom.xml
 # Specify the date when the site was setup
 #since: 2015
 
@@ -51,7 +57,7 @@ menu:
  # about: /about/
   archives: /archives/
   tags: /tags/
-  #sitemap: /sitemap.xml
+  sitemap: /sitemap.xml
   #commonweal: /404/
 
 # Enable/Disable menu icons.
@@ -317,7 +323,7 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 3fbf83350171e3f0fd216ddc5e2b0814
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -478,7 +484,7 @@ calendar:
 
 # Algolia Search
 algolia_search:
-  enable: true
+  enable: false
   hits:
     per_page: 10
   labels:
@@ -496,6 +502,11 @@ local_search:
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
 
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 # ---------------------------------------------------------------
 # Tags Settings
