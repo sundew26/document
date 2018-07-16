@@ -17,7 +17,7 @@ require(['jquery','mCustomScrollbar'],function($,mCustomScrollbar){
     });
 });
 ```
-
+ <!-- more -->
 ```
 .mCSB_scrollTools .mCSB_draggerRail{background-color: #c6c4c2;width: 8px;}
 

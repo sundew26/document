@@ -17,7 +17,7 @@ var reg = /a.*b/ig;
 var newStr = str.replace(reg, '笨蛋'); 
 console.log(newStr);
 ```
-
+ <!-- more -->
 // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC
 
 **非贪婪模式（尽可能少的去匹配符合条件的字符串 '?' ）

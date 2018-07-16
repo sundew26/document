@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str)) 2. 8-16位，且必须只包含数字、字母和特殊字符~!@#">
+<meta name="description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str))">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="regexp-password">
 <meta property="og:url" content="https://github.com/stardew/regexp-password/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str)) 2. 8-16位，且必须只包含数字、字母和特殊字符~!@#">
+<meta property="og:description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T11:12:01.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:23:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regexp-password">
-<meta name="twitter:description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str)) 2. 8-16位，且必须只包含数字、字母和特殊字符~!@#">
+<meta name="twitter:description" content="正则校验密码规则1. 8-16位数字、字母和特殊字符~!@#$%^&amp;amp;*-+=_.123var reg = /^\[~!@#$%^&amp;amp;*\\-+=_.0-9a-zA-Z\]&amp;#123;8,16&amp;#125;$/;  var str = &apos;1wfwe@99$;&apos; // 有分号  console.log(reg.test(str))">
 
 
 
@@ -430,6 +430,7 @@
 
       
         <h2 id="正则校验密码规则"><a href="#正则校验密码规则" class="headerlink" title="正则校验密码规则"></a>正则校验密码规则</h2><p>1. 8-16位数字、字母和特殊字符~!@#$%^&amp;*-+=_.<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;  </div><div class="line">var str = '<span class="number">1</span>wfwe@<span class="number">99</span>$;' <span class="comment">// 有分号  </span></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure></p>
+ <a id="more"></a>
 <p>2. 8-16位，且必须只包含数字、字母和特殊字符~!@#$%^&amp;*-+=_.<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var reg = /^(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[~!@#$%^&amp;*\\-+=_.\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[<span class="number">0</span><span class="number">-9</span>\])(?=\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]*\[a-zA-Z\])\[~!@#$%^&amp;*\\-+=_<span class="number">.0</span><span class="number">-9</span>a-zA-Z\]&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$/;</div><div class="line">var str = '<span class="number">1</span>w@<span class="number">2812</span>fhif94#$%<span class="number">1</span>'    <span class="comment">// 17位</span></div><div class="line">console.log(reg.test(str))</div></pre></td></tr></table></figure></p>
 <p>3. 感觉上面的有点长，replace了一下，但是看着也没多好，将就下吧。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">注：</div><div class="line">x = <span class="string">'~!@#$%^&amp;*\\\-+=_.'</span>  <span class="comment">// 特殊字符</span></div><div class="line">d = <span class="string">'0-9'</span>  <span class="comment">// 数字</span></div><div class="line">w = <span class="string">'a-zA-Z'</span> <span class="comment">// 字母</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> reg = <span class="string">'^(?=\[xdw\]*\[x\])(?=\[xdw\]*\[d\])(?=\[xdw\]*\[w\])\[xdw\]&#123;8,16&#125;$'</span>.replace(<span class="regexp">/x/gi</span>, <span class="string">'~!@#$%^&amp;*\\\-+=_.'</span>).replace(<span class="regexp">/d/gi</span>, <span class="string">'0-9'</span>).replace(<span class="regexp">/w/gi</span>, <span class="string">'a-zA-Z'</span>);</div><div class="line">reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(reg);</div><div class="line"><span class="keyword">var</span> str = <span class="string">'1w@28194#$%&lt;'</span> <span class="comment">// 有&lt;</span></div><div class="line"><span class="built_in">console</span>.log(reg, reg.test(str))</div></pre></td></tr></table></figure></p>
 <p>注：特殊字符里的‘-’需要转义‘\-’, 3中需要‘\-’</p>
@@ -619,7 +620,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -646,7 +647,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

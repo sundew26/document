@@ -96,19 +96,19 @@
 
 
 
-<meta name="description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr); // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC *">
+<meta name="description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr);">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="regexp-important">
 <meta property="og:url" content="https://github.com/stardew/regexp-important/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr); // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC *">
+<meta property="og:description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr);">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIqLmAuHfMbLCr6Ad3C6Gw0KGt7ykePwac4YibOQzae5qjqIRmrgQXN0iaRpCOaSGk565SlfbWrSpw/0?wx_fmt=jpeg">
-<meta property="og:updated_time" content="2018-06-28T11:11:54.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:23:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regexp-important">
-<meta name="twitter:description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr); // 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC *">
+<meta name="twitter:description" content="正则表达式重点总结 1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）1234var str = &quot;aaabbbbcccccAAABBBBCCCCC&quot;; var reg = /a.*b/ig; var newStr = str.replace(reg, &apos;笨蛋&apos;); console.log(newStr);">
 <meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIqLmAuHfMbLCr6Ad3C6Gw0KGt7ykePwac4YibOQzae5qjqIRmrgQXN0iaRpCOaSGk565SlfbWrSpw/0?wx_fmt=jpeg">
 
 
@@ -433,6 +433,7 @@
       
         <h2 id="正则表达式重点总结"><a href="#正则表达式重点总结" class="headerlink" title="正则表达式重点总结"></a>正则表达式重点总结</h2><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3EIqLmAuHfMbLCr6Ad3C6Gw0KGt7ykePwac4YibOQzae5qjqIRmrgQXN0iaRpCOaSGk565SlfbWrSpw/0?wx_fmt=jpeg" alt=""></p>
 <h3 id="1-贪婪模式-（尽可能多的去匹配符合条件的字符串）"><a href="#1-贪婪模式-（尽可能多的去匹配符合条件的字符串）" class="headerlink" title="1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）"></a>1. 贪婪模式 （尽可能多的去匹配符合条件的字符串）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/a.*b/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
+ <a id="more"></a>
 <p>// 结果：笨蛋CCCCC  匹配了aaabbbbcccccAAABBBBCCCCC</p>
 <p>**非贪婪模式（尽可能少的去匹配符合条件的字符串 ‘?’ ）</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">"aaabbbbcccccAAABBBBCCCCC"</span>; </div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/a.*?b/ig</span>; </div><div class="line"><span class="keyword">var</span> newStr = str.replace(reg, <span class="string">'笨蛋'</span>); </div><div class="line"><span class="built_in">console</span>.log(newStr);</div></pre></td></tr></table></figure>
@@ -659,7 +660,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -686,7 +687,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

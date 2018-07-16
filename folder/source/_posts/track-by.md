@@ -12,7 +12,7 @@ api：[http://cn.vuejs.org/guide/list.html#track-by](http://cn.vuejs.org/guide/l
 示例地址：[https://jsfiddle.net/stardew/f1eju0ku/5/](https://jsfiddle.net/stardew/f1eju0ku/5/)
 
 无track-by情况：数据修改时，无论值是否被修改，dom都被重新渲染（控制台可以看到）
-
+ <!-- more -->
 加入track-by属性：数据修改时，不变数据所在的dom不被重新渲染，已改变的数据所在dom才被重新渲染
 
 track-by的两种使用方法：

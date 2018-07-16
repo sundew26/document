@@ -12,7 +12,7 @@ categories: 探索
 2\. 下载微信开发者工具，https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=1476197489869。
 
 3\. 使用微信扫码登录
-
+ <!-- more -->
 4\. 添加一个项目，把注册公众号获得到的appId复制到appId，名称目录填写好后，点击添加项目，显示
 
 ![](https://static.oschina.net/uploads/space/2016/1012/152416_w6pz_255575.png)

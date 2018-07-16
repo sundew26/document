@@ -10,7 +10,7 @@ categories: 前端基础
 ### 一、浏览器内核
 
     主要指渲染引擎(Rendering Engine)，负责解析网页语法(如HTML、JavaScript)并渲染、展示网页。  
-
+ <!-- more -->
     。Trident内核（代表：Internet Explorer）  
 
         IE、傲游、世界之窗浏览器、Avant、腾讯TT、Netscape 8、NetCaptor、Sleipnir、GOSURF、GreenBrowser和KKman等。  

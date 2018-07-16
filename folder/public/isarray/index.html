@@ -96,19 +96,19 @@
 
 
 
-<meta name="description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：12345678910111213141516171819var arr = [1, 2, 3];var obj = &amp;#123;a:1&amp;#125;;toString返回对象的字符串表示toString.apply(arr) === &apos;[object Array]&apos;;  // truetoString.apply(obj) === &apos;[objec">
+<meta name="description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="isarray">
 <meta property="og:url" content="https://github.com/stardew/isarray/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：12345678910111213141516171819var arr = [1, 2, 3];var obj = &amp;#123;a:1&amp;#125;;toString返回对象的字符串表示toString.apply(arr) === &apos;[object Array]&apos;;  // truetoString.apply(obj) === &apos;[objec">
+<meta property="og:description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3F22ruqIzJNWgnugCYFB4eOy83XFBiaS39FuXujVjpvicCMA1gNE3IIrInwmpExmfnRg0vcEVWwEHSg/0?wx_fmt=jpeg">
-<meta property="og:updated_time" content="2018-06-28T11:08:43.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:24:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="isarray">
-<meta name="twitter:description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：12345678910111213141516171819var arr = [1, 2, 3];var obj = &amp;#123;a:1&amp;#125;;toString返回对象的字符串表示toString.apply(arr) === &apos;[object Array]&apos;;  // truetoString.apply(obj) === &apos;[objec">
+<meta name="twitter:description" content="鉴别数组 判断一个对象是否是数组，有五种方法，如下：">
 <meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3F22ruqIzJNWgnugCYFB4eOy83XFBiaS39FuXujVjpvicCMA1gNE3IIrInwmpExmfnRg0vcEVWwEHSg/0?wx_fmt=jpeg">
 
 
@@ -432,7 +432,7 @@
 
       
         <h1 id="鉴别数组"><a href="#鉴别数组" class="headerlink" title="鉴别数组"></a>鉴别数组</h1><p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3F22ruqIzJNWgnugCYFB4eOy83XFBiaS39FuXujVjpvicCMA1gNE3IIrInwmpExmfnRg0vcEVWwEHSg/0?wx_fmt=jpeg" alt=""></p>
-<p>判断一个对象是否是数组，有五种方法，如下：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123;a:1&#125;</span>;</div><div class="line"></div><div class="line">toString返回对象的字符串表示</div><div class="line">toString.apply(arr) === <span class="string">'[object Array]'</span>;  <span class="comment">// true</span></div><div class="line">toString.apply(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(arr) === <span class="string">'[object Array]'</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line">arr instanceof <span class="keyword">Array</span>; <span class="comment">// true</span></div><div class="line">obj instanceof <span class="keyword">Array</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="keyword">Array</span>.isArray(arr); <span class="comment">// true</span></div><div class="line"><span class="keyword">Array</span>.isArray(obj); <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">// constructor 指向创建当前对象的构造函数</span></div><div class="line">arr.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// true</span></div><div class="line">obj.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p>判断一个对象是否是数组，有五种方法，如下：<br> <a id="more"></a><br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">var</span> obj = <span class="comment">&#123;a:1&#125;</span>;</div><div class="line"></div><div class="line">toString返回对象的字符串表示</div><div class="line">toString.apply(arr) === <span class="string">'[object Array]'</span>;  <span class="comment">// true</span></div><div class="line">toString.apply(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(arr) === <span class="string">'[object Array]'</span>; <span class="comment">// true</span></div><div class="line"><span class="keyword">Object</span>.prototype.toString.call(obj) === <span class="string">'[object Array]'</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line">arr instanceof <span class="keyword">Array</span>; <span class="comment">// true</span></div><div class="line">obj instanceof <span class="keyword">Array</span>; <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="keyword">Array</span>.isArray(arr); <span class="comment">// true</span></div><div class="line"><span class="keyword">Array</span>.isArray(obj); <span class="comment">// false</span></div><div class="line"></div><div class="line"><span class="comment">// constructor 指向创建当前对象的构造函数</span></div><div class="line">arr.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// true</span></div><div class="line">obj.<span class="keyword">constructor</span> === <span class="keyword">Array</span> <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
 <p>PS：<br>基本数据类型只有五种：Null, Undifined, String, Number, Boolean<br>引用类型：Array，Object，Function  </p>
 <h5 id="转自-鉴别数组"><a href="#转自-鉴别数组" class="headerlink" title="[转自] 鉴别数组"></a>[转自] <a href="https://mp.weixin.qq.com/s?__biz=MzI3NTQ5NTE5Mw==&amp;mid=2247483777&amp;idx=1&amp;sn=afaa43f8aeda14494fc1f0548bea5f4a&amp;chksm=eb02a1f7dc7528e1ad1de8480cc960950aaf4fb48481a707c2b4049e8cf38a4f9869671abdd5&amp;mpshare=1&amp;scene=1&amp;srcid=0628bOSEN5a1yDfO54Rz1qKb&amp;key=d8aade18608a3d7081d281c4945d2a5ae2411e3cdb859bc5aef4f6045ad3c7c0b8f450da58d17806dda7df259b7ee472994a556c047ce7c8259165fbda1baf5614aa0777c33d4c2fb4ee1835056faa60&amp;ascene=0&amp;uin=NzgyNzAwMTAx&amp;devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build&amp;version=12020610&amp;nettype=WIFI&amp;lang=zh_CN&amp;fontScale=100&amp;pass_ticket=3r5tdwajo%2Bn%2FJyql48TdVB%2FIyWmFLBAbbtRIhDbY8dpbaiMNp6ziZZAl21WufchK" target="_blank" rel="external">鉴别数组</a></h5>
       
@@ -620,7 +620,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -647,7 +647,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

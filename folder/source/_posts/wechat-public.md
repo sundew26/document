@@ -13,6 +13,7 @@ categories: 问题总结
 
 登录微信公众平台，进入基本配置。开发中需要用到两个参数，appId和appSecret（appSecret只展示一次，需保存下来，否则需要重置获取）。
 获取access_token时需要添加IP白名单。
+ <!-- more -->
 ![clipboard.png](https://segmentfault.com/img/bVbcc8v)
 点击查看
 ![clipboard.png](https://segmentfault.com/img/bVbcc7q)

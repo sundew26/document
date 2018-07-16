@@ -9,6 +9,7 @@ categories: 前端基础
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3F22ruqIzJNWgnugCYFB4eOy83XFBiaS39FuXujVjpvicCMA1gNE3IIrInwmpExmfnRg0vcEVWwEHSg/0?wx_fmt=jpeg)
 
 判断一个对象是否是数组，有五种方法，如下：  
+ <!-- more -->
 ```
 var arr = [1, 2, 3];
 var obj = {a:1};

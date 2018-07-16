@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource) 2. 调取接口12345678Vue.http.post(url, &amp;#123;">
+<meta name="description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource)">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vueresource-405">
 <meta property="og:url" content="https://github.com/stardew/vueresource-405/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource) 2. 调取接口12345678Vue.http.post(url, &amp;#123;">
+<meta property="og:description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T11:13:58.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:21:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vueresource-405">
-<meta name="twitter:description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource) 2. 调取接口12345678Vue.http.post(url, &amp;#123;">
+<meta name="twitter:description" content="vue-resource报错450的解决方案vue-resource(github)地址：https://github.com/pagekit/vue-resource 一、基本使用1.页面引入12import vueResource from &apos;vue-resource&apos;Vue.use(vueResource)">
 
 
 
@@ -431,6 +431,7 @@
       
         <h1 id="vue-resource报错450的解决方案"><a href="#vue-resource报错450的解决方案" class="headerlink" title="vue-resource报错450的解决方案"></a>vue-resource报错450的解决方案</h1><p>vue-resource(github)地址：<a href="https://github.com/pagekit/vue-resource">https://github.com/pagekit/vue-resource</a></p>
 <h2 id="一、基本使用"><a href="#一、基本使用" class="headerlink" title="一、基本使用"></a>一、基本使用</h2><h5 id="1-页面引入"><a href="#1-页面引入" class="headerlink" title="1.页面引入"></a>1.页面引入</h5><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> vueResource <span class="keyword">from</span> <span class="string">'vue-resource'</span></div><div class="line">Vue.use(vueResource)</div></pre></td></tr></table></figure>
+ <a id="more"></a>
 <h5 id="2-调取接口"><a href="#2-调取接口" class="headerlink" title="2. 调取接口"></a>2. 调取接口</h5><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Vue.http.post(url, &#123;</div><div class="line">  <span class="string">'data1'</span>: data1,</div><div class="line">  <span class="string">'data2'</span>: <span class="string">'data2'</span></div><div class="line">&#125;).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'success'</span>, response)</div><div class="line">&#125;, <span class="function"><span class="params">response</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'error'</span>, response)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h2 id="二、报错450"><a href="#二、报错450" class="headerlink" title="二、报错450"></a>二、报错450</h2><p>定位错误信息：请求header没有完全一一对应。<code>Content-Type: application/x-www-form-urlencoded; charset=UTF-8</code>应为<code>Content-Type: application/json; charset=UTF-8</code>，检查页面代码，发现已经设置了<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Vue<span class="selector-class">.http</span><span class="selector-class">.interceptors</span><span class="selector-class">.push</span>(function (request, next) &#123;</div><div class="line">  request<span class="selector-class">.headers</span><span class="selector-class">.set</span>(<span class="string">'Content-Type'</span>, <span class="string">'application/json; charset=UTF-8'</span>)</div><div class="line">  request<span class="selector-class">.headers</span><span class="selector-class">.set</span>(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>)</div><div class="line">  next()</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>只是页面没有起作用而已，那究竟是什么原因导致页面设置的Content-Type失效了呢？继续追溯，发现跟这行代码有关<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Vue.http.options.crossOrigin = true </span></div><div class="line"><span class="comment">// Vue.http.options.emulateHTTP = true</span></div><div class="line">Vue<span class="selector-class">.http</span><span class="selector-class">.options</span><span class="selector-class">.emulateJSON</span> = true <span class="comment">//（跟这行代码有关）</span></div></pre></td></tr></table></figure></p>
@@ -627,7 +628,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -654,7 +655,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

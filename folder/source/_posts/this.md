@@ -9,7 +9,7 @@ categories: 前端基础
 
 判断 this 指向谁，看执行时而非定义时，只要function没有绑定在对象上调用，它的 this 就是window。  
 箭头函数的特征是，定义在哪，this 就指向哪。  
-
+ <!-- more -->
 ```
 <!DOCTYPE html>
 <html>

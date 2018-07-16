@@ -8,7 +8,7 @@ categories: 工具类
 ## Atom一个跨平台文本编辑器
 
 Atom 是github专门为程序员推出的一个跨平台文本编辑器。文件太大时容易卡死，但是目前对于我们前端开发的项目还是完全可以支撑的，打开项目快的简直要飞起来（相比之前使用webstorm而言，个人不太喜欢sublime。）。安装以下一些插件后，使用起来非常酷炫。
-
+ <!-- more -->
 cd ~/.atom/packages 
 apm install atom-beautify 代码格式一键美化
 apm install language-vuejs 安装vue

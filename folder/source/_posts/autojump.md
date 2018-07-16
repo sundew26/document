@@ -11,6 +11,7 @@ categories: 工具类
 
 1. 安装zsh：
     `sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+ <!-- more -->
 2. 将zsh设置成默认的shell：`chsh -s /bin/zsh` (重启shell)
 3. `echo $SHELL`可以查看用的哪个shell（bash or zsh）
 4. 安装autojump：`brew install autojump`（确保有brew）

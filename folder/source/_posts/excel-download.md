@@ -11,6 +11,7 @@ categories: 小例子
 github: https://github.com/stardew516/xlsxDwonload
 
 以往做excel表格下载功能的时候，都是后端生成好表格后，存储在某个地方，然后给前端一个链接，前端使用a标签加download下载，或者使用node。其实纯前端也是可以做表格下载的，有一个很好用的javascript插件叫js-xlsx。
+ <!-- more -->
 ### js-xlsx
 github：https://github.com/tealeg/xlsx
 使用js-xlsx时，前端可以将后端返回的json数据拼接成自己需要导出的格式，下载到电脑中，完全不依赖后端。导入只需像平时一样选择文件，然后解析excel表格数据，转换成json格式。

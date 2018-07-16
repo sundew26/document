@@ -12,6 +12,7 @@ categories: 前端基础
 打开一个视频链接，例如：http://m.v.baidu.com/watch/7870860677481105842.html?&type=&fr=
 
 打开控制台，此时video样式显示如下：
+ <!-- more -->
 ![clipboard.png](https://segmentfault.com/img/bVbcruK)
 2.设置
 ---

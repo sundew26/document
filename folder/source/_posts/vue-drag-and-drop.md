@@ -12,7 +12,7 @@ categories: 小例子
 功能：输入列表框可上下移动、拖拽、添加、删除，生成图片可预览、下载。  
 
 基本思路：把html转成canvas，然后把canvas存成图片。  
-
+ <!-- more -->
 完成：用插件vue-drag-and-drop，使输入列表可拖拽；刚开始自己根据输入的内容用canvas画图，但是考虑到可扩展性，最后选择html2canvas工具把html转成canvas。  
 
 遇到的问题及解决办法：  

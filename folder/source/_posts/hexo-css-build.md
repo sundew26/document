@@ -9,7 +9,7 @@ categories: 博客
 
 ## 一、什么是hexo
 Hexo是一个快速、简洁且高效的博客框架，使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。目前比较火的vue和weex的文档都是使用hexo框架实现的。
-
+ <!-- more -->
 ## 二、hexo的安装
 安装hexo前，确保电脑中已经安装了node和git。
 ### node安装

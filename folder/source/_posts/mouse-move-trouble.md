@@ -8,7 +8,7 @@ categories: 问题总结
 ## mouseover、mouseout防止多次触发
 
 今天做一个信息提示功能时，发现用mouseover展示提示信息，mouseout收起信息时，一直闪烁，开始以为层级关系出问题，修改许久未见成效，最后发现是因为内部元素在鼠标移上的时候会向它的父对...  
-
+ <!-- more -->
 ![](http://static.oschina.net/uploads/space/2015/0729/125346_K5Kp_255575.png)![](http://static.oschina.net/uploads/space/2015/0729/124752_Lwdz_255575.png)
 
     下面这段文字是摘抄的：  

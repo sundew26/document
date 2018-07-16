@@ -10,6 +10,7 @@ categories: 前端基础
 定义：一个类仅有一个实例，并提供一个访问它的全局访问点。  
 
 原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。  
+ <!-- more -->
 ![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
 
 举例：用一个经典的弹窗功能来举例，下面是单例模式的形成  

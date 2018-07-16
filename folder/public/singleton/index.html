@@ -96,19 +96,19 @@
 
 
 
-<meta name="description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。 举例：用一个经典的弹窗功能来举例，下面是单例模式的形成   1.点击按钮出现弹窗（多次点击，出现多个浮层）1234567891011va">
+<meta name="description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="singleton">
 <meta property="og:url" content="https://github.com/stardew/singleton/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。 举例：用一个经典的弹窗功能来举例，下面是单例模式的形成   1.点击按钮出现弹窗（多次点击，出现多个浮层）1234567891011va">
+<meta property="og:description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
-<meta property="og:updated_time" content="2018-06-28T11:12:26.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:23:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="singleton">
-<meta name="twitter:description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。 举例：用一个经典的弹窗功能来举例，下面是单例模式的形成   1.点击按钮出现弹窗（多次点击，出现多个浮层）1234567891011va">
+<meta name="twitter:description" content="单例模式（创建型）定义：一个类仅有一个实例，并提供一个访问它的全局访问点。   原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。">
 <meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 
 
@@ -432,7 +432,7 @@
 
       
         <h1 id="单例模式（创建型）"><a href="#单例模式（创建型）" class="headerlink" title="单例模式（创建型）"></a>单例模式（创建型）</h1><p>定义：一个类仅有一个实例，并提供一个访问它的全局访问点。  </p>
-<p>原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。<br><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>原理：使用一个变量来标志当前是否已经为某个类创建过实例对象，如果没有，就创建一个类实例对象，并把值赋给存储实例的变量。如果有，则在下一次获取该类的实例时，直接返回之前创建的实例对象。<br> <a id="more"></a><br><img src="https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3EwLUfibiadGz4P373eRQCyErTrN0t8OfNsZnsfjHmFJJic2eQt4ucbnhTicRTocMk2mr7zC5fPdJrv5Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
 <p>举例：用一个经典的弹窗功能来举例，下面是单例模式的形成  </p>
 <h5 id="1-点击按钮出现弹窗（多次点击，出现多个浮层）"><a href="#1-点击按钮出现弹窗（多次点击，出现多个浮层）" class="headerlink" title="1.点击按钮出现弹窗（多次点击，出现多个浮层）"></a>1.点击按钮出现弹窗（多次点击，出现多个浮层）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> createMask = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createElement(<span class="string">'div'</span>));</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">$(<span class="string">'button'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> mask = createMask();</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <h5 id="2-添加一个全局标识，如果有直接返回，没有的话则创建（全局变量容易被污染）"><a href="#2-添加一个全局标识，如果有直接返回，没有的话则创建（全局变量容易被污染）" class="headerlink" title="2.添加一个全局标识，如果有直接返回，没有的话则创建（全局变量容易被污染）"></a>2.添加一个全局标识，如果有直接返回，没有的话则创建（全局变量容易被污染）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mask;</div><div class="line"></div><div class="line"><span class="keyword">var</span> createMask = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">if</span> (mask) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> mask;</div><div class="line"></div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line"></div><div class="line">    mask = <span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createElement(<span class="string">'div'</span>));</div><div class="line"></div><div class="line">    <span class="keyword">return</span> mask;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -478,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/extend/" rel="prev" title="extend">
-                extend <i class="fa fa-chevron-right"></i>
+              <a href="/data-structure/" rel="prev" title="data-structure">
+                data-structure <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -624,7 +624,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -651,7 +651,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

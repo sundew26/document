@@ -12,7 +12,7 @@ mac下彻底卸载nginx，并且重装。
 1.  nginx -s stop 停止nginx进程
     
 2.  which nginx 查看nginx所在目录  删除
-    
+  <!-- more -->   
 3.  brew remove nginx
     
 4.  brew install nginx

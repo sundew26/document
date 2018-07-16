@@ -17,6 +17,7 @@ vue-resource(github)地址：https://github.com/pagekit/vue-resource
   import vueResource from 'vue-resource'
   Vue.use(vueResource)
 ```
+ <!-- more -->
 ##### 2. 调取接口
 ```
 Vue.http.post(url, {

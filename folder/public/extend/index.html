@@ -96,18 +96,18 @@
 
 
 
-<meta name="description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+<meta name="description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="extend">
 <meta property="og:url" content="https://github.com/stardew/extend/index.html">
 <meta property="og:site_name" content="stardew的博客">
-<meta property="og:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+<meta property="og:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-28T11:06:54.000Z">
+<meta property="og:updated_time" content="2018-07-16T07:25:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="extend">
-<meta name="twitter:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。   1. 原型链基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。1234567891011121314151617181920212223242526272829function superObj () &amp;#123;	t">
+<meta name="twitter:description" content="大多数面向对象语言都支持两种继承方式：接口继承和实现继承。   而ECMAScript中无法实现接口继承，只支持实现继承。   其实现继承主要依靠原型链来实现。">
 
 
 
@@ -431,7 +431,7 @@
       
         <p>大多数面向对象语言都支持两种继承方式：接口继承和实现继承。  </p>
 <p>而ECMAScript中无法实现接口继承，只支持实现继承。  </p>
-<p>其实现继承主要依靠原型链来实现。  </p>
+<p>其实现继承主要依靠原型链来实现。<br> <a id="more"></a></p>
 <h5 id="1-原型链"><a href="#1-原型链" class="headerlink" title="1. 原型链"></a>1. 原型链</h5><p>基本思想：利用原型让一个引用类型继承另外一个引用类型的属性和方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'lujiang'</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">superObj.prototype.getSuperVal = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="string">'super '</span> + <span class="keyword">this</span>.name;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = <span class="string">'weilu'</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">subObj.prototype = <span class="keyword">new</span> superObj();</div><div class="line"></div><div class="line">subObj.prototype.getSubVal = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="string">'sub '</span> + <span class="keyword">this</span>.name;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.getSuperVal());<span class="comment">// super weilu</span></div></pre></td></tr></table></figure></p>
 <h5 id="2-借用构造函数"><a href="#2-借用构造函数" class="headerlink" title="2. 借用构造函数"></a>2. 借用构造函数</h5><p>基本思想：在子类型构造函数的内部调用父类构造函数，通过call()和apply()方法在新创建的对象上执行构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">'yellow'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	superObj.call(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line">obj.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.colors);<span class="comment">// ["yellow", "green", "blue", "purple"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> objj = <span class="keyword">new</span> subObj();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(objj.colors);<span class="comment">// ["yellow", "green", "blue"]</span></div></pre></td></tr></table></figure></p>
 <h5 id="3-组合继承"><a href="#3-组合继承" class="headerlink" title="3. 组合继承"></a>3. 组合继承</h5><p>基本思想：将原型连和借用构造函数组合起来，发挥两者之长。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">superObj</span> (<span class="params">name</span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">"yellow"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">superObj.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'name = '</span> + <span class="keyword">this</span>.name);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">subObj</span> (<span class="params">name, age</span>) </span>&#123;</div><div class="line"></div><div class="line">	superObj.call(<span class="keyword">this</span>, name);</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">subObj.prototype = <span class="keyword">new</span> superObj();</div><div class="line"></div><div class="line">subObj.prototype.constructor = subObj;</div><div class="line"></div><div class="line">subObj.prototype.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'age = '</span> + <span class="keyword">this</span>.age);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> subObj(<span class="string">'lujiang'</span>, <span class="number">25</span>);</div><div class="line"></div><div class="line">obj.colors.push(<span class="string">'purple'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.colors);<span class="comment">// ["yellow", "green", "blue", "purple"]</span></div><div class="line"></div><div class="line">obj.getName();<span class="comment">// name = lujiang</span></div><div class="line"></div><div class="line">obj.getAge();<span class="comment">// age = 25</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> objj = <span class="keyword">new</span> subObj(<span class="string">'weilu'</span>, <span class="number">25.5</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(objj.colors);<span class="comment">// ["yellow", "green", "blue"]</span></div><div class="line"></div><div class="line">objj.getName();<span class="comment">// name = weilu</span></div><div class="line"></div><div class="line">objj.getAge();<span class="comment">// age = 25.5</span></div></pre></td></tr></table></figure></p>
@@ -468,8 +468,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/singleton/" rel="next" title="singleton">
-                <i class="fa fa-chevron-left"></i> singleton
+              <a href="/data-structure/" rel="next" title="data-structure">
+                <i class="fa fa-chevron-left"></i> data-structure
               </a>
             
           </div>
@@ -478,8 +478,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/data-structure/" rel="prev" title="data-structure">
-                data-structure <i class="fa fa-chevron-right"></i>
+              <a href="/browser-engine/" rel="prev" title="browser-engine">
+                browser-engine <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -624,7 +624,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -651,7 +651,9 @@
         
         
 
-        
+        <div class="blog_music">
+    <iframe id="kanong" frameborder="no" border="0" marginwidth="0" marginheight="0" width=250 height=86 src="//music.163.com/outchain/player?type=2&id=450518399&auto=1&height=66"></iframe>
+</div>
 
 
       </section>

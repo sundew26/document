@@ -11,7 +11,7 @@ categories: 博客
 
 ## 一、概述
 前面讲了如何使用hexo+css搭建自己的博客，今天主要是总结下如何把本地能访问的静态的博客部署到github上。以重写weex使用手册为例（不要问我为什么这么无聊，等你怀孕了就知道了）。
-
+ <!-- more -->
 博客地址：https://stardew516.github.io/（迁移：https://stardew.github.io/）  
 博客部署地址：  
 https://github.com/stardew516/stardew516.github.io（https://github.com/stardew/stardew.github.io）

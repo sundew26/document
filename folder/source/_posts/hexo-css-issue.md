@@ -11,6 +11,7 @@ categories: 博客
 使用hexo+css模拟实现weex文档，页面[Weex 和 Vue 2.x 的语法差异][1]遇到问题。
 ### 问题描述
 新建页面，copy进去内容，hexo server运行，控制台报错：
+ <!-- more -->
 ```
 FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html
 Template render error: (unknown path) [Line 17, Column 9]

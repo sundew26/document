@@ -12,6 +12,8 @@ categories: 探索
 # 1. 构建项目
 
 创建一个项目之前，首先需要选取合适的工具，目前使用比较广的两个weex脚手架有weexpack和weex-toolkit。
+<!-- more -->
+
 #### weex-toolkit（创建的weex项目没有ios和android包）
 - weex init weex 创建项目
 - 修改weex.html文件，将`./node_modules/weex-vue-render/index.js`修改为`./node_modules/weex-vue-render/dist/index.js`
