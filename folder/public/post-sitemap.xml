@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://github.com/stardew/webpack-vue-package/</loc>
+        <lastmod>2018-07-17T11:50:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://github.com/stardew/main/</loc>
         <lastmod>2018-07-16T07:30:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
