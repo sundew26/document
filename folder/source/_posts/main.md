@@ -22,7 +22,7 @@ github总仓库地址：https://github.com/stardew516?tab=repositories
 ##### 描述：vue小组件  
 仓库：https://github.com/stardew516/vueui.git  
 演示：https://stardew516.github.io/vueui/dist/demo/index.html#/  
-扫码查看：![](https://raw.githubusercontent.com/stardew516/vueui/master/src/static/img/%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA.png)  
+扫码查看：![](http://t1.aixinxi.net/o_1crp3spo76664lu7bj157va1ua.png-w.jpg)  
   
 ##### 描述：宝宝饮食统计，vue-router实现的路由在githug pages内是可以预览的，vue3.0+vue-router+v-charts。  
 仓库：https://github.com/stardew516/babycare.git  
@@ -35,7 +35,7 @@ github总仓库地址：https://github.com/stardew516?tab=repositories
 ##### 描述：vue+webpack h5定位，失败后调百度接口，根据ip定位，pc端会出现位置偏差。仿微信滑动功能，实现列表左滑点赞。  
 仓库：https://github.com/stardew516/position.git  
 演示：https://stardew516.github.io/position/dist/view/index.html  
-扫码查看：![](https://segmentfault.com/img/bVbdI5N)  
+扫码查看：![](http://t1.aixinxi.net/o_1crp40oa0fm77f91fo911ttgcha.png-w.jpg)  
   
 ##### 描述：初学node，实现了一个简单的注册登录功能。  
 仓库：https://github.com/stardew516/sign.git  
@@ -49,7 +49,7 @@ github总仓库地址：https://github.com/stardew516?tab=repositories
 ##### 描述：小游戏，刮刮卡。  
 仓库：https://github.com/stardew516/scratch.git  
 演示：http://stardew516.github.io/scratch/scratch.html  
-扫码查看：![](https://segmentfault.com/img/bVbdI56)  
+扫码查看：![](http://t1.aixinxi.net/o_1crp435ap1gao1n7r1u8e8iciba.png-w.jpg)  
   
 ##### 描述：vue源码研究（function.md）  
 仓库：ttps://github.com/stardew516/vue-source.git  

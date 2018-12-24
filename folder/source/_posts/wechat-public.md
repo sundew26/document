@@ -14,16 +14,16 @@ categories: 问题总结
 登录微信公众平台，进入基本配置。开发中需要用到两个参数，appId和appSecret（appSecret只展示一次，需保存下来，否则需要重置获取）。
 获取access_token时需要添加IP白名单。
  <!-- more -->
-![clipboard.png](https://segmentfault.com/img/bVbcc8v)
+![clipboard.png](http://t1.aixinxi.net/o_1crp52crk17bja4o1dosuq61v24a.png-w.jpg)
 点击查看
-![clipboard.png](https://segmentfault.com/img/bVbcc7q)
+![clipboard.png](http://t1.aixinxi.net/o_1crp53gf719r41chja0h1i6na5aa.png-w.jpg)
 点击修改
-![clipboard.png](https://segmentfault.com/img/bVbcc7D)
+![clipboard.png](http://t1.aixinxi.net/o_1crp54cmd1jrklug18jfhs91p3ba.png-w.jpg)
 ### 2. 添加网页授权
 进入公众号设置=》功能设置=》网页授权域名
-![clipboard.png](https://segmentfault.com/img/bVbcdci)
+![clipboard.png](http://t1.aixinxi.net/o_1crp558581bu91f2dofu1ke611bda.png-w.jpg)
 点击设置，input框中输入授权回调页的域名参考第1点（只能填写一个），下载第3点中的txt文档，上传至服务器的根目录。
-![clipboard.png](https://segmentfault.com/img/bVbcd5o)
+![clipboard.png](http://t1.aixinxi.net/o_1crp561vh1djmqhunmai71oh3a.png-w.jpg)
 
 
 二、php后端实现

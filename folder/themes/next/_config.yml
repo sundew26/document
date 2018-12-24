@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: https://segmentfault.com/img/bVbcOD7
+favicon: http://t1.aixinxi.net/o_1crp45olh1cpgpag172q1vha1ofaa.png-w.jpg
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
@@ -133,7 +133,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://segmentfault.com/img/bVbcOD7
+avatar: http://t1.aixinxi.net/o_1crp45olh1cpgpag172q1vha1ofaa.png-w.jpg
 
 # Table Of Contents in the Sidebar
 toc:

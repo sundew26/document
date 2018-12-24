@@ -13,12 +13,12 @@ categories: 前端基础
 
 打开控制台，此时video样式显示如下：
  <!-- more -->
-![clipboard.png](https://segmentfault.com/img/bVbcruK)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4um7iabv1s8a13tc1kn010c1a.png-w.jpg)
 2.设置
 ---
 点击右上角竖着的...，选择settings，如上图，显示如下图：
-![clipboard.png](https://segmentfault.com/img/bVbcru8)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4vtcf12bjmegt7n1pc3m8ha.png-w.jpg)
 找到Elements，勾选 show user agent shadow DOM，再回到控制台，就可以看到隐藏的样式了。如下图所示：
-![clipboard.png](https://segmentfault.com/img/bVbcrxl)
+![clipboard.png](http://t1.aixinxi.net/o_1crp50tsuvpb1ci11pil1tki7aca.png-w.jpg)
 
 ##### [转自] [如何查看控制台隐藏样式shadow-root]()

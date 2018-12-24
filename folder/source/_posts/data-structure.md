@@ -7,7 +7,7 @@ categories: 前端基础
 
 # 数据结构基础 #
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkCe9RdE3enpa4Um5Xc8F1bk0I1WywW3j1m8ykOhGNgcJcz0CIZ7JRQg/0?wx_fmt=png)
+![](http://t1.aixinxi.net/o_1crp7bimtiq711qlla5jh1fq9a.png-w.jpg)
 
 数据结构是相互之间存在一种或多种特定关系的数据元素的集合。  
 
@@ -47,13 +47,13 @@ categories: 前端基础
 
     a. 满二叉树：深度为k且有2k-1个节点的二叉树  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkDkRYDN823dVFSLicfxMDzTG9icrv1COm9HlDic1w2YmcZkGuIY19oCicgw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkdGWhDpgJzR9yeKv7Me3TyW8MReDeQkqPvodDhsFwnyQ222nruRLVqw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7de6doh3ckac4q10kim04a.png-w.jpg)
+![](http://t1.aixinxi.net/o_1crp7e3o52obl1f1sfk40b1dqla.png-w.jpg)
 
     b. 完全二叉树：深度为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的满二叉树中编号从1至n的节点一一对应时，称之为完全二叉树。  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkwUgjCicnRzMzUx7FAPFNk9ZZ43kTyT7VOWem0sDE66L6x6Uwph5UFHQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkWiaqibfUOKsfIp4zGCnrpVrY7QVuC61w8LNiaic39rMGVE9iaeFP2m3aQcA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7euvq1nco1a7v1f0ou521ae9a.png-w.jpg)
+![](http://t1.aixinxi.net/o_1crp7fkas1jk6pj5hs36792ura.png-w.jpg)
 
     c. huffman树：最优二叉树    
 
@@ -69,13 +69,13 @@ categories: 前端基础
 
         教科书上结果：  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkiamlT9xfXhjNGmAWevmUBP54Dgs1a94pge2ziaf46l7EWXibyo86SH57Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7gqlg1d3jdmjfkg16f0f0va.png-w.jpg)
 
 WPL=3*4 + 5*4 + 7*4 + 8*4 + 11*3 + 14*3 + 23*2 + 29*2 = 271  
 
 自己构造思路：从小到大排好序{3，5，7，8，11，14，23，29}，两两之和（红圈）与未构造数字（黑圈）比较，取小构造。  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkDO2hYlCsibyEzlWPiaZMWgJrmibYtmXkU1XqTzZma1TG73CyyFqiaAv8YA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7hghn1hcp2p71t241mpj1dvna.png-w.jpg)
 
 WPL=3*5 + 5*5 + 7*4 + 8*3 + 11*3 + 14*3 + 23*2 +29*2 = 271
 结论：huffman树构造结果不唯一。  
@@ -84,17 +84,17 @@ WPL=3*5 + 5*5 + 7*4 + 8*3 + 11*3 + 14*3 + 23*2 +29*2 = 271
 
 图的遍历包括深度优先遍历和广度优先遍历：  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkpiaabsicuCujibcP0Vmm5WtT5f0aqGucaHAibZJtq58pbqeiaormDBhehtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7io0g1ra4v6413137h31ru6a.png-w.jpg)
 
 
 深度优先遍历：v1—>v2—>v4—>v8—>v5—>v3—>v6—>v7  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkTeP5KRwmFJgQCDuvEIOUe3I7NGW99GLnoK5Q2kC2lQZxIhozvaWfGw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7lgan1ubh13tu1b0h5tuhjma.png-w.jpg)
 
 
 广度优先遍历：v1—>v2—>v3—>v4—>v5—>v6—>v7—>v8  
 
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkjz654o9s9fUmsgVF4mKBY69GkQAX6NhtwLorTTt7icOHY8QgEpDHrxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7m6dd1bso1egbtrg78k131qa.png-w.jpg)
 
 最小生成树的问题：假设要在n个城市之间建立通信联络网，则连通n个城市只需要n-1条线路。这时。自然会考虑这样一个问题，如何在节省经费的前提下建立这个通信网。  
 
@@ -106,8 +106,8 @@ WPL=3*5 + 5*5 + 7*4 + 8*3 + 11*3 + 14*3 + 23*2 +29*2 = 271
 
 3. 例如第三组3-3中的v6和2，表示（v1，v3，v6）与v4的最小边为v4---v6的权值2。  
 
-![](https://mmbiz.qpic.cn/mmbiz_jpg/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkK1jHAIlaeQIUoicVjKaazqp6M2IAEia6SXVgiclSOB0s6zfNxp00AbydQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
-![](https://mmbiz.qpic.cn/mmbiz_png/0vF1DtfHb3H6KdP1dI8zbZVp81r47LRkXIObeic1VueF6p0ZS7p3hEiaa6st40bkoWlVG9tRF1kw1bicNU3d1puibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1)
+![](http://t1.aixinxi.net/o_1crp7nos0ue71qle1jej1t60k0ia.png-w.jpg)
+![](http://t1.aixinxi.net/o_1crp7op4398fdu4n9j1pp157oa.png-w.jpg)
 
 哈希表：根据哈希函数H(key)和处理冲突的方法将一组关键字映射到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“像”作为记录在表中的存储位置，这种表便称哈希表。  
 

@@ -28,7 +28,7 @@ https://github.com/stardew516/stardew516.github.io（https://github.com/stardew/
 ##### 2. 安装 hexo-deployer-git: `npm install hexo-deployer-git --save`
 
 ##### 3. 在github上新建一个仓库，注意命名格式如下图，用户名.github.io
-![clipboard.png](https://segmentfault.com/img/bVVyqc)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4t7f1ier1hoin3krgrmjma.png-w.jpg)
 
 ##### 4. _config.yml 中配置
   ```

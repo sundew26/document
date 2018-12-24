@@ -258,7 +258,7 @@ github：https://github.com/tealeg/xlsx
 
 ### 效果图
 
-![clipboard.png](https://segmentfault.com/img/bVUxSk)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4lt2nb9g1m9ht8mcho11uba.png-w.jpg)
 
 
   [1]: https://camo.githubusercontent.com/fd1391703fe12774261a10e488d70e69221d00fc/68747470733a2f2f73617563656c6162732e636f6d2f62726f777365722d6d61747269782f73686565746a732e737667

@@ -22,7 +22,7 @@ categories: 探索
 - npm run app 启动项目
 
 目录结构如下图：
-![clipboard.png](https://segmentfault.com/img/bVPAmL)
+![clipboard.png](http://t1.aixinxi.net/o_1crp48ccl170ithv1hs39qsvrfa.png-w.jpg)
 
 #### weexpack （创建的weex项目有ios和android包）
 - weexpack create weex 创建项目
@@ -31,7 +31,7 @@ categories: 探索
 - weexpack run ios 模拟器运行
 
 目录结构如下图：
-![clipboard.png](https://segmentfault.com/img/bVPAly)
+![clipboard.png](http://t1.aixinxi.net/o_1crp49o1p1mq0jn010blnjb16eea.png-w.jpg)
 
 因为我们不打包android和ios，只需要将写好的页面打包成.weex.js文件供ios和android开发人员调用，所以采用了weex init的构建方式。
 
@@ -41,15 +41,15 @@ categories: 探索
 
 Weex Devtools是Weex开发调试必备的神器，安装好后，终端进入到项目目录，运行weex debug 会自动打开页面
 
-![clipboard.png](https://segmentfault.com/img/bVPAfS)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4b14vmsalbm1ll31u5kneqa.png-w.jpg)
 
 扫二维码后
 
-![clipboard.png](https://segmentfault.com/img/bVPAgs)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4bvli1ah8uf81bi4hnh13t0a.png-w.jpg)
 
 点击Inspector可以看页面信息，我们打开Debugger，然后扫描打包好的js文件二维码就可以开始调试了。
 
-![clipboard.png](https://segmentfault.com/img/bVPAgM)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4d1bj1chkqcuac1efrn1a.png-w.jpg)
 
 注： 箭头所指处选debugger，我因为手贱选了个别的，导致好几天console里没有内容提示，还以为版本问题，后来研究了下，发现这里选错了。
 # 3. 遇到的问题
@@ -156,19 +156,19 @@ fetch的headers只能设置下面这些字段
 ***
 > stream的fetch使用get方式请求接口，url都会自动加上&undefined，官网的例子也不例外。原本普通接口多加一个undefined也没太大影响，但是我们项目是需要根据url参数计算签名的，所以一直签名不通过。
 
-![clipboard.png](https://segmentfault.com/img/bVPAyC)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4e3o11nim1dro1hke7fi39aa.png-w.jpg)
 
 ##### 解决：
 
 找到源码出处
-![clipboard.png](https://segmentfault.com/img/bVPz7b)
-![clipboard.png](https://segmentfault.com/img/bVPz6u)
-![clipboard.png](https://segmentfault.com/img/bVPABE)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4fcu7171g3np44vhdc6gca.png-w.jpg)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4gsj9rsqh13181f1o50p45a.png-w.jpg)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4i1p65ef1ho82da1ue45oia.png-w.jpg)
 
 weex-vue-render第2753行对get进行了特别处理，第2764行的url拼接了body和hash，因为body没有传值，所以是undefined，注释掉url+=这行就没有undefined了，但是修改node_modules中的包内容显然不是一个合理的解决方案。
 于是把get方式传值改为body传过来，web端好了，签名没有问题，但是真机上还是报错，排查后发现问题出在get中使用了body传值，找到开发文档，
 http://weex.apache.org/cn/references/modules/stream.html
-![clipboard.png](https://segmentfault.com/img/bVPABf)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4j5g52r51md3kt5cdl1kqla.png-w.jpg)
 然后我凌乱了，为什么明明不能传body你的源码里又要有那么一行代码`url += (config.url.indexOf('?') <= -1 ? '?' : '&') + body + hash;`。没办法，最后使用了一个超级笨的办法解决了。在签名计算的时候人为的给url加上“&undefined",计算好签名后，web中fetch参数中的url也要加上“&undefined"，但是真机上是不会有&undefined的，所以真机上的url需要去掉undefined，好了问题解决了。
 
 > storage中的`getItem(key, callback)`封装后，页面没拿到数据。

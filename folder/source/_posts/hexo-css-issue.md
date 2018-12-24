@@ -41,7 +41,7 @@ Template render error: (unknown path) [Line 17, Column 9]
 ### 定位问题
 问题定位到`if="&#123;&#123;!foo&#125;&#125;"`这句文案。文档中的效果如下：
 
-![clipboard.png](https://segmentfault.com/img/bVUuMg)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4nrg31l2r1gsv1c2dljeobba.png-w.jpg)
 
 
 ### 分析问题：
@@ -68,13 +68,13 @@ Template render error: (unknown path) [Line 17, Column 9]
     <code>if=&quot;&#123;&#123;!foo&#125;&#125;&quot;</code>
     ```
 图1：
-![clipboard.png](https://segmentfault.com/img/bVUuEK)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4oqlf1kccri6al1e6q1bbha.png-w.jpg)
 
 图2：
-![clipboard.png](https://segmentfault.com/img/bVUuGL)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4pjr4a60hbo9ao1tg44b6a.png-w.jpg)
 
 图3：
-![clipboard.png](https://segmentfault.com/img/bVUuFi)
+![clipboard.png](http://t1.aixinxi.net/o_1crp4qf9i1u2s17g7k7i13rf3nna.png-w.jpg)
 
 ### 总结
 使用hexo创建博客写文章的时候，遇到的问题几乎都是特殊字符解析方面的问题，所以应该尽可能少写一些特殊字符，如果实在需要，可以使用转义码。遇到问题时，解决思路可以考虑下转义码+html标签。
